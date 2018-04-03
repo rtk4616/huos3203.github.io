@@ -1,0 +1,1220 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="iOS" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="布衣男儿" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="原地址 UIStackView简单介绍一个Stack View能够将它所含的View以各种方式沿其轴向进行分布，同时也可以将View沿某个方向等距分布，要隐藏Stack View中的视图，你只需要设置该View的Hidden属性为true，剩下的工作Stack View会自己完成。。坐标（Axis）、间隔（Spacing）、对齐（Alignment）以及分布（Distribution ）等。di">
+<meta name="keywords" content="iOS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UIStackView教程：了解Stack View">
+<meta property="og:url" content="https://huos3203.github.io/2017/02/25/iOS/UIStackView教程了解StackView/index.html">
+<meta property="og:site_name" content="布衣男儿">
+<meta property="og:description" content="原地址 UIStackView简单介绍一个Stack View能够将它所含的View以各种方式沿其轴向进行分布，同时也可以将View沿某个方向等距分布，要隐藏Stack View中的视图，你只需要设置该View的Hidden属性为true，剩下的工作Stack View会自己完成。。坐标（Axis）、间隔（Spacing）、对齐（Alignment）以及分布（Distribution ）等。di">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack0.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack006.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack007.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack008.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack009.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack000.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack01.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack3.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack001.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/UIStackView.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/WEATHERhide.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack1.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/05-simulated-metrics-iphone-4-inch_639x173.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack2.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/Stack按钮">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack4.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack5.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack6.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack7.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack8.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack9.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack04.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack02.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack03.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack05.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack3.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack06.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack07.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack08.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack09.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack00.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack002.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack003.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack004.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack005.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack0001.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack0002.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack0003.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack0004.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack0005.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack0006.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack0006.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack0007.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack0008.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack0009.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack0000.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack010.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack011.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack012.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack013.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack014.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack015.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack016.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack017.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack018.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack019.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack020.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack021.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack022.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack023.png">
+<meta property="og:updated_time" content="2017-02-25T14:33:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="UIStackView教程：了解Stack View">
+<meta name="twitter:description" content="原地址 UIStackView简单介绍一个Stack View能够将它所含的View以各种方式沿其轴向进行分布，同时也可以将View沿某个方向等距分布，要隐藏Stack View中的视图，你只需要设置该View的Hidden属性为true，剩下的工作Stack View会自己完成。。坐标（Axis）、间隔（Spacing）、对齐（Alignment）以及分布（Distribution ）等。di">
+<meta name="twitter:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/stack0.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '7069931',
+      author: '布衣男儿'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://huos3203.github.io/2017/02/25/iOS/UIStackView教程了解StackView/"/>
+
+
+
+
+
+  <title>UIStackView教程：了解Stack View | 布衣男儿</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b4a2528a681e2f23855d15a4de0abfc2";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">布衣男儿</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不物喜，不己悲，善假物，易参行！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'dazsKTijnsz_zi-bXB3t','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://huos3203.github.io/2017/02/25/iOS/UIStackView教程了解StackView/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="boyer">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="布衣男儿">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">UIStackView教程：了解Stack View</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-25T02:12:14+08:00">
+                2017-02-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/控件/" itemprop="url" rel="index">
+                    <span itemprop="name">控件</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/02/25/iOS/UIStackView教程了解StackView/" class="leancloud_visitors" data-flag-title="UIStackView教程：了解Stack View">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <script src="/assets/js/APlayer.min.js"> </script><p><a href="http://blog.csdn.net/kmyhy/article/details/50456444" target="_blank" rel="noopener">原地址</a></p>
+<h2 id="UIStackView简单介绍"><a href="#UIStackView简单介绍" class="headerlink" title="UIStackView简单介绍"></a>UIStackView简单介绍</h2><p>一个Stack View能够将它所含的View以各种方式沿其轴向进行分布，同时也可以将View沿某个方向等距分布，要隐藏<code>Stack View</code>中的视图，你只需要设置该View的<code>Hidden</code>属性为<code>true</code>，剩下的工作Stack View会自己完成。。<br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack0.png"><br>坐标（Axis）、间隔（Spacing）、对齐（Alignment）以及分布（Distribution ）等。<br>distribution属性：决定Stack View如何沿它轴向的水平方向摆放它的subview，当属性值是Fill，这表示subview会沿轴向完全占据Stack View。因此，Stack View会拉伸其中一个subview使其填充剩余空间，尤其是水平内容优先级最低的那个，如果所有subview优先级相同，则拉伸第一个subview。<br>Alignment属性：决定了Stack View如何沿它轴向的垂直方向摆放它的subview，对于一个垂直的Stack View，这个属性可以设置为Fill、Leading、Center和Trailing。<br>对于水平的Stack View，这个属性则稍有不同：<br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack006.png"><br>.Top取代了.Leading，.Bottom取代了.Trailing。此外，水平Stack View还多出了两个属性值：.FirstBaseLine和.LastBaseLine。<br>对于水平的Stack View，这个属性则稍有不同：<br>Fill:<br><img title="Fill" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack007.png"><br>Leading:<br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack008.png"><br>Center:<br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack009.png"><br>Trailing:<br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack000.png"></p>
+<p>布局方式对比<br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack01.png"></p>
+<h3 id="添加一个新的Stack-View"><a href="#添加一个新的Stack-View" class="headerlink" title="添加一个新的Stack View"></a>添加一个新的Stack View</h3><p>点击故事板画布左下角<code>Auto Layout工具栏</code>中的<code>Stack按钮</code>：<br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack3.png"><br>另一种解散的方法是选中Stack View，然后点击<code>Editor\Emebed in\stack view</code>菜单。</p>
+<h3 id="解散一个废弃的Stack-View"><a href="#解散一个废弃的Stack-View" class="headerlink" title="解散一个废弃的Stack View"></a>解散一个废弃的Stack View</h3><p>首先，选定想解散的Stack View。按下<code>Option键</code>，点击<code>Stack 按钮</code>。这将弹出一个上下文菜单，然后点击Unembed：<br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack001.png"><br>另一种解散的方法是选中Stack View，然后点击<code>Editor\Unemebed</code>菜单。</p>
+<h2 id="使用场景描述"><a href="#使用场景描述" class="headerlink" title="使用场景描述"></a>使用场景描述</h2><p>当APP运行中增加或删除一个<code>view</code>时，需要重新调整邻近<code>view</code>的位置布局。<br>预见困境：</p>
+<ol>
+<li>在故事板中新建一些布局约束连接，以便能够安装或卸载其中的一些约束</li>
+<li>使用第三方库来实现</li>
+<li>根据任务复杂程度完全用代码实现<br>也许这个在视图附近的视图树中的所有View都不需要在运行时改变，但当你将新视图添加到故事板时，仍然要想方设法为它挤出空间来。</li>
+</ol>
+<p><code>UIStackView</code>提供了一个对多个视图进行水平或垂直布局的方法。通过对几个属性进行简单设置，比如对齐、分布和间距，可以让我们让其所包含的视图适应于其有效空间。</p>
+<h2 id="实现需求"><a href="#实现需求" class="headerlink" title="实现需求"></a>实现需求</h2><p>存在着这几方面的问题:</p>
+<h3 id="问题一：自适应横竖屏"><a href="#问题一：自适应横竖屏" class="headerlink" title="问题一：自适应横竖屏"></a>问题一：自适应横竖屏</h3><p>在横屏状态下（command+左箭头旋转为横屏），发现截图中的一排按钮位置无法适应屏幕宽度的变化。这时可以使用<code>UIStackView</code>来帮助实现自动适应横竖屏的效果。<br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/UIStackView.png"></p>
+<h3 id="问题二：控件间留白不紧凑"><a href="#问题二：控件间留白不紧凑" class="headerlink" title="问题二：控件间留白不紧凑"></a>问题二：控件间留白不紧凑</h3><p>点击WEATHER旁边的Hide按钮。隐藏了下面的文本内容后，留下了一大块的空白区域。<br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/WEATHERhide.png"></p>
+<h3 id="Storyboard引入界面"><a href="#Storyboard引入界面" class="headerlink" title="Storyboard引入界面"></a>Storyboard引入界面</h3><p>打开<code>Main.storyboard</code>，找到<code>Spot Info View Controller</code>这个Scene。将这些标签和按钮设为不同的背景色，是为了在运行时效果更直观。就是在故事板中，这也有助于看到<code>Stack View</code>属性的改变导致其内部视图的变化。<br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack1.png"><br>如果想在运行App时看见这些颜色，在<code>SpotInfoViewController</code>的<code>viewDidLoad()</code>方法中将下列语句注释：<br><figure class="highlight swift"><figcaption><span>swift</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 清空标签和按钮的背景色</span></span><br><span class="line"><span class="keyword">for</span> view <span class="keyword">in</span> backgroundColoredViews </span><br><span class="line">&#123;</span><br><span class="line">    view.backgroundColor = <span class="type">UIColor</span>.clearColor()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Size类便于使用storyboard"><a href="#Size类便于使用storyboard" class="headerlink" title="Size类便于使用storyboard"></a>Size类便于使用storyboard</h3><p>在本案例中，故事板中Scene大小不是默认<code>600x600</code>，在这里Simulated Metrics下的Size属性被设置成iPhone 4-inch。Simulated Metrics属性在运行时并没有任何影响——不同设备上视图的大小仍然会自动改变。<br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/05-simulated-metrics-iphone-4-inch_639x173.png"></p>
+<h2 id="创建水平UIStackView"><a href="#创建水平UIStackView" class="headerlink" title="创建水平UIStackView"></a>创建水平<code>UIStackView</code></h2><h3 id="按钮模块"><a href="#按钮模块" class="headerlink" title="按钮模块"></a>按钮模块</h3><ol>
+<li>选中按钮<br>用<code>Command+左键</code>同时选中<code>Spot Info View Controller</code>底下一排的所有按钮：<img src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack2.png"></li>
+<li>Stack按钮添加一个新的Stack View<br>点击故事板画布左下角<code>Auto Layout工具栏</code>中新增的<code>Stack按钮</code>：    </li>
+</ol>
+<img src="http://p27uwfdhv.bkt.clouddn.com/static/images/Stack按钮">
+<p>这些按钮被嵌到一个新的Stack View中：</p>
+<img src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack4.png">
+<h4 id="给新的Stack-View添加布局约束"><a href="#给新的Stack-View添加布局约束" class="headerlink" title="给新的Stack View添加布局约束"></a>给新的Stack View添加布局约束</h4><p>要在故事板选取一个充满了子视图的Stack View还是比较难的，介绍两种选择技巧。<br>3.1 在<code>Outline视图</code>中选取Stack View</p>
+<img title="Outline视图" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack5.png">
+<p>3.2 Shift+右键调出View树<br>在Stack View 的任意地方按下<code>Shift+右键</code>或者<code>Control+Shift+左键</code>（如果你正在用触控板的话）。这时将弹出一个上下文菜单，列出了位于所点击的地方的View树，你可以在这个菜单中选择Stack View。</p>
+<img title="Shift+右键" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack6.png">
+<ol>
+<li>自动布局工具栏中的Pin按钮,添加一个约束<img title="自动布局工具栏中的Pin按钮" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack7.png">
+</li>
+</ol>
+<p>首先勾选Constrain to margins。然后在Stack View四周添加下列约束：<br><figure class="highlight swift"><figcaption><span>swift</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Top</span>: <span class="number">20</span>, <span class="type">Leading</span>: <span class="number">0</span>, <span class="type">Trailing</span>: <span class="number">0</span>, <span class="type">Bottom</span>: <span class="number">0</span></span><br></pre></td></tr></table></figure><br>仔细检查top、leading、trailing、bottom中的数字并确保它们的I型柱都被选中。然后点击Add 4 Constraints：<br><img title="Add4Constraints" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack8.png"></p>
+<h4 id="按钮等间距分布"><a href="#按钮等间距分布" class="headerlink" title="按钮等间距分布"></a>按钮等间距分布</h4><p>添加约束后，导致第一个按钮被拉伸：<br><img title="第一个按钮被拉伸填充所有剩余空间" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack9.png"></p>
+<h5 id="使用等宽约束的Spacer-View实现"><a href="#使用等宽约束的Spacer-View实现" class="headerlink" title="使用等宽约束的Spacer View实现"></a>使用等宽约束的<code>Spacer View</code>实现</h5><p>解决这个问题只能使用空白的View来分隔这些按钮，在按钮之间摆放上一些用于分隔空间的 Spacer View。所有的Spacer View都要添加等宽约束，以及许多额外的约束，才能将这些Spacer View布局正确。<br>这看起来如下图所示。为了直观起见，这些Spacer View的背景色设置成了浅灰色：<br><img title="SpacerView添加等宽约束实现" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack04.png"><br>如果要在运行时添加一个按钮或者隐藏/删除一个按钮时，要想调整这些Spacer View和约束就要命了。</p>
+<h5 id="Distribution属性：沿轴向水平分布"><a href="#Distribution属性：沿轴向水平分布" class="headerlink" title="Distribution属性：沿轴向水平分布"></a><code>Distribution</code>属性：沿轴向水平分布</h5><p>distribution属性：决定Stack View如何将它的subview沿轴向分布，当属性值是Fill，这表示subview会沿轴向完全占据Stack View。因此，Stack View会拉伸其中一个subview使其填充剩余空间，尤其是水平内容优先级最低的那个，如果所有subview优先级相同，则拉伸第一个subview。<br>打开Stack View属性面板。将<code>Distribution</code>属性由<code>Fill</code>修改为<code>Equal Spacing</code>：<br><img title="`Fill`修改为`Equal" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack02.png"><br>编译运行，点击某个单元格，旋转模拟器（⌘→）。你将看到最下一排按钮现在按照等间距排列了！<br><img title="`Distribution`属性值`Equal" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack03.png"></p>
+<h3 id="Rating版块"><a href="#Rating版块" class="headerlink" title="Rating版块"></a>Rating版块</h3><p>选中RATING标签，以及旁边的显示为几个星形图标的标签：<br><img title="选中RATING标签" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack05.png"><br>然后点击Stack按钮将它们嵌到一个Stack View中：<br><img title="Stack按钮" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack3.png"><br><img title="RATING标签嵌到一个StackView中" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack06.png"><br>然后点击Pin按钮。勾选Constrain to margins，并添加如下约束：<br><figure class="highlight swift"><figcaption><span>swift</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Top</span>: <span class="number">20</span>, <span class="type">Leading</span>: <span class="number">0</span>, <span class="type">Bottom</span>: <span class="number">20</span></span><br></pre></td></tr></table></figure><br><img title="添加约束" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack07.png"><br>打开属性面板，将间距设置为8：<br><img title="间距设置为8" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack08.png"><br>你可能会看到一个 Misplaced Views的布局约束警告，同时星星标签会显示将会被拉伸到视图之外：<br><img title="MisplacedViews的布局约束警告" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack09.png"><br>有时候Xcode会临时提示一些警告，或者显示Stack View的位置不正确，这些警告会在你添加其他约束后消失。你完全可以忽略这些警告。<br>要解决这个警告，我们可以修改一下Stack View的Frame然后又改回，或者临时修改它的一条布局约束。<br>让我们试一下。先将Alignment 属性从Fill修改为Top，然后又改回原来的Fill。你将看到这下星星标签显示正常了：<br><img title="布局约束警告消失" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack00.png"><br>编译运行，进行测试</p>
+<h2 id="创建垂直的Stack-View"><a href="#创建垂直的Stack-View" class="headerlink" title="创建垂直的Stack View"></a>创建垂直的Stack View</h2><p>Xcode会自动根据这两者的位置推断出这将是一个垂直的Stack View，Stack View没有添加任何约束时，会自动适应了两个标签中的最宽的一个的宽度。</p>
+<h3 id="WHY-VISIT模块"><a href="#WHY-VISIT模块" class="headerlink" title="WHY VISIT模块"></a>WHY VISIT模块</h3><p>选中WHY VISIT标签及下面的标签,创建一个垂直的Stack View：<br><img title="选中WHY" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack002.png"><br>点击Stack 按钮将二者嵌到一个Stack View：<br><img title="嵌到一个垂直的StackView" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack003.png"></p>
+<h4 id="添加约束"><a href="#添加约束" class="headerlink" title="添加约束"></a>添加约束</h4><p>默认，约束是相对于距离最近的对象，对于Bottom约束来说就是距离它15像素的Hide按钮。但我们其实是想让约束相对于WEATHER标签。<br>选中Stack View，点击Pin按钮。勾选Constrain to margins，设置Top、Leading、Trainling为0。<br>然后，点击Bottom右边的下拉按钮，从列表中选择WEATHER（curent distance =20）：<br><img title="Top、Leading、Trainling为0" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack004.png"><br>最后点击Add 4 Constraints按钮。显示结果如下图所示：<br><img title="Top、Leading、Trainling为0" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack005.png"></p>
+<h4 id="alignment属性：轴向的垂直方向"><a href="#alignment属性：轴向的垂直方向" class="headerlink" title="alignment属性：轴向的垂直方向"></a>alignment属性：轴向的垂直方向</h4><p>Stack View问题，它的右边对齐于View的右边。但是底下的标签仍然是原来的宽度。需要使用alignment属性解决这个问题。<br>当你测试完所有Alignment值的布局效果后，将Alignment修改为Fill：<br><img title="Top、Leading、Trainling为0" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack0001.png"><br>将<code>Alignment</code>设置为<code>Fill</code>，表示所有View将沿与Stack View轴向垂直的方向进行全占式分布。这会让WHY VISIT标签扩展它的宽度到100%.</p>
+<p>如果我们只想让底下的标签将宽度扩展到100%怎么办？</p>
+<p>这个问题现在看来还不是多大的问题，因为两个标签在运行时的背景色都是透明的。但对于Weather版块来说就不同了。</p>
+<p>我们将用另外一个Stack View来说明这个问题。</p>
+<h2 id="垂直／水平Stack-View嵌套使用"><a href="#垂直／水平Stack-View嵌套使用" class="headerlink" title="垂直／水平Stack View嵌套使用"></a>垂直／水平Stack View嵌套使用</h2><h3 id="Weather版块"><a href="#Weather版块" class="headerlink" title="Weather版块"></a>Weather版块</h3><p>在Weather版块相对复杂一些，因为它多了一个Hide按钮。<br>要隐藏<code>Stack View</code>中的视图，你只需要设置该View的<code>Hidden</code>属性为<code>true</code>，剩下的工作Stack View会自己完成。这也是我们解决用户隐藏WEATHER标签下文本的主要思路。<br>一种方法是使用嵌套的Stack View，先将WEATHER标签和Hide按钮嵌到一个水平StackView，再将这个Stack View和标签嵌到一个垂直Stack View。<br><img title="垂直/水平StackView嵌套使用" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack0002.png"></p>
+<h4 id="垂直stackView"><a href="#垂直stackView" class="headerlink" title="垂直stackView"></a>垂直stackView</h4><p>注意Alignment属性负责Stack View轴向垂直的方向上的布局。所以，我们需要将Alignment属性设置为 Bottom：<br><img title="垂直/水平StackView嵌套使用" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack0003.png"></p>
+<h4 id="水平StackView中出现按钮拉伸标签的问题"><a href="#水平StackView中出现按钮拉伸标签的问题" class="headerlink" title="水平StackView中出现按钮拉伸标签的问题"></a>水平StackView中出现按钮拉伸标签的问题</h4><p>注意，WEATHER标签被拉伸为和Hide按钮一样高了。这并不合适，因为这会导致WEATHER标签和下面的文本之间多出了一些空间。<br>正确的方法是让 Hide 按钮不要和 Weather 版块呆在同一个Stack View中，或者任何别的Stack View中。<br>这样，在顶层View中还会保留一个subview，你将为它添加一个相对于WEATHER标签的约束——WEATHER标签嵌在Stack View里的。也就是说，你要为位于Stack View之外的按钮加一个约束，这个约束是相对于Stack View内的一个标签！</p>
+<h4 id="垂直stack-View1-嵌套WEATHER标签和标签"><a href="#垂直stack-View1-嵌套WEATHER标签和标签" class="headerlink" title="垂直stack View1:嵌套WEATHER标签和标签"></a>垂直stack View1:嵌套WEATHER标签和标签</h4><p>选中WEATHER标签和标签：<br><img title="选中嵌套标签" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack0004.png"><br>点击 Stack 按钮：<br><img title="Stack按钮创建stackView" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack0005.png"><br>点击Pin 按钮，勾上Constrain to margins，然后添加如下约束：<br><figure class="highlight swift"><figcaption><span>swift</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Top</span>: <span class="number">20</span>, <span class="type">Leading</span>: <span class="number">0</span>, <span class="type">Trailing</span>: <span class="number">0</span>, <span class="type">Bottom</span>: <span class="number">20</span></span><br></pre></td></tr></table></figure><br>将Stack View的Alignment设为Fill：<br><img title="Alignment设为Fill" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack0006.png"><br>我们需要在 Hide 按钮左边和WEATHER标签右边加一条约束，这样WEATHER 标签的宽度就不会拉满整个Stack View了。</p>
+<p>当然，底下的标签宽度还是需要100%占满的。</p>
+<p>我们是通过将WEATHER标签嵌到一个垂直Stack View 来实现的。注意，垂直Stack View的Alignment 属性可以设置为 .Leading，如果将Stack View拉宽，则它里面的View 会保持左对齐。</p>
+<h4 id="垂直stack-View2-仅嵌套WEATHER标签"><a href="#垂直stack-View2-仅嵌套WEATHER标签" class="headerlink" title="垂直stack View2: 仅嵌套WEATHER标签"></a>垂直stack View2: 仅嵌套WEATHER标签</h4><p>从Outline视图中选取WEATHER 标签，或者用Control+Shift+左键的方式选取WEATHER 标签：<br><img title="Stack按钮创建stackView" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack0006.png"><br>然后点击Stack 按钮：<br><img title="Stack按钮创建stackView" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack0007.png"><br>确保Axis 为 Vertical 的情况下，将Alignment 设置为 Leading：<br><img title="Alignment设置为Leading" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack0008.png"></p>
+<h4 id="按钮和WEATHER标签两个约束"><a href="#按钮和WEATHER标签两个约束" class="headerlink" title="按钮和WEATHER标签两个约束"></a>按钮和WEATHER标签两个约束</h4><p>从Hide 按钮用右键拖一条新的约束到 WEATHER 标签：<br><img title="AddConstraints" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack0009.png"><br>按下Shift键，同时选择Horizontal Spacing 和 Baseline。然后点击 Add Constraints：<br><img title="AddConstraints" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack0000.png"><br>编译运行。Hide 按钮的位置现在对了，而且当按下Hide 按钮，位于Stack View 中的标签被隐藏后，下面的视图也会被调整——根本不需要我们进行手动调整。<br><img title="编译运行" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack010.png"></p>
+<h2 id="顶级-Stack-View"><a href="#顶级-Stack-View" class="headerlink" title="顶级 Stack View"></a>顶级 Stack View</h2><p>在Outline 视图中，用Command+左键选择5个最顶级的 Stack View：<br><img title="选中视图" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack011.png"><br>然后点击 Stack 按钮：<br><img title="Stack按钮" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack012.png"><br>点击Pin 按钮，勾上 Constrain to margins，将 4 个边的约束都设为0。然后将Spacing 设置为20，Alignment 设为 Fill。现在故事板会是这个样子：<br><img title="添加约束" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack013.png"><br>编译运行：<br><img title="编译运行" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack014.png"><br>噢！这个 Hide 按钮又失去了它 的约束！因为包含 WEATHER 标签的Stack View的外边又套了一层 Stack View。这不是什么大问题，就像之前你做过的那样，再重新为它添加约束就是了。</p>
+<p>右键从Hide 按钮拖一条约束到 WEATHER标签，按下 Shift 键，同时选择 Horizontal Spacing 和 Baseline。然后点击 Add Constraints：<br><img title="AddConstraints" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack015.png"></p>
+<h2 id="重新调整视图位置"><a href="#重新调整视图位置" class="headerlink" title="重新调整视图位置"></a>重新调整视图位置</h2><p>现在，所有的版块都被嵌到一个顶级的 Stack View中了，我们想修改一下 what to see版块的位置，让它位于 weather 版块之后。</p>
+<p>从 Outline 视图中选择中间的的 Stack View，然后将它拖到第一、二个 Stack View 之间。<br>注意：让箭头稍微偏向你正在拖的Stack View左边一点，以便它能够作为外层 Stack View 的 subview 添加。蓝色的小圆圈应当位于两个 Stack View 之间的左端而不是右端：<br><img title="调整视图位置" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack016.png"></p>
+<p>现在，weather版块是从上到下的第三个版块，由于 Hide 按钮它并不是 Stack View的subview，所以它不会参与移动，它的frame当前是不正确的。</p>
+<p>点击 Hide 按钮，选中它：<br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack017.png"></p>
+<p>然后点击自动布局工具栏中的 Resolve Auto Layout Issues 按钮，选择 Update Frames：<br><img title="Update" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack018.png"><br>现在 Hide 按钮将回到正确的位置：<br><img title="UpdateHide按钮" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack019.png"></p>
+<h2 id="基于配置的-Size-类"><a href="#基于配置的-Size-类" class="headerlink" title="基于配置的 Size 类"></a>基于配置的 Size 类</h2><p>最后还有一个任务没有完成。在横屏模式，垂直空间是比较珍贵的，你想将这些版块之间靠得更近一些。要实现这个，你需要判断当垂直Size类为compact时，将顶层 Stack View的 Spacing属性由 20 改成 10.</p>
+<p>选择顶层 Stack View，点击 Spacing 前面的+按钮：<br><img title="前面的+按钮Spacing" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack020.png"></p>
+<p>选择 Any Width &gt; Compact Height：<br><img title="CompactHeight" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack021.png"></p>
+<p>在新出现的 wAny hC 一栏中，将 Spacing 设为 10：<br><img title="Spacing设为10" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack022.png"><br>编译运行。在竖屏模式下Spacing不会改变。旋转模拟器（⌘←），你会看到各版块之间的间距减少了，现在底部按钮之间的空间也变大了：<br><img title="编译运行" src="http://p27uwfdhv.bkt.clouddn.com/static/images/stack023.png"><br>如果你没有添加最外层的 Stack View，你仍然可以使用 Size 类将每个版块之间的垂直间距设置为 10，但这就不是仅仅设置一个地方就能够办到的了。</p>
+<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><p>现在，在隐藏和显示天气信息时仍然会觉得有一些突兀。你将增加一个动画使这个转换变得更平滑。</p>
+<p>Stack View完全支持 <code>UIView 动画</code>。也就是说要以动画方式显示/隐藏它所包含的subview，只需要简单地在一个动画块中切换它的 hidden 属性。</p>
+<p>让我们来看看代码怎么实现。打开 <code>SpotInfoViewController.Swift</code>，找到<br><code>updateWeatherInfoViews(hideWeatherInfo:animated:)</code>方法。</p>
+<p>将方法的最后一行：<br><figure class="highlight swift"><figcaption><span>swift</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">weatherInfoLabel.hidden = shouldHideWeatherInfo</span><br></pre></td></tr></table></figure><br>替换为：<br><figure class="highlight swift"><figcaption><span>swift</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> animated </span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">UIView</span>.animateWithDuration(<span class="number">0.3</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.weatherInfoLabel.hidden = shouldHideWeatherInfo</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">else</span> </span><br><span class="line">&#123;</span><br><span class="line">    weatherInfoLabel.hidden = shouldHideWeatherInfo</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>编译运行，点击Hide 按钮或 Show 按钮。是不是加入动画之后看起来要好得多呢？</p>
+<p>除了对 Stack View 中的视图以动画的方式设置 hidden 属性，你也可以对 Stack View 自身的属性使用 UIView 动画，例如 Alignment 属性、 Distribution 属性、 Spacing 属性和 Axis 属性。<br><a href="http://cdn5.raywenderlich.com/wp-content/uploads/2015/09/VacationSpots_Starter.zip" target="_blank" rel="noopener">开始项目源码</a><br><a href="http://cdn1.raywenderlich.com/wp-content/uploads/2015/09/VacationSpots_Complete.zip" target="_blank" rel="noopener">完整项目源码</a></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2>
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/weixinimg.jpg" alt="boyer wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/weixin.jpg" alt="boyer WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/zhifubao.jpg" alt="boyer Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/工具/" rel="tag"># 工具</a>
+          
+            <a href="/tags/UI/" rel="tag"># UI</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/24/iOS/更改设备屏幕上显示的应用程序图标下方的名称/" rel="next" title="CFBundleDisplayName更改APP启动图标的名称">
+                <i class="fa fa-chevron-left"></i> CFBundleDisplayName更改APP启动图标的名称
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/28/swift/使用Cocoapods创建私有podspec/" rel="prev" title="使用Cocoapods创建私有podspec">
+                使用Cocoapods创建私有podspec <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="boyer" />
+          <p class="site-author-name" itemprop="name">boyer</p>
+           
+              <p class="site-description motion-element" itemprop="description">不物喜，不己悲，善假物，易参行！</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">125</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">71</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">93</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        
+        <div class="feed-link motion-element">
+        <a href="/podcast.xml" rel="alternate">
+        <i class="fa fa-rss"></i>
+        我的播客
+        </a>
+        </div>
+        
+
+        
+        <div class="feed-link motion-element">
+        <a href="/MyClippings" rel="alternate">
+        <i class="fa fa-rss"></i>
+        kindle笔记
+        </a>
+        </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/huos3203" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1791281385" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/boyers" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/boyers" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/BuildingCocoaApps/" title="swift文档" target="_blank">swift文档</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.objccn.io" title="objc中国" target="_blank">objc中国</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://nshipster.cn" title="NSHipster" target="_blank">NSHipster</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/AttackOnDobby/iOS-Core-Animation-Advanced-Techniques" title="动画" target="_blank">动画</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://git-scm.com/book/zh" title="Git Pro" target="_blank">Git Pro</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://kaopu.so/pan" title="全盘搜" target="_blank">全盘搜</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wherebt.com" title="BT导航网" target="_blank">BT导航网</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://mp.weixin.qq.com" title="小程序官方" target="_blank">小程序官方</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://onevcat.com" title="王维" target="_blank">王维</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.devtang.com" title="唐巧" target="_blank">唐巧</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#UIStackView简单介绍"><span class="nav-number">1.</span> <span class="nav-text">UIStackView简单介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加一个新的Stack-View"><span class="nav-number">1.1.</span> <span class="nav-text">添加一个新的Stack View</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解散一个废弃的Stack-View"><span class="nav-number">1.2.</span> <span class="nav-text">解散一个废弃的Stack View</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用场景描述"><span class="nav-number">2.</span> <span class="nav-text">使用场景描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现需求"><span class="nav-number">3.</span> <span class="nav-text">实现需求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题一：自适应横竖屏"><span class="nav-number">3.1.</span> <span class="nav-text">问题一：自适应横竖屏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题二：控件间留白不紧凑"><span class="nav-number">3.2.</span> <span class="nav-text">问题二：控件间留白不紧凑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Storyboard引入界面"><span class="nav-number">3.3.</span> <span class="nav-text">Storyboard引入界面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Size类便于使用storyboard"><span class="nav-number">3.4.</span> <span class="nav-text">Size类便于使用storyboard</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建水平UIStackView"><span class="nav-number">4.</span> <span class="nav-text">创建水平UIStackView</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#按钮模块"><span class="nav-number">4.1.</span> <span class="nav-text">按钮模块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#给新的Stack-View添加布局约束"><span class="nav-number">4.1.1.</span> <span class="nav-text">给新的Stack View添加布局约束</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#按钮等间距分布"><span class="nav-number">4.1.2.</span> <span class="nav-text">按钮等间距分布</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#使用等宽约束的Spacer-View实现"><span class="nav-number">4.1.2.1.</span> <span class="nav-text">使用等宽约束的Spacer View实现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Distribution属性：沿轴向水平分布"><span class="nav-number">4.1.2.2.</span> <span class="nav-text">Distribution属性：沿轴向水平分布</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rating版块"><span class="nav-number">4.2.</span> <span class="nav-text">Rating版块</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建垂直的Stack-View"><span class="nav-number">5.</span> <span class="nav-text">创建垂直的Stack View</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#WHY-VISIT模块"><span class="nav-number">5.1.</span> <span class="nav-text">WHY VISIT模块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#添加约束"><span class="nav-number">5.1.1.</span> <span class="nav-text">添加约束</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#alignment属性：轴向的垂直方向"><span class="nav-number">5.1.2.</span> <span class="nav-text">alignment属性：轴向的垂直方向</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#垂直／水平Stack-View嵌套使用"><span class="nav-number">6.</span> <span class="nav-text">垂直／水平Stack View嵌套使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Weather版块"><span class="nav-number">6.1.</span> <span class="nav-text">Weather版块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#垂直stackView"><span class="nav-number">6.1.1.</span> <span class="nav-text">垂直stackView</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#水平StackView中出现按钮拉伸标签的问题"><span class="nav-number">6.1.2.</span> <span class="nav-text">水平StackView中出现按钮拉伸标签的问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#垂直stack-View1-嵌套WEATHER标签和标签"><span class="nav-number">6.1.3.</span> <span class="nav-text">垂直stack View1:嵌套WEATHER标签和标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#垂直stack-View2-仅嵌套WEATHER标签"><span class="nav-number">6.1.4.</span> <span class="nav-text">垂直stack View2: 仅嵌套WEATHER标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#按钮和WEATHER标签两个约束"><span class="nav-number">6.1.5.</span> <span class="nav-text">按钮和WEATHER标签两个约束</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#顶级-Stack-View"><span class="nav-number">7.</span> <span class="nav-text">顶级 Stack View</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重新调整视图位置"><span class="nav-number">8.</span> <span class="nav-text">重新调整视图位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于配置的-Size-类"><span class="nav-number">9.</span> <span class="nav-text">基于配置的 Size 类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动画"><span class="nav-number">10.</span> <span class="nav-text">动画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">11.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">boyer</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2132971"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("ue8PI3eFeweMAjNgpAAIfiRi-gzGzoHsz", "2kHl2CEoDUKiHcVvz0dhu5rF");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

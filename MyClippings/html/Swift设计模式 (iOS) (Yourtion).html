@@ -1,0 +1,1414 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="布衣男儿" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="Swift设计模式 (iOS) (Yourtion) - 来自 Kindle 伴侣 	 	 	 	 	 	 	   	 		 			 				 Swift设计模式 (iOS) (Yourtion) 23 			 		 		 			 				 					 返回目录 				 			 		 		 			 				 					创建型 (Creational)：单例模式 (Singleto">
+<meta property="og:type" content="website">
+<meta property="og:title" content="布衣男儿">
+<meta property="og:url" content="https://huos3203.github.io/MyClippings/html/Swift设计模式 (iOS) (Yourtion).html">
+<meta property="og:site_name" content="布衣男儿">
+<meta property="og:description" content="Swift设计模式 (iOS) (Yourtion) - 来自 Kindle 伴侣 	 	 	 	 	 	 	   	 		 			 				 Swift设计模式 (iOS) (Yourtion) 23 			 		 		 			 				 					 返回目录 				 			 		 		 			 				 					创建型 (Creational)：单例模式 (Singleto">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-28T07:42:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="布衣男儿">
+<meta name="twitter:description" content="Swift设计模式 (iOS) (Yourtion) - 来自 Kindle 伴侣 	 	 	 	 	 	 	   	 		 			 				 Swift设计模式 (iOS) (Yourtion) 23 			 		 		 			 				 					 返回目录 				 			 		 		 			 				 					创建型 (Creational)：单例模式 (Singleto">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '7069931',
+      author: '布衣男儿'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://huos3203.github.io/MyClippings/html/Swift设计模式 (iOS) (Yourtion).html"/>
+
+
+
+
+
+  <title> | 布衣男儿</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b4a2528a681e2f23855d15a4de0abfc2";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left  ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">布衣男儿</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不物喜，不己悲，善假物，易参行！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'dazsKTijnsz_zi-bXB3t','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+  <header class="post-header">
+
+	<h1 class="post-title" itemprop="name headline"></h1>
+
+
+
+</header>
+
+    
+    
+      <script src="/assets/js/APlayer.min.js"> </script><!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<title>Swift设计模式 (iOS) (Yourtion) - 来自 Kindle 伴侣</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="../style/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="../style/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+	<link href="../style/css/custom.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="../style/js/jquery-1.12.2.min.js"></script>
+	<script type="text/javascript" src="../style/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../style/js/custom.js"></script>
+</head>
+<body>
+	<div class="container">
+		<header class="header col-md-12">
+			<div class="page-header">
+				<h1><small><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Swift设计模式 (iOS) (Yourtion)</small> <span class="badge">23</span></h1>
+			</div>
+		</header>
+		<div class="col-md-2">
+			<ul class="nav nav-pills nav-stacked">
+				<li role="presentation" class="active text-center">
+					<a href="../index.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> 返回目录</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col-md-10">
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body mk129"><p>创建型 (Creational)：单例模式 (Singleton) 结构型 (Structural)：MVC、装饰者模式 (Decorator)、适配器模式 (Adapter)、外观模式 (Facade) 行为型 (Behavioral)：观察者模式 (Observer)、备忘录模式 (Memento)</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 标注</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #126-129</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月10日 星期四 下午1:30:47</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body nt129"><p>#note#设计模式的类型</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 笔记</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #129</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月10日 星期四 下午1:30:47</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body nt129"><p>#note#设计模式的类型</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 笔记</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #129</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月10日 星期四 下午1:31:41</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body nt521"><p>扩展  添加功能，重载方法</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 笔记</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #521</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 上午11:30:13</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body mk521"><p>在不用继承的情况下，给已存在的类、结构体或者枚举类添加一些新的功能。最重要的一点是，你可以在你没有访问权限的情况下扩展已有类。</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 标注</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #520-521</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 上午11:30:13</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body nt521"><p>扩展的功能</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 笔记</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #521</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 上午11:33:11</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body nt521"><p>扩展机制的对象和特点</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 笔记</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #521</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 上午11:36:12</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body nt521"><p>扩展机制的对象和特点<br><br>类是可以重写父类的方法<br>扩展的方法和属性名称不可与父类中的名称冲突</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 笔记</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #521</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 上午11:48:13</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body nt521"><p>扩展机制的对象和特点<br><br>类是可以重写父类的方法<br>扩展的方法和属性名称不可与原始类中的名称冲突</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 笔记</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #521</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 上午11:49:19</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body nt521"><p>扩展机制的对象和特点<br><br>类是可以重写父类的方法<br>扩展的方法和属性名称不可与原始类中的名称冲突<br>强大之处:<br>不用修改原始类的源码，即可实现继承模式才能实现的功能<br>遵循一职一则的原则，也具有即查即用的特点</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 笔记</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #521</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 上午11:58:13</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body nt580"><p>委托模式中的协议</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 笔记</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #580</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午12:17:02</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body mk580"><p>在 objc 的委托模式里，一个类可以通过协议来声明可选或者必须的方法</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 标注</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #579-580</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午12:17:02</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body nt582"><p>委托与继承的优劣较量</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 笔记</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #582</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午12:19:30</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body mk582"><p>看起来似乎继承然后重写必须的方法来的更简单一点。但是考虑一下这个问题：继承的结果必定是一个独立的类，如果你想让某个对象成为多个对象的委托，那么子类这招就行不通了。</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 标注</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #580-582</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午12:19:30</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body nt580"><p>委托模式中,协议的法定性</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 笔记</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #580</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午12:22:03</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body nt694"><p>委托和扩展合用,使代码更具可读性</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 笔记</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #694</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午1:34:22</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body mk694"><p>你可以把这些方法直接加在类声明里面，也可以放在扩展里，编译器不会去管数据源到底在哪里，只要能找到对应的方法就可以了。而我们之所以这样做，是为了方便其他人阅读。</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 标注</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #692-694</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午1:34:22</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body nt701"><p>委托模式的复用特性</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 笔记</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #701</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午1:41:11</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body mk702"><p>了让这个视图可以复用，显示内容的工作都只能交给另一个对象来完成：它的委托。这个横滑页面应该声明一些方法让它的委托去实现，就像是  UITableView  的  UITableViewDelegate </p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 标注</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #699-702</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午1:41:11</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body nt760"><p>weak类型,可选属性</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 笔记</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #760</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午1:50:12</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body mk760"><p>避免循环引用的问题，委托是  weak  类型。如果委托是  strong  类型的，当前对象持有了委托的强引用，委托又持有了当前对象的强引用，这样谁都无法释放就会导致内存泄露。</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 标注</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #756-760</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午1:50:12</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body nt760"><p>weak类型,值可选</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 笔记</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #760</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午1:51:37</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body nt760"><p>委托声明格式<br>@objc protocol 委托名delegate{}<br>weak类型,值可选</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 笔记</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #760</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午1:57:27</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body nt760"><p>协议声明格式<br>@objc protocol 协议名delegate{}<br>在花括号里定义委托方法 没有optional 修饰是必须实现的<br>weak类型,值可选</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 笔记</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #760</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午2:01:37</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body nt760"><p>协议声明格式<br>@objc protocol 协议名delegate{}<br>在花括号里定义委托方法 没有optional 修饰是必须实现的<br>委托对象声明格式<br>weak delegate :<br>o weak类型,值可选</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 笔记</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #760</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午2:04:56</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body nt760"><p>协议声明格式<br>@objc protocol 协议名delegate{}<br>在花括号里定义委托方法 没有optional 修饰是必须实现的<br>委托对象声明格式<br>weak delegate : 协议名delegate?<br>weak类型,值可选</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 笔记</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #760</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午2:06:02</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body nt441"><p>外观模式sdk级别提供规范化api 接口，</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 笔记</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #441</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午2:20:08</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body mk441"><p>外观模式把使用和背后的实现逻辑成功解耦，同时也降低了外部代码对内部工作的依赖程度。如果底层的类发生了改变，外观的接口并不需要做修改。</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 标注</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #440-441</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午2:20:08</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body nt505"><p>外观模式接口化</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 笔记</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #505</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午2:23:07</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body mk505"><p>便是外观模式的强大之处：如果外部文件想要添加一个新的专辑，它不会也不用去了解内部的实现逻辑是怎么样的。</p>
+<p>注意：当你设计外观的时候，请务必牢记：使用者随时可能直接访问你的隐藏类。永远不要假设使用者会遵循你当初的设计做事。</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 标注</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #502-505</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午2:23:07</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body nt516"><p>动态的给指定的类添加功能</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 笔记</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #516</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午2:30:11</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body mk516"><p>装饰者模式可以动态的给指定的类添加一些行为和职责，而不用对原代码进行任何修改。当你需要使用子类的时候，不妨考虑一下装饰者模式，可以在原始类上面封装一层</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 标注</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #515-516</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午2:30:12</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body nt516"><p>装饰模式可以动态的封装原始类，增加所需功能</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 笔记</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #516</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午2:33:11</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body nt701"><p>使用委托特性，实现视图可复用的目的</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 笔记</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #701</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午2:39:33</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body nt859"><p>委托fangf</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 笔记</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #859</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午4:02:23</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body mk860"><p>        delegate.horizontalScrollerClickedViewAtIndex(self, index: index)</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 标注</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #859-860</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午4:02:23</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body nt936"><p>委托方法可选,在调用时需要绑定判断</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 笔记</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #936</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午4:23:30</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body mk939"><p>    if let initialView = delegate.initialViewIndex?(self) {</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 标注</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #936-939</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午4:23:30</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body nt988"><p>DidmovetoSuperview 方法</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 笔记</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #988</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午4:25:30</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body mk988"><p>在当前  view  添加到其他  view  里的时候就会自动调用  didMoveToSuperview  方法，这样可以在正确的时间重新加载数据。</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 标注</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #985-988</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午4:25:30</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body nt988"><p>DidMoveToSuperview 方法</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 笔记</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #988</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午4:26:03</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body nt988"><p>didMoveToSuperview()方法</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 笔记</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #988</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午4:26:27</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body nt1136"><p>委托方法过多，可以声明多个协议要归类拆分实现</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 笔记</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #1136</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午4:42:34</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body mk1136"><p>如果协议里的方法过多，可以考虑把它分解成几个更小的协议。 UITableViewDelegate  和  UITableViewDataSource  就是很好的例子，它们都是  UITableView  的协议。</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 标注</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #1132-1136</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午4:42:34</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body nt1152"><p>观察模式引入</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 笔记</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #1152</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午4:46:12</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body mk1152"><p> AlbumView  不应该直接和  LibraryAPI  交互，我们不应该把视图的逻辑和业务逻辑混在一起。</p>
+<p>同样，  LibraryAPI  也不应该知道  AlbumView  这个类。</p>
+<p>如果  AlbumView  要展示封面， LibraryAPI  需要告诉  AlbumView  图片下载完成。</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 标注</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #1143-1152</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年3月11日 星期五 下午4:46:12</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body mk714"><p>苹果通过委托实现了适配器模式。委托相信大家都不陌生。举个例子，如果一个类遵循了  NSCoying  的协议，那么它一定要实现  copy  方法</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 标注</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #711-714</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016年4月21日 星期四 上午9:27:57</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body mk118"><p>设计模式针对软件设计中的常见问题，提供了一些可复用的解决方案，开发者可以通过这些模板写出易于理解且能够复用的代码</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 标注</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #117-118</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2017年4月15日 星期六 下午2:39:43</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body mk274"><p>为了将代码更好的分离和重用。理想状态下，视图层应当和模型层完全分离。如果视图层不依赖任何模型层的具体实现，那么就可以很容易的被其他模型复用，用来展示不同的数据</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 标注</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #272-274</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2017年4月17日 星期一 上午7:48:13</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body mk301"><p>单例模式确保每个指定的类只存在一个实例对象，并且可以全局访问那个实例</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 标注</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #300-301</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2017年4月17日 星期一 上午7:50:37</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body mk356"><p>Swift 中  static  的变量是延时加载的，意味着  Instance  直到需要的时候才会被创建。</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 标注</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #354-356</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2017年4月17日 星期一 上午7:55:04</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body mk556"><p>类是可以重写父类方法的，但是在扩展里不可以。扩展里的方法和属性不能和原始类里的方法和属性冲突。</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 标注</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #555-556</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2017年4月17日 星期一 上午8:10:21</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body mk710"><p>适配器把自己封装起来然后暴露统一的接口给其他类，这样即使其他类的接口各不相同，也能相安无事，一起工作。</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 标注</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #708-710</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2017年4月17日 星期一 上午8:26:59</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="panel panel-default">
+					<div class="panel-body mk1371"><p>备忘录模式捕捉并且具象化一个对象的内在状态。换句话说，它把你的对象存在了某个地方，然后在以后的某个时间再把它恢复出来，而不会打破它本身的封装性，私有数据依旧是私有数据</p></div>
+					<div class="panel-footer text-right">
+						<span class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 标注</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> #1369-1371</span> 
+						<span class="label label-default"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2017年4月17日 星期一 上午9:02:37</span>
+					</div>
+				</div>
+			</article>
+
+		</div>
+		<footer class="footer col-md-12">
+			<div class="text-center">
+				<a href="http://kindlefere.com" target="_blank">Kindle 伴侣 - 为静心阅读而生</a>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>
+    
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="boyer" />
+          <p class="site-author-name" itemprop="name">boyer</p>
+           
+              <p class="site-description motion-element" itemprop="description">不物喜，不己悲，善假物，易参行！</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">125</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">71</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">93</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        
+        <div class="feed-link motion-element">
+        <a href="/podcast.xml" rel="alternate">
+        <i class="fa fa-rss"></i>
+        我的播客
+        </a>
+        </div>
+        
+
+        
+        <div class="feed-link motion-element">
+        <a href="/MyClippings" rel="alternate">
+        <i class="fa fa-rss"></i>
+        kindle笔记
+        </a>
+        </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/huos3203" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1791281385" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/boyers" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/boyers" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/BuildingCocoaApps/" title="swift文档" target="_blank">swift文档</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.objccn.io" title="objc中国" target="_blank">objc中国</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://nshipster.cn" title="NSHipster" target="_blank">NSHipster</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/AttackOnDobby/iOS-Core-Animation-Advanced-Techniques" title="动画" target="_blank">动画</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://git-scm.com/book/zh" title="Git Pro" target="_blank">Git Pro</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://kaopu.so/pan" title="全盘搜" target="_blank">全盘搜</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wherebt.com" title="BT导航网" target="_blank">BT导航网</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://mp.weixin.qq.com" title="小程序官方" target="_blank">小程序官方</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://onevcat.com" title="王维" target="_blank">王维</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.devtang.com" title="唐巧" target="_blank">唐巧</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">boyer</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2132971"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("ue8PI3eFeweMAjNgpAAIfiRi-gzGzoHsz", "2kHl2CEoDUKiHcVvz0dhu5rF");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

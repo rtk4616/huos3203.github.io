@@ -1,0 +1,1150 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="搭建,工具," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="布衣男儿" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="腾讯云服务器 申请账户，体验5天，搭建一个jira服务，还有微信小程序服务  需要在服务器上安装docker （腾讯服务器提供了一款支持docker的Ubuntu系统）  想使用daocloud加速器，就要更新docker版本docker run –detach –publish 8080:8080 cptactionhank/atlassian-jira:latesthttp://[docke">
+<meta name="keywords" content="搭建,工具">
+<meta property="og:type" content="article">
+<meta property="og:title" content="腾讯云docker服务器上部署jira系统">
+<meta property="og:url" content="https://huos3203.github.io/2017/05/25/远程操作mysql数据库/index.html">
+<meta property="og:site_name" content="布衣男儿">
+<meta property="og:description" content="腾讯云服务器 申请账户，体验5天，搭建一个jira服务，还有微信小程序服务  需要在服务器上安装docker （腾讯服务器提供了一款支持docker的Ubuntu系统）  想使用daocloud加速器，就要更新docker版本docker run –detach –publish 8080:8080 cptactionhank/atlassian-jira:latesthttp://[docke">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-05-24T17:49:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="腾讯云docker服务器上部署jira系统">
+<meta name="twitter:description" content="腾讯云服务器 申请账户，体验5天，搭建一个jira服务，还有微信小程序服务  需要在服务器上安装docker （腾讯服务器提供了一款支持docker的Ubuntu系统）  想使用daocloud加速器，就要更新docker版本docker run –detach –publish 8080:8080 cptactionhank/atlassian-jira:latesthttp://[docke">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '7069931',
+      author: '布衣男儿'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://huos3203.github.io/2017/05/25/远程操作mysql数据库/"/>
+
+
+
+
+
+  <title>腾讯云docker服务器上部署jira系统 | 布衣男儿</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b4a2528a681e2f23855d15a4de0abfc2";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">布衣男儿</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不物喜，不己悲，善假物，易参行！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'dazsKTijnsz_zi-bXB3t','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://huos3203.github.io/2017/05/25/远程操作mysql数据库/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="boyer">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="布衣男儿">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">腾讯云docker服务器上部署jira系统</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-25T01:07:47+08:00">
+                2017-05-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/docker/" itemprop="url" rel="index">
+                    <span itemprop="name">docker</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/05/25/远程操作mysql数据库/" class="leancloud_visitors" data-flag-title="腾讯云docker服务器上部署jira系统">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <script src="/assets/js/APlayer.min.js"> </script><h2 id="腾讯云服务器"><a href="#腾讯云服务器" class="headerlink" title="腾讯云服务器"></a>腾讯云服务器</h2><ol>
+<li><p>申请账户，体验5天，搭建一个jira服务，还有微信小程序服务</p>
+</li>
+<li><p>需要在服务器上安装docker （腾讯服务器提供了一款支持docker的Ubuntu系统）</p>
+</li>
+<li>想使用daocloud加速器，就要更新docker版本<br>docker run –detach –publish 8080:8080 cptactionhank/atlassian-jira:latest<br><a href="http://[dockerhost]:8080" target="_blank" rel="noopener">http://[dockerhost]:8080</a> and finish the configuration</li>
+</ol>
+<h3 id="远程服务器的基本操作"><a href="#远程服务器的基本操作" class="headerlink" title="远程服务器的基本操作"></a>远程服务器的基本操作</h3><ol>
+<li>登录：<code>ssh -l username 服务ip／域名</code><br> ssh ubuntu@123.<strong><em>.</em>.<em>6   5<em>*</em></em></strong>RtH<br> sudo docker pull cptactionhank/atlassian-jira</li>
+<li>服务器端拷贝文件目录<br> scp -i localDir serveruser@serverip:serverDir</li>
+</ol>
+<h3 id="docker下安装mysql数据库镜像"><a href="#docker下安装mysql数据库镜像" class="headerlink" title="docker下安装mysql数据库镜像"></a>docker下安装mysql数据库镜像</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo docker pull mysql </span><br><span class="line">sudo docker run --name jiradb -e MYSQL_ROOT_PASSWORD=jiradb -d mysql/mysql-server:latest</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>-name : 容器名<br>MYSQL_ROOT_PASSWORD : 数据库密码<br>-d : 镜像名:tag 版本</p>
+</blockquote>
+<h4 id="终端：单行登录mysql"><a href="#终端：单行登录mysql" class="headerlink" title="终端：单行登录mysql"></a>终端：单行登录mysql</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker exec -it jiradb mysql -ujira -pjira</span><br></pre></td></tr></table></figure>
+<h4 id="进入mysql终端-访问数据库"><a href="#进入mysql终端-访问数据库" class="headerlink" title="进入mysql终端,访问数据库"></a>进入mysql终端,访问数据库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo docker exec -it jiradb bash</span><br><span class="line">#登录数据库  默认用户root 密码为空，如果前边设置了MYSQL_ROOT_PASSWORD的值，则需要密码</span><br><span class="line">mysql -uroot -p   #登录本地数据库 可以 省略-h参数 -h 127.0.0.1</span><br><span class="line">回车</span><br><span class="line">输入密码：jiradb  #就是$MYSQL_ROOT_PASSWORD的值</span><br><span class="line">即登录</span><br></pre></td></tr></table></figure>
+<h4 id="用户权限控制"><a href="#用户权限控制" class="headerlink" title="用户权限控制"></a>用户权限控制</h4><ol>
+<li><p>查看sql服务器的状态：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">status;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建用户名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create user jira identified by &apos;jira&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>赋予权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">grant all privileges on *.* to &apos;jira&apos;@&apos;%&apos; identified by &apos;jira&apos; with grant option;</span><br><span class="line">grant all privileges on *.* to &apos;jira&apos;@&apos;localhost&apos; identified by &apos;jira&apos; with grant option;</span><br><span class="line">flush privileges;</span><br><span class="line">quit;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h4><ol>
+<li><p>创建数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database jiradb character set &apos;UTF8&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看当前数据库名：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select database();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>切换指定数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use jiradb;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看数据库表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show tables;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>创建表</p>
+<h5 id="jira和数据库关联结果"><a href="#jira和数据库关联结果" class="headerlink" title="jira和数据库关联结果"></a>jira和数据库关联结果</h5><p>无法通过 docker 中mysql镜像的盒子来实现jira和数据库关联：<br>从另一个容器中的应用来访问jiradb容器中的mysql服务：没成功<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Connect to MySQL from an application in another Docker container</span><br><span class="line">sudo docker run --name jirad --link jiradb:mysql/mysql-server -d cptactionhank/atlassian-jira:latest</span><br><span class="line">`</span><br></pre></td></tr></table></figure></p>
+<p>最终采用在ubuntu系统中安装mysql：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$sudo apt-get -y install mysql-server</span><br></pre></td></tr></table></figure></p>
+<p>##问题：Could not reach any registry endpoint<br>安装Linux加速器：<br>curl -sSL <a href="https://get.daocloud.io/daotools/set_mirror.sh" target="_blank" rel="noopener">https://get.daocloud.io/daotools/set_mirror.sh</a> | sh -s <a href="http://142900b5.m.daocloud.io" target="_blank" rel="noopener">http://142900b5.m.daocloud.io</a><br>该脚本可以将 –registry-mirror 加入到你的 Docker 配置文件 /etc/default/docker 中。适用于 Ubuntu14.04、Debian、CentOS6 、CentOS7、Fedora、Arch Linux、openSUSE Leap 42.1，其他版本可能有细微不同。<br>ubuntu 系统安装daocloud检测工具：<br>curl -sSL <a href="https://get.daocloud.io/daomonit/install.sh" target="_blank" rel="noopener">https://get.daocloud.io/daomonit/install.sh</a> | sh -s d0312f829e9807ee0bf157cdc9c9cca42380395c </p>
+<h3 id="更新服务器上的docker"><a href="#更新服务器上的docker" class="headerlink" title="更新服务器上的docker"></a>更新服务器上的docker</h3><p><a href="https://docs.docker.com/engine/installation/linux/ubuntulinux/#/prerequisites-by-ubuntu-version" target="_blank" rel="noopener">官网教程</a></p>
+<h3 id="Update-your-apt-sources"><a href="#Update-your-apt-sources" class="headerlink" title="Update your apt sources"></a>Update your apt sources</h3><p>To set APT to use packages from the Docker repository:</p>
+<ol>
+<li>Log into your machine as a user with sudo or root privileges.</li>
+<li>Open a terminal window.</li>
+<li><p>Update package information, ensure that APT works with the https method, and that CA certificates are installed.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install apt-transport-https ca-certificates</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Docker资源库<br>|Ubuntu version|    Repository|<br>|—|—-|<br>|Precise 12.04 (LTS)|deb <a href="https://apt.dockerproject.org/repo" target="_blank" rel="noopener">https://apt.dockerproject.org/repo</a> ubuntu-precise main|<br>|Trusty 14.04 (LTS)    |deb <a href="https://apt.dockerproject.org/repo" target="_blank" rel="noopener">https://apt.dockerproject.org/repo</a> ubuntu-trusty main|<br>|Wily 15.10         |deb <a href="https://apt.dockerproject.org/repo" target="_blank" rel="noopener">https://apt.dockerproject.org/repo</a> ubuntu-wily main|<br>|Xenial 16.04 (LTS)    |deb <a href="https://apt.dockerproject.org/repo" target="_blank" rel="noopener">https://apt.dockerproject.org/repo</a> ubuntu-xenial main|</p>
+<blockquote>
+<p>Note: Docker does not provide packages for all architectures. Binary artifacts are built nightly, and you can download them from <a href="https://master.dockerproject.org" target="_blank" rel="noopener">https://master.dockerproject.org</a>. To install docker on a multi-architecture system, add an [arch=…] clause to the entry. Refer to Debian Multiarch wiki for details.</p>
+</blockquote>
+</li>
+<li>导入库<br><repo> = deb <a href="https://apt.dockerproject.org/repo" target="_blank" rel="noopener">https://apt.dockerproject.org/repo</a> ubuntu-precise main<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">"&lt;REPO&gt;"</span> | sudo tee /etc/apt/sources.list.d/docker.list</span><br></pre></td></tr></table></figure>
+</repo></li>
+</ol>
+<p>`<br>6.Update the APT package index.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br></pre></td></tr></table></figure></p>
+<p>7.Verify that APT is pulling from the right repository.<br>When you run the following command, an entry is returned for each version of Docker that is available for you to install. Each entry should have the URL <a href="https://apt.dockerproject.org/repo/" target="_blank" rel="noopener">https://apt.dockerproject.org/repo/</a>. The version currently installed is marked with <em>*</em>.The output below is truncated.</p>
+<p>$ apt-cache policy docker-engine</p>
+<p>docker-engine:<br>Installed: 1.12.2-0~trusty<br>Candidate: 1.12.2-0~trusty<br>Version table:<br><em>*</em> 1.12.2-0~trusty 0<br>500 <a href="https://apt.dockerproject.org/repo/" target="_blank" rel="noopener">https://apt.dockerproject.org/repo/</a> ubuntu-trusty/main amd64 Packages<br>100 /var/lib/dpkg/status<br>1.12.1-0~trusty 0<br>500 <a href="https://apt.dockerproject.org/repo/" target="_blank" rel="noopener">https://apt.dockerproject.org/repo/</a> ubuntu-trusty/main amd64 Packages<br>1.12.0-0~trusty 0<br>500 <a href="https://apt.dockerproject.org/repo/" target="_blank" rel="noopener">https://apt.dockerproject.org/repo/</a> ubuntu-trusty/main amd64 Packages</p>
+<p>From now on when you run apt-get upgrade, APT pulls from the new repository.</p>
+<p>To upgrade your kernel and install the additional packages, do the following:</p>
+<p>Open a terminal on your Ubuntu host.<br>Update your package manager.<br>$ sudo apt-get update<br>Install both the required and optional packages.<br>$ sudo apt-get install linux-image-generic-lts-trusty<br>Repeat this step for other packages you need to install.<br>Reboot your host to use the updated kernel.<br>$ sudo reboot<br>After your system reboots, go ahead and install Docker.</p>
+<p>Install the latest version<br>Make sure you have satisfied all the prerequisites, then follow these steps.</p>
+<p>Note: For production systems, it is recommended that you install a specific version so that you do not accidentally update Docker. You should plan upgrades for production systems carefully.<br>Log into your Ubuntu installation as a user with sudo privileges.<br>Update your APT package index.<br>$ sudo apt-get update<br>Install Docker.<br>$ sudo apt-get install docker-engine<br>Start the docker daemon.<br>$ sudo service docker start<br>Verify that docker is installed correctly by running the hello-world image.<br>$ sudo docker run hello-world<br>This command downloads a test image and runs it in a container. When the container runs, it prints an informational message and exits.</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/weixinimg.jpg" alt="boyer wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/weixin.jpg" alt="boyer WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/zhifubao.jpg" alt="boyer Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/搭建/" rel="tag"># 搭建</a>
+          
+            <a href="/tags/工具/" rel="tag"># 工具</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/18/开源库/iOS和OSX集成gitAPI/" rel="next" title="iOS和OSX集成gitAPI">
+                <i class="fa fa-chevron-left"></i> iOS和OSX集成gitAPI
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/25/工具/calibre一站式电子书解决方案/" rel="prev" title="calibre一站式电子书解决方案">
+                calibre一站式电子书解决方案 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="boyer" />
+          <p class="site-author-name" itemprop="name">boyer</p>
+           
+              <p class="site-description motion-element" itemprop="description">不物喜，不己悲，善假物，易参行！</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">125</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">71</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">93</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        
+        <div class="feed-link motion-element">
+        <a href="/podcast.xml" rel="alternate">
+        <i class="fa fa-rss"></i>
+        我的播客
+        </a>
+        </div>
+        
+
+        
+        <div class="feed-link motion-element">
+        <a href="/MyClippings" rel="alternate">
+        <i class="fa fa-rss"></i>
+        kindle笔记
+        </a>
+        </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/huos3203" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1791281385" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/boyers" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/boyers" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/BuildingCocoaApps/" title="swift文档" target="_blank">swift文档</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.objccn.io" title="objc中国" target="_blank">objc中国</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://nshipster.cn" title="NSHipster" target="_blank">NSHipster</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/AttackOnDobby/iOS-Core-Animation-Advanced-Techniques" title="动画" target="_blank">动画</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://git-scm.com/book/zh" title="Git Pro" target="_blank">Git Pro</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://kaopu.so/pan" title="全盘搜" target="_blank">全盘搜</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wherebt.com" title="BT导航网" target="_blank">BT导航网</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://mp.weixin.qq.com" title="小程序官方" target="_blank">小程序官方</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://onevcat.com" title="王维" target="_blank">王维</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.devtang.com" title="唐巧" target="_blank">唐巧</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#腾讯云服务器"><span class="nav-number">1.</span> <span class="nav-text">腾讯云服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#远程服务器的基本操作"><span class="nav-number">1.1.</span> <span class="nav-text">远程服务器的基本操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#docker下安装mysql数据库镜像"><span class="nav-number">1.2.</span> <span class="nav-text">docker下安装mysql数据库镜像</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#终端：单行登录mysql"><span class="nav-number">1.2.1.</span> <span class="nav-text">终端：单行登录mysql</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进入mysql终端-访问数据库"><span class="nav-number">1.2.2.</span> <span class="nav-text">进入mysql终端,访问数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用户权限控制"><span class="nav-number">1.2.3.</span> <span class="nav-text">用户权限控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库操作"><span class="nav-number">1.2.4.</span> <span class="nav-text">数据库操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#jira和数据库关联结果"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">jira和数据库关联结果</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新服务器上的docker"><span class="nav-number">1.3.</span> <span class="nav-text">更新服务器上的docker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Update-your-apt-sources"><span class="nav-number">1.4.</span> <span class="nav-text">Update your apt sources</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">boyer</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2132971"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("ue8PI3eFeweMAjNgpAAIfiRi-gzGzoHsz", "2kHl2CEoDUKiHcVvz0dhu5rF");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

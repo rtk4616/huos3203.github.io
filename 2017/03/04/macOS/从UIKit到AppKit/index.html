@@ -1,0 +1,1178 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="语法,UI,混编" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="布衣男儿" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="不同点NSWindowController在Mac上应用都支持多窗口（NSWindowController），AppKit 中都有 NSWindowController担当着类似在iOS中的view controller处理的任务。  window在iOS占据整个屏幕，几乎不怎么不用。 NSViewControllerAppKit 中的 NSViewController默认不支持交互，缺少生命周">
+<meta name="keywords" content="语法,UI,混编">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从UIKit到AppKit">
+<meta property="og:url" content="https://huos3203.github.io/2017/03/04/macOS/从UIKit到AppKit/index.html">
+<meta property="og:site_name" content="布衣男儿">
+<meta property="og:description" content="不同点NSWindowController在Mac上应用都支持多窗口（NSWindowController），AppKit 中都有 NSWindowController担当着类似在iOS中的view controller处理的任务。  window在iOS占据整个屏幕，几乎不怎么不用。 NSViewControllerAppKit 中的 NSViewController默认不支持交互，缺少生命周">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/ViewEffectsInspector.jpg">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/sandbox.jpg">
+<meta property="og:updated_time" content="2017-03-03T17:55:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="从UIKit到AppKit">
+<meta name="twitter:description" content="不同点NSWindowController在Mac上应用都支持多窗口（NSWindowController），AppKit 中都有 NSWindowController担当着类似在iOS中的view controller处理的任务。  window在iOS占据整个屏幕，几乎不怎么不用。 NSViewControllerAppKit 中的 NSViewController默认不支持交互，缺少生命周">
+<meta name="twitter:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/ViewEffectsInspector.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '7069931',
+      author: '布衣男儿'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://huos3203.github.io/2017/03/04/macOS/从UIKit到AppKit/"/>
+
+
+
+
+
+  <title>从UIKit到AppKit | 布衣男儿</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b4a2528a681e2f23855d15a4de0abfc2";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">布衣男儿</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不物喜，不己悲，善假物，易参行！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'dazsKTijnsz_zi-bXB3t','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://huos3203.github.io/2017/03/04/macOS/从UIKit到AppKit/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="boyer">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="布衣男儿">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">从UIKit到AppKit</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-04T01:55:16+08:00">
+                2017-03-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/macOS/" itemprop="url" rel="index">
+                    <span itemprop="name">macOS</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/macOS/视图/" itemprop="url" rel="index">
+                    <span itemprop="name">视图</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/03/04/macOS/从UIKit到AppKit/" class="leancloud_visitors" data-flag-title="从UIKit到AppKit">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <script src="/assets/js/APlayer.min.js"> </script><h2 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h2><h3 id="NSWindowController"><a href="#NSWindowController" class="headerlink" title="NSWindowController"></a>NSWindowController</h3><p>在<code>Mac</code>上应用都支持多窗口（<code>NSWindowController</code>），<code>AppKit</code> 中都有 <code>NSWindowController</code>担当着类似在<code>iOS</code>中的<code>view controller</code>处理的任务。</p>
+<blockquote>
+<p><code>window</code>在<code>iOS</code>占据整个屏幕，几乎不怎么不用。</p>
+<h3 id="NSViewController"><a href="#NSViewController" class="headerlink" title="NSViewController"></a>NSViewController</h3><p><code>AppKit</code> 中的 <code>NSViewController</code>默认不支持交互，缺少生命周期相关方法和<code>UIKit</code>中熟悉的特性。<br>但在OS X 10.10 Yosemite之后，<code>NSViewController</code>改进很多，默认支持交互中的响应链。</p>
+</blockquote>
+<h3 id="NSWindow-和-UIWindow"><a href="#NSWindow-和-UIWindow" class="headerlink" title="NSWindow 和 UIWindow"></a>NSWindow 和 UIWindow</h3><p>在<code>UIKit</code>中<code>UIWindow</code>是一个 <code>view</code> 的子类.<br>在<code>AppKit</code>中<code>NSWindow</code>用 <code>contentView</code> 属性持有一个指向其顶层 <code>view</code> 的引用。</p>
+<h2 id="响应者链（responder-chain）"><a href="#响应者链（responder-chain）" class="headerlink" title="响应者链（responder chain）"></a>响应者链（responder chain）</h2><p>如果你在为 OS X 10.9 或者更低版本的系统开发，请注意在默认情况下<code>view controller</code> 并不是响应者链的一环。相反，事件会沿着视图树向上传递然后直接到达 <code>window</code> 和 <code>window</code> <code>controller</code>。在这种情况下，如果你想在 <code>view controller</code> 处理事件，你需要手动把它添加到响应者链中。</p>
+<h3 id="Target-Action消息传递方式"><a href="#Target-Action消息传递方式" class="headerlink" title="Target-Action消息传递方式"></a>Target-Action消息传递方式</h3><p><code>Target-Action</code> 是回应 <code>UI 事件</code>时典型的消息传递方式。<code>iOS</code> 上的 <code>UIControl</code> 和 <code>Mac</code> 上的 <code>NSControl/NSCell</code> 都支持这个机制。<br><code>Target-Action</code> 在消息的发送者和接收者之间建立了一个松散的关系。消息的接收者不知道发送者，甚至消息的发送者也不知道消息的接收者会是什么。如果 <code>target</code> 是 <code>nil</code>，<code>action</code> 会在响应链 (responder chain) 中被传递下去，直到找到一个响应它的对象。</p>
+<h4 id="传递机制的局限"><a href="#传递机制的局限" class="headerlink" title="传递机制的局限"></a>传递机制的局限</h4><p>基于 <code>target-action</code> 传递机制的一个局限是，发送的消息不能携带自定义的信息：</p>
+<ol>
+<li>在<code>iOS</code> 中，可以选择性的把发送者和触发 <code>action</code> 的事件作为参数。</li>
+<li>在 <code>Mac</code> 平台上 <code>action</code> 方法的第一个参数永远是发送者，否则将不视为无效方法。<br>在<code>AppKit</code>唯一有效的<code>action</code> 方法声明方式：<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)performAction:(<span class="keyword">id</span>)sender;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="控件关联Action事件的区别"><a href="#控件关联Action事件的区别" class="headerlink" title="控件关联Action事件的区别"></a>控件关联Action事件的区别</h4><p><code>iOS</code> 上的 <code>UIControl</code> 和 <code>Mac</code> 上的 <code>NSControl/NSCell</code> 都支持这个机制。</p>
+<ol>
+<li>在 <code>iOS</code> 中，每个控件可以通过<code>addTarget:action:forControlEvents:</code>和多个 <code>target-action</code> 关联。</li>
+<li>在<code>AppKit</code>中通常一个<code>控件</code>仅对应一个 <code>target-action</code>对。</li>
+</ol>
+<h2 id="View视图系统"><a href="#View视图系统" class="headerlink" title="View视图系统"></a>View视图系统</h2><p>因为历史遗留问题，<code>Mac</code> 的视图系统和 <code>iOS</code>的视图系统有很大区别。</p>
+<ol>
+<li>绘图处理器差异<br><code>iOS</code>由 <code>Core Animation layer</code> 驱动，使用<code>GPU</code>处理。<br><code>AppKit</code>视图系统相关的任务主要靠 <code>CPU</code> 处理，因为在<code>AppKit</code>设计之初，<code>GPU</code>还没有诞生。<br>Mac开发参考资料：<br><a href="https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CocoaViewsGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40002978" target="_blank" rel="noopener">Introduction to View Programming Guide for Cocoa</a><br><a href="https://developer.apple.com/videos/wwdc/2012/#217" target="_blank" rel="noopener">WWDC session：Layer-Backed Views: AppKit + Core Animation</a><br><a href="https://developer.apple.com/videos/wwdc/2013/#215" target="_blank" rel="noopener">Optimizing Drawing and Scrolling</a></li>
+</ol>
+<h3 id="Layer-Backed-View-iOS反哺AppKit层支持视图"><a href="#Layer-Backed-View-iOS反哺AppKit层支持视图" class="headerlink" title="Layer-Backed View: iOS反哺AppKit层支持视图"></a>Layer-Backed View: iOS反哺AppKit层支持视图</h3><ol>
+<li><code>iOS</code>反哺<code>AppKit</code><br>默认情况下，<code>AppKit</code> 的 <code>view</code> 不是由 <code>Core Animation layer</code> 驱动的；<code>AppKit</code> 整合 <code>layer-backing</code> 是 <code>iOS</code> 反哺的结果。</li>
+</ol>
+<h4 id="layer-backing启用／禁用-wantsLayer"><a href="#layer-backing启用／禁用-wantsLayer" class="headerlink" title="layer backing启用／禁用:wantsLayer"></a>layer backing启用／禁用:wantsLayer</h4><p><code>AppKit</code> 区分 <code>layer-backed view</code> 和 <code>layer-hosting view</code>，可以在每个视图树的根节点启用或者禁用 <code>layer backing</code>。<br>启用 <code>layer backing</code></p>
+<ol>
+<li>方法一：把窗口的 <code>contentView</code> 的 <code>wantsLayer</code> 属性设置为 <code>YES</code></li>
+<li>方法二：在 <code>Interface Builder</code> 的 <code>View Effects Inspector</code> 面板完成<img src="http://p27uwfdhv.bkt.clouddn.com/static/images/ViewEffectsInspector.jpg">
+这会导致 <code>window</code> 的视图树中所有的 <code>view</code> 都启用 <code>layer backing</code>，这样就没必要反复设置每个 <code>view</code> 的 <code>wantsLayer</code> 属性了。</li>
+</ol>
+<h4 id="修改layer属性"><a href="#修改layer属性" class="headerlink" title="修改layer属性"></a>修改layer属性</h4><p>在<code>AppKit</code>上开启<code>layer backing</code>之后，<code>layer</code>的拥有者是<code>AppKit</code>，这就意味着不能直接编辑 <code>layer</code>的属性。<br>在 <code>iOS</code> 上可以直接编辑：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">self</span>.layer.backgroundColor = [<span class="built_in">UIColor</span> redColor].CGColor;</span><br></pre></td></tr></table></figure><br>在 <code>AppKit</code>编辑<code>layer</code>属性需要以下步骤：</p>
+<ol>
+<li>重写 <code>NSView</code> 的 <code>wantsUpdateLayer</code> 方法并返回 <code>YES</code>,这能让你可以改变 <code>layer</code> 的属性。<br>这样以来，在<code>view</code> 更新周期中，将不会再调用 <code>view</code> 的 <code>drawRect:</code> 方法。取而代之，调用<code>updateLayer</code>方法来更新<code>Layer</code>。<br>举个例子，用这方法去实现一个非常简单的有纯色背景的 <code>view</code>（没错，<code>NSView</code> 没有<code>backgroundColor</code> 属性）：<br>这个例子的前提是这个 <code>view</code> 的<code>父 view</code> 已经为其视图树启用了 <code>layer backing</code>。<br>另一种可行的实现则只需要重写 <code>drawRect:</code> 方法并在其中绘制背景颜色。<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">ColoredView</span>: <span class="title">NSView</span></span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">NSColor</span> *backgroundColor;</span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">ColoredView</span></span></span><br><span class="line">- (<span class="built_in">BOOL</span>)wantsUpdateLayer</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)updateLayer</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">self</span>.layer.backgroundColor = <span class="keyword">self</span>.backgroundColor.CGColor;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)setBackgroundColor:(<span class="built_in">NSColor</span> *)backgroundColor</span><br><span class="line">&#123;</span><br><span class="line">    _backgroundColor = backgroundColor;</span><br><span class="line">    [<span class="keyword">self</span> setNeedsDisplay:<span class="literal">YES</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="合并-Layer"><a href="#合并-Layer" class="headerlink" title="合并 Layer"></a>合并 Layer</h4><p>当APP启动过多的<code>layer-backed view</code> 会带来巨大的内存消耗（每一个 <code>layer</code> 有其自己的 <code>backing store</code>，还有可能和其他 <code>view</code>的 <code>backing store</code> 重叠）而且会带来潜在的合成这些 <code>layer</code> 的消耗。</p>
+<h5 id="canDrawSubviewsIntoLayer合并Layer"><a href="#canDrawSubviewsIntoLayer合并Layer" class="headerlink" title="canDrawSubviewsIntoLayer合并Layer"></a>canDrawSubviewsIntoLayer合并Layer</h5><p>从 OS X 10.9 开始，如果不单独对一个 <code>view</code> 中的子 <code>view</code> 做动画，可以通过设置 <code>canDrawSubviewsIntoLayer</code> 属性来让 <code>AppKit</code> 合并一个<code>视图树</code>中所有 <code>layer</code> 的内容到一个共有的 <code>layer</code>。</p>
+<h5 id="隐式layer-backed合并Layer"><a href="#隐式layer-backed合并Layer" class="headerlink" title="隐式layer-backed合并Layer"></a>隐式layer-backed合并Layer</h5><p>所有隐式 <code>layer-backed</code> 的<code>子 view</code>（比如，没有显式地对这些<code>子 view</code> 设置 <code>wantsLayer = YES</code>）现在将会被绘制到同一个 <code>layer</code> 中。不过<code>wantsLayer</code> 设置为 <code>YES</code> 的<code>子 view</code> 仍然持有它们自己的 <code>backing layer</code>， 而且不管 <code>wantsUpdateLayer</code> 返回什么，它们的 <code>drawRect:</code> 方法仍然会被调用。</p>
+<h4 id="Layer-重绘策略"><a href="#Layer-重绘策略" class="headerlink" title="Layer 重绘策略"></a>Layer 重绘策略</h4><h5 id="layer-backed-view-默认的自动重绘策略"><a href="#layer-backed-view-默认的自动重绘策略" class="headerlink" title="layer-backed view 默认的自动重绘策略"></a>layer-backed view 默认的自动重绘策略</h5><p><code>layer-backed view</code> 会默认设置重绘策略为 <code>NSViewLayerContentsRedrawDuringViewResize</code>。在行为上，这个非 <code>layer-backed view</code> 是类似的，不过如果动画的每一帧都引入一个绘制步骤的话可能会对动画的性能造成不利影响。</p>
+<h5 id="设置layer-backed-view手动重绘策略"><a href="#设置layer-backed-view手动重绘策略" class="headerlink" title="设置layer-backed view手动重绘策略"></a>设置layer-backed view手动重绘策略</h5><ol>
+<li>设置手动重绘策略：把 <code>layerContentsRedrawPolicy</code> 属性设置为 <code>NSViewLayerContentsRedrawOnSetNeedsDisplay</code> </li>
+<li>实现手动重绘操作：调用 <code>-setNeedsDisplay:</code>方法来触发重绘操作<br>这样便由你来决定 <code>layer</code> 的内容何时需要重绘。帧的改变将不再自动触发重绘。</li>
+</ol>
+<h5 id="设置view的属性来重绘Layer"><a href="#设置view的属性来重绘Layer" class="headerlink" title="设置view的属性来重绘Layer"></a>设置view的属性来重绘Layer</h5><ol>
+<li>view中<code>layerContentsPlacement</code>属性：等价<code>layer</code>中的 <code>contentGravity</code> 属性。<br>这个属性允许你指定在调整大小的时候当前的 <code>layer</code> 内容该怎么映射到 <code>layer</code> 上。</li>
+</ol>
+<h3 id="Layer-Hosting-View-使用-Core-Animation-layer"><a href="#Layer-Hosting-View-使用-Core-Animation-layer" class="headerlink" title="Layer-Hosting View:使用 Core Animation layer"></a>Layer-Hosting View:使用 Core Animation layer</h3><p><code>layer-hosting view</code> 是视图树中的叶子节点，使用这种模式可以对<code>layer</code> 及其<code>子 layer</code> 做任何操作，代价是你再也不能给该 <code>view</code> 添加任何<code>子 view</code>。</p>
+<h4 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h4><ol>
+<li>为 <code>view</code> 的 <code>layer</code> 属性分配一个 <code>layer 对象</code>，</li>
+<li>设置<code>wantsLayer</code> 为 <code>YES</code><br>这些步骤的顺序是非常关键：<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- (instancetype)initWithFrame:(<span class="type">NSRect</span>)frame</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">self</span> = [<span class="keyword">super</span> initWithFrame:frame];</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">self</span>) </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">self</span>.layer = [[<span class="type">CALayer</span> alloc] <span class="keyword">init</span>];</span><br><span class="line">        <span class="keyword">self</span>.wantsLayer = <span class="type">YES</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+在你设置了自定义的 <code>layer</code> 之后，再设置 <code>wantsLayer</code> 是非常重要的。</li>
+</ol>
+<h3 id="其他与-View-相关的陷阱"><a href="#其他与-View-相关的陷阱" class="headerlink" title="其他与 View 相关的陷阱"></a>其他与 View 相关的陷阱</h3><h4 id="坐标系统原点设置左下／左上角"><a href="#坐标系统原点设置左下／左上角" class="headerlink" title="坐标系统原点设置左下／左上角"></a>坐标系统原点设置左下／左上角</h4><p>通过重写<code>isFlipped</code> 并返回 <code>YES</code> 来恢复到你熟悉的左上角。</p>
+<h4 id="View背景颜色属性drawsBackground"><a href="#View背景颜色属性drawsBackground" class="headerlink" title="View背景颜色属性drawsBackground"></a>View背景颜色属性drawsBackground</h4><p>由于 <code>AppKit</code> 中的 <code>view</code> 没有背景颜色属性可以让你直接设置为 <code>[NSColor clearColor]</code> 来让其变得透明，许多 <code>NSView</code> 的子类比如 <code>NSTextView</code> 和 <code>NSScrollView</code> 开放了一个 <code>drawsBackground</code> 属性，如果你想让这一类 <code>view</code> 透明，你必须设置该属性为 <code>NO</code>。</p>
+<h4 id="设置光标追踪区域"><a href="#设置光标追踪区域" class="headerlink" title="设置光标追踪区域"></a>设置光标追踪区域</h4><p>为了能接收光标进出一个 view 或者在 view 里面移动的事件，你需要创建一个追踪区域。你可以在 <code>NSView</code> 中指定的 <code>updateTrackingAreas</code> 方法中来做这件事情。一个通用的写法看起来是这样子的：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- (void)updateTrackingAreas</span><br><span class="line">&#123;</span><br><span class="line">    [<span class="keyword">self</span> removeTrackingArea:<span class="keyword">self</span>.trackingArea];</span><br><span class="line">    <span class="keyword">self</span>.trackingArea = [[<span class="type">NSTrackingArea</span> alloc] initWithRect:<span class="type">CGRectZero</span> </span><br><span class="line">                                                     options:<span class="type">NSTrackingMouseEnteredAndExited</span>|<span class="type">NSTrackingInVisibleRect</span>|<span class="type">NSTrackingActiveInActiveApp</span></span><br><span class="line">                                                       owner:<span class="keyword">self</span> </span><br><span class="line">                                                    userInfo:<span class="literal">nil</span>];</span><br><span class="line">    [<span class="keyword">self</span> addTrackingArea:<span class="keyword">self</span>.trackingArea];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="NSCell困惑"><a href="#NSCell困惑" class="headerlink" title="NSCell困惑"></a>NSCell困惑</h4><p><code>AppKit</code> 的控件之前是由 <code>NSCell</code> 的子类驱动的，可以被所有同类型的控件重用。<br><code>AppKit</code> 最初区分 <code>view</code> 和 <code>cell</code> 是为了节省资源 - <code>view</code> 可以把所有的绘制工作代理给更轻量级的可以被所有同类型的 <code>view</code> 重用的 <code>cell</code> 对象。<br>不要混淆这些 <code>cell</code> 和 <code>UIKit</code> 里 <code>table view</code> 的 <code>cell</code> 及 <code>collection view</code> 的 <code>cell</code>。</p>
+<h5 id="自定义一个按钮控件"><a href="#自定义一个按钮控件" class="headerlink" title="自定义一个按钮控件"></a>自定义一个按钮控件</h5><p>Apple 正在一步步地抛弃这样的实现方法了，但是你还是会时不时碰到这样的问题。<br>举个例子，如果你想创建一个自定义的按钮，</p>
+<ol>
+<li>首先要继承 <code>NSButton</code> 和 <code>NSButtonCell</code></li>
+<li>然后在这个 <code>cell 子类</code>里面进行你自定义的绘制，</li>
+<li>然后通过重写 <code>+[NSControl cellClass]</code>方法告诉自定义按钮使用你的 <code>cell 子类</code></li>
+</ol>
+<h4 id="获取-Core-Graphics-上下文"><a href="#获取-Core-Graphics-上下文" class="headerlink" title="获取 Core Graphics 上下文"></a>获取 Core Graphics 上下文</h4><p>最后，如果你想知道在你自己的 <code>drawRect:</code> 方法里怎么获取当前的 <code>Core Graphics</code> 上下文，答案是 <code>NSGraphicsContext</code> 的 <code>graphicsPort</code> 属性。详细内容请查看 <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CocoaDrawingGuide/" target="_blank" rel="noopener">Cocoa Drawing Guide</a>。</p>
+<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><p>如果你的 <code>view</code> 不是由 <code>layer</code> 驱动的，那你的动画自然是完全由 <code>CPU</code> 处理，这意味着动画的每一步都必须相应地绘制到 <code>window-backing store</code> 上。</p>
+<h3 id="对-layer-backed-view做动画"><a href="#对-layer-backed-view做动画" class="headerlink" title="对 layer-backed view做动画"></a>对 layer-backed view做动画</h3><p>正如上面说的，在 <code>AppKit</code> 中,这些 <code>layer</code> 由 <code>AppKit</code> 管理，你不应该修改 <code>layer-backed view</code> 中的 <code>layer</code>。 </p>
+<h4 id="几何属性"><a href="#几何属性" class="headerlink" title="几何属性"></a>几何属性</h4><p>与<code>iOS</code> 相反，<code>view</code> 的几何属性并不仅仅是对应的 <code>layer</code> 的几何属性的映射，但 <code>AppKit</code> 却会把 <code>view</code> 内部的几何属性同步到 <code>layer</code>。</p>
+<h4 id="的animator-proxy动画"><a href="#的animator-proxy动画" class="headerlink" title="的animator proxy动画"></a>的animator proxy动画</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">view.animator.alphaValue = <span class="number">.5</span>;</span><br></pre></td></tr></table></figure>
+<p>在幕后，这句代码会启用 <code>layer</code> 的隐式动画，设置其透明度，然后再次禁用 <code>layer</code> 的隐式动画。</p>
+<h4 id="NSAnimationContext动画"><a href="#NSAnimationContext动画" class="headerlink" title="NSAnimationContext动画"></a>NSAnimationContext动画</h4><ol>
+<li>结束回调<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[<span class="built_in">NSAnimationContext</span> runAnimationGroup:^(<span class="built_in">NSAnimationContext</span> *context)&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//持续时间</span></span><br><span class="line">    context.duration = <span class="number">1</span>;  </span><br><span class="line">    <span class="comment">//缓动类型</span></span><br><span class="line">    context.timingFunction = [<span class="built_in">CAMediaTimingFunction</span> functionWithName:kCAMediaTimingFunctionEaseIn];</span><br><span class="line">    view.animator.alphaValue = <span class="number">.5</span>;</span><br><span class="line"></span><br><span class="line">&#125; completionHandler:^&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;]; </span><br></pre></td></tr></table></figure></li>
+<li>无结束回调<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="built_in">NSAnimationContext</span> currentContext].duration = <span class="number">1</span>;</span><br><span class="line">view.animator.alphaValue = <span class="number">.5</span>; </span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="启用隐式动画"><a href="#启用隐式动画" class="headerlink" title="启用隐式动画"></a>启用隐式动画</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="built_in">NSAnimationContext</span> currentContext].allowsImplicitAnimations = <span class="literal">YES</span>;</span><br><span class="line">view.alphaValue = <span class="number">.5</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="CAAnimations控制动画"><a href="#CAAnimations控制动画" class="headerlink" title="CAAnimations控制动画"></a>CAAnimations控制动画</h4><p>使用 <code>CAAnimation</code> 实例更全面地控制动画。和 <code>iOS</code> 相反，你不能直接把它们加到 <code>layer</code> 上（因为 <code>layer</code> 不应该由你来修改），不过你可以使用 <code>NSAnimatablePropertyContainer</code> 协议中定义的 <code>API</code>，<code>NSView</code> 和 <code>NSWindow</code> 已经实现了该协议。<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">CAKeyframeAnimation</span> *animation = [<span class="built_in">CAKeyframeAnimation</span> animation];</span><br><span class="line">animation.values = @[@<span class="number">1</span>, @<span class="number">.9</span>, @<span class="number">.8</span>, @<span class="number">.7</span>, @<span class="number">.6</span>];</span><br><span class="line">view.animations = @&#123;<span class="string">@"alphaValue"</span>: animation&#125;;</span><br><span class="line">view.animator.alphaValue = <span class="number">.5</span>;</span><br></pre></td></tr></table></figure></p>
+<h5 id="帧动画"><a href="#帧动画" class="headerlink" title="帧动画"></a>帧动画</h5><p>对于帧动画来说，把 <code>view</code> 的 <code>layerContentsRedrawPolicy</code> 设置为 <code>NSViewLayerContentsRedrawOnSetNeedsDisplay</code> 是非常重要的，不然的话 <code>view</code> 的内容在每一帧都会被重绘。</p>
+<p>很遗憾，<code>NSView</code> 没有开放 <code>Core Animation layer</code> 所有可以进行动画的属性，<code>transform</code> 是其中最重要的例子。看看 Jonathan Willings 的这篇文章，它描述了你可以如何解决这些限制。不过注意，文章中的解决方案是不受官方支持的。</p>
+<p>上面提到的所有东西都适用于 <code>layer-backed view</code>。对于 l<code>ayer-hosting view</code> 来说，你可以直接对 <code>view</code> 的 <code>layer</code> 或者<code>子 layer</code> 使用 <code>CAAnimations</code>，因为你拥有它们的控制权。</p>
+<h3 id="文字系统"><a href="#文字系统" class="headerlink" title="文字系统"></a>文字系统</h3><p>有了 <code>TextKit</code>，<code>iOS 7</code> 终于有了和 <code>Mac</code> 上早就有了的 <code>Cocoa Text System</code> 等效的东西。但 Apple 并不仅仅是把文字系统从 Mac 上转移到 <code>iOS</code>；相反，Apple 对其做了些显著的改变。<br>举个例子，<code>AppKit</code> 开放 <code>NSTypesetter</code> 和 <code>NSGlyphGenerator</code>，你可以通过继承这两者来自定义它们的一些特性。<code>iOS</code> 并不开放这些类，但是你可以通过 <code>NSLayoutManagerDelegate</code> 协议达到定制的目的。<br>总体来说，两个平台的文字系统还是非常相似的，所有你在 <code>iOS</code> 上能做的在 <code>Mac</code> 上都可以做（甚至更多），但对于一些东西，你必须从不同的地方寻找合适的方法实现。</p>
+<h3 id="沙盒"><a href="#沙盒" class="headerlink" title="沙盒"></a>沙盒</h3><p>符合沙盒机制的 <code>Mac 应用</code>才能通过 <code>Mac App Store</code> 销售。然而，我们已经习惯了沙盒机制还没出现之前的 <code>Mac</code> 开发环境，所以有时候会忽视一些你想要实现的功能会和沙盒的限制出现冲突。<br>管理Mac应用对沙盒支持：<br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/sandbox.jpg"></p>
+<h2 id="独有特性"><a href="#独有特性" class="headerlink" title="独有特性"></a>独有特性</h2><p>有很多事情你只能在 Mac 上做，这主要是因为它不同的交互模型和它更为宽松的安全策略。在本期话题中，我们有一些文章深入探讨了其中的一些内容：<a href="http://objccn.io/issue-14-4/" target="_blank" rel="noopener">进程间通讯</a>，<a href="http://objccn.io/issue-14-1/" target="_blank" rel="noopener">使 Mac 应用脚本化</a>,<a href="http://objccn.io/issue-14-2/" target="_blank" rel="noopener">在沙盒中脚本化其他应用</a> , <a href="http://objccn.io/issue-14-3/" target="_blank" rel="noopener">为你的应用构建插件</a>。<br>当然，这只是 Mac 独有特性中很小的一部分，但这给了你一个很好的视角看待 iOS 8 从头开始打造其可扩展性和 app 间通讯。最后，还有很多东西等待你去探索：Drag and Drop，Printing，Bindings，OpenCL 等等，这里仅仅是举几个例子。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/weixinimg.jpg" alt="boyer wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/weixin.jpg" alt="boyer WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/zhifubao.jpg" alt="boyer Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/语法/" rel="tag"># 语法</a>
+          
+            <a href="/tags/UI/" rel="tag"># UI</a>
+          
+            <a href="/tags/混编/" rel="tag"># 混编</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/03/开源库/RxSwift基本概念/" rel="next" title="RxSwift基本概念">
+                <i class="fa fa-chevron-left"></i> RxSwift基本概念
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/15/xcode/Xcode8插件制作替代Alcatraz/" rel="prev" title="Xcode8插件制作替代Alcatraz">
+                Xcode8插件制作替代Alcatraz <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="boyer" />
+          <p class="site-author-name" itemprop="name">boyer</p>
+           
+              <p class="site-description motion-element" itemprop="description">不物喜，不己悲，善假物，易参行！</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">125</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">71</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">93</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        
+        <div class="feed-link motion-element">
+        <a href="/podcast.xml" rel="alternate">
+        <i class="fa fa-rss"></i>
+        我的播客
+        </a>
+        </div>
+        
+
+        
+        <div class="feed-link motion-element">
+        <a href="/MyClippings" rel="alternate">
+        <i class="fa fa-rss"></i>
+        kindle笔记
+        </a>
+        </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/huos3203" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1791281385" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/boyers" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/boyers" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/BuildingCocoaApps/" title="swift文档" target="_blank">swift文档</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.objccn.io" title="objc中国" target="_blank">objc中国</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://nshipster.cn" title="NSHipster" target="_blank">NSHipster</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/AttackOnDobby/iOS-Core-Animation-Advanced-Techniques" title="动画" target="_blank">动画</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://git-scm.com/book/zh" title="Git Pro" target="_blank">Git Pro</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://kaopu.so/pan" title="全盘搜" target="_blank">全盘搜</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wherebt.com" title="BT导航网" target="_blank">BT导航网</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://mp.weixin.qq.com" title="小程序官方" target="_blank">小程序官方</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://onevcat.com" title="王维" target="_blank">王维</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.devtang.com" title="唐巧" target="_blank">唐巧</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#不同点"><span class="nav-number">1.</span> <span class="nav-text">不同点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NSWindowController"><span class="nav-number">1.1.</span> <span class="nav-text">NSWindowController</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NSViewController"><span class="nav-number">1.2.</span> <span class="nav-text">NSViewController</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NSWindow-和-UIWindow"><span class="nav-number">1.3.</span> <span class="nav-text">NSWindow 和 UIWindow</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#响应者链（responder-chain）"><span class="nav-number">2.</span> <span class="nav-text">响应者链（responder chain）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Target-Action消息传递方式"><span class="nav-number">2.1.</span> <span class="nav-text">Target-Action消息传递方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#传递机制的局限"><span class="nav-number">2.1.1.</span> <span class="nav-text">传递机制的局限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#控件关联Action事件的区别"><span class="nav-number">2.1.2.</span> <span class="nav-text">控件关联Action事件的区别</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#View视图系统"><span class="nav-number">3.</span> <span class="nav-text">View视图系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Layer-Backed-View-iOS反哺AppKit层支持视图"><span class="nav-number">3.1.</span> <span class="nav-text">Layer-Backed View: iOS反哺AppKit层支持视图</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#layer-backing启用／禁用-wantsLayer"><span class="nav-number">3.1.1.</span> <span class="nav-text">layer backing启用／禁用:wantsLayer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改layer属性"><span class="nav-number">3.1.2.</span> <span class="nav-text">修改layer属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#合并-Layer"><span class="nav-number">3.1.3.</span> <span class="nav-text">合并 Layer</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#canDrawSubviewsIntoLayer合并Layer"><span class="nav-number">3.1.3.1.</span> <span class="nav-text">canDrawSubviewsIntoLayer合并Layer</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#隐式layer-backed合并Layer"><span class="nav-number">3.1.3.2.</span> <span class="nav-text">隐式layer-backed合并Layer</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Layer-重绘策略"><span class="nav-number">3.1.4.</span> <span class="nav-text">Layer 重绘策略</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#layer-backed-view-默认的自动重绘策略"><span class="nav-number">3.1.4.1.</span> <span class="nav-text">layer-backed view 默认的自动重绘策略</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置layer-backed-view手动重绘策略"><span class="nav-number">3.1.4.2.</span> <span class="nav-text">设置layer-backed view手动重绘策略</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置view的属性来重绘Layer"><span class="nav-number">3.1.4.3.</span> <span class="nav-text">设置view的属性来重绘Layer</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Layer-Hosting-View-使用-Core-Animation-layer"><span class="nav-number">3.2.</span> <span class="nav-text">Layer-Hosting View:使用 Core Animation layer</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建"><span class="nav-number">3.2.1.</span> <span class="nav-text">创建</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他与-View-相关的陷阱"><span class="nav-number">3.3.</span> <span class="nav-text">其他与 View 相关的陷阱</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#坐标系统原点设置左下／左上角"><span class="nav-number">3.3.1.</span> <span class="nav-text">坐标系统原点设置左下／左上角</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#View背景颜色属性drawsBackground"><span class="nav-number">3.3.2.</span> <span class="nav-text">View背景颜色属性drawsBackground</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置光标追踪区域"><span class="nav-number">3.3.3.</span> <span class="nav-text">设置光标追踪区域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NSCell困惑"><span class="nav-number">3.3.4.</span> <span class="nav-text">NSCell困惑</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#自定义一个按钮控件"><span class="nav-number">3.3.4.1.</span> <span class="nav-text">自定义一个按钮控件</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取-Core-Graphics-上下文"><span class="nav-number">3.3.5.</span> <span class="nav-text">获取 Core Graphics 上下文</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动画"><span class="nav-number">4.</span> <span class="nav-text">动画</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对-layer-backed-view做动画"><span class="nav-number">4.1.</span> <span class="nav-text">对 layer-backed view做动画</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#几何属性"><span class="nav-number">4.1.1.</span> <span class="nav-text">几何属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#的animator-proxy动画"><span class="nav-number">4.1.2.</span> <span class="nav-text">的animator proxy动画</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NSAnimationContext动画"><span class="nav-number">4.1.3.</span> <span class="nav-text">NSAnimationContext动画</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启用隐式动画"><span class="nav-number">4.1.4.</span> <span class="nav-text">启用隐式动画</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CAAnimations控制动画"><span class="nav-number">4.1.5.</span> <span class="nav-text">CAAnimations控制动画</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#帧动画"><span class="nav-number">4.1.5.1.</span> <span class="nav-text">帧动画</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文字系统"><span class="nav-number">4.2.</span> <span class="nav-text">文字系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#沙盒"><span class="nav-number">4.3.</span> <span class="nav-text">沙盒</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#独有特性"><span class="nav-number">5.</span> <span class="nav-text">独有特性</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">boyer</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2132971"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("ue8PI3eFeweMAjNgpAAIfiRi-gzGzoHsz", "2kHl2CEoDUKiHcVvz0dhu5rF");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

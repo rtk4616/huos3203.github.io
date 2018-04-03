@@ -1,0 +1,1125 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="工具,单元测试,UI,测试" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="布衣男儿" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="UI Testing 和 AccessibilityUI Accessibility 早在 iOS 3.0 就被引入了，用来辅助身体不便的人士使用 app。VoiceOver 是 Apple 的屏幕阅读技术，而 UI Accessibility 的基本原则就是对屏幕上的 UI 元素进行分类和标记。两者配合，通过阅读或者聆听这些元素，用户就可以在不接触屏幕的情况下通过声音来使用 app。 Acce">
+<meta name="keywords" content="工具,单元测试,UI,测试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UI自动测试开发相关API">
+<meta property="og:url" content="https://huos3203.github.io/2017/02/21/测试/UI自动测试学习/index.html">
+<meta property="og:site_name" content="布衣男儿">
+<meta property="og:description" content="UI Testing 和 AccessibilityUI Accessibility 早在 iOS 3.0 就被引入了，用来辅助身体不便的人士使用 app。VoiceOver 是 Apple 的屏幕阅读技术，而 UI Accessibility 的基本原则就是对屏幕上的 UI 元素进行分类和标记。两者配合，通过阅读或者聆听这些元素，用户就可以在不接触屏幕的情况下通过声音来使用 app。 Acce">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/XCUIElementAttributes.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/UIAccessibility.jpg">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/XCUIElementTypeQueryProvider.png">
+<meta property="og:updated_time" content="2017-05-26T11:03:05.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="UI自动测试开发相关API">
+<meta name="twitter:description" content="UI Testing 和 AccessibilityUI Accessibility 早在 iOS 3.0 就被引入了，用来辅助身体不便的人士使用 app。VoiceOver 是 Apple 的屏幕阅读技术，而 UI Accessibility 的基本原则就是对屏幕上的 UI 元素进行分类和标记。两者配合，通过阅读或者聆听这些元素，用户就可以在不接触屏幕的情况下通过声音来使用 app。 Acce">
+<meta name="twitter:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/XCUIElementAttributes.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '7069931',
+      author: '布衣男儿'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://huos3203.github.io/2017/02/21/测试/UI自动测试学习/"/>
+
+
+
+
+
+  <title>UI自动测试开发相关API | 布衣男儿</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b4a2528a681e2f23855d15a4de0abfc2";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">布衣男儿</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不物喜，不己悲，善假物，易参行！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'dazsKTijnsz_zi-bXB3t','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://huos3203.github.io/2017/02/21/测试/UI自动测试学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="boyer">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="布衣男儿">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">UI自动测试开发相关API</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-21T01:16:49+08:00">
+                2017-02-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/xcode/" itemprop="url" rel="index">
+                    <span itemprop="name">xcode</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/xcode/测试/" itemprop="url" rel="index">
+                    <span itemprop="name">测试</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/02/21/测试/UI自动测试学习/" class="leancloud_visitors" data-flag-title="UI自动测试开发相关API">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <script src="/assets/js/APlayer.min.js"> </script><h2 id="UI-Testing-和-Accessibility"><a href="#UI-Testing-和-Accessibility" class="headerlink" title="UI Testing 和 Accessibility"></a>UI Testing 和 Accessibility</h2><p>UI Accessibility 早在 iOS 3.0 就被引入了，用来辅助身体不便的人士使用 app。VoiceOver 是 Apple 的屏幕阅读技术，而 UI Accessibility 的基本原则就是对屏幕上的 UI 元素进行分类和标记。两者配合，通过阅读或者聆听这些元素，用户就可以在不接触屏幕的情况下通过声音来使用 app。</p>
+<p>Accessibility 的核心思想是对 UI 元素进行分类和标记 – 将屏幕上的 UI 分类为像是按钮，文本框，cell 或者是静态文本 (也就是 label) 这样的类型，然后使用 identifier 来区分不同的 UI 元素。用户可以通过语音控制 app 的按钮点击，或是询问某个 label 的内容等等，十分方便。iOS SDK 中的控件都实现了默认的 Accessibility 支持，而我们如果使用自定义的控件的话，则需要自行使用 Accessibility 的 API 来进行添加。</p>
+<h2 id="UI-Testing-API"><a href="#UI-Testing-API" class="headerlink" title="UI Testing API"></a>UI Testing API</h2><h3 id="XCUIApplication-获取APP实例"><a href="#XCUIApplication-获取APP实例" class="headerlink" title="XCUIApplication()获取APP实例"></a>XCUIApplication()获取APP实例</h3><p><code>XCUIApplication()</code>继承<code>XCUIElement</code>，这个类掌管应用程序的生命周期，里面包含两个主要方法<br><code>launch():</code>启动程序<br><code>terminate():</code>终止程序</p>
+<h3 id="获取XCUIElementQuery对象的四种方式"><a href="#获取XCUIElementQuery对象的四种方式" class="headerlink" title="获取XCUIElementQuery对象的四种方式"></a>获取<code>XCUIElementQuery</code>对象的四种方式</h3><h4 id="第一种简写形式：buttons-gt-XCUIElementQuery"><a href="#第一种简写形式：buttons-gt-XCUIElementQuery" class="headerlink" title="第一种简写形式：buttons-&gt;XCUIElementQuery"></a>第一种简写形式：<code>buttons-&gt;XCUIElementQuery</code></h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> buttons:<span class="type">XCUIElementQuery</span> = <span class="type">XCUIApplication</span>().buttons</span><br><span class="line"><span class="keyword">let</span> textFields:<span class="type">XCUIElementQuery</span> = <span class="type">XCUIApplication</span>().textFields</span><br></pre></td></tr></table></figure>
+<h4 id="三种通过XCUIElementType的枚举值"><a href="#三种通过XCUIElementType的枚举值" class="headerlink" title="三种通过XCUIElementType的枚举值"></a>三种通过<code>XCUIElementType</code>的枚举值</h4><p>通过<code>XCUIElementType</code>的枚举值来获取<code>XCUIElementQuery</code>对象，其中第二种是简写方式。<br><code>XCUIElementType</code>枚举声明如下：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@available</span>(iOS <span class="number">9.0</span>, *)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">XCUIElementType</span> : <span class="title">UInt</span> </span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    ......</span><br><span class="line">    <span class="keyword">case</span> button</span><br><span class="line">    <span class="keyword">case</span> radioButton</span><br><span class="line">    <span class="keyword">case</span> textField</span><br><span class="line">    <span class="keyword">case</span> comboBox</span><br><span class="line">    <span class="keyword">case</span> menuButton</span><br><span class="line">    <span class="keyword">case</span> toolbarButton</span><br><span class="line">    ......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="第一种获取所有的元素：descendantsMatchingType-gt-XCUIElementQuery"><a href="#第一种获取所有的元素：descendantsMatchingType-gt-XCUIElementQuery" class="headerlink" title="第一种获取所有的元素：descendantsMatchingType-&gt;XCUIElementQuery"></a>第一种获取所有的元素：<code>descendantsMatchingType-&gt;XCUIElementQuery</code></h5><p>取某种类型的元素以及它的子类集合，能获取到系统级控件如<code>UIButton</code>，和用户自定义的UI控件<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> buttons:<span class="type">XCUIElementQuery</span> = <span class="type">XCUIApplication</span>().descendantsMatchingType(.<span class="type">Button</span>)</span><br><span class="line"><span class="keyword">let</span> textFields:<span class="type">XCUIElementQuery</span> = <span class="type">XCUIApplication</span>().descendantsMatchingType(.textField)</span><br></pre></td></tr></table></figure></p>
+<h5 id="第三种仅获取当前层级子元素：childrenMatchingType"><a href="#第三种仅获取当前层级子元素：childrenMatchingType" class="headerlink" title="第三种仅获取当前层级子元素：childrenMatchingType"></a>第三种仅获取当前层级子元素：<code>childrenMatchingType</code></h5><p>取某种类型的元素集合，不包含它的子类，即仅获取系统级控件如<code>UIButton</code>，不获取用户自定义的UI控件<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> buttons:<span class="type">XCUIElementQuery</span> = <span class="type">XCUIApplication</span>().childrenMatchingType(.<span class="type">Button</span>)</span><br><span class="line"><span class="keyword">let</span> textFields:<span class="type">XCUIElementQuery</span> = <span class="type">XCUIApplication</span>().childrenMatchingType(.textField)</span><br></pre></td></tr></table></figure></p>
+<h5 id="第四种所有包含的元素：containingType"><a href="#第四种所有包含的元素：containingType" class="headerlink" title="第四种所有包含的元素：containingType"></a>第四种所有包含的元素：<code>containingType</code></h5><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> buttons:<span class="type">XCUIElementQuery</span> = <span class="type">XCUIApplication</span>().containingType(.<span class="type">Button</span>)</span><br><span class="line"><span class="keyword">let</span> textFields:<span class="type">XCUIElementQuery</span> = <span class="type">XCUIApplication</span>().containingType(.textField)</span><br></pre></td></tr></table></figure>
+<h3 id="XCUIElement表示系统的各种UI控件"><a href="#XCUIElement表示系统的各种UI控件" class="headerlink" title="XCUIElement表示系统的各种UI控件"></a>XCUIElement表示系统的各种UI控件</h3><p><code>XCUIElement</code>UI控件在测试框架中的代理，继承<code>NSObject</code>，实现<code>XCUIElementAttributes</code>协议, <code>XCUIElementTypeQueryProvider</code>协议，可以表示系统的各种UI控件。</p>
+<ol>
+<li>XCUIElementAttributes协议：里面包含了UIAccessibility中的部分属性<img src="http://p27uwfdhv.bkt.clouddn.com/static/images/XCUIElementAttributes.png">
+<img src="http://p27uwfdhv.bkt.clouddn.com/static/images/UIAccessibility.jpg"></li>
+<li>XCUIElementTypeQueryProvider协议：包含了系统中大部分UI控件的类型，可通过读属性的方式取得某种类型的UI集合<img src="http://p27uwfdhv.bkt.clouddn.com/static/images/XCUIElementTypeQueryProvider.png">
+</li>
+</ol>
+<h4 id="访问UI控件"><a href="#访问UI控件" class="headerlink" title="访问UI控件"></a>访问UI控件</h4><ol>
+<li><code>exist:</code>判断当前的UI元素是否存在，如果对一个不存在的元素进行操作，会导致测试组件抛出异常并中断测试.</li>
+<li><code>element()</code>／<code>下标方法</code>：<code>XCUIElementQuery</code>实例的方法获取UI控件，不能直接通过<code>XCUIElement</code> 来访问 app 中的元素，只能通过 <code>Accessibility</code> 中的像是 <code>identifier</code> 或者 <code>frame</code> 这样的属性来获取 UI 的信息。<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> userNameTextField:<span class="type">XCUIElement</span> = app.textFields.element(boundBy: <span class="number">0</span>)</span><br><span class="line"><span class="keyword">let</span> userNameTextField:<span class="type">XCUIElement</span> = app.textFields[<span class="string">"username"</span>]</span><br></pre></td></tr></table></figure>
+对于 <code>XCUIElementQuery</code>，<code>Query</code>的执行是有延迟的，它和最后我们得到的 <code>XCUIElement</code> 并不是一一对应的。和 <code>NSURL</code> 与请求到的内容的关系类似，随着时间的变化，同一个 <code>URL</code> 有可能请求到不同的内容。<br>在拿到<code>Query</code>实例后，只有在通过<code>下标</code>或<code>访问方法</code>访问时，才会真正寻找对应的 <code>UI 控件</code>。这就是说，随着我们的 UI 的变化，同样的 <code>query</code> 也可能获取到不用的<code>UI控件</code>。为了获取UI元素准确：我们可以通过在 <code>Interface Builder</code> 或者<code>代码</code>中，对UI控件的 <code>identifier</code>属性进行设置，这样就可以使用下标的方式进行访问了。</li>
+</ol>
+<h4 id="设置UI控件触发事件和属性值"><a href="#设置UI控件触发事件和属性值" class="headerlink" title="设置UI控件触发事件和属性值"></a>设置UI控件<code>触发事件</code>和<code>属性值</code></h4><p>使用<code>typeText(text:String)</code>,<code>tap()</code>,<code>doubleTap()</code>等方法。<br>以获取userNameTextField控件为例：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> userNameTextField:<span class="type">XCUIElement</span> = app.textFields.element(boundBy: <span class="number">0</span>)</span><br><span class="line">userNameTextField.tap()</span><br><span class="line">userNameTextField.typeText(<span class="string">"文本内容"</span>)</span><br></pre></td></tr></table></figure></p>
+<h4 id="XCUIElementAttributes协议"><a href="#XCUIElementAttributes协议" class="headerlink" title="XCUIElementAttributes协议"></a>XCUIElementAttributes协议</h4><p>UI元素中包含的各个属性，<code>identifier</code>，<code>frame</code>,<code>title</code>,<code>label</code>等…</p>
+<ol>
+<li>使用: 可使用这些属性来获取UI元素对象。<figure class="highlight swift"><figcaption><span>title获取</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> username = <span class="string">"hsg"</span></span><br><span class="line">userNameTextField.typeText(username)</span><br><span class="line">app.textFields[username].tap()</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><figcaption><span>identifier获取</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> identifier = <span class="string">"hsg"</span></span><br><span class="line">userNameTextField.typeText(username)</span><br><span class="line">app.textFields[username].tap()</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/weixinimg.jpg" alt="boyer wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/weixin.jpg" alt="boyer WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/zhifubao.jpg" alt="boyer Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/工具/" rel="tag"># 工具</a>
+          
+            <a href="/tags/UI/" rel="tag"># UI</a>
+          
+            <a href="/tags/测试/" rel="tag"># 测试</a>
+          
+            <a href="/tags/单元测试/" rel="tag"># 单元测试</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/17/自定义展示型控制器/" rel="next" title="通过转场动画代理协议自定义来展示型控制器">
+                <i class="fa fa-chevron-left"></i> 通过转场动画代理协议自定义来展示型控制器
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/21/测试/高期望实现异步单元测试/" rel="prev" title="高期望实现异步单元测试">
+                高期望实现异步单元测试 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="boyer" />
+          <p class="site-author-name" itemprop="name">boyer</p>
+           
+              <p class="site-description motion-element" itemprop="description">不物喜，不己悲，善假物，易参行！</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">125</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">71</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">93</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        
+        <div class="feed-link motion-element">
+        <a href="/podcast.xml" rel="alternate">
+        <i class="fa fa-rss"></i>
+        我的播客
+        </a>
+        </div>
+        
+
+        
+        <div class="feed-link motion-element">
+        <a href="/MyClippings" rel="alternate">
+        <i class="fa fa-rss"></i>
+        kindle笔记
+        </a>
+        </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/huos3203" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1791281385" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/boyers" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/boyers" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/BuildingCocoaApps/" title="swift文档" target="_blank">swift文档</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.objccn.io" title="objc中国" target="_blank">objc中国</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://nshipster.cn" title="NSHipster" target="_blank">NSHipster</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/AttackOnDobby/iOS-Core-Animation-Advanced-Techniques" title="动画" target="_blank">动画</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://git-scm.com/book/zh" title="Git Pro" target="_blank">Git Pro</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://kaopu.so/pan" title="全盘搜" target="_blank">全盘搜</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wherebt.com" title="BT导航网" target="_blank">BT导航网</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://mp.weixin.qq.com" title="小程序官方" target="_blank">小程序官方</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://onevcat.com" title="王维" target="_blank">王维</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.devtang.com" title="唐巧" target="_blank">唐巧</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#UI-Testing-和-Accessibility"><span class="nav-number">1.</span> <span class="nav-text">UI Testing 和 Accessibility</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UI-Testing-API"><span class="nav-number">2.</span> <span class="nav-text">UI Testing API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#XCUIApplication-获取APP实例"><span class="nav-number">2.1.</span> <span class="nav-text">XCUIApplication()获取APP实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取XCUIElementQuery对象的四种方式"><span class="nav-number">2.2.</span> <span class="nav-text">获取XCUIElementQuery对象的四种方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一种简写形式：buttons-gt-XCUIElementQuery"><span class="nav-number">2.2.1.</span> <span class="nav-text">第一种简写形式：buttons-&gt;XCUIElementQuery</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三种通过XCUIElementType的枚举值"><span class="nav-number">2.2.2.</span> <span class="nav-text">三种通过XCUIElementType的枚举值</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#第一种获取所有的元素：descendantsMatchingType-gt-XCUIElementQuery"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">第一种获取所有的元素：descendantsMatchingType-&gt;XCUIElementQuery</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第三种仅获取当前层级子元素：childrenMatchingType"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">第三种仅获取当前层级子元素：childrenMatchingType</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第四种所有包含的元素：containingType"><span class="nav-number">2.2.2.3.</span> <span class="nav-text">第四种所有包含的元素：containingType</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XCUIElement表示系统的各种UI控件"><span class="nav-number">2.3.</span> <span class="nav-text">XCUIElement表示系统的各种UI控件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#访问UI控件"><span class="nav-number">2.3.1.</span> <span class="nav-text">访问UI控件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置UI控件触发事件和属性值"><span class="nav-number">2.3.2.</span> <span class="nav-text">设置UI控件触发事件和属性值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#XCUIElementAttributes协议"><span class="nav-number">2.3.3.</span> <span class="nav-text">XCUIElementAttributes协议</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">boyer</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2132971"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("ue8PI3eFeweMAjNgpAAIfiRi-gzGzoHsz", "2kHl2CEoDUKiHcVvz0dhu5rF");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

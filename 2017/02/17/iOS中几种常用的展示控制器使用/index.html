@@ -1,0 +1,1132 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="动画,转场,UI" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="布衣男儿" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="开始项目完整项目 UIAlertController在iOS8中，提供UIAlertController控制器代替UIAlertView和UIActionSheet两个控件。给用户展示提示信息的新的一种方式。 优势 能够自适应的（在iPad上，an action sheet style alert will present itself in a popover）， 显示方式：可以轻松切换Act">
+<meta name="keywords" content="动画,转场,UI">
+<meta property="og:type" content="article">
+<meta property="og:title" content="整理iOS中几种常用的展示型视图控制器">
+<meta property="og:url" content="https://huos3203.github.io/2017/02/17/iOS中几种常用的展示控制器使用/index.html">
+<meta property="og:site_name" content="布衣男儿">
+<meta property="og:description" content="开始项目完整项目 UIAlertController在iOS8中，提供UIAlertController控制器代替UIAlertView和UIActionSheet两个控件。给用户展示提示信息的新的一种方式。 优势 能够自适应的（在iPad上，an action sheet style alert will present itself in a popover）， 显示方式：可以轻松切换Act">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/iPhoneipadalert.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/popover箭头.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/UIPopoverArrowDirection.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/iPhonemodally.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/adaptivePresentationStyleForPresentationController.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/UIModalPresentationStyle.None.png">
+<meta property="og:updated_time" content="2017-02-16T21:56:31.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="整理iOS中几种常用的展示型视图控制器">
+<meta name="twitter:description" content="开始项目完整项目 UIAlertController在iOS8中，提供UIAlertController控制器代替UIAlertView和UIActionSheet两个控件。给用户展示提示信息的新的一种方式。 优势 能够自适应的（在iPad上，an action sheet style alert will present itself in a popover）， 显示方式：可以轻松切换Act">
+<meta name="twitter:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/iPhoneipadalert.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '7069931',
+      author: '布衣男儿'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://huos3203.github.io/2017/02/17/iOS中几种常用的展示控制器使用/"/>
+
+
+
+
+
+  <title>整理iOS中几种常用的展示型视图控制器 | 布衣男儿</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b4a2528a681e2f23855d15a4de0abfc2";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">布衣男儿</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不物喜，不己悲，善假物，易参行！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'dazsKTijnsz_zi-bXB3t','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://huos3203.github.io/2017/02/17/iOS中几种常用的展示控制器使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="boyer">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="布衣男儿">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">整理iOS中几种常用的展示型视图控制器</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-17T01:53:18+08:00">
+                2017-02-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/转场/" itemprop="url" rel="index">
+                    <span itemprop="name">转场</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/02/17/iOS中几种常用的展示控制器使用/" class="leancloud_visitors" data-flag-title="整理iOS中几种常用的展示型视图控制器">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <script src="/assets/js/APlayer.min.js"> </script><p><a href="https://www.dropbox.com/s/4gj6levvlav2xzc/PresentationsDemoStart.zip?dl=0" target="_blank" rel="noopener">开始项目</a><br><a href="https://github.com/appcoda/Presentation-Controllers-Demo" target="_blank" rel="noopener">完整项目</a></p>
+<h2 id="UIAlertController"><a href="#UIAlertController" class="headerlink" title="UIAlertController"></a>UIAlertController</h2><p>在iOS8中，提供<code>UIAlertController</code>控制器代替<code>UIAlertView</code>和<code>UIActionSheet</code>两个控件。给用户展示提示信息的新的一种方式。</p>
+<h3 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h3><ol>
+<li>能够自适应的（在iPad上，an <code>action sheet</code> style alert will present itself in a popover），</li>
+<li>显示方式：可以轻松切换<code>Action sheets</code>和<code>alert view</code>两种显示样式<code>alert view</code>被以modal态显示presenting视图控制器上，<code>Action sheets</code>被固定在以屏幕底部。 </li>
+<li>按钮事件实现：使用闭包的方式来处理，相较之前通过实现代理的方式要简单很多。</li>
+<li>子控件支持：<code>Alert view</code>支持按钮和输入框两种，Action sheets仅支持按钮一种控件。</li>
+<li>不同于以往的两类<code>UIAlertController</code>继承自<code>UIViewController</code>。这意味着可以使用视图控制器提供展示信息的功能。</li>
+</ol>
+<h3 id="创建使用UIAlertController"><a href="#创建使用UIAlertController" class="headerlink" title="创建使用UIAlertController"></a>创建使用UIAlertController</h3><p>用<code>title</code>，<code>message</code>参数来实例化<code>alertController</code>实例，然后在实例中添加两个闭包的按钮<br><figure class="highlight swift"><figcaption><span>showAlertWasTapped</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@IBAction</span> <span class="function"><span class="keyword">func</span> <span class="title">showAlertWasTapped</span><span class="params">(sender: UIButton)</span></span> </span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">let</span> alertController = <span class="type">UIAlertController</span>(title: <span class="string">"Appcoda"</span>, message: <span class="string">"Message in alert dialog"</span>, preferredStyle: <span class="type">UIAlertControllerStyle</span>.<span class="type">Alert</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> deleteAction = <span class="type">UIAlertAction</span>(title: <span class="string">"Delete"</span>, style: <span class="type">UIAlertActionStyle</span>.<span class="type">Destructive</span>, handler: &#123;(alert :<span class="type">UIAlertAction</span>!) <span class="keyword">in</span></span><br><span class="line">        <span class="built_in">println</span>(<span class="string">"Delete button tapped"</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">    alertController.addAction(deleteAction)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> okAction = <span class="type">UIAlertAction</span>(title: <span class="string">"OK"</span>, style: <span class="type">UIAlertActionStyle</span>.<span class="type">Default</span>, handler: &#123;(alert :<span class="type">UIAlertAction</span>!) <span class="keyword">in</span></span><br><span class="line">        <span class="built_in">println</span>(<span class="string">"OK button tapped"</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">    alertController.addAction(okAction)</span><br><span class="line"></span><br><span class="line">    presentViewController(alertController, animated: <span class="literal">true</span>, completion: <span class="literal">nil</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>运行效果：<br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/iPhoneipadalert.png"></p>
+<h3 id="UIAlertControllerStyle枚举：Alert切换ActionSheet"><a href="#UIAlertControllerStyle枚举：Alert切换ActionSheet" class="headerlink" title="UIAlertControllerStyle枚举：Alert切换ActionSheet"></a>UIAlertControllerStyle枚举：<code>Alert</code>切换<code>ActionSheet</code></h3><p>在<code>UIAlertController</code>之前，切换<code>alert</code>和<code>action sheet</code>需要重写大量的代码，但现在只需要改变一个枚举值<code>UIAlertControllerStyle.Alert</code>为<code>UIAlertControllerStyle.ActionSheet</code>.<br><figure class="highlight swift"><figcaption><span>UIAlertControllerStyle.ActionSheet</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> alertController = <span class="type">UIAlertController</span>(title: <span class="string">"Appcoda"</span>, message: <span class="string">"Message in alert dialog"</span>, preferredStyle: <span class="type">UIAlertControllerStyle</span>.<span class="type">ActionSheet</span>)</span><br></pre></td></tr></table></figure><br>在iPhone上，屏幕底部显示一个<code>action sheet</code>。<br>问题：在iPad上，点击上面的按钮崩溃，需要定义锚点位置。</p>
+<h3 id="popoverPresentationController锚点：sourceView-sourceRect"><a href="#popoverPresentationController锚点：sourceView-sourceRect" class="headerlink" title="popoverPresentationController锚点：sourceView/sourceRect"></a>popoverPresentationController锚点：sourceView/sourceRect</h3><p><code>popover controller</code>在<code>alertController</code>视图内展示，需要一个<code>popover箭头</code>指向<code>alertController</code>视图的某一位置。<br>通过设置<code>sourceView</code>来确定<code>popover箭头</code>位置，这个<code>popover</code>以及<code>popover箭头</code>指向的矩形区域都在这个<code>sourceView</code>上。<br>在调用<code>presentViewController()</code>之前添加代码：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alertController.popoverPresentationController?.sourceView = view</span><br><span class="line">alertController.popoverPresentationController?.sourceRect = sender.frame</span><br></pre></td></tr></table></figure><br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/popover箭头.png"></p>
+<h2 id="UIPopoverPresentationController"><a href="#UIPopoverPresentationController" class="headerlink" title="UIPopoverPresentationController"></a>UIPopoverPresentationController</h2><p><code>Alert</code>主要用于显示用户的提示信息，当展示的信息很多时，就需要借助<code>popover presentation controller</code>。</p>
+<h3 id="在compact和regular两种屏幕中显示模态视图"><a href="#在compact和regular两种屏幕中显示模态视图" class="headerlink" title="在compact和regular两种屏幕中显示模态视图"></a>在compact和regular两种屏幕中显示模态视图</h3><p>在<code>storyboard</code>文件，设置视图的<code>storyboard ID</code>:<code>PopoverViewController</code>，设置模态视图展示样式，展示在<code>compact-width</code>和<code>regular-width</code>的两种设备屏幕上。<br>实现如下：<br><figure class="highlight swift"><figcaption><span>actionWasTapped</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@IBAction</span> <span class="function"><span class="keyword">func</span> <span class="title">actionWasTapped</span><span class="params">(sender: UIBarButtonItem)</span></span> </span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">let</span> storyboard : <span class="type">UIStoryboard</span> = <span class="type">UIStoryboard</span>(name: <span class="string">"Main"</span>, bundle: <span class="literal">nil</span>)</span><br><span class="line">    <span class="keyword">let</span> vc = storyboard.instantiateViewControllerWithIdentifier(<span class="string">"PopoverViewController"</span>) <span class="keyword">as</span>! <span class="type">UIViewController</span></span><br><span class="line">    vc.modalPresentationStyle = <span class="type">UIModalPresentationStyle</span>.<span class="type">Popover</span></span><br><span class="line">    <span class="keyword">let</span> popover: <span class="type">UIPopoverPresentationController</span> = vc.popoverPresentationController!</span><br><span class="line">    popover.barButtonItem = sender  <span class="comment">//`popover箭头`锚的位置</span></span><br><span class="line">    presentViewController(vc, animated: <span class="literal">true</span>, completion:<span class="literal">nil</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="设置锚点四种方式"><a href="#设置锚点四种方式" class="headerlink" title="设置锚点四种方式"></a>设置锚点四种方式</h4><ol>
+<li>barButtonItem<br>先获取该视图控制器的<code>popoverPresentationController</code>控制器，通过<code>popover</code>控制器的<code>barButtonItem</code>属性来设置锚点控件。当弹出时<code>popover箭头</code>就指向这个barButtonItem控件。</li>
+<li>通过指定<code>sourceView</code>和<code>sourceRect</code>两个属性，就像前面例子中一样来指定锚点位置。</li>
+<li>通过其他属性来实现，例如：<code>permittedArrowDirections</code>，也能够指定锚点。</li>
+<li>如果在在展示过程中，无法确定箭头的方向时，就是用默认值：<code>UIPopoverArrowDirection.Any</code>.<br>在iPad显示：</li>
+</ol>
+<img src="http://p27uwfdhv.bkt.clouddn.com/static/images/UIPopoverArrowDirection.png">
+<p>在iPhone上以模态显示：</p>
+<img src="http://p27uwfdhv.bkt.clouddn.com/static/images/iPhonemodally.png">
+<h3 id="在iPhone设备上dissmiss模态视图"><a href="#在iPhone设备上dissmiss模态视图" class="headerlink" title="在iPhone设备上dissmiss模态视图"></a>在iPhone设备上dissmiss模态视图</h3><p>要在iPhone设备上，实现模态视图dissmiss功能，需要借助导航控制器，同时这个模态视图需要遵循<code>UIPopoverPresentationController</code>协议，实现两个代理方法</p>
+<h4 id="实现UIPopoverPresentationController协议"><a href="#实现UIPopoverPresentationController协议" class="headerlink" title="实现UIPopoverPresentationController协议"></a>实现<code>UIPopoverPresentationController</code>协议</h4><ol>
+<li><code>PopoverViewController</code>类定义修改如下:<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PopoverViewController</span>: <span class="title">UIViewController</span>, <span class="title">UIPopoverPresentationControllerDelegate</span> </span>&#123;</span><br></pre></td></tr></table></figure></li>
+<li>在actionWasTapped()函数中调用<code>presentViewController()</code>之前添加：<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">popover.delegate = <span class="keyword">self</span></span><br></pre></td></tr></table></figure>
+<h4 id="方法一：返回自适应设备的视图展示样式"><a href="#方法一：返回自适应设备的视图展示样式" class="headerlink" title="方法一：返回自适应设备的视图展示样式"></a>方法一：返回自适应设备的视图展示样式</h4>当APP在<code>compact-width</code>设备上弹出一个视图时调用.这个方法告诉OS系统使用的视图展示样式。<br>这里OS系统被告知在<code>compact-width</code>设备上，使用全屏的样式展示视图。<figure class="highlight swift"><figcaption><span>adaptivePresentationStyleForPresentationController()</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">adaptivePresentationStyleForPresentationController</span><span class="params">(controller: UIPresentationController)</span></span> -&gt; <span class="type">UIModalPresentationStyle</span> </span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="type">UIModalPresentationStyle</span>.<span class="type">FullScreen</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="方法二：返回自定义的视图控制器"><a href="#方法二：返回自定义的视图控制器" class="headerlink" title="方法二：返回自定义的视图控制器"></a>方法二：返回自定义的视图控制器</h4>当前展现的视图和原来的展示方式不同时调用.我们设置这个视图的<code>Popover presentation</code>展示方式，但是我们指定在<code>compact-width</code>设备上，这样它会以full screen样式展示。在这个函数中，样式切换发生时，会return自定义的视图控制器。<figure class="highlight swift"><figcaption><span>presentationController(_:viewControllerForAdaptivePresentationStyle)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">presentationController</span><span class="params">(controller: UIPresentationController, viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle)</span></span> -&gt; <span class="type">UIViewController</span>? </span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">let</span> navigationController = <span class="type">UINavigationController</span>(rootViewController: controller.presentedViewController)</span><br><span class="line">    <span class="keyword">let</span> btnDone = <span class="type">UIBarButtonItem</span>(title: <span class="string">"Done"</span>, style: .<span class="type">Done</span>, target: <span class="keyword">self</span>, action: <span class="string">"dismiss"</span>)</span><br><span class="line">    navigationController.topViewController.navigationItem.rightBarButtonItem = btnDone</span><br><span class="line">    <span class="keyword">return</span> navigationController</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="Done按钮的dismiss事件"><a href="#Done按钮的dismiss事件" class="headerlink" title="Done按钮的dismiss事件"></a><code>Done</code>按钮的dismiss事件</h4><p>在导航控制器中国封装这个视图，在导航条上添加一个<code>Done</code>按钮，点击<code>Done</code>dismiss这个视图<br><figure class="highlight swift"><figcaption><span>dismiss</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">dismiss</span><span class="params">()</span></span> </span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">self</span>.dismissViewControllerAnimated(<span class="literal">true</span>, completion: <span class="literal">nil</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在iPhone上，显示修改后的视图控制器，多出带按钮的导航栏。<br>在iPad上，视图控制器显示没有导航控制器，因为它不使用全屏幕显示。<br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/adaptivePresentationStyleForPresentationController.png"><br>如果想让iPhone像iPad一样显示一个Popover，只<code>adaptivePresentationStyleForPresentationController</code>返回：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="type">UIModalPresentationStyle</span>.<span class="type">None</span></span><br></pre></td></tr></table></figure><br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/UIModalPresentationStyle.None.png"></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/weixinimg.jpg" alt="boyer wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/weixin.jpg" alt="boyer WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/zhifubao.jpg" alt="boyer Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/动画/" rel="tag"># 动画</a>
+          
+            <a href="/tags/转场/" rel="tag"># 转场</a>
+          
+            <a href="/tags/UI/" rel="tag"># UI</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/16/macOS/JavaScript自动化组件OC桥接/" rel="next" title="JavaScript自动化组件OC桥接">
+                <i class="fa fa-chevron-left"></i> JavaScript自动化组件OC桥接
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/17/自定义展示型控制器/" rel="prev" title="通过转场动画代理协议自定义来展示型控制器">
+                通过转场动画代理协议自定义来展示型控制器 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="boyer" />
+          <p class="site-author-name" itemprop="name">boyer</p>
+           
+              <p class="site-description motion-element" itemprop="description">不物喜，不己悲，善假物，易参行！</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">125</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">71</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">93</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        
+        <div class="feed-link motion-element">
+        <a href="/podcast.xml" rel="alternate">
+        <i class="fa fa-rss"></i>
+        我的播客
+        </a>
+        </div>
+        
+
+        
+        <div class="feed-link motion-element">
+        <a href="/MyClippings" rel="alternate">
+        <i class="fa fa-rss"></i>
+        kindle笔记
+        </a>
+        </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/huos3203" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1791281385" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/boyers" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/boyers" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/BuildingCocoaApps/" title="swift文档" target="_blank">swift文档</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.objccn.io" title="objc中国" target="_blank">objc中国</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://nshipster.cn" title="NSHipster" target="_blank">NSHipster</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/AttackOnDobby/iOS-Core-Animation-Advanced-Techniques" title="动画" target="_blank">动画</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://git-scm.com/book/zh" title="Git Pro" target="_blank">Git Pro</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://kaopu.so/pan" title="全盘搜" target="_blank">全盘搜</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wherebt.com" title="BT导航网" target="_blank">BT导航网</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://mp.weixin.qq.com" title="小程序官方" target="_blank">小程序官方</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://onevcat.com" title="王维" target="_blank">王维</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.devtang.com" title="唐巧" target="_blank">唐巧</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#UIAlertController"><span class="nav-number">1.</span> <span class="nav-text">UIAlertController</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优势"><span class="nav-number">1.1.</span> <span class="nav-text">优势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建使用UIAlertController"><span class="nav-number">1.2.</span> <span class="nav-text">创建使用UIAlertController</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UIAlertControllerStyle枚举：Alert切换ActionSheet"><span class="nav-number">1.3.</span> <span class="nav-text">UIAlertControllerStyle枚举：Alert切换ActionSheet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#popoverPresentationController锚点：sourceView-sourceRect"><span class="nav-number">1.4.</span> <span class="nav-text">popoverPresentationController锚点：sourceView/sourceRect</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UIPopoverPresentationController"><span class="nav-number">2.</span> <span class="nav-text">UIPopoverPresentationController</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在compact和regular两种屏幕中显示模态视图"><span class="nav-number">2.1.</span> <span class="nav-text">在compact和regular两种屏幕中显示模态视图</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置锚点四种方式"><span class="nav-number">2.1.1.</span> <span class="nav-text">设置锚点四种方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在iPhone设备上dissmiss模态视图"><span class="nav-number">2.2.</span> <span class="nav-text">在iPhone设备上dissmiss模态视图</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实现UIPopoverPresentationController协议"><span class="nav-number">2.2.1.</span> <span class="nav-text">实现UIPopoverPresentationController协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法一：返回自适应设备的视图展示样式"><span class="nav-number">2.2.2.</span> <span class="nav-text">方法一：返回自适应设备的视图展示样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法二：返回自定义的视图控制器"><span class="nav-number">2.2.3.</span> <span class="nav-text">方法二：返回自定义的视图控制器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Done按钮的dismiss事件"><span class="nav-number">2.2.4.</span> <span class="nav-text">Done按钮的dismiss事件</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">boyer</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2132971"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("ue8PI3eFeweMAjNgpAAIfiRi-gzGzoHsz", "2kHl2CEoDUKiHcVvz0dhu5rF");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
