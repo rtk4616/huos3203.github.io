@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huos3203.github.io/"/>
-  <updated>2018-03-13T18:00:23.000Z</updated>
+  <updated>2018-04-11T19:16:17.000Z</updated>
   <id>https://huos3203.github.io/</id>
   
   <author>
@@ -15,6 +15,126 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Otherlinkerflags设置ld命令执行的参数</title>
+    <link href="https://huos3203.github.io/2018/04/12/xcode/Otherlinkerflags%E8%AE%BE%E7%BD%AEld%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E7%9A%84%E5%8F%82%E6%95%B0/"/>
+    <id>https://huos3203.github.io/2018/04/12/xcode/Otherlinkerflags设置ld命令执行的参数/</id>
+    <published>2018-04-11T16:42:57.000Z</published>
+    <updated>2018-04-11T19:16:17.000Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>Other linker flags设置的值实际上就是ld命令执行时后面所加的参数。</p><p>3个常用参数：<br><code>-ObjC</code>：加了这个参数后，链接器就会把静态库中所有的Objective-C类和分类都加载到最后的可执行文件中<br><code>-all_load</code>：会让链接器把所有找到的目标文件都加载到可执行文件中，但是千万不要随便使用这个参数！假如你使用了不止一个静态库文件，然后又使用了这个参数，那么你很有可能会遇到<code>ld: duplicate symbol</code>错误，因为不同的库文件里面可能会有相同的目标文件，所以建议在遇到<code>-ObjC</code>失效的情况下使用<code>-force_load</code>参数。<br><code>-force_load</code>：所做的事情跟<code>-all_load</code>其实是一样的，但是<code>-force_load</code>需要指定要进行全部加载的库文件的路径，这样的话，你就只是完全加载了一个库文件，不影响其余库文件的按需加载.</p><h3 id="加载FrameWork"><a href="#加载FrameWork" class="headerlink" title="加载FrameWork"></a>加载FrameWork</h3><h3 id="加载静态库"><a href="#加载静态库" class="headerlink" title="加载静态库"></a>加载静态库</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;p&gt;Other linker flags设置的值实际上就是ld命令执行时后面所加的参数。&lt;/p&gt;
+&lt;p&gt;3个常用参数：&lt;br&gt;&lt;code&gt;-ObjC&lt;/code&gt;：加了这个参数后
+      
+    
+    </summary>
+    
+      <category term="xcode" scheme="https://huos3203.github.io/categories/xcode/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>iOS插件化开发之Small</title>
+    <link href="https://huos3203.github.io/2018/04/12/xcode/iOS%E6%8F%92%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91%E4%B9%8BSmall/"/>
+    <id>https://huos3203.github.io/2018/04/12/xcode/iOS插件化开发之Small/</id>
+    <published>2018-04-11T16:42:17.000Z</published>
+    <updated>2018-04-11T19:16:17.000Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><div id="badge-container-huos3203-Small-04f08ae4a26" class="hexo-github" style="width: ="></div><script src="/hexo-github/badge.js"></script><script type="text/javascript">  loadStyle("/hexo-github/style.css");  loadStyle("/hexo-github/octicons/octicons.css");  new Badge("#badge-container-huos3203-Small-04f08ae4a26", "huos3203", "Small", "04f08ae4a26", false);</script><p><a href="http://code.wequick.net/Small/cn/home" target="_blank" rel="noopener">官网</a></p><h2 id="iOS组件化基础"><a href="#iOS组件化基础" class="headerlink" title="iOS组件化基础"></a>iOS组件化基础</h2><p>iOS组件化基于<a href="https://developer.apple.com/library/ios/documentation/General/Conceptual/DevPedia-CocoaCore/Framework.html#//apple_ref/doc/uid/TP40008195-CH56-SW1" target="_blank" rel="noopener">Cocoa Touch Framework</a>（以下简称CTF）通过<a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/cl/NSBundle" target="_blank" rel="noopener">NSBundle</a>实现。</p><ul><li>CTF首次公开在WWDC2014，要求Xcode6 beta以上版本。</li><li>CTF官方表示支持8.0以上系统，但在6.0、7.0上测试正常。</li><li>如果你的App包含了CTF，但是<strong>Deployment Target</strong> &lt; 8.0，上传二进制文件到App Store时会报警中断。</li></ul><p>受苹果官方限制，如果你的CTF没有签名，将无法实现代码级别更新。</p><p>Framework 模式无法上传到App Store。只能应用到企业版</p><h2 id="使用文档"><a href="#使用文档" class="headerlink" title="使用文档"></a>使用文档</h2><ol><li><p>导入模板，重启Xcode</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/wequick/Small.git</span><br><span class="line"><span class="built_in">cd</span> Small/iOS</span><br><span class="line">cp -r Templates ~/Library/Developer/Xcode/Templates</span><br></pre></td></tr></table></figure></li><li><p>新建工程<br><code>File-&gt;New-&gt;Project...</code>，选择Small-pods模板<br><img src="https://camo.githubusercontent.com/25aac173476e3a5eecdf2853b0e233bf8179bece/687474703a2f2f636f64652e7765717569636b2e6e65742f6173736574732f696d616765732f736d616c6c2d696f732d74656d706c6174652e706e67" alt="Small iOS Template"></p></li><li><p>安装Pods</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> [your-project-path]</span><br><span class="line">pod install --no-repo-update</span><br></pre></td></tr></table></figure></li><li><p>关闭工程并打开xcworkspace</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open *.xcworkspace</span><br></pre></td></tr></table></figure></li></ol><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><ul><li>使用者模式<a href="Sample">Sample</a></li></ul><blockquote><p>需要先编译Pods</p></blockquote><ul><li>开发者模式<a href="DevSample">DevSample</a></li></ul><blockquote><p>需要去除并行编译模式：<code>Edit Scheme...-&gt;Build-&gt;Build Options-&gt; [ ] Parallelize Build</code></p><p>各个组件需要签名后才支持代码级别更新。示例中更新例子为xib内容更新。<br><br>在没有设置签名之前，请在模拟器上跑示例。</p></blockquote><h2 id="TODO-List"><a href="#TODO-List" class="headerlink" title="TODO List"></a>TODO List</h2><ul><li>Sample支持CocoaPods</li><li>设置签名脚本（现在需要对每个组件Project手动设置签名）</li><li>热更新（现在需要重启生效）</li><li>Xcode Template for creating new <code>Small Bundle</code></li></ul><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://github.com/wequick/small/wiki/iOS" target="_blank" rel="noopener">Wiki/iOS</a><br><a href="http://www.cocoachina.com/industry/20140613/8810.html" target="_blank" rel="noopener">WWDC2014之iOS使用动态库</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;div id=&quot;badge-container-huos3203-Small-04f08ae4a26&quot; class=&quot;hexo-github&quot; style=&quot;width: =&quot;&gt;
+      
+    
+    </summary>
+    
+      <category term="xcode" scheme="https://huos3203.github.io/categories/xcode/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>&lt;#标题#&gt;</title>
+    <link href="https://huos3203.github.io/2018/04/10/%3C#%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5#%3E/"/>
+    <id>https://huos3203.github.io/2018/04/10/&lt;#永久链接#&gt;/</id>
+    <published>2018-04-10T05:41:49.000Z</published>
+    <updated>2018-04-10T05:43:51.000Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h2 id="tag标签自增新建脚本"><a href="#tag标签自增新建脚本" class="headerlink" title="tag标签自增新建脚本"></a>tag标签自增新建脚本</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line">tag=$(git describe --tags `git rev-list --tags --max-count=1`)</span><br><span class="line">version=<span class="variable">$&#123;tag##*.&#125;</span></span><br><span class="line"><span class="built_in">let</span> <span class="string">"version+=1"</span></span><br><span class="line">newTag=<span class="variable">$&#123;tag%.*&#125;</span>.<span class="variable">$&#123;version&#125;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'Create New Tag '</span><span class="variable">$newTag</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;h2 id=&quot;tag标签自增新建脚本&quot;&gt;&lt;a href=&quot;#tag标签自增新建脚本&quot; class=&quot;headerlink&quot; title=&quot;tag标签自增新建脚本&quot;&gt;&lt;/a&gt;tag
+      
+    
+    </summary>
+    
+      <category term="分类" scheme="https://huos3203.github.io/categories/%E5%88%86%E7%B1%BB/"/>
+    
+    
+      <category term="&lt;#工具#&gt;" scheme="https://huos3203.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="&lt;#管理#&gt;" scheme="https://huos3203.github.io/tags/%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>当项目过大需要通过SSH方式Clone</title>
+    <link href="https://huos3203.github.io/2018/04/05/git/%E5%BD%93%E9%A1%B9%E7%9B%AE%E8%BF%87%E5%A4%A7%E9%9C%80%E8%A6%81%E9%80%9A%E8%BF%87SSH%E6%96%B9%E5%BC%8FClone/"/>
+    <id>https://huos3203.github.io/2018/04/05/git/当项目过大需要通过SSH方式Clone/</id>
+    <published>2018-04-04T17:44:24.000Z</published>
+    <updated>2018-04-04T17:44:24.000Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h3 id="设置全局提交信息"><a href="#设置全局提交信息" class="headerlink" title="设置全局提交信息"></a>设置全局提交信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email &quot;you@example.com&quot;</span><br><span class="line">git config --global user.name &quot;Your Name&quot;</span><br></pre></td></tr></table></figure><h3 id="项目过大问题"><a href="#项目过大问题" class="headerlink" title="项目过大问题"></a>项目过大问题</h3><blockquote><p>git clone 主工程出现 fatal: The remote end hung up unexpectedly3)</p></blockquote><p>通常的解决办法：</p><ol><li><p>设置提交缓存的大小为 1G：1048576000<br> git config http.postBuffer 1048576000</p></li><li><p>否则，需要配置github/gitlab的公钥<br> 生成：ssh-keygen -t rsa -C “$your_email”<br> 拷贝：pbcopy &lt; ~/.ssh/id_rsa.pub<br> 创建SSHKey：<br> 在github/gitlab新建公钥<code>add SSH Key</code>：粘贴到密钥文本框中即可。</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;h3 id=&quot;设置全局提交信息&quot;&gt;&lt;a href=&quot;#设置全局提交信息&quot; class=&quot;headerlink&quot; title=&quot;设置全局提交信息&quot;&gt;&lt;/a&gt;设置全局提交信息&lt;/h3
+      
+    
+    </summary>
+    
+      <category term="git" scheme="https://huos3203.github.io/categories/git/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>A++审核问题总结</title>
+    <link href="https://huos3203.github.io/2018/04/03/%E6%B5%8B%E8%AF%95/A++%E5%AE%A1%E6%A0%B8%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
+    <id>https://huos3203.github.io/2018/04/03/测试/A++审核问题总结/</id>
+    <published>2018-04-03T15:29:08.000Z</published>
+    <updated>2018-04-03T15:29:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p><a href="https://developer.apple.com/cn/app-store/review/guidelines/" target="_blank" rel="noopener">苹果审核规则</a><br>答审核人员回访时提到的几个问题：</p><ol><li>处理非法内容的预防措施<br>答：我们平台会采取24小时内删除非法内容并将违规用户拉黑销号处理，通过后台运作实现有效的防范措施。</li><li>app完整及数据内容规范化<br>答：我们对含有测试文本及敏感文字的数据进行清理，保证了功能完善内容规范。</li><li>经营模式<br>举例说明：A有事想，通过发布任务给B，询问B是否有朋友可以帮忙，如果有并且愿意介绍，A愿意以红包的方式进行打赏B，这个红包是象征意义的红包，目前不会在APP内进行支付，会在线下支付，也可不支付。主要通过寻找朋友的人脉寻求帮助的场景建立起一个社交的应用场景。</li><li>通讯录权限描述不清晰<br>答：我们重新校正了权限描述，让用户更清晰准确的理解APP使用通讯录的目的。</li></ol><p>希望早日通过审核，Thanks。</p><h2 id="规则1-2-Safety-User-Generated-Content"><a href="#规则1-2-Safety-User-Generated-Content" class="headerlink" title="规则1. 2 Safety: User Generated Content"></a>规则1. 2 Safety: User Generated Content</h2><pre><code>添加举报功能</code></pre><h2 id="规则5-1-2通讯录权限"><a href="#规则5-1-2通讯录权限" class="headerlink" title="规则5.1.2通讯录权限"></a>规则5.1.2通讯录权限</h2><p>微信通讯录权限描述:</p><h4 id="登录之后弹出两个提示"><a href="#登录之后弹出两个提示" class="headerlink" title="登录之后弹出两个提示:"></a>登录之后弹出两个提示:</h4><ol><li>说明APP使用目的<br>微信将上传手机通讯录至微信服务器以匹配及推荐朋友.\n(上传通讯录仅用于匹配,不会保存资料,亦不会用作他用)</li><li>说明APP请求使用权限<br>如果不允许,微信将无法推荐通讯录中的朋友给你.微信仅使用特征码用于匹配识别,不会保存你的通讯录内容.</li></ol><p>规避封帐号的风险：</p><ol><li>总结常被拒的问题，每次发布时做好自查。</li><li>把被拒概率大的单独申请账号审核。</li></ol><h2 id="被苹果惩罚的原因（不做以下勾当就不会招来苹果惩罚）"><a href="#被苹果惩罚的原因（不做以下勾当就不会招来苹果惩罚）" class="headerlink" title="被苹果惩罚的原因（不做以下勾当就不会招来苹果惩罚）"></a>被苹果惩罚的原因（不做以下勾当就不会招来苹果惩罚）</h2><p>✕ 刷榜<br>众所周知，刷榜绝对是开发者被苹果惩罚的最主要原因。<br>✕ 诱导性运营活动<br>引导用户评论以及消费都属于诱导性运营活动。<br>✕ 被刷榜<br>这边要说下这点。所谓“被刷榜”是指，被竞争对手恶意刷好评通过苹果机制强制下架。竞争对手采用这种方式陷害竞品，而目前苹果很难界定刷榜行为的主动和被动，所以这块开发者也要注意了。<br>✕ 违规做热搜排名<br>热搜排名在ASO优化中占据重要位置，但其实热搜带来的下载量并不多，并且这种行为很容易被苹果检测到，而一些开发者仍然乐意在这块冒险。<br>✕ 加入非官方支付代码<br>有些开发商为了方便玩家支付，擅自绕开苹果的支付体系，加入支付宝代码等，这种行为被苹果发现后绝对是会直接封号，毫不留情。<br>✕ 涉政、违法<br>这点大家应该都很清楚，如果应用的功能涉及侵犯他人的隐私滥用隐私权限或者存在与宗教、法律相悖的内容，也会遭到下架。</p><h2 id="对策"><a href="#对策" class="headerlink" title="对策"></a>对策</h2><p>✓ 1.一旦你的产品被惩罚，第一时间，邮件，电话等等方式找苹果，表示自己毫不知情，是受害者，希望能够恢复。态度一定要诚恳，据说这招很灵，不妨一试。<br>✓ 2.发动用户找苹果投诉，表示自己在App Store找不到喜欢的产品了，影响了用户体验。不过这招一定不能用力过猛，否则可能再给你的应用帮倒忙。<br>✓ 3.没办法中的办法，就是重新申请一个开发者账号，重新申请一个新的应用，换一张皮，重新上架。<br>原文：<a href="http://m.ifeng.com/news/x1PWh003/shareNews?aid=108804258&amp;fresh=1&amp;autoFresh=1" target="_blank" rel="noopener">被苹果惩罚了之后怎么办？如何去规避风险呢</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/cn/app-store/review/guidelines/&quot; target=&quot;_blank&quot; r
+      
+    
+    </summary>
+    
+      <category term="分类" scheme="https://huos3203.github.io/categories/%E5%88%86%E7%B1%BB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>隐藏导航条底部黑线</title>
@@ -291,6 +411,29 @@
   </entry>
   
   <entry>
+    <title>支持OSX浏览PDF简单视图</title>
+    <link href="https://huos3203.github.io/2017/09/09/macOS/%E6%94%AF%E6%8C%81OSX%E6%B5%8F%E8%A7%88PDF%E7%AE%80%E5%8D%95%E8%A7%86%E5%9B%BE/"/>
+    <id>https://huos3203.github.io/2017/09/09/macOS/支持OSX浏览PDF简单视图/</id>
+    <published>2017-09-08T18:48:43.000Z</published>
+    <updated>2017-10-02T22:02:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><div id="enc_content">U2FsdGVkX19e+SweSrpcFuNph+HGfinjNzWrUrul1U5BquioAyOsv78yv6cNeJgtJukwllyBIf4uNJcde+OMd79+8Kmuq6No4I0iRP+jQu26pQLE1o1V8R+/n4Zr6iaLc77ehCGVjLddryI6BW94AnjvFbm1oOPgUXltP25tiEQaHj2K4kiT0gDzneyE04Js04/yRAS/d6jNjZE5MTgc/ULWxtpM2EoBzWU91yMYtkZV/QX2E/RhJVNGlv5K52JMCK+YHiinDWVmiUZqKr2lqKyC9m0sdGLpBvyT9Jwr1prFW0U5KjiT7usKjmQU4qYWAYOSDSzNR2wbL7BTNlSx0i2CPdr6GjClkbcjWTkRGurW0zCZOmds8MNdXvxfS+BOyxFua+EmA1jIgBbBfHm9aUZpgiRPv+78ruWDfferABJhLajgKKtaoCf48S6sgwQZzuRneVq1hPIWgc4rQEVPdFd3qWQvQO9IvdAB+HaHXtTfK2VE388gU25NHuzOzOmGjaaPRXaPFx+9OtGAGUMr08xHgtXyiCQAQDhZ/SyyrHtecHWSoYUelIJ29aMHuxTQbLHGWXx3619n0fRdaK6W5QP99lUJ+fC1aYYXhiAFvqfXr8jGw+7umzpjqj2cNkzeOABSgOpNcQ8D7mHVOX9QOKfKQhyBr5QTKsOcB1a6DvpgMHm/7g3blNF1vBtexj56xFGg6gMxmt2tyqbzZlHsGJlNg7TK6zaPWy0xsHXCPqsn3Xov6WAvQpA0+kYn71zbXWWfYfwXlEsvZhcYCE8uxh2q2wypPq4bmdjeM3KJryVoNVL3Vs2JuqNd4eH7KDJA5/p+qfANkrVxTPylhaNuCmQRXfyfr5AUC6PhtSi9ZUhH7W6lBR6ARkkckBlZzUXampKeOkRRtja/4Ip8KLfJr+yQMeEnnPxnDNdlgGkK4bEpyLYFzGOgEw4h0Rf0Z5CuxZtXzNtSg68alkNdinP9+k3+7NcHrSLAXn7654do5avFi+zLxwoHD1rRNBNVj0b3UeAe+KMOVgQpXmqXJehP4Omf9OlnlAWp6+zy3X7jQ8GP4rOqWLXiuj/8qe04f2hs9+amsoOKXmgXEdodJUNIsdTuEdn16aJjYlvGavV26Vl5lUXpflfnppLZpMgjy7+JZuL7+HU0guKabS8C8RfAyeGsY4ER6UHlrKhX0HJmNfmeNFsO2qObGoWTxabJm9Sw</div><script src="/js/crypto-js.js"></script><script>var pwd = window.prompt("please input password","");var txt = document.getElementById("enc_content").innerHTML;var bytes  = CryptoJS.AES.decrypt(txt, pwd);var plaintext = bytes.toString(CryptoJS.enc.Utf8);document.getElementById("enc_content").innerHTML = plaintext</script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;div id=&quot;enc_content&quot;&gt;U2FsdGVkX19e+SweSrpcFuNph+HGfinjNzWrUrul1U5BquioAyOsv78yv6cNeJgtJukw
+      
+    
+    </summary>
+    
+      <category term="分类" scheme="https://huos3203.github.io/categories/%E5%88%86%E7%B1%BB/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>ngrok使用</title>
     <link href="https://huos3203.github.io/2017/09/06/%E5%B7%A5%E5%85%B7/ngrok%E4%BD%BF%E7%94%A8/"/>
     <id>https://huos3203.github.io/2017/09/06/工具/ngrok使用/</id>
@@ -360,157 +503,6 @@
       <category term="swift" scheme="https://huos3203.github.io/categories/swift/"/>
     
       <category term="依赖" scheme="https://huos3203.github.io/categories/swift/%E4%BE%9D%E8%B5%96/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>在space-vim平台安装若干插件</title>
-    <link href="https://huos3203.github.io/2017/08/17/shell/%E5%9C%A8space-vim%E5%B9%B3%E5%8F%B0%E5%AE%89%E8%A3%85%E8%8B%A5%E5%B9%B2%E6%8F%92%E4%BB%B6/"/>
-    <id>https://huos3203.github.io/2017/08/17/shell/在space-vim平台安装若干插件/</id>
-    <published>2017-08-17T14:26:46.000Z</published>
-    <updated>2017-08-17T15:02:27.000Z</updated>
-    
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h2 id="space-vim"><a href="#space-vim" class="headerlink" title="space-vim"></a>space-vim</h2><p>首次启用一个 layer，需要执行 SPC f R, 或者 :so $MYVIMRC, 重新加载 .vimrc 并执行 :PlugInstall 安装所需的相关插件 。或者退出重新打开 vim, vim-plug 将会检测并自动安装缺失的插件。<br>基于vim-plug的插件管理平台<br><a href="https://github.com/junegunn/vim-plug#commands" target="_blank" rel="noopener">vim-plug命令工具</a></p><h3 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h3><table><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><code>PlugInstall [name ...] [#threads]</code></td><td>Install plugins</td></tr><tr><td><code>PlugUpdate [name ...] [#threads]</code></td><td>Install or update plugins</td></tr><tr><td><code>PlugClean[!]</code></td><td>Remove unused directories (bang version will clean without prompt)</td></tr><tr><td><code>PlugUpgrade</code></td><td>Upgrade vim-plug itself</td></tr><tr><td><code>PlugStatus</code></td><td>Check the status of plugins</td></tr><tr><td><code>PlugDiff</code></td><td>Examine changes from the previous update and the pending changes</td></tr><tr><td><code>PlugSnapshot[!] [output path]</code></td><td>Generate script for restoring the current snapshot of the plugins</td></tr></tbody></table><h3 id="Plug-options"><a href="#Plug-options" class="headerlink" title="Plug options"></a><code>Plug</code> options</h3><table><thead><tr><th>Option</th><th>Description</th></tr></thead><tbody><tr><td><code>branch</code>/<code>tag</code>/<code>commit</code></td><td>Branch/tag/commit of the repository to use</td></tr><tr><td><code>rtp</code></td><td>Subdirectory that contains Vim plugin</td></tr><tr><td><code>dir</code></td><td>Custom directory for the plugin</td></tr><tr><td><code>as</code></td><td>Use different name for the plugin</td></tr><tr><td><code>do</code></td><td>Post-update hook (string or funcref)</td></tr><tr><td><code>on</code></td><td>On-demand loading: Commands or <code>&lt;Plug&gt;</code>-mappings</td></tr><tr><td><code>for</code></td><td>On-demand loading: File types</td></tr><tr><td><code>frozen</code></td><td>Do not update unless explicitly specified</td></tr></tbody></table><h2 id="安装objc-自动提示插件YouCompleteMe"><a href="#安装objc-自动提示插件YouCompleteMe" class="headerlink" title="安装objc 自动提示插件YouCompleteMe"></a>安装objc 自动提示插件YouCompleteMe</h2><p><a href="https://github.com/Valloric/YouCompleteMe#commands" target="_blank" rel="noopener">YouCompleteMe命令工具</a></p><ol><li><p>在spacevim添加<br>使用space-vim封装的layer</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Layer &apos;ycmd&apos;         &quot;语法自动补齐</span><br></pre></td></tr></table></figure><p>YouCompleteMe 安装位置： <code>~/.vim/plugged/YouCompleteMe</code> 。</p></li><li><p>编译 YCM<br>在使用space-vim平台上，使用layer方式安装会执行如下编译操作：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!./install.py --clang-completer</span><br></pre></td></tr></table></figure></li></ol><p>详见脚本：space-vim/layers/+tools/ycmd/packages.vim</p><p>参考：<a href="http://www.cocoachina.com/ios/20170224/18751.html" target="_blank" rel="noopener">征服恐惧！用 Vim 写 iOS App</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install cmake</span><br><span class="line">./install.py --clang-completer --system-libclang</span><br></pre></td></tr></table></figure></p><p><code>--clang-completer</code>: 告诉脚本需要 clang 的支持<br><code>--system-libclang</code>: 告诉编译脚本使用系统的 clang，因为之前 clang 升级 4.0 的时候，并没有已经编译好的包给我下载，所以这里不用系统 clang 的话，编译脚本会下载一个 clang 3.0，这样就无法支持 iOS 10.0 以后的 sdk 了，因为 iOS 10.0 以后的 sdk 为了支持 swift 引入了一些 clang 3.0 不支持的新语法，所以这里要加上 –system-libclang。</p><ol><li>FlagsForFile脚本获取编译参数<br>YCMD 是通过每个项目路径下的 <code>.ycm_extra_conf.py</code> 脚本文件，定义了<code>FlagsForFile</code> 的函数来获取某一个特定文件需要的编译参数，一般情况下大部分文件的编译参数是相同的。</li></ol><h3 id="配置swiftlint语法矫正工具"><a href="#配置swiftlint语法矫正工具" class="headerlink" title="配置swiftlint语法矫正工具"></a>配置swiftlint语法矫正工具</h3><p>安装<br>方式一：<code>brew install swiftlint</code><br>方式二：下载[swiftlint.pkg][<a href="https://github.com/realm/SwiftLint/releases/latest" target="_blank" rel="noopener">https://github.com/realm/SwiftLint/releases/latest</a>]<br>方式三：<code>pod &#39;SwiftLint&#39;</code>，对单个项目集成swiftlint</p><p>配置<br>在Xcode中<br>新增一个： “Run Script Phase”:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="built_in">which</span> swiftlint &gt;/dev/null; <span class="keyword">then</span></span><br><span class="line">swiftlint</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint"</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure></p><p>在终端预览：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ swiftlint <span class="built_in">help</span></span><br><span class="line">Available commands:</span><br><span class="line"></span><br><span class="line">autocorrect  Automatically correct warnings and errors</span><br><span class="line"><span class="built_in">help</span>         Display general or <span class="built_in">command</span>-specific <span class="built_in">help</span></span><br><span class="line">lint         Print lint warnings and errors <span class="keyword">for</span> the Swift files <span class="keyword">in</span> the current directory (default <span class="built_in">command</span>)</span><br><span class="line">rules        Display the list of rules and their identifiers</span><br><span class="line">version      Display the current version of SwiftLint</span><br></pre></td></tr></table></figure><p>支持vim编辑器：<br><a href="https://github.com/keith/swift.vim" target="_blank" rel="noopener">keith/swift.vim</a></p><ol><li>安装 <a href="https://github.com/scrooloose/syntastic/" target="_blank" rel="noopener">syntastic</a></li><li>当在存在<code>Package.swift</code>的swift目录中启动vim，swiftpm将自动可用。</li><li>当在存在<code>.swiftlint.yml</code>的swift目录中启动vim，且SwiftLint已安装，自动启用swiftlint。</li><li>在vimrc中添加配置，当启动vim即可使用：<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> g:syntastic_swift_checkers = [<span class="string">'swiftpm'</span>, <span class="string">'swiftlint'</span>]</span><br></pre></td></tr></table></figure></li></ol><h3 id="支持swift自动补齐"><a href="#支持swift自动补齐" class="headerlink" title="支持swift自动补齐"></a>支持swift自动补齐</h3><p>keith/sourcekittendaemon.vim：这个插件提供了Vim集成SourceKittenDaemon。这意味着你可以在vim中开发swift项目<br>需要两步：</p><ol><li>安装 <a href="https://github.com/jpsim/SourceKitten" target="_blank" rel="noopener">sourcekitten</a><br> 方式一：<code>brew install sourcekitten</code><br> 方式二：clone源码 ,运行<code>swift build</code><br> 方式三： clone 源码，运行 <code>make install</code><br> 方式三： <a href="https://github.com/jpsim/SourceKitten/releases" target="_blank" rel="noopener">pkg安装包</a><br> 执行<code>sourcekitten help</code>验证安装成功。</li><li>安装SourceKittenDaemon环境<br> 安装并设置<a href="https://github.com/terhechte/SourceKittenDaemon" target="_blank" rel="noopener">SourceKittenDaemon</a><br> 方式一：<a href="https://github.com/terhechte/SourceKittenDaemon/releases/" target="_blank" rel="noopener">pkg安装包</a><br> 方式二：1. Clone the repository  2. 安装 <code>make install</code><br> 执行<code>SourceKittenDaemon help</code>验证安装成功。<br> 启动后台驻守服务HTTP：<a href="https://github.com/terhechte/SourceKittenDaemon/blob/master/Protocol.org" target="_blank" rel="noopener">参考Protocol.org</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SourceKittenDaemon start --port 44876 --project /private/tmp/abcde/abcde.xcodeproj</span><br></pre></td></tr></table></figure></li></ol><p><code>--port</code>: 服务使用的端口号，默认为<code>8081</code>，vim目前不支持指定SourceKittenDaemon端口，使用默认的8081。<br><code>--project=</code>: 指定服务将要加载的<code>.xcodeproj</code>文件路径，不支持指定<code>.xcworkspaces</code>文件路径</p><p>使用get方法请求后驻服务：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/complete  # X-Offset|X-Path|X-File</span><br><span class="line">/stop     # 停止后驻服务. 一般用于为其他target提供服务时，重新启动服务。</span><br><span class="line">/ping     # ping后驻服务，运行正常 return OK</span><br><span class="line">/project  # 打印当前加载的project文件路径。</span><br><span class="line">/files    # 打印一个当前加载的project中包含的所有swift文件列表</span><br></pre></td></tr></table></figure></p><ol><li>安装vim插件<br>使用vim-plug安装<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Plug &apos;keith/sourcekittendaemon.vim&apos;</span><br></pre></td></tr></table></figure></li></ol><p>NOTE: This plugin doesn’t provide Swift runtime files. If you’d like those checkout swift.vim</p><h3 id="AsyncRun-shell-command"><a href="#AsyncRun-shell-command" class="headerlink" title="AsyncRun shell command"></a>AsyncRun shell command</h3><p> use</p><ol><li>open quick window<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:copen</span><br></pre></td></tr></table></figure></li></ol><ol><li>run shell command<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:AsyncRun git status</span><br></pre></td></tr></table></figure></li></ol><p>now, show git status log in the quick window </p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;h2 id=&quot;space-vim&quot;&gt;&lt;a href=&quot;#space-vim&quot; class=&quot;headerlink&quot; title=&quot;space-vim&quot;&gt;&lt;/a&gt;space-vim
-      
-    
-    </summary>
-    
-      <category term="vim" scheme="https://huos3203.github.io/categories/vim/"/>
-    
-      <category term="工具" scheme="https://huos3203.github.io/categories/vim/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>PBBReader项目重构模型</title>
-    <link href="https://huos3203.github.io/2017/07/26/%E4%B8%AA%E4%BA%BA%E9%A1%B9%E7%9B%AE/PBBReader%E9%A1%B9%E7%9B%AE%E9%87%8D%E6%9E%84%E6%A8%A1%E5%9E%8B/"/>
-    <id>https://huos3203.github.io/2017/07/26/个人项目/PBBReader项目重构模型/</id>
-    <published>2017-07-25T17:06:47.000Z</published>
-    <updated>2017-08-17T14:54:01.000Z</updated>
-    
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p><img src="http://www.plantuml.com/plantuml/svg/ZLPRJnj757xVNp5ofQpKS7cib0SaY8L2KneBK2lLvM5j3_OgQw_hNNfHX0G2WxaOJA10I75Y2iLDmQP1nc07_6TsnhjF-GkTdTcRRqddnPvpllFDDpDdpbbLL2K80YCZ4r28m9HHk6s-BXahMPnVmiK2ogzpOPXGOGh4g9_x518c8XQAuxza0w0_B_71PhE-fDMlJTZHFWZByQIS8Ao3GMP7kUmqq6ukyFevsghYtJBUMFWnWRF7Uc43M4GyuUmdmo949oluglY8nJTh3JP7MsMjVchC7-gD5VtL8R7x1WPyUYEFDqzHvXAbhxNw7YhVwlyM21MX9AHVc0C0Hc0frEwopRlInm-74fnH1rDYDAOEgd9oC2IhgXm7WCRGS8v_G0UmbDINK2vZiR2Di0cgRA3JVS303tYEH-cBvbdMmh-jeWzRZxwL8x1l0ePL8H6LOD-eB96Zx1jD2N7OzrYIPoDzVa4LGe82UOvQWG_bocYjE1m8-5vmW8mW-Uk74emAAfm6WWA-4MOJuHYnSdCS8mG-yw2MDvWkEmwV7-kDJQDGcGRaZ8EelDnyku1Nxz7hl6di3ceSwALB1dL1xQ4CMjh0cHnRs0Dj8-WEdNCsk_P6NxmZUMU9jlU3CjVQtHyj-s7q9uVetKljRiUONyNhVpihwALxL3h4Hul6gvmZXaQqUvYWapsqjOqoorhjdrPukuV1g--9qPXVG9bzlL1q8kPQD1i7QRrSxwAv-fxaAjwzTlbk6sXxhMrXnqOX-EK5thtNpvQDu-t_0JJUN7qMMDdIpp81_sWF-MI7pStBAI7KefqQNU6rVMEdffV_melf7ZJQpJkjLYCl7pKMsyYyBiR7BEIAoDEqoUOu-qa0d_AJ9AhGF-83BpZgvbEq6E7VBt6sX6exrEZYdKfc1jZhsieOcTT3LKK4URhD4cepnCahbbpRd6VRl9oGn0JyXA1d5E1TDeZkqoGdtGrpj1G0NqnLamyLEVmSgjQvMOuM6wKmwPdLS-DXejCpbTKOJ7dcoTcG98ObCUIzD-yoJwQc0Yr2XoV7dX1D7gLcGGE-vlcvThEAzsud_K-TSfDVGEbLl5aaxyGg1fCn8GK9n9h6PvEHcMcN1QNFcxj5L3r5wQhDydXM8ULuxDdaLyCIJAdVYV0NAreLup2bM9FXoC_4AofY8keXPFrBkp_IAtiM8H-S_65S3eaIrM4cdLi-AHEveN7XEJcdJX_VuXpgKMM2Ory_7OSHKGX8mcyzU3eXGrsUkBCFlRA4Qpbh1pDM-ewDjBwbkXWG8fxR3P3JaHE29q-34p0gAcfB3YX98UpDaU-XH7etTC_PanNEod4X2fM1NyE2ea1LwIA38Rg8wN3OaZeSL5Y7rIFFwwEfo0yvW_Jwz5NpoYg-0BWUddFkWbL1fzzn7Mt9QWqT7QONqblNEJVPGR_vYM7US4URQSbRq4-_GYZGRGXZ8xOTj9qxnzB2eNTwf-Em-RnV0_Qttemianyk99C4PDtL_BPZrly0"></p><h3 id="使用属性结构与法"><a href="#使用属性结构与法" class="headerlink" title="使用属性结构与法"></a>使用属性结构与法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">\`\`\`puml</span><br><span class="line">salt</span><br><span class="line">&#123;</span><br><span class="line">    &#123;T</span><br><span class="line">    + world</span><br><span class="line">    ++ America</span><br><span class="line">    ++ sss</span><br><span class="line">    +++ aaa</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">\`\`\`puml</span><br></pre></td></tr></table></figure><p><img src="http://www.plantuml.com/plantuml/svg/AqxCAU6gvgeEuLBGLYZFByf90JAq5HnpKuioanF1xEBYOX2jhP2OcCXLorKB0000"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;p&gt;&lt;img src=&quot;http://www.plantuml.com/plantuml/svg/ZLPRJnj757xVNp5ofQpKS7cib0SaY8L2KneBK2lL
-      
-    
-    </summary>
-    
-      <category term="项目" scheme="https://huos3203.github.io/categories/%E9%A1%B9%E7%9B%AE/"/>
-    
-      <category term="结构" scheme="https://huos3203.github.io/categories/%E9%A1%B9%E7%9B%AE/%E7%BB%93%E6%9E%84/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>WKWebView控件和JS脚本传参及交互</title>
-    <link href="https://huos3203.github.io/2017/07/07/iOS/WKWebView%E6%8E%A7%E4%BB%B6%E5%92%8CJS%E8%84%9A%E6%9C%AC%E4%BC%A0%E5%8F%82%E5%8F%8A%E4%BA%A4%E4%BA%92/"/>
-    <id>https://huos3203.github.io/2017/07/07/iOS/WKWebView控件和JS脚本传参及交互/</id>
-    <published>2017-07-07T09:54:41.000Z</published>
-    <updated>2017-09-09T08:07:47.000Z</updated>
-    
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h3 id="WebKit简介"><a href="#WebKit简介" class="headerlink" title="WebKit简介"></a>WebKit简介</h3><div id="badge-container-huos3203-WKWebView-JS-d03bc0e" class="hexo-github" style="width: ="></div><script src="/hexo-github/badge.js"></script><script type="text/javascript">  loadStyle("/hexo-github/style.css");  loadStyle("/hexo-github/octicons/octicons.css");  new Badge("#badge-container-huos3203-WKWebView-JS-d03bc0e", "huos3203", "WKWebView-JS", "d03bc0e", false);</script><p>自iOS8 以后，苹果推出了新框架 WebKit，提供了替换 UIWebView 的组件 WKWebView。各种 UIWebView 的性能问题没有了，速度更快了，占用内存少了，体验更好了，下面列举一些其它的优势:<br>1、在性能、稳定性、功能方面有很大提升（加载速度，内存的提升谁用谁知道）<br>2、更多的支持 HTML5 的特性<br>3、官方宣称的高达60fps的滚动刷新率以及内置手势<br>4、Safari 相同的 JavaScript 引擎<br>5、将 UIWebViewDelegate 与 UIWebView 拆分成了14类与3个协议，包含该更细节功能的实现。</p><p><img src="http://www.plantuml.com/plantuml/svg/XLPjJzjM5FxkNt55f2O19rAtRnv2cfYg3THr6jloOR3AYI_1O6paE6HexKGfwLBUaa61bVSEA6YZZ0eDQ4B8d_6z3f_w5tQkhvqub6ht0_ZQvzpddESyvznOggLXbEXDuEGFAiwHnRcUllhq6jqu4b9Ojx29Xh2iO5Emoy_g1xlsvGufJf65RQVq36pjyfvTNgGRPL8u4x2kUBP2k9qlvBojaDqJ-iS2FNn5DbUHzpuiXDcNhLaffScPZ2WdCvOffonHPP23SWgBiguRbcofXYvYFJiA7lNZslNgCTdUbYAng7FmX6uy5oEXg5tRf3DxOkJNA9dB-wyxeYH_14zXYEMEkrWeJcMQb0fUAB3tdhZ17O0W-JVEmRndjdDEBelIruQ2nMznofBrj8R5UuO66OhtJ7aKYzsQaLN4BsHBJieP71R6vDI8dCQeJNtGnpXwiVtvDr-rTNPofwwkNmG4oqqPAEziiEvzOElXGqHNtj7JPGW2Dett7IYYAb5LLws4QWsvy5BAq0VLTDPqMPA2fkC66EDnMSlA5kwHn-M-bAcEMU0nEgPXPlwbh2iQDhdNOo4G63-r6Lnt42KGQIo6oDijEdd08et50l29tkyps0G_2nJ4_fc61bYeFNlRwq3gZSo3YVjvVnYfUrntvqVWMaYz_MIN9bbHE3ltSIO3rVEPqHd5jnWpC8zEBoJsDn2MWZMS1juXiDiEzkAAnUpABdGHZypZpqEvbIT9KHNG8LR7SSkn7uaYuzfuv7271ZBTchwUt24l3_sojQghpyYQAIof-Z387eh-dGfC31hcVLdLNUKzqBK9wJCF5qhYwzuV7QWfUHGoiHBK_N26smI5T9sVTwh7K9s0Z4PRICj8mncwi4-AkwGqtx0PCp8-2p2LwF99CwHmo5tk0DhxZPuUDhlU6qWRVvEJAxjQSruSIZ1gCBAhB0e9SVkGlyA2-zKonf0n2DeMwB_5-a41sBClAdPrYSqzn4oudQccXoncoVi8XTAcF240Y5rU81k7dFf4BrqzUtyvT_tdD9dPgLUhFYlmhdvynSXO_vsKZdhwUDBq8a_cbsyW9GtBCaOP56y4wMwS5alsrNhZLByUT6dUhcxqwv_48O87tVR56tfU0HCEugnD1r7UNwxvVeqlG7g__caSQ27vVQvR8BA563y32TLFdaAwVFxrwoYdwegHY-TmSaIruZVA6W-KDHuePuJNCmh-_Cc-AAiAlpE08r9Tegli9k9Od4nkoEa3SpshQJTAudUc56mzo9VElgQ5lrefPvLOE2V5bPu-kFIk9nU138v09Y_xTI2Ih6y1F939xUh_x3U-mvbUel6aeKo07BlSvSelV-gSLiZw5IdEr6jR32qeq2vlkRSHiwpFJ3bJxvoZrrBaKLVKgHpGvpKnqXvbLrIXXCI84Qq_MOETY4Z-pAwiXCIVnSTYX_WJWkETSirrZSMYv9Zj42GMYSUZzPThi0iBYTwsksseFVOZQzI1668xBbt96nDkKgYpXKiTQQe-WaAv8HNaU4FKRZVd-Eq1h84SeIXqyvLTEMjAMF3wWo6dJOnrmFPqJ7SkIEqfZ0Dm05o1Zp9an3GyQFbnDlJMQCSFP0--YTx_TUCI2lZmADp0abeM3pHbG_QccV9TdP322UGMSFEjKEUZE4TCQZ0N1-8mCoJKQ9ecW1yO6n0G6SzIuZtMEDN_5JPe06cca3GciCcKiZNBgEHl_mC0"></p><h4 id="添加监听代理和JS接口"><a href="#添加监听代理和JS接口" class="headerlink" title="添加监听代理和JS接口"></a>添加监听代理和JS接口</h4><p>在OC中添加监听的接口清单：以JS脚本的接口<code>showMobile</code>为例：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">WKWebViewConfiguration</span> *config = [[<span class="built_in">WKWebViewConfiguration</span> alloc] init];</span><br><span class="line"><span class="built_in">WKUserContentController</span> *userCC = config.userContentController;</span><br><span class="line"><span class="comment">//MARK:在OC中添加监听的接口清单：JS脚本的接口名</span></span><br><span class="line">[userCC addScriptMessageHandler:<span class="keyword">self</span> name:<span class="string">@"showMobile"</span>];</span><br></pre></td></tr></table></figure></p><h4 id="设置WKUserContentController的代理"><a href="#设置WKUserContentController的代理" class="headerlink" title="设置WKUserContentController的代理"></a>设置WKUserContentController的代理</h4><ol><li><p>设置代理类遵守<code>WKScriptMessageHandler</code>协议</p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">ViewController</span> () &lt;<span class="title">WKScriptMessageHandler</span>&gt;</span></span><br></pre></td></tr></table></figure></li><li><p>注册对JS接口监听，注入代理类</p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[userCC addScriptMessageHandler:<span class="keyword">self</span> name:<span class="string">@"showMobile"</span>];</span><br></pre></td></tr></table></figure></li><li><p>实现<code>WKUserContentController</code>代理的回调方法,响应JS接口事件</p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)userContentController:(<span class="built_in">WKUserContentController</span> *)userContentController didReceiveScriptMessage:(<span class="built_in">WKScriptMessage</span> *)message &#123;</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"%@"</span>,message.body);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol><h4 id="JS脚本接口"><a href="#JS脚本接口" class="headerlink" title="JS脚本接口"></a>JS脚本接口</h4><p>js接口声明格式：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.webkit.messageHandlers.接口名.postMessage(<span class="string">'参数'</span>)</span><br></pre></td></tr></table></figure></p><p>接口名: 在WKWebView中，当JS执行该接口时，OC会拦截预先监听的接口，并处理相关事件。</p><p>参数：object类型，多个参数时需要封装为集合类型来实现多参传递。</p><p>当OC拦截到该接口时，可以在<code>WKScriptMessageHandler</code>回调方法中的<code>WKScriptMessage</code>参数实例中获取该参数值: <code>message.body</code>。</p><p>三个例子：</p><ol><li><p>JS无参调用OC<br><br>当无参调用OC时，参数必须为<code>null</code></p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.webkit.messageHandlers.showMobile.postMessage(<span class="literal">null</span>)</span><br></pre></td></tr></table></figure></li><li><p>JS传参调用OC<br><br>传递单个参数时，直接写入即可，例如：<code>xiao黄</code></p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.webkit.messageHandlers.showName.postMessage(<span class="string">'xiao黄'</span>)</span><br></pre></td></tr></table></figure></li></ol><p>传递多个参数时，需要封装为集合类型实现多参传递。<br><br>例如:当传递一个电话，一条信息，需要封装为<code>[&#39;13300001111&#39;,&#39;Go Climbing This Weekend !!!&#39;]</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.webkit.messageHandlers.showSendMsg.postMessage([<span class="string">'13300001111'</span>, <span class="string">'Go Climbing This Weekend !!!'</span>])</span><br></pre></td></tr></table></figure></p><h3 id="iOS原生API调用JS脚本"><a href="#iOS原生API调用JS脚本" class="headerlink" title="iOS原生API调用JS脚本"></a>iOS原生API调用JS脚本</h3><p>在网页加载完成之后调用JS代码才会执行，因为这个时候html页面已经注入到webView中并且可以响应到对应方法。<br><br>例如调用JS函数<code>alertMobile()</code>：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">self</span>.wkWebView evaluateJavaScript:<span class="string">@"alertMobile()"</span> completionHandler:^(<span class="keyword">id</span> _Nullable response, <span class="built_in">NSError</span> * _Nullable error) &#123;</span><br><span class="line"><span class="comment">//TODO</span></span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"%@ %@"</span>,response,error);</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure></p><h4 id="在OC中为JS定义属性-函数"><a href="#在OC中为JS定义属性-函数" class="headerlink" title="在OC中为JS定义属性/函数"></a>在OC中为JS定义属性/函数</h4><ul><li>当注入的类型字符串类型时，必须用<code>&#39;&#39;</code>括起来。<br></li><li>OC注入的参数为全局属性，在html中的JS脚本可以直接调用属性名来获取值。<br></li></ul><p>通过NSString形式，编写JS脚本，通过以下两种方式注入网页</p><p>方式一：在初始化<code>WKWebView</code>时，通过配置<code>WKWebViewConfiguration&gt;userContentController</code>注入JS脚本  。<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//MARK:向网页中注入JS脚本例如，参数/函数等</span></span><br><span class="line"><span class="built_in">WKUserScript</span> *script = [[<span class="built_in">WKUserScript</span> alloc] initWithSource:<span class="string">@"var number=0;"</span></span><br><span class="line">injectionTime:<span class="built_in">WKUserScriptInjectionTimeAtDocumentStart</span></span><br><span class="line">forMainFrameOnly:<span class="literal">YES</span>];</span><br><span class="line"><span class="built_in">WKUserContentController</span> *userCC = config.userContentController;</span><br><span class="line">[userCC addUserScript:script];</span><br></pre></td></tr></table></figure></p><p>方式二：使用WKWebView实例方法<code>evaluateJavaScript</code>动态注入JS脚本</p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">self</span>.wkWebView evaluateJavaScript:<span class="string">@"var number=0;"</span> completionHandler:<span class="literal">nil</span>];</span><br></pre></td></tr></table></figure><h4 id="iOS原生API调用JS函数"><a href="#iOS原生API调用JS函数" class="headerlink" title="iOS原生API调用JS函数"></a>iOS原生API调用JS函数</h4><p>使用WKWebView实例方法<code>evaluateJavaScript</code>动态调用JS函数<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">self</span>.wkWebView evaluateJavaScript:<span class="string">@"alertSendMsg('18870707070','下午好！')"</span> completionHandler:<span class="literal">nil</span>];</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;h3 id=&quot;WebKit简介&quot;&gt;&lt;a href=&quot;#WebKit简介&quot; class=&quot;headerlink&quot; title=&quot;WebKit简介&quot;&gt;&lt;/a&gt;WebKit简介&lt;/h3
-      
-    
-    </summary>
-    
-      <category term="iOS" scheme="https://huos3203.github.io/categories/iOS/"/>
-    
-      <category term="控件" scheme="https://huos3203.github.io/categories/iOS/%E6%8E%A7%E4%BB%B6/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>vim编辑器键盘映射命令map</title>
-    <link href="https://huos3203.github.io/2017/07/04/shell/vim%E7%BC%96%E8%BE%91%E5%99%A8%E9%94%AE%E7%9B%98%E6%98%A0%E5%B0%84%E5%91%BD%E4%BB%A4map/"/>
-    <id>https://huos3203.github.io/2017/07/04/shell/vim编辑器键盘映射命令map/</id>
-    <published>2017-07-04T15:06:52.000Z</published>
-    <updated>2017-08-17T15:02:27.000Z</updated>
-    
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>使用<code>:map</code>命令，可以将键盘上的某个按键与Vim的命令绑定起来。<br>例如使用以下命令，可以通过F5键将单词用花括号括起来：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:map &lt;F5&gt; i&#123;e&lt;Esc&gt;a&#125;&lt;Esc&gt;</span><br></pre></td></tr></table></figure></p><p>执行过程：<code>i{</code>将插入字符<code>{</code>，然后使用<code>Esc</code>退回到命令状态；接着用<code>e</code>移到单词结尾，<code>a}</code>增加字符<code>}</code>，最后退至命令状态。<br>在执行以上命令之后，光标定位在一个单词上（例如amount），按下F5键，这时字符就会变成{amount}的形式。</p><h2 id="不同模式下的键盘映射"><a href="#不同模式下的键盘映射" class="headerlink" title="不同模式下的键盘映射"></a>不同模式下的键盘映射</h2><p>使用下表中不同形式的map命令，可以针对特定的模式设置键盘映射：</p><table><thead><tr><th style="text-align:center">Command 命令</th><th style="text-align:center">Normal 常规模式</th><th style="text-align:center">Visual可视化模式</th><th style="text-align:center">Operator Pending运算符模式</th><th style="text-align:center">Insert Only插入模式</th><th style="text-align:center">Command Line 命令行模式</th></tr></thead><tbody><tr><td style="text-align:center">:map</td><td style="text-align:center">y</td><td style="text-align:center">y</td><td style="text-align:center">y</td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center">:nmap</td><td style="text-align:center">y</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td></td></tr><tr><td style="text-align:center">:vmap</td><td style="text-align:center"></td><td style="text-align:center">y</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center">:omap</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">y</td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center">:map!</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">y</td><td style="text-align:center">y</td></tr><tr><td style="text-align:center">:imap</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">y</td><td style="text-align:center"></td></tr><tr><td style="text-align:center">:cmap</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">y</td></tr></tbody></table><h3 id="查看键盘映射"><a href="#查看键盘映射" class="headerlink" title="查看键盘映射"></a>查看键盘映射</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:map</span><br></pre></td></tr></table></figure><h3 id="取消键盘映射"><a href="#取消键盘映射" class="headerlink" title="取消键盘映射"></a>取消键盘映射</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:unmap &lt;F10&gt; #参数</span><br></pre></td></tr></table></figure><p>注意：必须为:unmap命令指定一个参数。如果未指定任何参数，那么系统将会报错，而不会取消所有的键盘映射。<br>针对不同模式下的键盘映射，需要使用与其相对应的unmap命令。例如：使用:iunmap命令，取消插入模式下的键盘映射；而取消常规模式下的键盘映射，则需要使用:nunmap命令。<br>如果想要取消所有映射，可以使用:mapclear命令。请注意，这个命令将会移除所有用户定义和系统默认的键盘映射。</p><h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><p><a href="http://blog.csdn.net/daofengdeba/article/details/7605124" target="_blank" rel="noopener">VIM键盘映射 (Map)</a><br><a href="http://www.pythonclub.org/vim/map-basic" target="_blank" rel="noopener">Vim按键映射</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;p&gt;使用&lt;code&gt;:map&lt;/code&gt;命令，可以将键盘上的某个按键与Vim的命令绑定起来。&lt;br&gt;例如使用以下命令，可以通过F5键将单词用花括号括起来：&lt;br&gt;&lt;figure
-      
-    
-    </summary>
-    
-      <category term="vim" scheme="https://huos3203.github.io/categories/vim/"/>
-    
-      <category term="工具" scheme="https://huos3203.github.io/categories/vim/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>vim编辑器的基本用法</title>
-    <link href="https://huos3203.github.io/2017/07/04/shell/vim%E7%BC%96%E8%BE%91%E5%99%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/"/>
-    <id>https://huos3203.github.io/2017/07/04/shell/vim编辑器的基本用法/</id>
-    <published>2017-07-04T10:09:29.000Z</published>
-    <updated>2017-08-17T15:02:27.000Z</updated>
-    
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p><a href="https://github.com/huos3203/vim-galore-zh_cn" target="_blank" rel="noopener">参考</a></p><h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>动作：是指移动光标的操作，你肯定很熟悉 h、j、k 和 l，以及 w 和 b。但其实，/ 也是一个动作。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:h navigation</span><br></pre></td></tr></table></figure></p><p>操作符：<br>对某个区域文本执行的操作。比如，d、~、gU 和 &gt; 都是操作符。这些操作符既可以在普通模式下使用，也可以在可视模式下使用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:h operator</span><br></pre></td></tr></table></figure></p><p>文本对象：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:h text-objects</span><br></pre></td></tr></table></figure></p><h3 id="缓冲区列表"><a href="#缓冲区列表" class="headerlink" title="缓冲区列表"></a>缓冲区列表</h3><p>缓冲区的几种状态：已激活，已载入，已列出，已命名<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">:ls  #列出所有可以列出的缓冲区</span><br><span class="line">:ls! #命令可以显示被放入缓冲区列表的和未被放入列表的缓冲区</span><br></pre></td></tr></table></figure></p><p>创建一个无名临时缓冲区<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:enew</span><br></pre></td></tr></table></figure></p><p>激活一个缓冲区<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:e file2</span><br></pre></td></tr></table></figure></p><p>命名一个缓冲区<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:w /path/file #存储位置</span><br></pre></td></tr></table></figure></p><h3 id="参数列表"><a href="#参数列表" class="headerlink" title="参数列表"></a>参数列表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:h argument-list</span><br></pre></td></tr></table></figure><p>操作命令范围概念<br>关键字符：,|;|数字|\$|%</p><h3 id="跳转历史和变更历史"><a href="#跳转历史和变更历史" class="headerlink" title="跳转历史和变更历史"></a>跳转历史和变更历史</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">:jumps</span><br><span class="line">:changes</span><br><span class="line">:h changelist</span><br><span class="line">:h jumplist</span><br></pre></td></tr></table></figure><h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><p>空格 f t 树型栏<br>, f c unite命令</p><p>markdown<br>,cp 预览效果（无效）<br>,ct 新建目录<br>,cs 显示侧边目录<br>,1..3 快速标题格式</p><h3 id="unite"><a href="#unite" class="headerlink" title="unite"></a>unite</h3><p><a href="http://www.cnblogs.com/pigzhu/p/3159161.html" target="_blank" rel="noopener">Vim插件：Unite新手指导(译)</a><br>Unite可以在一个项目中快速浏览文件。但是它不仅限于文件，其他任何可以列出的东西都可以很好的被显示和搜索。这个开放式的特性很可能是人们找到它的原因</p><h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p>Unite命令采用的格式为:Unite source，其中”source”是buffer，file和file_rec其中之一。</p><p><code>buffer</code>: 浏览当前打开的buffer列表<br><code>file</code>: 浏览当前目录的文件列表<br><code>file_rec</code>: 递归的列出当前目录的文件<br>当一个命令被使用，一个新的水平分割窗口会被打开。<br>比如，命令:<code>Unite file</code>将会显示当前目录的文件列表。在这个窗口中，标准的Vim命令模式下的命令可以使用。可以使用“<code>j</code>”和“<code>k</code>”浏览该列表，可以使用“<code>/</code>”来查询。如果你在一个文件上按下<code>enter</code>键，Unite将会打开它。如果光标是在一个目录上，Unite将会进入该目录，并且更新该文件列表。<br>使用NERO Tree命令<br>查看帮助命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?</span><br></pre></td></tr></table></figure></p><p>将选中的目录变为根目录：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C  # change tree root to the selected dir</span><br></pre></td></tr></table></figure></p><h3 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h3><h4 id="插入搜索模式"><a href="#插入搜索模式" class="headerlink" title="插入搜索模式"></a>插入搜索模式</h4><p>如果你在Unite窗口进入插入模式，光标将会移到该窗口的最上方，并显示“&gt;”提示符。输入字符会搜索该列表–这里和FuzzyFinder相似。和常规vim一样，按<esc>键可以退出插入模式回到命令模式。</esc></p><h4 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h4><p>在命令模式下，当光标在一个文件上，按下a，Unite会显示一个可以操作该文件命令的列表。这个命令列表被称为actions，这个列表可以像Unite其他部分一样被搜索和调用。</p><h4 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h4><p>actions可以组合通配符。如果输入:Unite file, 然后按下*将会标记所有文件，再输入a将会列出所有actions，最后选择above，Unite将会打开所有被标记的文件。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/huos3203/vim-galore-zh_cn&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;参
-      
-    
-    </summary>
-    
-      <category term="vim" scheme="https://huos3203.github.io/categories/vim/"/>
-    
-      <category term="工具" scheme="https://huos3203.github.io/categories/vim/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>SourceKittenSwift语法自动补齐工具</title>
-    <link href="https://huos3203.github.io/2017/06/29/shell/SourceKittenSwift%E8%AF%AD%E6%B3%95%E8%87%AA%E5%8A%A8%E8%A1%A5%E9%BD%90%E5%B7%A5%E5%85%B7/"/>
-    <id>https://huos3203.github.io/2017/06/29/shell/SourceKittenSwift语法自动补齐工具/</id>
-    <published>2017-06-29T10:08:50.000Z</published>
-    <updated>2017-08-17T15:02:27.000Z</updated>
-    
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>vim插件工具：Vundle</p><p>主题色：<br>|组合键 |   Description|<br>空格 + T + n|  随机切换颜色主题。<br>SPC T s    |使用unite buffer方式切换一个主题</p><h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><h3 id="Unite"><a href="#Unite" class="headerlink" title="Unite"></a><a href="https://github.com/Shougo/unite.vim" target="_blank" rel="noopener">Unite</a></h3><p>预定义操作命令<br>Unite或unite.vim插件可以搜索和显示信息，例如：任意源文件、缓冲区的，最近使用的文件或记录。可以直接运行在Unite窗口中显示的几个预设操作。</p><h3 id="neocomplete"><a href="#neocomplete" class="headerlink" title="neocomplete"></a>neocomplete</h3><p>一个自动补全的插件，使用TAB或ENTER键来选择。<br>同时，它又额外附带了补全代码段的特性（模版补全），要想使用这种特性，必须安装另外的插件neosnippet或者ultisnips。<br><img src="http://img.blog.csdn.net/20161026000011614?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p><h3 id="NERD-Commenter"><a href="#NERD-Commenter" class="headerlink" title="NERD Commenter"></a><a href="https://github.com/scrooloose/nerdcommenter" target="_blank" rel="noopener">NERD Commenter</a></h3><p>快速注释/解开注释</p><h3 id="Goyo-and-Limelight"><a href="#Goyo-and-Limelight" class="headerlink" title="Goyo and Limelight"></a>Goyo and Limelight</h3><p>干净模式和背景虚化。两者配合使用，效果非常好。vim 也可以很文艺</p><h3 id="Bookmarks"><a href="#Bookmarks" class="headerlink" title="Bookmarks"></a><a href="http://blog.csdn.net/mdl13412/article/details/44081509" target="_blank" rel="noopener">Bookmarks</a></h3><p>插件旨在解决 Vim 自带书签无法高亮、无法持久化、难于记忆的问题，而且解决的非常漂亮. 下面列出其主要特性:</p><p>单行书签切换 ⚑<br>单行的注释(说明)书签 ☰<br>在 quickfix 窗口中访问所有书签<br>书签自动保存，下次开启自动加载<br>针对工作目录的独立书签(可选)<br>高度可定制<br>可以和 Unite 插件的 quickfix 结合<br>不依赖 Vim 自身的 marks</p><h3 id="Gita"><a href="#Gita" class="headerlink" title="Gita"></a>Gita</h3><p>git插件</p><h3 id="其他插件"><a href="#其他插件" class="headerlink" title="其他插件"></a>其他插件</h3><p>Key    Mode    Action</p><p><leader>+gu    Normal    Open undo tree</leader></p><p><leader>+i    Normal    Toggle indentation lines</leader></p><p><leader>+j    Normal    Start smalls</leader></p><p><leader>+r    Normal    Quickrun</leader></p><p><leader>+?    Normal    Dictionary</leader></p><p><leader>+W    Normal    Wiki</leader></p><p><leader>+K    Normal    Thesaurus</leader></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;p&gt;vim插件工具：Vundle&lt;/p&gt;
-&lt;p&gt;主题色：&lt;br&gt;|组合键 |   Description|&lt;br&gt;空格 + T + n|  随机切换颜色主题。&lt;br&gt;SPC T 
-      
-    
-    </summary>
-    
-      <category term="vim" scheme="https://huos3203.github.io/categories/vim/"/>
-    
-      <category term="工具" scheme="https://huos3203.github.io/categories/vim/%E5%B7%A5%E5%85%B7/"/>
     
     
   </entry>
