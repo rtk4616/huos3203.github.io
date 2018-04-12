@@ -443,6 +443,126 @@
 <h3 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h3><h4 id="插入搜索模式"><a href="#插入搜索模式" class="headerlink" title="插入搜索模式"></a>插入搜索模式</h4><p>如果你在Unite窗口进入插入模式，光标将会移到该窗口的最上方，并显示“&gt;”提示符。输入字符会搜索该列表–这里和FuzzyFinder相似。和常规vim一样，按<esc>键可以退出插入模式回到命令模式。</esc></p>
 <h4 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h4><p>在命令模式下，当光标在一个文件上，按下a，Unite会显示一个可以操作该文件命令的列表。这个命令列表被称为actions，这个列表可以像Unite其他部分一样被搜索和调用。</p>
 <h4 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h4><p>actions可以组合通配符。如果输入:Unite file, 然后按下*将会标记所有文件，再输入a将会列出所有actions，最后选择above，Unite将会打开所有被标记的文件。</p>
+<h3 id="单行操作"><a href="#单行操作" class="headerlink" title="单行操作"></a>单行操作</h3><h4 id="光标移动"><a href="#光标移动" class="headerlink" title="光标移动"></a>光标移动</h4><p>hjkl (强例推荐使用其移动光标，但不必需) →你也可以使用光标键 (←↓↑→). 注: j 就像下箭头。</p>
+<ol>
+<li><p>单词移动：<br>1.一个单词由字母，数字和下划线组成，那么就用小写的e和w。即：程序变量移动。<br>2.单词是由blank字符分隔符，那么就用大写的E和W。 即：程序语句移动。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">w → 到下一个单词的开头。</span><br><span class="line">e → 到下一个单词的结尾。</span><br><span class="line">b → 到前一个单词的开头。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>本行移动：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0 → 数字零，到行头</span><br><span class="line">^ → 到本行第一个不是blank字符的位置（所谓blank字符就是空格，tab，换行，回车等）</span><br><span class="line">$ → 到本行行尾</span><br><span class="line">g_ → 到本行最后一个不是blank字符的位置。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>行间移动：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">NG → 到第 N 行 （陈皓注：注意命令中的G是大写的，另我一般使用 : N 到第N行，如 :137 到第137行）</span><br><span class="line">gg → 到第一行。（陈皓注：相当于1G，或 :1）</span><br><span class="line">G 到最后一行</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="多行范围"><a href="#多行范围" class="headerlink" title="多行范围"></a>多行范围</h3><p>范围 (Ranges) 其实很好理解，但很多 Vim 用户的理解不到位。</p>
+<ul>
+<li>很多命令都可以加一个数字，用于指明操作范围</li>
+<li>范围可以是一个行号，用于指定某一行</li>
+<li>范围也可以是一对通过 <code>,</code> 或 <code>;</code> 分割的行号</li>
+<li>大部分命令，默认只作用于当前行</li>
+<li>只有 <code>:write</code> 和 <code>:global</code> 是默认作用于所有行的</li>
+</ul>
+<p>范围的使用是十分直观的。以下为一些例子（其中，<code>:d</code> 为 <code>:delete</code> 的缩写）：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>操作的行</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>:d</code></td>
+<td>当前行</td>
+</tr>
+<tr>
+<td><code>:.d</code></td>
+<td>当前行</td>
+</tr>
+<tr>
+<td><code>:1d</code></td>
+<td>第一行</td>
+</tr>
+<tr>
+<td><code>:$d</code></td>
+<td>最后一行</td>
+</tr>
+<tr>
+<td><code>:1,$d</code></td>
+<td>所有行</td>
+</tr>
+<tr>
+<td><code>:%d</code></td>
+<td>所有行（这是 <code>1,$</code> 的语法糖）</td>
+</tr>
+<tr>
+<td><code>:.,5d</code></td>
+<td>当前行至第 5 行</td>
+</tr>
+<tr>
+<td><code>:,5d</code></td>
+<td>同样是当前行至第 5 行</td>
+</tr>
+<tr>
+<td><code>:,+3d</code></td>
+<td>当前行及接下来的 3 行</td>
+</tr>
+<tr>
+<td><code>:1,+3d</code></td>
+<td>第一行至当前行再加 3 行</td>
+</tr>
+<tr>
+<td><code>:,-3d</code></td>
+<td>当前行及向上的 3 行（Vim 会弹出提示信息，因为这是一个保留的范围）</td>
+</tr>
+<tr>
+<td><code>:3,&#39;xdelete</code></td>
+<td>第三行至<a href="#标注">标注</a> 为 x 的那一行</td>
+</tr>
+<tr>
+<td><code>:/^foo/,$delete</code></td>
+<td>当前行以下，以字符 “foo” 开头的那一行至结尾</td>
+</tr>
+<tr>
+<td><code>:/^foo/+1,$delete</code></td>
+<td>当前行以下，以字符 “foo” 开头的那一行的下一行至结尾</td>
+</tr>
+</tbody>
+</table>
+<p>需要注意的是，<code>;</code> 也可以用于表示范围。区别在于，<code>a,b</code> 的 <code>b</code> 是以当前行作为参考的。而 <code>a;b</code> 的 <code>b</code> 是以 <code>a</code> 行作为参考的。举个例子，现在你的光标在第 5 行。这时 <code>:1,+1d</code> 会删除第 1 行至第 6 行，而 <code>:1;+1d</code> 会删除第 1 行和第 2 行。</p>
+<h3 id="可视化区域选择并编辑文本"><a href="#可视化区域选择并编辑文本" class="headerlink" title="可视化区域选择并编辑文本"></a>可视化区域选择并编辑文本</h3><p>1.区域选择其命令格式：</p>
+<pre><code>&lt;action&gt;a&lt;object&gt; 或 &lt;action&gt;i&lt;object&gt;
+</code></pre><p>在visual 模式下，这些命令很强大。</p>
+<p><code>action</code>可以是任何的命令，如 <code>d (删除)</code>, <code>y (拷贝)</code>,<code>v (可以视模式选择)</code>。<br><code>object</code> 可能是： w 一个单词， W 一个以空格为分隔的单词， s 一个句字， p 一个段落。也可以是一个特别的字符：”、 ‘、 )、 }、 ]。</p>
+<p>示例：<br>假设你有一个字符串 (map (+) (“foo”)).而光标键在第一个 o 的位置。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vi&quot; → 会选择 foo.</span><br><span class="line">va&quot; → 会选择 &quot;foo&quot;.</span><br><span class="line">vi) → 会选择 &quot;foo&quot;.</span><br><span class="line">va) → 会选择(&quot;foo&quot;).</span><br><span class="line">v2i) → 会选择 map (+) (&quot;foo&quot;)</span><br><span class="line">v2a) → 会选择 (map (+) (&quot;foo&quot;))</span><br></pre></td></tr></table></figure></p>
+<p>2.可视化选择： v,V,<c-v></c-v></p>
+<p>前面，我们看到了 <c-v>的示例 （在Windows下应该是<c-q>），我们可以使用 v 和 V。一但被选好了，你可以做下面的事：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">J → 把所有的行连接起来（变成一行）</span><br><span class="line">&lt; 或 &gt; → 左右缩进</span><br><span class="line">= → 自动给缩进 （陈皓注：这个功能相当强大，我太喜欢了）</span><br></pre></td></tr></table></figure></c-q></c-v></p>
+<p>3.在所有被选择的行后加上点东西：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">选中相关的行 (可使用 j 或 &lt;C-d&gt; 或是 /pattern 或是 % 等……)</span><br><span class="line">$ 到行最后</span><br><span class="line">A, 输入字符串，按 ESC。</span><br></pre></td></tr></table></figure></p>
+<h3 id="文本编辑"><a href="#文本编辑" class="headerlink" title="文本编辑"></a>文本编辑</h3><p>插入光标位置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">i → Insert 模式，按 ESC 回到 Normal 模式.</span><br><span class="line">a → 在光标后插入</span><br><span class="line">o → 在当前行后插入一个新行</span><br><span class="line">O → 在当前行前插入一个新行</span><br></pre></td></tr></table></figure></p>
+<p>操作文本：</p>
+<p>1.删除：字符，单词，行</p>
+<pre><code>x → 删当前光标所在的一个字符。
+cw → 替换从光标所在位置后到一个单词结尾的字符【准确的说是删除从光标位置到一个单词结尾的字符并进入插入模式】
+dd → 删除当前行，并把删除的行存到剪贴板里
+</code></pre><p>通过行号确定你要删除的行；</p>
+<pre><code>set nu → 显示行号；
+:32,65d → 32-65行就被删除了
+</code></pre><p>2.拷贝：单词，行，段</p>
+<pre><code>ye → 当前位置拷贝到本单词的最后一个字符。
+yy → 拷贝当前行相当于 ddP（dd删除当前行，再粘贴）
+0y$ → 拷贝当前行，即：光标移动组合操作格式：&lt;start position&gt;&lt;command&gt;&lt;end position&gt;
+y2/foo → 拷贝2个 “foo” 之间的字符串。
+</code></pre><p>  还有很多时候并不一定你就一定要按y才会拷贝，下面的命令也会被拷贝：</p>
+<pre><code>d (删除 )
+v (可视化的选择)
+gU (变大写)
+gu (变小写)
+等等
+</code></pre><blockquote>
+<p>注：可视化选择是一个很有意思的命令，你可以先按v，然后移动光标，你就会看到文本被选择，然后，你可能d，也可y，也可以变大写等</p>
+</blockquote>
+<p>3.粘帖：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p/P → p是表示在当前位置之后，P表示在当前位置之前</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -784,7 +904,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本操作"><span class="nav-number">1.</span> <span class="nav-text">基本操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">2.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓冲区列表"><span class="nav-number">3.</span> <span class="nav-text">缓冲区列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数列表"><span class="nav-number">4.</span> <span class="nav-text">参数列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跳转历史和变更历史"><span class="nav-number">5.</span> <span class="nav-text">跳转历史和变更历史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用命令"><span class="nav-number">6.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#unite"><span class="nav-number">7.</span> <span class="nav-text">unite</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用法"><span class="nav-number">8.</span> <span class="nav-text">用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模式"><span class="nav-number">9.</span> <span class="nav-text">模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#插入搜索模式"><span class="nav-number">9.1.</span> <span class="nav-text">插入搜索模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#命令模式"><span class="nav-number">9.2.</span> <span class="nav-text">命令模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#操作"><span class="nav-number">9.3.</span> <span class="nav-text">操作</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本操作"><span class="nav-number">1.</span> <span class="nav-text">基本操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">2.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓冲区列表"><span class="nav-number">3.</span> <span class="nav-text">缓冲区列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数列表"><span class="nav-number">4.</span> <span class="nav-text">参数列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跳转历史和变更历史"><span class="nav-number">5.</span> <span class="nav-text">跳转历史和变更历史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用命令"><span class="nav-number">6.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#unite"><span class="nav-number">7.</span> <span class="nav-text">unite</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用法"><span class="nav-number">8.</span> <span class="nav-text">用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模式"><span class="nav-number">9.</span> <span class="nav-text">模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#插入搜索模式"><span class="nav-number">9.1.</span> <span class="nav-text">插入搜索模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#命令模式"><span class="nav-number">9.2.</span> <span class="nav-text">命令模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#操作"><span class="nav-number">9.3.</span> <span class="nav-text">操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单行操作"><span class="nav-number">10.</span> <span class="nav-text">单行操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#光标移动"><span class="nav-number">10.1.</span> <span class="nav-text">光标移动</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多行范围"><span class="nav-number">11.</span> <span class="nav-text">多行范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可视化区域选择并编辑文本"><span class="nav-number">12.</span> <span class="nav-text">可视化区域选择并编辑文本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本编辑"><span class="nav-number">13.</span> <span class="nav-text">文本编辑</span></a></li></ol></div>
             
 
           </div>
