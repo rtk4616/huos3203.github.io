@@ -100,13 +100,13 @@
 <meta property="og:site_name" content="布衣男儿">
 <meta property="og:description" content="不同点NSWindowController在Mac上应用都支持多窗口（NSWindowController），AppKit 中都有 NSWindowController担当着类似在iOS中的view controller处理的任务。  window在iOS占据整个屏幕，几乎不怎么不用。 NSViewControllerAppKit 中的 NSViewController默认不支持交互，缺少生命周">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/ViewEffectsInspector.jpgimageMogr2 | watermark">
-<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/sandbox.jpgimageMogr2 | watermark">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/ViewEffectsInspector.jpg?imageMogr2|watermark/2/w/500">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/sandbox.jpg?imageMogr2|watermark/2/w/500">
 <meta property="og:updated_time" content="2017-03-03T17:55:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从UIKit到AppKit">
 <meta name="twitter:description" content="不同点NSWindowController在Mac上应用都支持多窗口（NSWindowController），AppKit 中都有 NSWindowController担当着类似在iOS中的view controller处理的任务。  window在iOS占据整个屏幕，几乎不怎么不用。 NSViewControllerAppKit 中的 NSViewController默认不支持交互，缺少生命周">
-<meta name="twitter:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/ViewEffectsInspector.jpgimageMogr2 | watermark">
+<meta name="twitter:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/ViewEffectsInspector.jpg?imageMogr2|watermark/2/w/500">
 
 
 
@@ -456,7 +456,7 @@
 <h4 id="layer-backing启用／禁用-wantsLayer"><a href="#layer-backing启用／禁用-wantsLayer" class="headerlink" title="layer backing启用／禁用:wantsLayer"></a>layer backing启用／禁用:wantsLayer</h4><p><code>AppKit</code> 区分 <code>layer-backed view</code> 和 <code>layer-hosting view</code>，可以在每个视图树的根节点启用或者禁用 <code>layer backing</code>。<br>启用 <code>layer backing</code></p>
 <ol>
 <li>方法一：把窗口的 <code>contentView</code> 的 <code>wantsLayer</code> 属性设置为 <code>YES</code></li>
-<li>方法二：在 <code>Interface Builder</code> 的 <code>View Effects Inspector</code> 面板完成<img src="http://p27uwfdhv.bkt.clouddn.com/static/images/ViewEffectsInspector.jpgimageMogr2 | watermark">
+<li>方法二：在 <code>Interface Builder</code> 的 <code>View Effects Inspector</code> 面板完成<img src="http://p27uwfdhv.bkt.clouddn.com/static/images/ViewEffectsInspector.jpg?imageMogr2|watermark/2/w/500">
 这会导致 <code>window</code> 的视图树中所有的 <code>view</code> 都启用 <code>layer backing</code>，这样就没必要反复设置每个 <code>view</code> 的 <code>wantsLayer</code> 属性了。</li>
 </ol>
 <h4 id="修改layer属性"><a href="#修改layer属性" class="headerlink" title="修改layer属性"></a>修改layer属性</h4><p>在<code>AppKit</code>上开启<code>layer backing</code>之后，<code>layer</code>的拥有者是<code>AppKit</code>，这就意味着不能直接编辑 <code>layer</code>的属性。<br>在 <code>iOS</code> 上可以直接编辑：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">self</span>.layer.backgroundColor = [<span class="built_in">UIColor</span> redColor].CGColor;</span><br></pre></td></tr></table></figure><br>在 <code>AppKit</code>编辑<code>layer</code>属性需要以下步骤：</p>
@@ -508,7 +508,7 @@
 <p>很遗憾，<code>NSView</code> 没有开放 <code>Core Animation layer</code> 所有可以进行动画的属性，<code>transform</code> 是其中最重要的例子。看看 Jonathan Willings 的这篇文章，它描述了你可以如何解决这些限制。不过注意，文章中的解决方案是不受官方支持的。</p>
 <p>上面提到的所有东西都适用于 <code>layer-backed view</code>。对于 l<code>ayer-hosting view</code> 来说，你可以直接对 <code>view</code> 的 <code>layer</code> 或者<code>子 layer</code> 使用 <code>CAAnimations</code>，因为你拥有它们的控制权。</p>
 <h3 id="文字系统"><a href="#文字系统" class="headerlink" title="文字系统"></a>文字系统</h3><p>有了 <code>TextKit</code>，<code>iOS 7</code> 终于有了和 <code>Mac</code> 上早就有了的 <code>Cocoa Text System</code> 等效的东西。但 Apple 并不仅仅是把文字系统从 Mac 上转移到 <code>iOS</code>；相反，Apple 对其做了些显著的改变。<br>举个例子，<code>AppKit</code> 开放 <code>NSTypesetter</code> 和 <code>NSGlyphGenerator</code>，你可以通过继承这两者来自定义它们的一些特性。<code>iOS</code> 并不开放这些类，但是你可以通过 <code>NSLayoutManagerDelegate</code> 协议达到定制的目的。<br>总体来说，两个平台的文字系统还是非常相似的，所有你在 <code>iOS</code> 上能做的在 <code>Mac</code> 上都可以做（甚至更多），但对于一些东西，你必须从不同的地方寻找合适的方法实现。</p>
-<h3 id="沙盒"><a href="#沙盒" class="headerlink" title="沙盒"></a>沙盒</h3><p>符合沙盒机制的 <code>Mac 应用</code>才能通过 <code>Mac App Store</code> 销售。然而，我们已经习惯了沙盒机制还没出现之前的 <code>Mac</code> 开发环境，所以有时候会忽视一些你想要实现的功能会和沙盒的限制出现冲突。<br>管理Mac应用对沙盒支持：<br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/sandbox.jpgimageMogr2 | watermark"></p>
+<h3 id="沙盒"><a href="#沙盒" class="headerlink" title="沙盒"></a>沙盒</h3><p>符合沙盒机制的 <code>Mac 应用</code>才能通过 <code>Mac App Store</code> 销售。然而，我们已经习惯了沙盒机制还没出现之前的 <code>Mac</code> 开发环境，所以有时候会忽视一些你想要实现的功能会和沙盒的限制出现冲突。<br>管理Mac应用对沙盒支持：<br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/sandbox.jpg?imageMogr2|watermark/2/w/500"></p>
 <h2 id="独有特性"><a href="#独有特性" class="headerlink" title="独有特性"></a>独有特性</h2><p>有很多事情你只能在 Mac 上做，这主要是因为它不同的交互模型和它更为宽松的安全策略。在本期话题中，我们有一些文章深入探讨了其中的一些内容：<a href="http://objccn.io/issue-14-4/" target="_blank" rel="noopener">进程间通讯</a>，<a href="http://objccn.io/issue-14-1/" target="_blank" rel="noopener">使 Mac 应用脚本化</a>,<a href="http://objccn.io/issue-14-2/" target="_blank" rel="noopener">在沙盒中脚本化其他应用</a> , <a href="http://objccn.io/issue-14-3/" target="_blank" rel="noopener">为你的应用构建插件</a>。<br>当然，这只是 Mac 独有特性中很小的一部分，但这给了你一个很好的视角看待 iOS 8 从头开始打造其可扩展性和 app 间通讯。最后，还有很多东西等待你去探索：Drag and Drop，Printing，Bindings，OpenCL 等等，这里仅仅是举几个例子。</p>
 
       

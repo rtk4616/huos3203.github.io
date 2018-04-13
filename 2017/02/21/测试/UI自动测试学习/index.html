@@ -100,14 +100,14 @@
 <meta property="og:site_name" content="布衣男儿">
 <meta property="og:description" content="UI Testing 和 AccessibilityUI Accessibility 早在 iOS 3.0 就被引入了，用来辅助身体不便的人士使用 app。VoiceOver 是 Apple 的屏幕阅读技术，而 UI Accessibility 的基本原则就是对屏幕上的 UI 元素进行分类和标记。两者配合，通过阅读或者聆听这些元素，用户就可以在不接触屏幕的情况下通过声音来使用 app。 Acce">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/XCUIElementAttributes.pngimageMogr2 | watermark">
-<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/UIAccessibility.jpgimageMogr2 | watermark">
-<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/XCUIElementTypeQueryProvider.pngimageMogr2 | watermark">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/XCUIElementAttributes.png?imageMogr2|watermark/2/w/500">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/UIAccessibility.jpg?imageMogr2|watermark/2/w/500">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/XCUIElementTypeQueryProvider.png?imageMogr2|watermark/2/w/500">
 <meta property="og:updated_time" content="2017-05-26T11:03:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UI自动测试开发相关API">
 <meta name="twitter:description" content="UI Testing 和 AccessibilityUI Accessibility 早在 iOS 3.0 就被引入了，用来辅助身体不便的人士使用 app。VoiceOver 是 Apple 的屏幕阅读技术，而 UI Accessibility 的基本原则就是对屏幕上的 UI 元素进行分类和标记。两者配合，通过阅读或者聆听这些元素，用户就可以在不接触屏幕的情况下通过声音来使用 app。 Acce">
-<meta name="twitter:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/XCUIElementAttributes.pngimageMogr2 | watermark">
+<meta name="twitter:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/XCUIElementAttributes.png?imageMogr2|watermark/2/w/500">
 
 
 
@@ -438,9 +438,9 @@
 <h5 id="第四种所有包含的元素：containingType"><a href="#第四种所有包含的元素：containingType" class="headerlink" title="第四种所有包含的元素：containingType"></a>第四种所有包含的元素：<code>containingType</code></h5><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> buttons:<span class="type">XCUIElementQuery</span> = <span class="type">XCUIApplication</span>().containingType(.<span class="type">Button</span>)</span><br><span class="line"><span class="keyword">let</span> textFields:<span class="type">XCUIElementQuery</span> = <span class="type">XCUIApplication</span>().containingType(.textField)</span><br></pre></td></tr></table></figure>
 <h3 id="XCUIElement表示系统的各种UI控件"><a href="#XCUIElement表示系统的各种UI控件" class="headerlink" title="XCUIElement表示系统的各种UI控件"></a>XCUIElement表示系统的各种UI控件</h3><p><code>XCUIElement</code>UI控件在测试框架中的代理，继承<code>NSObject</code>，实现<code>XCUIElementAttributes</code>协议, <code>XCUIElementTypeQueryProvider</code>协议，可以表示系统的各种UI控件。</p>
 <ol>
-<li>XCUIElementAttributes协议：里面包含了UIAccessibility中的部分属性<img src="http://p27uwfdhv.bkt.clouddn.com/static/images/XCUIElementAttributes.pngimageMogr2 | watermark">
-<img src="http://p27uwfdhv.bkt.clouddn.com/static/images/UIAccessibility.jpgimageMogr2 | watermark"></li>
-<li>XCUIElementTypeQueryProvider协议：包含了系统中大部分UI控件的类型，可通过读属性的方式取得某种类型的UI集合<img src="http://p27uwfdhv.bkt.clouddn.com/static/images/XCUIElementTypeQueryProvider.pngimageMogr2 | watermark">
+<li>XCUIElementAttributes协议：里面包含了UIAccessibility中的部分属性<img src="http://p27uwfdhv.bkt.clouddn.com/static/images/XCUIElementAttributes.png?imageMogr2|watermark/2/w/500">
+<img src="http://p27uwfdhv.bkt.clouddn.com/static/images/UIAccessibility.jpg?imageMogr2|watermark/2/w/500"></li>
+<li>XCUIElementTypeQueryProvider协议：包含了系统中大部分UI控件的类型，可通过读属性的方式取得某种类型的UI集合<img src="http://p27uwfdhv.bkt.clouddn.com/static/images/XCUIElementTypeQueryProvider.png?imageMogr2|watermark/2/w/500">
 </li>
 </ol>
 <h4 id="访问UI控件"><a href="#访问UI控件" class="headerlink" title="访问UI控件"></a>访问UI控件</h4><ol>
