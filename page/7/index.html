@@ -316,6 +316,175 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://huos3203.github.io/2014/09/02/iOS/代码实现AutoLayout相关特性/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="boyer">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="布衣男儿">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2014/09/02/iOS/代码实现AutoLayout相关特性/" itemprop="url">代码实现AutoLayout相关特性</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-09-02T15:53:11Z">
+                2014-09-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/xcode/" itemprop="url" rel="index">
+                    <span itemprop="name">xcode</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/xcode/SB/" itemprop="url" rel="index">
+                    <span itemprop="name">SB</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2014/09/02/iOS/代码实现AutoLayout相关特性/" class="leancloud_visitors" data-flag-title="代码实现AutoLayout相关特性">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="按比例缩放"><a href="#按比例缩放" class="headerlink" title="按比例缩放"></a>按比例缩放</h2><p>按比例缩放，这是在Interface Builder中无法设置的内容。<br>而在代码中，有如下两种实现方式:</p>
+<ol>
+<li>使用<code>NSLayoutConstraint</code>类型的初始化函数中的<code>multiplier</code>参数就可以非常简单的设置按比例缩放。  </li>
+<li>同时也可以设置不同<code>NSLayoutAttribute</code>参数来达到意想不到的效果，比如“A的Width等于B的Height的2倍”这样的效果。  </li>
+</ol>
+<p>现在就拿一个简单的<strong><code>UIButton</code></strong>做示例，在ViewController中创建一个UIButton字段：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">UIButton</span> *btn;  </span><br></pre></td></tr></table></figure>  </p>
+<h4 id="需求-1："><a href="#需求-1：" class="headerlink" title="需求 1："></a>需求 1：</h4><ol>
+<li>要求<strong><code>UIButton</code></strong>水平居中，始终距离父View底部<strong>20</strong>单位，其高度是父View高度的三分之一。</li>
+<li>使用<strong>KVO</strong>来监控<strong><code>UIButton</code></strong>的大小并实时输出到屏幕上。  <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)viewDidLoad</span><br><span class="line">&#123;</span><br><span class="line">    [<span class="keyword">super</span> viewDidLoad];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//创建UIButton，不需要设置frame</span></span><br><span class="line">    btn = [<span class="built_in">UIButton</span> buttonWithType:<span class="built_in">UIButtonTypeRoundedRect</span>];</span><br><span class="line">    [btn setTitle:<span class="string">@"mgen"</span> forState:<span class="built_in">UIControlStateNormal</span>];</span><br><span class="line">    btn.backgroundColor = [<span class="built_in">UIColor</span> greenColor];</span><br><span class="line">    [<span class="keyword">self</span>.view addSubview:btn];</span><br><span class="line"></span><br><span class="line">    <span class="comment">//禁止自动转换AutoresizingMask</span></span><br><span class="line">    btn.translatesAutoresizingMaskIntoConstraints = <span class="literal">NO</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//居中</span></span><br><span class="line">    [<span class="keyword">self</span>.view addConstraint:[<span class="built_in">NSLayoutConstraint</span></span><br><span class="line">                              constraintWithItem:btn</span><br><span class="line">                              attribute:<span class="built_in">NSLayoutAttributeCenterX</span></span><br><span class="line">                              relatedBy:<span class="built_in">NSLayoutRelationEqual</span></span><br><span class="line">                              toItem:<span class="keyword">self</span>.view</span><br><span class="line">                              attribute:<span class="built_in">NSLayoutAttributeCenterX</span></span><br><span class="line">                              multiplier:<span class="number">1</span></span><br><span class="line">                              constant:<span class="number">0</span>]];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//距离底部20单位</span></span><br><span class="line">    <span class="comment">//注意NSLayoutConstraint创建的constant是加在toItem参数的，所以需要-20。</span></span><br><span class="line">    [<span class="keyword">self</span>.view addConstraint:[<span class="built_in">NSLayoutConstraint</span></span><br><span class="line">                              constraintWithItem:btn</span><br><span class="line">                              attribute:<span class="built_in">NSLayoutAttributeBottom</span></span><br><span class="line">                              relatedBy:<span class="built_in">NSLayoutRelationEqual</span></span><br><span class="line">                              toItem:<span class="keyword">self</span>.view</span><br><span class="line">                              attribute:<span class="built_in">NSLayoutAttributeBottom</span></span><br><span class="line">                              multiplier:<span class="number">1</span></span><br><span class="line">                              constant:<span class="number">-20</span>]];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//定义高度是父View的三分之一</span></span><br><span class="line">    [<span class="keyword">self</span>.view addConstraint:[<span class="built_in">NSLayoutConstraint</span></span><br><span class="line">                              constraintWithItem:btn</span><br><span class="line">                              attribute:<span class="built_in">NSLayoutAttributeHeight</span></span><br><span class="line">                              relatedBy:<span class="built_in">NSLayoutRelationEqual</span></span><br><span class="line">                              toItem:<span class="keyword">self</span>.view</span><br><span class="line">                              attribute:<span class="built_in">NSLayoutAttributeHeight</span></span><br><span class="line">                              multiplier:<span class="number">0.3</span></span><br><span class="line">                              constant:<span class="number">0</span>]];</span><br><span class="line"></span><br><span class="line">    <span class="comment">//注册KVO方法</span></span><br><span class="line">    [btn addObserver:<span class="keyword">self</span> forKeyPath:<span class="string">@"bounds"</span> options:<span class="built_in">NSKeyValueObservingOptionNew</span> | <span class="built_in">NSKeyValueObservingOptionInitial</span> context:<span class="literal">nil</span>];    </span><br><span class="line">&#125;</span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line"><span class="comment">//KVO回调</span></span><br><span class="line">- (<span class="keyword">void</span>)observeValueForKeyPath:(<span class="built_in">NSString</span> *)keyPath ofObject:(<span class="keyword">id</span>)object change:(<span class="built_in">NSDictionary</span> *)change context:(<span class="keyword">void</span> *)context</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (object == btn &amp;&amp; [keyPath isEqualToString:<span class="string">@"bounds"</span>])</span><br><span class="line">    &#123;</span><br><span class="line">        [btn setTitle:<span class="built_in">NSStringFromCGSize</span>(btn.bounds.size) forState:<span class="built_in">UIControlStateNormal</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>  
+运行结果：  <img src="http://p27uwfdhv.bkt.clouddn.com/static/images/runbtn1.png?imageMogr2/2/w/800"><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/runbtn2.png?imageMogr2/2/w/800">
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2014/09/02/iOS/代码实现AutoLayout相关特性/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://huos3203.github.io/2014/08/29/iOS/在IOS中自定义URLSchemes教程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -431,9 +600,9 @@
 <p>首先，你需要说明你想如何在程序中响应这个URL。最简单的自定义协议的方法是“唤醒”，而且可以通过URL把数据信息传递给程序，这样，程序被唤醒后能做更多的事情。</p>
 <h4 id="注册自定义URL协议"><a href="#注册自定义URL协议" class="headerlink" title="注册自定义URL协议"></a>注册自定义URL协议</h4><p>首先需要向iPhone注册一个自定义URL协议。这是在你的项目文件夹的info.plist文件进行的（就是你改变应用程序图标的同一个文件）。</p>
 <p>默认，Xcode在图形窗口中打开info.pllist，当然也可以直接用文本模式打开——对有的人来说这反而更简单。</p>
-<h6 id="Step1-右键，选择“Add-Row”-在下拉选框中选择“URL-types”，类型为Array"><a href="#Step1-右键，选择“Add-Row”-在下拉选框中选择“URL-types”，类型为Array" class="headerlink" title="Step1. 右键，选择“Add Row”,在下拉选框中选择“URL types”，类型为Array:"></a>Step1. 右键，选择“Add Row”,在下拉选框中选择“<strong>URL types</strong>”，类型为Array:</h6><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/urlScheme2.gif?imageMogr2|watermark/2/w/500">
-<h6 id="Step2-打开“Item-0″类型为Dic-添加新key为”URL-identifier”-类型为String。可以是任何值，但建议用“反域名”-例如-“com-myapp”-。"><a href="#Step2-打开“Item-0″类型为Dic-添加新key为”URL-identifier”-类型为String。可以是任何值，但建议用“反域名”-例如-“com-myapp”-。" class="headerlink" title="Step2. 打开“Item 0″类型为Dic,添加新key为”URL identifier”,类型为String。可以是任何值，但建议用“反域名”(例如 “com.myapp”)。"></a>Step2. 打开“Item 0″类型为Dic,添加新key为”URL identifier”,类型为String。可以是任何值，但建议用“反域名”(例如 “com.myapp”)。</h6><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/urlScheme2a.gif?imageMogr2|watermark/2/w/500">
-<h5 id="Step3-打开“Item-0″类型为Dic-添加新key为“URL-Schemes”-类型为Array"><a href="#Step3-打开“Item-0″类型为Dic-添加新key为“URL-Schemes”-类型为Array" class="headerlink" title="Step3. 打开“Item 0″类型为Dic,添加新key为“URL Schemes”,类型为Array:"></a>Step3. 打开“Item 0″类型为Dic,添加新key为“URL Schemes”,类型为Array:</h5><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/urlScheme2b.gif?imageMogr2|watermark/2/w/500">
+<h6 id="Step1-右键，选择“Add-Row”-在下拉选框中选择“URL-types”，类型为Array"><a href="#Step1-右键，选择“Add-Row”-在下拉选框中选择“URL-types”，类型为Array" class="headerlink" title="Step1. 右键，选择“Add Row”,在下拉选框中选择“URL types”，类型为Array:"></a>Step1. 右键，选择“Add Row”,在下拉选框中选择“<strong>URL types</strong>”，类型为Array:</h6><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/urlScheme2.gif?imageMogr2/2/w/800">
+<h6 id="Step2-打开“Item-0″类型为Dic-添加新key为”URL-identifier”-类型为String。可以是任何值，但建议用“反域名”-例如-“com-myapp”-。"><a href="#Step2-打开“Item-0″类型为Dic-添加新key为”URL-identifier”-类型为String。可以是任何值，但建议用“反域名”-例如-“com-myapp”-。" class="headerlink" title="Step2. 打开“Item 0″类型为Dic,添加新key为”URL identifier”,类型为String。可以是任何值，但建议用“反域名”(例如 “com.myapp”)。"></a>Step2. 打开“Item 0″类型为Dic,添加新key为”URL identifier”,类型为String。可以是任何值，但建议用“反域名”(例如 “com.myapp”)。</h6><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/urlScheme2a.gif?imageMogr2/2/w/800">
+<h5 id="Step3-打开“Item-0″类型为Dic-添加新key为“URL-Schemes”-类型为Array"><a href="#Step3-打开“Item-0″类型为Dic-添加新key为“URL-Schemes”-类型为Array" class="headerlink" title="Step3. 打开“Item 0″类型为Dic,添加新key为“URL Schemes”,类型为Array:"></a>Step3. 打开“Item 0″类型为Dic,添加新key为“URL Schemes”,类型为Array:</h5><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/urlScheme2b.gif?imageMogr2/2/w/800">
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2014/08/29/iOS/在IOS中自定义URLSchemes教程/#more" rel="contents">
@@ -1635,7 +1804,7 @@
 <font size="3">更直观的理解，<strong>UITextView</strong>，<strong>UITextField</strong>、<strong>UILabel</strong>等UIKit控件都已经基于<strong>Text Kit</strong>重新构建，是为UIKit框架提供高质量排版服务而扩展的一些类和协议.<br>例如：NSTextStorage对象，它本身是<strong>NSMutableAttributedString</strong>的子类，支持分批编辑，这就意味着在改变一个范围内的字符样式时，不用整体替换文本内容，就能完成排版效果。其中支持分页文本、文本包装、富文本编辑、交互式文本着色、文本折叠和自定义截取等特性。</font>  
 
 </blockquote>
-<p>IOS6之前，想实现一些丰富的文本排版，例如在textView中显示不同样式的文本，或者图片和文字混排等，就需要借助于UIWebView或者深入研究一下<code>Core Text</code>。后来iOS6，增加一个很棒的属性:<code>NSAttributedString</code>，主要用于支持UILabel、UITextField、UITextView等UIKit控件自主排版的功能。很显然，IOS7并没有满足于这一改进，同时推出一款功能更为齐全，易用的<code>Text Kit</code>新宠。<br>在iOS 6中, 用于文本的UIKit控件是基于WebKit和Core Graphics的字符串绘制方法来实现的。如下面层级体系图所示：<br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/TextRenderingArchitecture-iOS6.png?imageMogr2|watermark/2/w/500"><br>iOS 7的整体构架要更清晰，所有基于文本的UIKit控件（除了UIWebView）现在都可以使用Text Kit，如下图所示：<br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/TextRenderingArchitecture-iOS7.png?imageMogr2|watermark/2/w/500"></p>
+<p>IOS6之前，想实现一些丰富的文本排版，例如在textView中显示不同样式的文本，或者图片和文字混排等，就需要借助于UIWebView或者深入研究一下<code>Core Text</code>。后来iOS6，增加一个很棒的属性:<code>NSAttributedString</code>，主要用于支持UILabel、UITextField、UITextView等UIKit控件自主排版的功能。很显然，IOS7并没有满足于这一改进，同时推出一款功能更为齐全，易用的<code>Text Kit</code>新宠。<br>在iOS 6中, 用于文本的UIKit控件是基于WebKit和Core Graphics的字符串绘制方法来实现的。如下面层级体系图所示：<br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/TextRenderingArchitecture-iOS6.png?imageMogr2/2/w/800"><br>iOS 7的整体构架要更清晰，所有基于文本的UIKit控件（除了UIWebView）现在都可以使用Text Kit，如下图所示：<br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/TextRenderingArchitecture-iOS7.png?imageMogr2/2/w/800"></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2014/06/17/iOS/IOS7新宠TextKit/#more" rel="contents">
@@ -2334,7 +2503,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">132</span>
+                <span class="site-state-item-count">133</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2345,7 +2514,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">71</span>
+                <span class="site-state-item-count">72</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>

@@ -100,14 +100,14 @@
 <meta property="og:site_name" content="布衣男儿">
 <meta property="og:description" content="Playground 展示语法和实时执行真实数据的特性，为编写方法和库接口提供了很好的机会，通过实时编译我们能了解语法、写出例子以及获得方法如何使用的说明，所有这些就如一个活的文档展示在眼前。  演习框架API，了解框架结构SceneKitMac.playground是一个功能完备带动画的 3D 场景。你需要打开 Assistant Editor (在菜单上依次点击 View | Assista">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/xcplayground-sources.png?imageMogr2|watermark/2/w/500">
-<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/xcplayground-capture.png?imageMogr2|watermark/2/w/500">
-<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/xcplayground-documentation.png?imageMogr2|watermark/2/w/500">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/xcplayground-sources.png?imageMogr2/2/w/800">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/xcplayground-capture.png?imageMogr2/2/w/800">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/xcplayground-documentation.png?imageMogr2/2/w/800">
 <meta property="og:updated_time" content="2017-03-01T17:27:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="互动性的教学工具XCPlayground">
 <meta name="twitter:description" content="Playground 展示语法和实时执行真实数据的特性，为编写方法和库接口提供了很好的机会，通过实时编译我们能了解语法、写出例子以及获得方法如何使用的说明，所有这些就如一个活的文档展示在眼前。  演习框架API，了解框架结构SceneKitMac.playground是一个功能完备带动画的 3D 场景。你需要打开 Assistant Editor (在菜单上依次点击 View | Assista">
-<meta name="twitter:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/xcplayground-sources.png?imageMogr2|watermark/2/w/500">
+<meta name="twitter:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/xcplayground-sources.png?imageMogr2/2/w/800">
 
 
 
@@ -437,7 +437,7 @@
 <blockquote>
 <p>注意：由于此目录下的文件都是被编译成模块导入的，只有被设置成 public 的类型，属性或方法才能在 Playground 中使用。</p>
 </blockquote>
-<img src="http://p27uwfdhv.bkt.clouddn.com/static/images/xcplayground-sources.png?imageMogr2|watermark/2/w/500">
+<img src="http://p27uwfdhv.bkt.clouddn.com/static/images/xcplayground-sources.png?imageMogr2/2/w/800">
 <h2 id="导入Frameworks"><a href="#导入Frameworks" class="headerlink" title="导入Frameworks"></a>导入Frameworks</h2><p>如果想要导入外部 framework，创建一个 Xcode Workspace 包含了 framework 项目和你的 Playground。在 Build 之后，就可以通过常规的import命令导入对应的包。</p>
 <h3 id="手动配置cocoa-touch-Framework来桥接playground"><a href="#手动配置cocoa-touch-Framework来桥接playground" class="headerlink" title="手动配置cocoa touch Framework来桥接playground"></a>手动配置cocoa touch Framework来桥接playground</h3><p>在Playgroud中使用个人项目中的类相关方法，需要借助于Custom Frameworks桥接<br>注：.swift的文件中的方法必须是public修饰。<br>参考文档：<code>Playground help -&gt; Importing Custom Frameworks into a Playground</code></p>
 <ol>
@@ -472,7 +472,7 @@
 <p>通过使用 XCPCaptureValue() 函数，我们可以随着一系列的迭代建立一个变动值的图。回到我们上面提到的天气例子，让我们来看看按小时计的温度数据，使用 XCPCaptureValue 来在辅助编辑界面以时间线的方式显示 温度的值：</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> XCPlayground</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> forecast <span class="keyword">in</span> forecasts </span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> tempString = forecast[<span class="string">"temp"</span>]?[<span class="string">"english"</span>] <span class="keyword">as</span>? <span class="type">String</span>, temperature = tempString.toInt()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">XCPCaptureValue</span>(<span class="string">"Temperature"</span>, temperature)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>另一种可选的方式是, 选择 Editor → Show Result For Current Line 就会捕获当前线的数值并且直接以图表的形势显示在 Playground 流中：</p>
-<img src="http://p27uwfdhv.bkt.clouddn.com/static/images/xcplayground-capture.png?imageMogr2|watermark/2/w/500">
+<img src="http://p27uwfdhv.bkt.clouddn.com/static/images/xcplayground-capture.png?imageMogr2/2/w/800">
 <h3 id="异步执行（Asynchronous-Execution）"><a href="#异步执行（Asynchronous-Execution）" class="headerlink" title="异步执行（Asynchronous Execution）"></a>异步执行（Asynchronous Execution）</h3><p>不同于大部分 Swift 代码，是作为框架或者应用的一部分，Playgrounds 被当做是 高级代码。Playground 中的高级代码是按照指令接着指令的顺序从上到下执行的。<br>这种无容器风格的代码执行提供了立即反馈，但是存在着一个问题：在执行到了 Playground 底部后，会立即停止。网络请求，计时器，以及长时间运行的后台队列都会在提供反馈成功或者失败之前被立即终止。<br><code>PlaygroundSupport</code> 模块包含一个能够延长该过程的函数：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">var</span> needsIndefiniteExecution: <span class="type">Bool</span></span><br></pre></td></tr></table></figure></p>
 <ol>
 <li>开启异步：默认值为<code>false</code>,当使用liveView代理时，会自动设置为<code>true</code>。当为<code>true</code>时，在高级代码执行完成后，会告诉Xcode继续运行Playground页面。为<code>false</code>时，当代码执行完直接终止。</li>
@@ -490,7 +490,7 @@
 </li>
 </ol>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//: This line will have **bold** and *italic* text.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*:</span></span><br><span class="line"><span class="comment">## Headers of All Sizes</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">### Lists of Links</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">- [NSHipster](http://nshipster.com)</span></span><br><span class="line"><span class="comment">- [ASCIIwwdc](http://asciiwwdc.com)</span></span><br><span class="line"><span class="comment">- [SwiftDoc](http://swiftdoc.org)</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">### Images, Too</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">![Remote Image](http://nshipster.s3.amazonaws.com/alert.gif)</span></span><br><span class="line"><span class="comment">![Local Image](bomb.gif) </span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*Images in the Resources directory can be referenced locally*</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<img src="http://p27uwfdhv.bkt.clouddn.com/static/images/xcplayground-documentation.png?imageMogr2|watermark/2/w/500">
+<img src="http://p27uwfdhv.bkt.clouddn.com/static/images/xcplayground-documentation.png?imageMogr2/2/w/800">
 <p>Playgrounds 提供了一个我们关于分享和学习 OS X 和 iOS 相关工具的方式的重大改变。Playground 可以展示每一个特性，并且为将来的用户探索和发现你创建的库提供了空间。丢掉你的静态README.md， 换成可互动的README.playground吧，再玩起来！</p>
 
       
@@ -673,7 +673,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">132</span>
+                <span class="site-state-item-count">133</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -684,7 +684,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">71</span>
+                <span class="site-state-item-count">72</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>

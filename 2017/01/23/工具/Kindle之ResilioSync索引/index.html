@@ -100,12 +100,12 @@
 <meta property="og:site_name" content="布衣男儿">
 <meta property="og:description" content="Kindle伴侣精品书库Kindle伴原文Resilio Sync同步密钥1BOC3NIGPF2DOKETOF2FAHXJXE2HF24QWC 精品书库精品库 每周一书每周一书 国外书籍国外精选 Resilio Sync原地址详解 实现原理Resilio Sync 这款软件的优点上面已经说了一些，就是不依赖中心服务器，所有的文件都分布在用密钥连接在一起的电脑上。这里重点说一下小伙伴们关心的缺点。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/sync高级设置.png?imageMogr2|watermark/2/w/500">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/sync高级设置.png?imageMogr2/2/w/800">
 <meta property="og:updated_time" content="2017-06-28T15:57:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kindle之ResilioSync索引">
 <meta name="twitter:description" content="Kindle伴侣精品书库Kindle伴原文Resilio Sync同步密钥1BOC3NIGPF2DOKETOF2FAHXJXE2HF24QWC 精品书库精品库 每周一书每周一书 国外书籍国外精选 Resilio Sync原地址详解 实现原理Resilio Sync 这款软件的优点上面已经说了一些，就是不依赖中心服务器，所有的文件都分布在用密钥连接在一起的电脑上。这里重点说一下小伙伴们关心的缺点。">
-<meta name="twitter:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/sync高级设置.png?imageMogr2|watermark/2/w/500">
+<meta name="twitter:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/sync高级设置.png?imageMogr2/2/w/800">
 
 
 
@@ -444,7 +444,7 @@ Thumbs.db
 @eaDir
 @SynoResource
 .@__thumb
-</code></pre><h3 id="高级设置相关说明"><a href="#高级设置相关说明" class="headerlink" title="高级设置相关说明"></a>高级设置相关说明</h3><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/sync高级设置.png?imageMogr2|watermark/2/w/500">
+</code></pre><h3 id="高级设置相关说明"><a href="#高级设置相关说明" class="headerlink" title="高级设置相关说明"></a>高级设置相关说明</h3><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/sync高级设置.png?imageMogr2/2/w/800">
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">disk_low_priority：<span class="literal">true</span>  设置在磁盘上操作文件的优先级，如果设置为<span class="literal">false</span>，在同步文件时读写文件将会采用最高速度和优先级，不过这样会影响其他应用的性能。</span><br><span class="line"></span><br><span class="line">folder_rescan_interval：<span class="number">600</span>  设置扫描目录的时间间隔，单位为秒</span><br><span class="line"></span><br><span class="line">lan_encrypt_data：<span class="literal">true</span>  如果设置为ture，则在本地网络传输时会采用加密传输。</span><br><span class="line"></span><br><span class="line">lan_use_tcp：<span class="literal">false</span>  如果设置为ture，在本地网络同步会采用tcp传输，而不是采用udp传输。注意：在LAN中禁止加密并采用tcp传输，会增加传输速度。</span><br><span class="line"></span><br><span class="line">rate_limit_local_peers：<span class="literal">false</span>  申请在本地网络的peers直接限速传输，默认没有在LAN里面限速</span><br><span class="line"></span><br><span class="line">send_buf_size：<span class="number">5</span>  在发送文件时可以使用的发送缓存，可以设置<span class="number">1</span>~<span class="number">100</span>M</span><br><span class="line"></span><br><span class="line">recv_buf_size：<span class="number">5</span>  在接收文件时可以使用的接收缓存，可以设置<span class="number">1</span>~<span class="number">100</span>M</span><br><span class="line"></span><br><span class="line">sync_max_time_diff：<span class="number">600</span>  同步的设备之间的时间差别</span><br><span class="line"></span><br><span class="line">sync_trash_ttl：<span class="number">30</span>  设置多少天之后自动删除.SyncArchive目录中的文件</span><br><span class="line"></span><br><span class="line">max_file_size_diff_for_patching：<span class="number">1000</span></span><br><span class="line"></span><br><span class="line">max_file_size_for_versioning：<span class="number">1000</span>  版本控制的一个参数，不了解...</span><br></pre></td></tr></table></figure>
 <h3 id="常见问题汇总"><a href="#常见问题汇总" class="headerlink" title="常见问题汇总"></a>常见问题汇总</h3><h4 id="添加同步链接后为什么找不到节点？"><a href="#添加同步链接后为什么找不到节点？" class="headerlink" title="添加同步链接后为什么找不到节点？"></a>添加同步链接后为什么找不到节点？</h4><p>如果是刚添加同步密钥或链接，请稍等片刻。如果很长时间仍然找不到节点无法同步，请尝试：把已经添加的同步目录删除，在 Sync 界面上谭家的同步断开，然后重新添加同步密钥或同步链接。</p>
 <h4 id="提示“与-x-个用户的时间差”怎么办？"><a href="#提示“与-x-个用户的时间差”怎么办？" class="headerlink" title="提示“与 x 个用户的时间差”怎么办？"></a>提示“与 x 个用户的时间差”怎么办？</h4><p>如果系统的时间严重不准会导致 BT Sync 无法正常工作。如果 Sync 软件提示的事您的电脑有时间差，请确保开启自动时间同步，如果时间同步没问题，请先退出 Sync 软件重新开启。如果提醒其他人有时间差，请忽略。</p>
@@ -636,7 +636,7 @@ Thumbs.db
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">132</span>
+                <span class="site-state-item-count">133</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -647,7 +647,7 @@ Thumbs.db
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">71</span>
+                <span class="site-state-item-count">72</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
