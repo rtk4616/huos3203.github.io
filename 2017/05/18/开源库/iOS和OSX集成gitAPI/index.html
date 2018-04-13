@@ -100,16 +100,16 @@
 <meta property="og:site_name" content="布衣男儿">
 <meta property="og:description" content="在项目中使用git submodule工具集成子项目ObjectiveGit 在新项目中使用git submodule集成gitAPI参考官方提供的两个demo  OS X: CommitViewer      iOS: ObjectiveGit iOS Example   123git submodule add https://github.com/libgit2/objective-git">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/ObjectiveGitxiaoguo.png">
-<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/NSTextFieldBindings.png">
-<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/textFieldConections.png">
-<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/delegatebinding.png">
-<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/fontManage.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/ObjectiveGitxiaoguo.pngimageMogr2 | watermark">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/NSTextFieldBindings.pngimageMogr2 | watermark">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/textFieldConections.pngimageMogr2 | watermark">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/delegatebinding.pngimageMogr2 | watermark">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/fontManage.pngimageMogr2 | watermark">
 <meta property="og:updated_time" content="2017-09-24T09:18:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS和OSX集成gitAPI">
 <meta name="twitter:description" content="在项目中使用git submodule工具集成子项目ObjectiveGit 在新项目中使用git submodule集成gitAPI参考官方提供的两个demo  OS X: CommitViewer      iOS: ObjectiveGit iOS Example   123git submodule add https://github.com/libgit2/objective-git">
-<meta name="twitter:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/ObjectiveGitxiaoguo.png">
+<meta name="twitter:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/ObjectiveGitxiaoguo.pngimageMogr2 | watermark">
 
 
 
@@ -434,7 +434,7 @@
 <h4 id="在新项目中使用git-submodule集成gitAPI"><a href="#在新项目中使用git-submodule集成gitAPI" class="headerlink" title="在新项目中使用git submodule集成gitAPI"></a>在新项目中使用git submodule集成gitAPI</h4><p>参考官方提供的两个demo</p>
 <ul>
 <li><p>OS X: <a href="https://github.com/Abizern/CommitViewer" target="_blank" rel="noopener">CommitViewer</a>   </p>
-<img src="http://p27uwfdhv.bkt.clouddn.com/static/images/ObjectiveGitxiaoguo.png">
+<img src="http://p27uwfdhv.bkt.clouddn.com/static/images/ObjectiveGitxiaoguo.pngimageMogr2 | watermark">
 </li>
 <li><p>iOS: <a href="https://github.com/Raekye/ObjectiveGit-iOS-Example" target="_blank" rel="noopener">ObjectiveGit iOS Example</a></p>
 </li>
@@ -463,15 +463,15 @@
 <ol>
 <li>选中NSTextField的bindings检查器面板   </li>
 <li>在<code>value</code>单元内设置bind to 的值，通过下拉框选中 <code>Delegate</code>      </li>
-<li>Model key Path:输入类变量的名称。    <img src="http://p27uwfdhv.bkt.clouddn.com/static/images/NSTextFieldBindings.png">   </li>
-<li>切换到 NSTextField／Delegate的Connections检查器面板,就会看到已经建立了关联：     <img src="http://p27uwfdhv.bkt.clouddn.com/static/images/textFieldConections.png">   <img src="http://p27uwfdhv.bkt.clouddn.com/static/images/delegatebinding.png">   
+<li>Model key Path:输入类变量的名称。    <img src="http://p27uwfdhv.bkt.clouddn.com/static/images/NSTextFieldBindings.pngimageMogr2 | watermark">   </li>
+<li>切换到 NSTextField／Delegate的Connections检查器面板,就会看到已经建立了关联：     <img src="http://p27uwfdhv.bkt.clouddn.com/static/images/textFieldConections.pngimageMogr2 | watermark">   <img src="http://p27uwfdhv.bkt.clouddn.com/static/images/delegatebinding.pngimageMogr2 | watermark">   
 </li>
 </ol>
 <h5 id="依赖属性"><a href="#依赖属性" class="headerlink" title="依赖属性"></a>依赖属性</h5><p>Foundation 框架提供的表示属性依赖的机制如下：<br>参考<a href="https://github.com/huos3203/BookObjc/blob/master/publish/issue7/issue-7-3-DJBen.md#依赖的属性" target="_blank" rel="noopener">属性的依赖</a><br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="built_in">NSSet</span> *)keyPathsForValuesAffectingValueForKey:(<span class="built_in">NSString</span> *)key</span><br><span class="line"></span><br><span class="line">或</span><br><span class="line">+ (<span class="built_in">NSSet</span> *)keyPathsForValuesAffecting&lt;键名&gt;</span><br></pre></td></tr></table></figure></p>
 <p>将属性关联起来，这样就可以将类变量的值同步至UI控件中了：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="built_in">NSSet</span> *)keyPathsForValuesAffectingValueForKey:(<span class="built_in">NSString</span> *)key </span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NSSet</span> *keySet = [<span class="built_in">NSSet</span> setWithObjects:<span class="string">@"commit"</span>, <span class="literal">nil</span>];</span><br><span class="line">    <span class="keyword">if</span> ([key isEqualToString:<span class="string">@"messageTitle"</span>] ||</span><br><span class="line">        [key isEqualToString:<span class="string">@"messageDetails"</span>] ||</span><br><span class="line">        [key isEqualToString:<span class="string">@"author"</span>] ||</span><br><span class="line">        [key isEqualToString:<span class="string">@"date"</span>])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> keySet;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> [<span class="keyword">super</span> keyPathsForValuesAffectingValueForKey:key];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h4 id="实现字体样式菜单来改变字体样式"><a href="#实现字体样式菜单来改变字体样式" class="headerlink" title="实现字体样式菜单来改变字体样式"></a>实现字体样式菜单来改变字体样式</h4><ol>
 <li>在xib中拖一个Object并设置为NSFontManager.h类的实现。   </li>
-<li>选中NSFontManager.h的connections面板，将Received Actions关联到对应的菜单项即可  <img src="http://p27uwfdhv.bkt.clouddn.com/static/images/fontManage.png">
+<li>选中NSFontManager.h的connections面板，将Received Actions关联到对应的菜单项即可  <img src="http://p27uwfdhv.bkt.clouddn.com/static/images/fontManage.pngimageMogr2 | watermark">
 </li>
 </ol>
 

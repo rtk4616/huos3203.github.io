@@ -100,13 +100,13 @@
 <meta property="og:site_name" content="布衣男儿">
 <meta property="og:description" content="在以前的 OS X 系统中，给你的 App 在运行时动态载入可执行代码比较困难。现在可以通过NSBundle和 plug-ins插件,可以很方便的向原有APP中添加新功能点。 目的：在一个修改过的 TextEdit 里面加入加载 bundle 的功能 包 (Bundles) 和接口 (Interfaces)如果你打开 Xcode8 创建一个新项目，会看见 OS X 所有可以编写APP插件的模版，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/xcode8.png">
-<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/xcode6.jpg">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/xcode8.pngimageMogr2 | watermark">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/xcode6.jpgimageMogr2 | watermark">
 <meta property="og:updated_time" content="2017-02-07T13:47:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OSX 应用插件">
 <meta name="twitter:description" content="在以前的 OS X 系统中，给你的 App 在运行时动态载入可执行代码比较困难。现在可以通过NSBundle和 plug-ins插件,可以很方便的向原有APP中添加新功能点。 目的：在一个修改过的 TextEdit 里面加入加载 bundle 的功能 包 (Bundles) 和接口 (Interfaces)如果你打开 Xcode8 创建一个新项目，会看见 OS X 所有可以编写APP插件的模版，">
-<meta name="twitter:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/xcode8.png">
+<meta name="twitter:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/xcode8.pngimageMogr2 | watermark">
 
 
 
@@ -418,7 +418,7 @@
       
         <script src="/assets/js/APlayer.min.js"> </script><p>在以前的 OS X 系统中，给你的 App 在运行时动态载入可执行代码比较困难。现在可以通过<code>NSBundle</code>和 <code>plug-ins</code>插件,可以很方便的向原有APP中添加新功能点。</p>
 <p>目的：在一个修改过的 TextEdit 里面加入加载 bundle 的功能</p>
-<h2 id="包-Bundles-和接口-Interfaces"><a href="#包-Bundles-和接口-Interfaces" class="headerlink" title="包 (Bundles) 和接口 (Interfaces)"></a>包 (Bundles) 和接口 (Interfaces)</h2><p>如果你打开 Xcode8 创建一个新项目，会看见 OS X 所有可以编写APP插件的模版，例如： <code>Screen Savers</code> 到 <code>Image Units</code>等。<br>在<code>Framework &amp; Library</code>中的 <code>Bundle</code> 条目。我会在今天探索一个非常简单的的项目，那就是在一个修改过的 TextEdit 里面加入加载 bundle 的功能。<br><img title="项目模版" src="http://p27uwfdhv.bkt.clouddn.com/static/images/xcode8.png"><br><code>bundle 模版</code>项目与APP项目比较：</p>
+<h2 id="包-Bundles-和接口-Interfaces"><a href="#包-Bundles-和接口-Interfaces" class="headerlink" title="包 (Bundles) 和接口 (Interfaces)"></a>包 (Bundles) 和接口 (Interfaces)</h2><p>如果你打开 Xcode8 创建一个新项目，会看见 OS X 所有可以编写APP插件的模版，例如： <code>Screen Savers</code> 到 <code>Image Units</code>等。<br>在<code>Framework &amp; Library</code>中的 <code>Bundle</code> 条目。我会在今天探索一个非常简单的的项目，那就是在一个修改过的 TextEdit 里面加入加载 bundle 的功能。<br><img title="项目模版" src="http://p27uwfdhv.bkt.clouddn.com/static/images/xcode8.pngimageMogr2 | watermark"><br><code>bundle 模版</code>项目与APP项目比较：</p>
 <ol>
 <li>一个 <code>Contents</code> 目录，里面包含了 <code>Info.plist</code> 和 <code>Resource</code> 目录。</li>
 <li>如果你在你的项目下加入了新的类，你可以看见包含一个可执行文件的 <code>MacOS</code> 目录。</li>
@@ -452,7 +452,7 @@
 </li>
 </ol>
 <h2 id="集成插件"><a href="#集成插件" class="headerlink" title="集成插件"></a>集成插件</h2><p>运行 <code>TextEdit</code> （它会创建<code>Plug-Ins</code>目录），然后构建 <code>MarkYellow</code> 工程。把 <code>MarkYellow.bundle</code> 丢到你的 <code>~/Library/Application Support/Text Edit/Plug-Ins/</code> 目录下面，重启你的 <code>TextEdit</code> 应用。<br>一切看起来都很好，扫描，加载，插入一个菜单，然后，当你使用菜单项的时候，传递到参数到插件里面。试一试，点击 <code>Plug-Ins ▸ Mark Selected Text Yellow</code>，选择的文字的背景颜色就变成黄色的了。</p>
-<h2 id="XCode8版本问题"><a href="#XCode8版本问题" class="headerlink" title="XCode8版本问题"></a>XCode8版本问题</h2><p>Xcode8 不再支持<code>Application Plug-in</code>插件<br><img title="项目创建模版" src="http://p27uwfdhv.bkt.clouddn.com/static/images/xcode6.jpg"><br><a href="http://www.jianshu.com/p/39443429f71d" target="_blank" rel="noopener">XCode8.2.1继续使用xcode插件</a><br>这个是因为苹果解决xcode ghost，把插件屏蔽了。<br>解决方法<br><code>sudo /usr/libexec/xpccachectl</code><br>然后必须重启电脑后生效.</p>
+<h2 id="XCode8版本问题"><a href="#XCode8版本问题" class="headerlink" title="XCode8版本问题"></a>XCode8版本问题</h2><p>Xcode8 不再支持<code>Application Plug-in</code>插件<br><img title="项目创建模版" src="http://p27uwfdhv.bkt.clouddn.com/static/images/xcode6.jpgimageMogr2 | watermark"><br><a href="http://www.jianshu.com/p/39443429f71d" target="_blank" rel="noopener">XCode8.2.1继续使用xcode插件</a><br>这个是因为苹果解决xcode ghost，把插件屏蔽了。<br>解决方法<br><code>sudo /usr/libexec/xpccachectl</code><br>然后必须重启电脑后生效.</p>
 
       
     </div>

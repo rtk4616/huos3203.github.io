@@ -100,12 +100,12 @@
 <meta property="og:site_name" content="布衣男儿">
 <meta property="og:description" content="触发转场的方式官方支持的自定义转场 在 UINavigationController 中 push 和 pop; 在 UITabBarController 中切换 Tab; Modal 转场：presentation 和 dismissal，俗称视图控制器的模态显示和消失，仅限于modalPresentationStyle属性为 UIModalPresentationFullScreen 或 U">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/semi-transparent.png">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/semi-transparent.pngimageMogr2 | watermark">
 <meta property="og:updated_time" content="2017-02-25T14:33:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="通过转场动画代理协议自定义来展示型控制器">
 <meta name="twitter:description" content="触发转场的方式官方支持的自定义转场 在 UINavigationController 中 push 和 pop; 在 UITabBarController 中切换 Tab; Modal 转场：presentation 和 dismissal，俗称视图控制器的模态显示和消失，仅限于modalPresentationStyle属性为 UIModalPresentationFullScreen 或 U">
-<meta name="twitter:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/semi-transparent.png">
+<meta name="twitter:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/semi-transparent.pngimageMogr2 | watermark">
 
 
 
@@ -442,7 +442,7 @@
 <h4 id="转场环境-Transition-Context"><a href="#转场环境-Transition-Context" class="headerlink" title="转场环境(Transition Context):"></a>转场环境(Transition Context):</h4><p>提供转场中需要的数据；遵守<uiviewcontrollercontexttransitioning>协议；由 UIKit 在转场开始前生成并提供给我们提交的动画控制器和交互控制器使用。</uiviewcontrollercontexttransitioning></p>
 <h4 id="转场协调器-Transition-Coordinator-："><a href="#转场协调器-Transition-Coordinator-：" class="headerlink" title="转场协调器(Transition Coordinator)："></a>转场协调器(Transition Coordinator)：</h4><p>可在转场动画发生的同时并行执行其他的动画，其作用与其说协调不如说辅助，主要在 Modal 转场和交互转场取消时使用，其他时候很少用到；遵守<uiviewcontrollertransitioncoordinator>协议；由 UIKit 在转场时生成，UIViewController 在 iOS 7 中新增了方法transitionCoordinator()返回一个遵守该协议的对象，且该方法只在该控制器处于转场过程中才返回一个此类对象，不参与转场时返回 nil。</uiviewcontrollertransitioncoordinator></p>
 <p>总结下，5个协议只需要我们操心3个；实现一个最低限度可用的转场动画，我们只需要提供上面五个组件里的两个：转场代理和动画控制器即可，还有一个转场环境是必需的，不过这由系统提供；当进一步实现交互转场时，还需要我们提供交互控制器，也有现成的类供我们使用。</p>
-<h2 id="特殊的-Modal-转场"><a href="#特殊的-Modal-转场" class="headerlink" title="特殊的 Modal 转场"></a>特殊的 Modal 转场</h2><p>容器类 VC 的转场里 <code>fromView</code> 和 <code>toView</code> 是 <code>containerView</code> 的子层次的视图，而 Modal 转场里 <code>presentingView</code> 与 <code>containerView</code> 是同层次的视图，只有 <code>presentedView</code> 是 <code>containerView</code> 的子层次视图。<br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/semi-transparent.png"></p>
+<h2 id="特殊的-Modal-转场"><a href="#特殊的-Modal-转场" class="headerlink" title="特殊的 Modal 转场"></a>特殊的 Modal 转场</h2><p>容器类 VC 的转场里 <code>fromView</code> 和 <code>toView</code> 是 <code>containerView</code> 的子层次的视图，而 Modal 转场里 <code>presentingView</code> 与 <code>containerView</code> 是同层次的视图，只有 <code>presentedView</code> 是 <code>containerView</code> 的子层次视图。<br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/semi-transparent.pngimageMogr2 | watermark"></p>
 <h3 id="iOS-8引入的UIPresentationController"><a href="#iOS-8引入的UIPresentationController" class="headerlink" title="iOS 8引入的UIPresentationController"></a>iOS 8引入的UIPresentationController</h3><p><code>UIPresentationController</code>类，该类接管了 <code>UIViewController</code> 的显示过程，为其提供转场和视图管理支持。在 iOS 8.0 以上的系统里，你可以在 <code>presentation</code> 转场结束后打印视图控制器的结构，会发现 <code>presentedVC</code> 是由一个<code>UIPresentationController</code>对象来显示的，查看视图结构也能看到 <code>presentedView</code> 是 <code>UIView</code> 私有子类的<code>UITtansitionView</code>的子视图，这就是前面 <code>containerView</code> 的真面目.<br>当<code>UIViewController</code>的<code>modalPresentationStyle</code>属性为<code>.Custom</code>时(不支持.FullScreen)，我们有机会通过控制器的转场代理提供<code>UIPresentationController</code>的子类对 <code>Modal 转场</code>进行进一步的定制。实际上该类也可以在<code>.FullScreen</code>模式下使用，但是会丢失由该类负责的动画，保险起见还是遵循官方的建议，只在<code>.Custom</code>模式下使用该类。<br><code>UIPresentationController</code>类赋予 Modal 转场以下特性：</p>
 <ol>
 <li>定制 <code>presentedView</code> 的外观，尺寸以及在 <code>containerView</code> 中添加自定义视图并为这些视图添加动画；</li>
