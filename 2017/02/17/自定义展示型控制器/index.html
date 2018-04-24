@@ -92,19 +92,19 @@
 
 
 
-<meta name="description" content="触发转场的方式官方支持的自定义转场 在 UINavigationController 中 push 和 pop; 在 UITabBarController 中切换 Tab; Modal 转场：presentation 和 dismissal，俗称视图控制器的模态显示和消失，仅限于modalPresentationStyle属性为 UIModalPresentationFullScreen 或 U">
+<meta name="description" content="loadStyle(&quot;/hexo-github/style.css&quot;);   loadStyle(&quot;/hexo-github/octicons/octicons.css&quot;);   new Badge(&quot;#badge-container-huos3203-PresentationsDemo-2cce4c908&quot;, &quot;huos3203&quot;, &quot;PresentationsDemo&quot;, &quot;2cc">
 <meta name="keywords" content="转场,动画">
 <meta property="og:type" content="article">
-<meta property="og:title" content="通过转场动画代理协议自定义来展示型控制器">
+<meta property="og:title" content="自定义展示型控制器">
 <meta property="og:url" content="https://huos3203.github.io/2017/02/17/自定义展示型控制器/index.html">
 <meta property="og:site_name" content="布衣男儿">
-<meta property="og:description" content="触发转场的方式官方支持的自定义转场 在 UINavigationController 中 push 和 pop; 在 UITabBarController 中切换 Tab; Modal 转场：presentation 和 dismissal，俗称视图控制器的模态显示和消失，仅限于modalPresentationStyle属性为 UIModalPresentationFullScreen 或 U">
+<meta property="og:description" content="loadStyle(&quot;/hexo-github/style.css&quot;);   loadStyle(&quot;/hexo-github/octicons/octicons.css&quot;);   new Badge(&quot;#badge-container-huos3203-PresentationsDemo-2cce4c908&quot;, &quot;huos3203&quot;, &quot;PresentationsDemo&quot;, &quot;2cc">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/semi-transparent.png?imageMogr2/2/w/800">
-<meta property="og:updated_time" content="2017-02-25T14:33:14.000Z">
+<meta property="og:updated_time" content="2018-04-24T11:49:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="通过转场动画代理协议自定义来展示型控制器">
-<meta name="twitter:description" content="触发转场的方式官方支持的自定义转场 在 UINavigationController 中 push 和 pop; 在 UITabBarController 中切换 Tab; Modal 转场：presentation 和 dismissal，俗称视图控制器的模态显示和消失，仅限于modalPresentationStyle属性为 UIModalPresentationFullScreen 或 U">
+<meta name="twitter:title" content="自定义展示型控制器">
+<meta name="twitter:description" content="loadStyle(&quot;/hexo-github/style.css&quot;);   loadStyle(&quot;/hexo-github/octicons/octicons.css&quot;);   new Badge(&quot;#badge-container-huos3203-PresentationsDemo-2cce4c908&quot;, &quot;huos3203&quot;, &quot;PresentationsDemo&quot;, &quot;2cc">
 <meta name="twitter:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/semi-transparent.png?imageMogr2/2/w/800">
 
 
@@ -139,7 +139,7 @@
 
 
 
-  <title>通过转场动画代理协议自定义来展示型控制器 | 布衣男儿</title>
+  <title>自定义展示型控制器 | 布衣男儿</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -335,7 +335,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">通过转场动画代理协议自定义来展示型控制器</h1>
+          <h1 class="post-title" itemprop="name headline">自定义展示型控制器</h1>
         
 
         <div class="post-meta">
@@ -398,7 +398,7 @@
 
           
           
-             <span id="/2017/02/17/自定义展示型控制器/" class="leancloud_visitors" data-flag-title="通过转场动画代理协议自定义来展示型控制器">
+             <span id="/2017/02/17/自定义展示型控制器/" class="leancloud_visitors" data-flag-title="自定义展示型控制器">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -426,7 +426,15 @@
       
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><h2 id="触发转场的方式"><a href="#触发转场的方式" class="headerlink" title="触发转场的方式"></a>触发转场的方式</h2><h3 id="官方支持的自定义转场"><a href="#官方支持的自定义转场" class="headerlink" title="官方支持的自定义转场"></a>官方支持的自定义转场</h3><ul>
+        <script src="/assets/js/APlayer.min.js"> </script><div id="badge-container-huos3203-PresentationsDemo-2cce4c908" class="hexo-github" style="width: ="></div>
+<script src="/hexo-github/badge.js"></script>
+<script type="text/javascript">
+  loadStyle("/hexo-github/style.css");
+  loadStyle("/hexo-github/octicons/octicons.css");
+  new Badge("#badge-container-huos3203-PresentationsDemo-2cce4c908", "huos3203", "PresentationsDemo", "2cce4c908", false);
+</script>
+
+<h2 id="触发转场的方式"><a href="#触发转场的方式" class="headerlink" title="触发转场的方式"></a>触发转场的方式</h2><h3 id="官方支持的自定义转场"><a href="#官方支持的自定义转场" class="headerlink" title="官方支持的自定义转场"></a>官方支持的自定义转场</h3><ul>
 <li>在 <code>UINavigationController</code> 中 <code>push</code> 和 <code>pop</code>;</li>
 <li>在 <code>UITabBarController</code> 中切换 <code>Tab</code>;</li>
 <li>Modal 转场：<code>presentation</code> 和 <code>dismissal</code>，俗称视图控制器的模态显示和消失，仅限于<code>modalPresentationStyle</code>属性为 <code>UIModalPresentationFullScreen</code> 或 <code>UIModalPresentationCustom</code> 这两种模式;<br><code>UICollectionViewController</code> 的布局转场：仅限于 <code>UICollectionViewController</code> 与 <code>UINavigationController</code> 结合的转场方式，与上面三种都有点不同，不过实现很简单，可跳转至该链接查看。<br>官方的支持包含了 iOS 中的大部分转场方式，还有一种自定义容器中的转场并没有得到系统的直接支持，不过借助协议这种灵活的方式，我们依然能够实现对自定义容器控制器转场的定制，在压轴环节我们将实现这一点。<h3 id="相关触发转场的动作"><a href="#相关触发转场的动作" class="headerlink" title="相关触发转场的动作"></a>相关触发转场的动作</h3><h4 id="UINavigationController"><a href="#UINavigationController" class="headerlink" title="UINavigationController"></a>UINavigationController</h4><code>UINavigationController</code> 中所有修改其<code>viewControllers</code>栈中 <code>VC</code> 的方法都可以自定义转场动画：<figure class="highlight swift"><figcaption><span>swift</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//我们使用的最广泛的 push 和 pop 方法</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">pushViewController</span><span class="params">(<span class="number">_</span> viewController: UIViewController, animated animated: Bool)</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">popViewControllerAnimated</span><span class="params">(<span class="number">_</span> animated: Bool)</span></span> -&gt; <span class="type">UIViewController</span>?</span><br><span class="line"><span class="comment">//不怎么常用的 pop 方法</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">popToRootViewControllerAnimated</span><span class="params">(<span class="number">_</span> animated: Bool)</span></span> -&gt; [<span class="type">UIViewController</span>]?</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">popToRootViewControllerAnimated</span><span class="params">(<span class="number">_</span> animated: Bool)</span></span> -&gt; [<span class="type">UIViewController</span>]?</span><br><span class="line"><span class="comment">//这个方法有有点特别，是对 VC 栈的整体更新，开启动画后的执行比较复杂，具体参考文档说明。不建议在这种情况下开启转场动画。</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">setViewControllers</span><span class="params">(<span class="number">_</span> viewControllers: [UIViewController], animated animated: Bool)</span></span></span><br></pre></td></tr></table></figure>
