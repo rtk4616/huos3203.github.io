@@ -316,6 +316,158 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://huos3203.github.io/2015/01/06/开源库/XMPP简单研究[转]/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="boyer">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="布衣男儿">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/01/06/开源库/XMPP简单研究[转]/" itemprop="url">XMPP简单研究[转]</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-01-06T14:36:06Z">
+                2015-01-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/开源库/" itemprop="url" rel="index">
+                    <span itemprop="name">开源库</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2015/01/06/开源库/XMPP简单研究[转]/" class="leancloud_visitors" data-flag-title="XMPP简单研究[转]">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>最近想做一个游戏服务器和 IM 互通的服务。最初的想法是可以增进游戏帐号的安全，比如游戏用户可以通过绑定一个 IM 帐号，从而不用登陆游戏就向游戏服务器发一些指令。这些指定通常是用来冻结一些帐号的功能。而游戏服务器也可以通过 IM 帐号向离线用户发送一些关键消息。这样，只需要解除绑定 IM 帐号需要一定的时间，或使用更安全的途径，即可以让游戏帐号更加安全。（至少，游戏用户可以从 IM 上获知他的游戏帐号每次登陆登出的时间、IP 等等）</p>
+<p>后来细想，这里面可以做的东西还有许多。玩家会因为多一个信息通道，而更轻松的去玩那些需要长期驻留的游戏。游戏厂商也可以多一个挽留玩家的渠道，甚至用来宣传新游戏或游戏的增值服务，等等。好处不再列举。</p>
+<p>其实、绑定 IM 帐号和绑定手机号本质上区别不大。只不过，IM 帐号几乎是零费用，又不像 SMS ，控制权掌控在移动手里。IM 更适合做双向交流（SMS 的双向交流不那么方便，而且对用户和游戏运营商都有经济负担）。独立提供一个 Game2IM 的服务供众多游戏运营商使用也是个有趣的主意。和 SMS 一样，只要给出一个简单接口让游戏运营商调用，把游戏网络和 IM 网络互联就可以了。</p>
+<p>实现这个想法有两个方案。其一是制作各种 IM 的机器人，通过机器人和用户 IM 沟通。这个方案技术门槛稍低，有许多现成的机器人可以使用。缺点是，受 IM 提供商的限制（比如好友数量限制）。无法使用机器人的签名针对性的向用户传递特有的消息。除非你为每个游戏用户定制一个机器人，但那样，每个机器人都需要单独一个连接，对资源消耗过大。<br>￼<!--显示文章缩略部分的标记方法--><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/01/06/开源库/XMPP简单研究[转]/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://huos3203.github.io/2014/09/02/iOS/代码实现AutoLayout相关特性/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2503,7 +2655,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">133</span>
+                <span class="site-state-item-count">134</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
