@@ -40,29 +40,6 @@
   </entry>
   
   <entry>
-    <title>GB乐理知识体系</title>
-    <link href="https://huos3203.github.io/2018/05/29/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/GB%E4%B9%90%E7%90%86%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/"/>
-    <id>https://huos3203.github.io/2018/05/29/作文作曲/GB乐理知识体系/</id>
-    <published>2018-05-29T11:32:04.000Z</published>
-    <updated>2018-05-29T12:26:48.000Z</updated>
-    
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h2 id="使用puml来梳理乐理知识点"><a href="#使用puml来梳理乐理知识点" class="headerlink" title="使用puml来梳理乐理知识点"></a>使用puml来梳理乐理知识点</h2>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;h2 id=&quot;使用puml来梳理乐理知识点&quot;&gt;&lt;a href=&quot;#使用puml来梳理乐理知识点&quot; class=&quot;headerlink&quot; title=&quot;使用puml来梳理乐理知识点
-      
-    
-    </summary>
-    
-      <category term="作文作曲" scheme="https://huos3203.github.io/categories/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>终端实现预览plantuml的插件</title>
     <link href="https://huos3203.github.io/2018/05/29/shell/%E7%BB%88%E7%AB%AF%E5%AE%9E%E7%8E%B0%E9%A2%84%E8%A7%88plantuml%E7%9A%84%E6%8F%92%E4%BB%B6/"/>
     <id>https://huos3203.github.io/2018/05/29/shell/终端实现预览plantuml的插件/</id>
@@ -81,6 +58,29 @@
     </summary>
     
       <category term="shell" scheme="https://huos3203.github.io/categories/shell/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>GB乐理知识体系</title>
+    <link href="https://huos3203.github.io/2018/05/29/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/GB%E4%B9%90%E7%90%86%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/"/>
+    <id>https://huos3203.github.io/2018/05/29/作文作曲/GB乐理知识体系/</id>
+    <published>2018-05-29T11:32:04.000Z</published>
+    <updated>2018-05-29T12:26:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h2 id="使用puml来梳理乐理知识点"><a href="#使用puml来梳理乐理知识点" class="headerlink" title="使用puml来梳理乐理知识点"></a>使用puml来梳理乐理知识点</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;h2 id=&quot;使用puml来梳理乐理知识点&quot;&gt;&lt;a href=&quot;#使用puml来梳理乐理知识点&quot; class=&quot;headerlink&quot; title=&quot;使用puml来梳理乐理知识点
+      
+    
+    </summary>
+    
+      <category term="作文作曲" scheme="https://huos3203.github.io/categories/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/"/>
     
     
   </entry>
