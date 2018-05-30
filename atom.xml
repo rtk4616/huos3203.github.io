@@ -86,29 +86,6 @@
   </entry>
   
   <entry>
-    <title>GB乐理知识体系</title>
-    <link href="https://huos3203.github.io/2018/05/29/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/GB%E4%B9%90%E7%90%86%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/"/>
-    <id>https://huos3203.github.io/2018/05/29/作文作曲/GB乐理知识体系/</id>
-    <published>2018-05-29T11:32:04.000Z</published>
-    <updated>2018-05-30T18:42:21.000Z</updated>
-    
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h2 id="使用puml来梳理乐理知识点"><a href="#使用puml来梳理乐理知识点" class="headerlink" title="使用puml来梳理乐理知识点"></a>使用puml来梳理乐理知识点</h2><h2 id="UML时序图"><a href="#UML时序图" class="headerlink" title="UML时序图"></a>UML时序图</h2><p><img src="http://www.plantuml.com/plantuml/svg/VLDBRzf04Bxlh_2vKcZwF73egHSEELKzLJsWs56GKAY8fTuG4O6O132bTMbZI7030RMgGGg5Wddy6Sy-Jlo5hhCEDT36b_NCV3lpVRCpQaoDAn8CM-wqHcqBj0fBEtJsWPmESFe8p1b2SMLFbVQLgAmaqQEGb4hX_0-iw-xup7K6SDeXdnne7fDoBfL2ZqCybuKlMp0r8DjQJ0eutyOt1gvdsDSo-rwWtICwDwdb-z6Ja4H-cYoT1oFd_ZwdlGpj6gyZwEaoqQWFuslGgjJge6SXYMMBP6h3w0Rq7d6EEGMa7CW-lSFTA5VpV7jRUX-JrNtqvi7RhQqNGKQ-QvCL2gAMYB3F8lBoVt5n4kSZlgWnCmTbxT_8bLgRhhyPGU-wJijlZu_aKSxxJewH0tl0Az3kDnGqmi8GlS963nVjnKG3BSUiNuj9VXLBvoVOQUAwnJl8KUp4Q-j3OjbWds-0MRK3uohjNkDCbYTR2N96Q-6mEscmTELGJIILY8pMer9CfgKXw9-5QpDEp3ukjO8O8SRNB_1GwtdJ6JHkUoX6iq2SFcbuZLwnx-Uwav2L-FgLiCHddhQly4LvwVFArTE2u9tAZMjy5QWzPrMRQm7zIg23T8MedUYxL_SKv_l17yIT5iLD_kDD_-tIkQCpA9Uy5Vio8yrnK1XK2j1iGxFFAXfk366YhmxIMXDyB_zsbGDLIKfxYGG_a3VLzKjlluJZ3m00"></p><h2 id="大音阶"><a href="#大音阶" class="headerlink" title="大音阶"></a>大音阶</h2><p> 12个调：7个大键5个黑键 ： 全音/半音<br> 音名：C Db D Eb E Fb F Gb G Ab A Bb B<br> 音组：十二平均律<br> 音高低，强弱，长短，音色<br> 音符时效：全音符，二分音符，四分音符，八分音符，十六分音符。<br> 斧头/符干/符尾   书写方法：斧头下干居右，斧头上干居左，符尾永居右<br> 节：<br> 拍号：<br> 乐速：BPM<br> 五线谱<br> 音程： 度数：两个音符跨度的线和间的个数，音数：两个音符相差全音和半音的个数<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">调试</span><br><span class="line">音阶</span><br><span class="line">调域</span><br><span class="line">固定唱名法/首调唱名法</span><br><span class="line">自然大调/自然小调</span><br><span class="line">和弦的---顺阶和弦</span><br><span class="line">调号</span><br><span class="line">五度圈</span><br><span class="line">大调中的主要和弦的功能与进行</span><br></pre></td></tr></table></figure></p><h3 id="C大调音阶"><a href="#C大调音阶" class="headerlink" title="C大调音阶"></a>C大调音阶</h3><p> do 在C上<br> 音名：C，D，E，F，G，A，B，C<br> 指法：1 ，2，3，1，2，3，4，5</p><h3 id="G大调音阶"><a href="#G大调音阶" class="headerlink" title="G大调音阶"></a>G大调音阶</h3><p> 音名：G，A，B，半音 C，D，E，全音F#，半音G</p><ol><li><del>扫描事件动画处理</del></li><li>巡查录入，执法权限验证进行执法</li><li>筛选商业调试UI</li><li>巡查年度列表</li><li>配置平台组件</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;h2 id=&quot;使用puml来梳理乐理知识点&quot;&gt;&lt;a href=&quot;#使用puml来梳理乐理知识点&quot; class=&quot;headerlink&quot; title=&quot;使用puml来梳理乐理知识点
-      
-    
-    </summary>
-    
-      <category term="作文作曲" scheme="https://huos3203.github.io/categories/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>终端实现预览plantuml的插件</title>
     <link href="https://huos3203.github.io/2018/05/29/shell/%E7%BB%88%E7%AB%AF%E5%AE%9E%E7%8E%B0%E9%A2%84%E8%A7%88plantuml%E7%9A%84%E6%8F%92%E4%BB%B6/"/>
     <id>https://huos3203.github.io/2018/05/29/shell/终端实现预览plantuml的插件/</id>
@@ -127,6 +104,29 @@
     </summary>
     
       <category term="shell" scheme="https://huos3203.github.io/categories/shell/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>GB乐理知识体系</title>
+    <link href="https://huos3203.github.io/2018/05/29/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/GB%E4%B9%90%E7%90%86%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/"/>
+    <id>https://huos3203.github.io/2018/05/29/作文作曲/GB乐理知识体系/</id>
+    <published>2018-05-29T11:32:04.000Z</published>
+    <updated>2018-05-30T18:42:21.000Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h2 id="使用puml来梳理乐理知识点"><a href="#使用puml来梳理乐理知识点" class="headerlink" title="使用puml来梳理乐理知识点"></a>使用puml来梳理乐理知识点</h2><h2 id="UML时序图"><a href="#UML时序图" class="headerlink" title="UML时序图"></a>UML时序图</h2><p><img src="http://www.plantuml.com/plantuml/svg/VLDBRzf04Bxlh_2vKcZwF73egHSEELKzLJsWs56GKAY8fTuG4O6O132bTMbZI7030RMgGGg5Wddy6Sy-Jlo5hhCEDT36b_NCV3lpVRCpQaoDAn8CM-wqHcqBj0fBEtJsWPmESFe8p1b2SMLFbVQLgAmaqQEGb4hX_0-iw-xup7K6SDeXdnne7fDoBfL2ZqCybuKlMp0r8DjQJ0eutyOt1gvdsDSo-rwWtICwDwdb-z6Ja4H-cYoT1oFd_ZwdlGpj6gyZwEaoqQWFuslGgjJge6SXYMMBP6h3w0Rq7d6EEGMa7CW-lSFTA5VpV7jRUX-JrNtqvi7RhQqNGKQ-QvCL2gAMYB3F8lBoVt5n4kSZlgWnCmTbxT_8bLgRhhyPGU-wJijlZu_aKSxxJewH0tl0Az3kDnGqmi8GlS963nVjnKG3BSUiNuj9VXLBvoVOQUAwnJl8KUp4Q-j3OjbWds-0MRK3uohjNkDCbYTR2N96Q-6mEscmTELGJIILY8pMer9CfgKXw9-5QpDEp3ukjO8O8SRNB_1GwtdJ6JHkUoX6iq2SFcbuZLwnx-Uwav2L-FgLiCHddhQly4LvwVFArTE2u9tAZMjy5QWzPrMRQm7zIg23T8MedUYxL_SKv_l17yIT5iLD_kDD_-tIkQCpA9Uy5Vio8yrnK1XK2j1iGxFFAXfk366YhmxIMXDyB_zsbGDLIKfxYGG_a3VLzKjlluJZ3m00"></p><h2 id="大音阶"><a href="#大音阶" class="headerlink" title="大音阶"></a>大音阶</h2><p> 12个调：7个大键5个黑键 ： 全音/半音<br> 音名：C Db D Eb E Fb F Gb G Ab A Bb B<br> 音组：十二平均律<br> 音高低，强弱，长短，音色<br> 音符时效：全音符，二分音符，四分音符，八分音符，十六分音符。<br> 斧头/符干/符尾   书写方法：斧头下干居右，斧头上干居左，符尾永居右<br> 节：<br> 拍号：<br> 乐速：BPM<br> 五线谱<br> 音程： 度数：两个音符跨度的线和间的个数，音数：两个音符相差全音和半音的个数<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">调试</span><br><span class="line">音阶</span><br><span class="line">调域</span><br><span class="line">固定唱名法/首调唱名法</span><br><span class="line">自然大调/自然小调</span><br><span class="line">和弦的---顺阶和弦</span><br><span class="line">调号</span><br><span class="line">五度圈</span><br><span class="line">大调中的主要和弦的功能与进行</span><br></pre></td></tr></table></figure></p><h3 id="C大调音阶"><a href="#C大调音阶" class="headerlink" title="C大调音阶"></a>C大调音阶</h3><p> do 在C上<br> 音名：C，D，E，F，G，A，B，C<br> 指法：1 ，2，3，1，2，3，4，5</p><h3 id="G大调音阶"><a href="#G大调音阶" class="headerlink" title="G大调音阶"></a>G大调音阶</h3><p> 音名：G，A，B，半音 C，D，E，全音F#，半音G</p><ol><li><del>扫描事件动画处理</del></li><li>巡查录入，执法权限验证进行执法</li><li>筛选商业调试UI</li><li>巡查年度列表</li><li>配置平台组件</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;h2 id=&quot;使用puml来梳理乐理知识点&quot;&gt;&lt;a href=&quot;#使用puml来梳理乐理知识点&quot; class=&quot;headerlink&quot; title=&quot;使用puml来梳理乐理知识点
+      
+    
+    </summary>
+    
+      <category term="作文作曲" scheme="https://huos3203.github.io/categories/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/"/>
     
     
   </entry>
@@ -159,9 +159,9 @@
     <link href="https://huos3203.github.io/2018/05/17/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/%E9%9B%A8%E5%A4%9C/"/>
     <id>https://huos3203.github.io/2018/05/17/作文作曲/雨夜/</id>
     <published>2018-05-17T10:58:36.000Z</published>
-    <updated>2018-05-29T12:26:48.000Z</updated>
+    <updated>2018-05-30T21:29:45.000Z</updated>
     
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h2 id="雨夜"><a href="#雨夜" class="headerlink" title="雨夜"></a>雨夜</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">卧听风雨天窗跃，左耳贯注天籁音</span><br><span class="line">不闻春雷潜入夜，广厦飞瀑挂屋檐</span><br></pre></td></tr></table></figure><!-- 简单示例 (id, server, type)  --><h2 id="滑板"><a href="#滑板" class="headerlink" title="滑板"></a>滑板</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">心如止水毽如飞，晨练漂移划湖心</span><br><span class="line">夜雨不及暑气盛，黑云压城君汗蒸</span><br></pre></td></tr></table></figure><div class="bili_video"><embed height="452" width="544" quality="high" allowfullscreen="true" type="application/x-shockwave-flash" src="http://share.acg.tv/flash.swf" flashvars="aid=1468496&page=1" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash"></div>]]></content>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h2 id="雨夜"><a href="#雨夜" class="headerlink" title="雨夜"></a>雨夜</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">卧听风雨天窗跃，左耳贯注天籁音</span><br><span class="line">不闻春雷潜入夜，广厦飞瀑挂屋檐</span><br></pre></td></tr></table></figure><!-- 简单示例 (id, server, type)  --><h2 id="滑板"><a href="#滑板" class="headerlink" title="滑板"></a>滑板</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">心如止水毽如飞，晨练漂移划湖心</span><br><span class="line">夜雨不及暑气盛，黑云压城君汗蒸</span><br></pre></td></tr></table></figure><div class="bili_video"><embed height="452" width="544" quality="high" allowfullscreen="true" type="application/x-shockwave-flash" src="http://share.acg.tv/flash.swf" flashvars="aid=1468496&page=1" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash"></div><div class="owl-media owl-video owl-bilibili"><embed src="http://static.hdslb.com/miniloader.swf" flashvars="aid=1468496&page=1" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" quality="high" allowfullscreen="true"></div>]]></content>
     
     <summary type="html">
     
