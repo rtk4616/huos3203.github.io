@@ -423,7 +423,7 @@
       
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><p>使用<code>:map</code>命令，可以将键盘上的某个按键与Vim的命令绑定起来。<br>例如使用以下命令，可以通过F5键将单词用花括号括起来：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:map &lt;F5&gt; i&#123;e&lt;Esc&gt;a&#125;&lt;Esc&gt;</span><br></pre></td></tr></table></figure></p>
+        <link rel="stylesheet" href="/owl.css"><script src="/assets/js/APlayer.min.js"> </script><p>使用<code>:map</code>命令，可以将键盘上的某个按键与Vim的命令绑定起来。<br>例如使用以下命令，可以通过F5键将单词用花括号括起来：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:map &lt;F5&gt; i&#123;e&lt;Esc&gt;a&#125;&lt;Esc&gt;</span><br></pre></td></tr></table></figure></p>
 <p>执行过程：<code>i{</code>将插入字符<code>{</code>，然后使用<code>Esc</code>退回到命令状态；接着用<code>e</code>移到单词结尾，<code>a}</code>增加字符<code>}</code>，最后退至命令状态。<br>在执行以上命令之后，光标定位在一个单词上（例如amount），按下F5键，这时字符就会变成{amount}的形式。</p>
 <h2 id="不同模式下的键盘映射"><a href="#不同模式下的键盘映射" class="headerlink" title="不同模式下的键盘映射"></a>不同模式下的键盘映射</h2><p>使用下表中不同形式的map命令，可以针对特定的模式设置键盘映射：</p>
 <table>

@@ -424,7 +424,7 @@
       
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><p>第一步：在任意目录创建调试crash的目录</p>
+        <link rel="stylesheet" href="/owl.css"><script src="/assets/js/APlayer.min.js"> </script><p>第一步：在任意目录创建调试crash的目录</p>
 <p>第二步：将之前Archive的文件copy到crash目录里面,其中包括两个文件.app和.app.dSYM</p>
 <p>第三步：将symbolicatecrash工具copy到crash目录<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /Applications/Xcode.app -name symbolicatecrash -type f</span><br></pre></td></tr></table></figure></p>
 <p>2.用命令将symbolicatecrash拷贝到桌面的crash文件夹里面，与.app和.app.dSYM放一起<br>拷贝到crash目录：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp /Applications/Xcode.app/.../symbolicatecrash /Users/Desktop/crash</span><br></pre></td></tr></table></figure></p>

@@ -429,7 +429,7 @@
       
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><p><a href="http://en.wikipedia.org/wiki/Concurrency_%28computer_science%29" target="_blank" rel="noopener">并发</a>所描述的概念就是同时运行多个任务。这些任务可能是以在单核 CPU 上<a href="http://en.wikipedia.org/wiki/Preemption_%28computing%29" target="_blank" rel="noopener">分时（时间共享）</a>的形式同时运行，也可能是在多核 CPU 上以真正的并行方式来运行。</p>
+        <link rel="stylesheet" href="/owl.css"><script src="/assets/js/APlayer.min.js"> </script><p><a href="http://en.wikipedia.org/wiki/Concurrency_%28computer_science%29" target="_blank" rel="noopener">并发</a>所描述的概念就是同时运行多个任务。这些任务可能是以在单核 CPU 上<a href="http://en.wikipedia.org/wiki/Preemption_%28computing%29" target="_blank" rel="noopener">分时（时间共享）</a>的形式同时运行，也可能是在多核 CPU 上以真正的并行方式来运行。</p>
 <p>OS X 和 iOS 提供了几种不同的 API 来支持并发编程。每一个 API 都具有不同的功能和使用限制，这使它们适合不同的任务。同时，这些 API 处在不同的抽象层级上。我们有可能用其进行非常深入底层的操作，但是这也意味着背负起将任务进行良好处理的巨大责任。</p>
 <p>实际上，并发编程是一个很有挑战的主题，它有许多错综复杂的问题和陷阱。当开发者在使用类似 <code>Grand Central Dispatch</code>（GCD）或 <code>NSOperationQueue</code> 的 API 时，很容易遗忘这些问题和陷阱。本文首先对 OS X 和 iOS 中不同的并发编程 API 进行一些介绍，然后再深入了解并发编程中独立于与你所使用的特定 API 的一些内在挑战。</p>
 <h2 id="OS-X-和-iOS-中的并发编程"><a href="#OS-X-和-iOS-中的并发编程" class="headerlink" title="OS X 和 iOS 中的并发编程"></a>OS X 和 iOS 中的并发编程</h2><p>OS X 和 iOS 提供了相同的并发编程API。 本文会介绍 <code>pthread</code> 、 <code>NSThread</code> 、<code>GCD</code> 、<code>NSOperationQueue</code>，以及 <code>NSRunLoop</code>（并非并发）。</p>

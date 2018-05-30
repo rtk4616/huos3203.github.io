@@ -423,7 +423,7 @@
       
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><h2 id="Perfect介绍"><a href="#Perfect介绍" class="headerlink" title="Perfect介绍"></a>Perfect介绍</h2><p>Perfect提供一系列代表请求和响应的对象组件，并允许在服务器上增加管理句柄用于产生页面内容。<br>所有对象都是在服务器对象创建后开始工作。服务器对象会被执行配置，随后会根据配置绑定并监听特定端口。一旦出现连接，服务器会读取请求数据，请求数据读取完成后，服务器会将request object请求对象传递给请求过滤器。</p>
+        <link rel="stylesheet" href="/owl.css"><script src="/assets/js/APlayer.min.js"> </script><h2 id="Perfect介绍"><a href="#Perfect介绍" class="headerlink" title="Perfect介绍"></a>Perfect介绍</h2><p>Perfect提供一系列代表请求和响应的对象组件，并允许在服务器上增加管理句柄用于产生页面内容。<br>所有对象都是在服务器对象创建后开始工作。服务器对象会被执行配置，随后会根据配置绑定并监听特定端口。一旦出现连接，服务器会读取请求数据，请求数据读取完成后，服务器会将request object请求对象传递给请求过滤器。</p>
 <h3 id="请求过滤器"><a href="#请求过滤器" class="headerlink" title="请求过滤器"></a>请求过滤器</h3><p>过滤器可能会根据需要修改查询请求。服务器会使用请求的URI路径检索routing请求／响应路由以获取处理该请求的具体句柄。如果找到了合适的处理句柄，服务器会传递给句柄对应的response object响应对象。当句柄反馈响应完成时，响应对象会被传递给响应过滤器。这些过滤器会根据需要修改最终输出的数据内容。最后响应结果数据会被推送给客户端浏览器，而客户端到服务器的连接或者被关闭、或者被拒绝维持HTTP持久连接、或者为后续请求和响应维持HTTP活动连接。</p>
 <h3 id="HTTP请求-响应路由"><a href="#HTTP请求-响应路由" class="headerlink" title="HTTP请求/响应路由"></a>HTTP请求/响应路由</h3><p>HTTP请求/响应路由是用于决定在当前请求下，哪一个句柄去接收和响应。</p>
 <ol>

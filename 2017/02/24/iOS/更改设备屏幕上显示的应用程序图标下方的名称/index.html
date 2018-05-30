@@ -430,7 +430,7 @@
       
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><p>修改APP启动图标上的名称，需配置<code>Info.plist</code>文件，增加<code>CFBundleDisplayName</code>属性键值对。<br>进入到如下界面：<br><!--长宽设置百分比大小无效果--><br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/qa1823_ExpandAppInProjectNavigator.png?imageMogr2/2/w/800"></p>
+        <link rel="stylesheet" href="/owl.css"><script src="/assets/js/APlayer.min.js"> </script><p>修改APP启动图标上的名称，需配置<code>Info.plist</code>文件，增加<code>CFBundleDisplayName</code>属性键值对。<br>进入到如下界面：<br><!--长宽设置百分比大小无效果--><br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/qa1823_ExpandAppInProjectNavigator.png?imageMogr2/2/w/800"></p>
 <p>在<code>Info.plist</code>文件属性列表中搜索”Bundle display name”，如果存在就修改为新APP名称。<br>如果不存在，在任何一个属性条目下，点击”+”按钮，弹出的下拉列表中选择”Bundle display name”，再双击”Bundle display name”属性值列，输入新APP名称。<br><!--长宽设置百分比大小无效果--><br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/qa1823_WatchKitAppInfoPane.png?imageMogr2/2/w/800"></p>
 <h2 id="agvtool自动增加版本号命令行工具"><a href="#agvtool自动增加版本号命令行工具" class="headerlink" title="agvtool自动增加版本号命令行工具"></a>agvtool自动增加版本号命令行工具</h2><p>版本号和编译号分别是代表了正式发布版本和内部版本， agvtool 是一个自动增加版本号的命令行工具。<br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/QA1827_AppStoreBuildNumber.png?imageMogr2/2/w/800"><br>注意：版本号是给用户看的，用于标明当前的发行版本，并且被存储在 App 的 Info.plist 文件的 CFBundleShortVersionString (Bundle versions string, short) 中。编译号是内部使用的，用于标明未发行或者已内部发行的应用程序，并且它被存储在 Info.plist 文件的 CFBundleVersion (Bundle version) 中。</p>
 <p>注意：如果应用程序包含了多个目标（target）， agvtool 工具将会把所有目标都设置为同一个版本号和编译号。</p>

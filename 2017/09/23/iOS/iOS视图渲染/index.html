@@ -426,7 +426,7 @@
       
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><h2 id="图形堆栈"><a href="#图形堆栈" class="headerlink" title="图形堆栈"></a>图形堆栈</h2><p>当像素映射到屏幕上的时候，后台发生了很多事情。但一旦他们显示到屏幕上，每一个像素均由三个颜色组件构成：红，绿，蓝。三个独立的颜色单元会根据给定的颜色显示到一个像素上。在 iPhone5 的<a href="https://zh.wikipedia.org/wiki/%E6%A9%AB%E5%90%91%E9%9B%BB%E5%A0%B4%E6%95%88%E6%87%89%E9%A1%AF%E7%A4%BA%E6%8A%80%E8%A1%93" target="_blank" rel="noopener">液晶显示器</a>上有1,136×640=727,040个像素，因此有2,181,120个颜色单元。在15寸视网膜屏的 MacBook Pro 上，这一数字达到15.5百万以上。所有的图形堆栈一起工作以确保每次正确的显示。当你滚动整个屏幕的时候，数以百万计的颜色单元必须以每秒60次的速度刷新，这是一个很大的工作量。</p>
+        <link rel="stylesheet" href="/owl.css"><script src="/assets/js/APlayer.min.js"> </script><h2 id="图形堆栈"><a href="#图形堆栈" class="headerlink" title="图形堆栈"></a>图形堆栈</h2><p>当像素映射到屏幕上的时候，后台发生了很多事情。但一旦他们显示到屏幕上，每一个像素均由三个颜色组件构成：红，绿，蓝。三个独立的颜色单元会根据给定的颜色显示到一个像素上。在 iPhone5 的<a href="https://zh.wikipedia.org/wiki/%E6%A9%AB%E5%90%91%E9%9B%BB%E5%A0%B4%E6%95%88%E6%87%89%E9%A1%AF%E7%A4%BA%E6%8A%80%E8%A1%93" target="_blank" rel="noopener">液晶显示器</a>上有1,136×640=727,040个像素，因此有2,181,120个颜色单元。在15寸视网膜屏的 MacBook Pro 上，这一数字达到15.5百万以上。所有的图形堆栈一起工作以确保每次正确的显示。当你滚动整个屏幕的时候，数以百万计的颜色单元必须以每秒60次的速度刷新，这是一个很大的工作量。</p>
 <h3 id="软件堆栈组成"><a href="#软件堆栈组成" class="headerlink" title="软件堆栈组成"></a>软件堆栈组成</h3><p>从简单的角度来看，软件堆栈看起来有点像这样：</p>
 <p><img src="https://objccn.io/images/issue-3/pixels-software-stack.png" alt="软件堆栈"></p>
 <h4 id="GPU强大的图形硬件"><a href="#GPU强大的图形硬件" class="headerlink" title="GPU强大的图形硬件"></a>GPU强大的图形硬件</h4><p><code>Display</code>的上一层便是图形处理单元 GPU，<code>GPU</code> 是一个专门为图形高并发计算而量身定做的处理单元。这也是为什么它能同时更新所有的像素，并呈现到显示器上。它并发的本性让它能高效的将不同纹理合成起来。我们将有一小块内容来更详细的讨论图形合成。关键的是，GPU 是非常专业的，因此在某些工作上非常高效。比如，GPU 非常快，并且比 CPU 使用更少的电来完成工作。通常 CPU 都有一个普遍的目的，它可以做很多不同的事情，但是合成图像在 CPU 上却显得比较慢。</p>

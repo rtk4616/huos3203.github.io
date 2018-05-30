@@ -412,7 +412,7 @@
       
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><p>当需要导航条为透明色，与背景色一体时，需要去除底边线：<br>如下代码：使用空图片设置背景图，并指定bar的样式。</p>
+        <link rel="stylesheet" href="/owl.css"><script src="/assets/js/APlayer.min.js"> </script><p>当需要导航条为透明色，与背景色一体时，需要去除底边线：<br>如下代码：使用空图片设置背景图，并指定bar的样式。</p>
 <pre><code class="swift"><span class="keyword">self</span>.navigationController.navigationBar setBackgroundImage:[<span class="type">UIImage</span> new] forBarMetrics:<span class="type">UIBarMetricsDefault</span>];
 <span class="keyword">self</span>.navigationController.navigationBar.barStyle = <span class="type">UIBarStyleBlackTranslucent</span>;
 </code></pre>

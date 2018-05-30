@@ -1,4 +1,4 @@
-<script src="/assets/js/APlayer.min.js"> </script>$(function(){
+<link rel="stylesheet" href="/owl.css"><script src="/assets/js/APlayer.min.js"> </script>$(function(){
 	$('.panel-body').each(function(){
 		var hi = $(this).attr('class');
 		var mk = new RegExp(/\d+$/);

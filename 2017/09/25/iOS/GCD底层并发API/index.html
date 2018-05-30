@@ -423,7 +423,7 @@
       
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><p>这篇文章里，我们将会讨论一些 iOS 和 OS X 都可以使用的底层 API。除了 <code>dispatch_once</code> ，我们一般不鼓励使用其中的任何一种技术。</p>
+        <link rel="stylesheet" href="/owl.css"><script src="/assets/js/APlayer.min.js"> </script><p>这篇文章里，我们将会讨论一些 iOS 和 OS X 都可以使用的底层 API。除了 <code>dispatch_once</code> ，我们一般不鼓励使用其中的任何一种技术。</p>
 <p>但是我们想要揭示出表面之下深层次的一些可利用的方面。这些底层的 API 提供了大量的灵活性，随之而来的是大量的复杂度和更多的责任。在我们的文章<a href="http://objccn.io/issue-2-2/" target="_blank" rel="noopener">常见的后台实践</a>中提到的高层的 API 和模式能够让你专注于手头的任务并且免于大量的问题。通常来说，高层的 API 会提供更好的性能，除非你能承受起使用底层 API 带来的纠结于调试代码的时间和努力。</p>
 <p>尽管如此，了解深层次下的软件堆栈工作原理还是有很有帮助的。我们希望这篇文章能够让你更好的了解这个平台，同时，让你更加感谢这些高层的 API。</p>
 <p>首先，我们将会分析大多数组成 <em>Grand Central Dispatch</em> 的部分。它已经存在了好几年，并且苹果公司持续添加功能并且改善它。现在苹果已经将其开源，这意味着它对其他平台也是可用的了。最后，我们将会看一下<a href="#atomic_operations">原子操作</a>——另外的一种底层代码块的集合。</p>
