@@ -334,6 +334,596 @@ daovoice('update');
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://huos3203.github.io/2014/06/17/iOS/UIDevice类介绍/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="boyer">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="布衣男儿">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2014/06/17/iOS/UIDevice类介绍/" itemprop="url">UIDevice类介绍</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-06-17T15:12:53Z">
+                2014-06-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/设备/" itemprop="url" rel="index">
+                    <span itemprop="name">设备</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2014/06/17/iOS/UIDevice类介绍/" class="leancloud_visitors" data-flag-title="UIDevice类介绍">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  654字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  3分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="UIDevice-h"><a href="#UIDevice-h" class="headerlink" title="UIDevice.h"></a>UIDevice.h</h3><figure class="highlight objc"><figcaption><span>设备的基本属性</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="built_in">UIDevice</span> *)currentDevice; 		  <span class="comment">// 获取当前设备</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">NSString</span>    *name;               	  <span class="comment">// e.g. "My iPhone"  </span></span><br><span class="line"><span class="built_in">NSString</span>    *model;              	  <span class="comment">// e.g. @"iPhone", @"iPod touch"  </span></span><br><span class="line"><span class="built_in">NSString</span>    *localizedModel;     	  <span class="comment">// localized version of model  </span></span><br><span class="line"><span class="built_in">NSString</span>    *systemName;     		  <span class="comment">// e.g. @"iOS"  </span></span><br><span class="line"><span class="built_in">NSString</span>    *systemVersion;   	  <span class="comment">// e.g. @"4.0"  </span></span><br><span class="line"><span class="built_in">UIDeviceOrientation</span> orientation;    <span class="comment">//除非正在生成设备方向的通知，否则返回UIDeviceOrientationUnknown  </span></span><br><span class="line"><span class="built_in">NSUUID</span> *identifierForVendor         <span class="comment">//可用于唯一标识该设备，同一供应商不同应用具有相同的UUID</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight objc"><figcaption><span>方向属性值</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">UIDeviceOrientationUnknown</span>,</span><br><span class="line"><span class="built_in">UIDeviceOrientationPortrait</span>,                    <span class="comment">// 竖向，头向上</span></span><br><span class="line"><span class="built_in">UIDeviceOrientationPortraitUpsideDown</span>,  		<span class="comment">// 竖向，头向下</span></span><br><span class="line"><span class="built_in">UIDeviceOrientationLandscapeLeft</span>,         		<span class="comment">// 横向，头向左</span></span><br><span class="line"><span class="built_in">UIDeviceOrientationLandscapeRight</span>,       		<span class="comment">// 横向，头向右</span></span><br><span class="line"><span class="built_in">UIDeviceOrientationFaceUp</span>,                  	<span class="comment">// 平放，屏幕朝下</span></span><br><span class="line"><span class="built_in">UIDeviceOrientationFaceDown</span>                	 <span class="comment">// 平放，屏幕朝下</span></span><br></pre></td></tr></table></figure>
+<p>//使用内置的宏定义的函数，根据<strong>orientation</strong>判断设备方向,返回值类型<strong>BOOL</strong>.<br><figure class="highlight"><figcaption><span>纵向宏定义,返回YES:纵向</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define UIDeviceOrientationIsPortrait(orientation)  ((orientation) == UIDeviceOrientationPortrait || (orientation) == UIDeviceOrientationPortraitUpsideDown)</span><br></pre></td></tr></table></figure><br><figure class="highlight"><figcaption><span>横向宏定义,返回YES:横向</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define UIDeviceOrientationIsLandscape(orientation) ((orientation) == UIDeviceOrientationLandscapeLeft || (orientation) == UIDeviceOrientationLandscapeRight)</span><br></pre></td></tr></table></figure><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2014/06/17/iOS/UIDevice类介绍/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    <div>
+        
+    </div>
+    <div>
+        
+    </div>
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://huos3203.github.io/2014/06/17/iOS/IOS7新宠TextKit/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="boyer">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="布衣男儿">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2014/06/17/iOS/IOS7新宠TextKit/" itemprop="url">IOS7新宠Text Kit</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-06-16T22:24:48Z">
+                2014-06-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2014/06/17/iOS/IOS7新宠TextKit/" class="leancloud_visitors" data-flag-title="IOS7新宠Text Kit">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  1,379字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  5分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="Text-Kit"><a href="#Text-Kit" class="headerlink" title="Text Kit"></a>Text Kit</h2><p><strong><code>Text Kit</code></strong>：是个庞大的framework，继承了<code>Core Text</code>的全部功能，构建了快速、先进的文本排版和渲染引擎，更让开发者们高兴的是，设计者把它封装在了一个面向对象的API中。并且与UIKit框架很好的集成，它让程序能够通过<strong>NSTextStorage</strong>对象存储文本排版和显示文本等主要信息，并支持排版所需要的所有特性，包括字距调整、连写、换行和对齐等。  </p>
+<blockquote>
+<font size="3">更直观的理解，<strong>UITextView</strong>，<strong>UITextField</strong>、<strong>UILabel</strong>等UIKit控件都已经基于<strong>Text Kit</strong>重新构建，是为UIKit框架提供高质量排版服务而扩展的一些类和协议.<br>例如：NSTextStorage对象，它本身是<strong>NSMutableAttributedString</strong>的子类，支持分批编辑，这就意味着在改变一个范围内的字符样式时，不用整体替换文本内容，就能完成排版效果。其中支持分页文本、文本包装、富文本编辑、交互式文本着色、文本折叠和自定义截取等特性。</font>  
+
+</blockquote>
+<p>IOS6之前，想实现一些丰富的文本排版，例如在textView中显示不同样式的文本，或者图片和文字混排等，就需要借助于UIWebView或者深入研究一下<code>Core Text</code>。后来iOS6，增加一个很棒的属性:<code>NSAttributedString</code>，主要用于支持UILabel、UITextField、UITextView等UIKit控件自主排版的功能。很显然，IOS7并没有满足于这一改进，同时推出一款功能更为齐全，易用的<code>Text Kit</code>新宠。<br>在iOS 6中, 用于文本的UIKit控件是基于WebKit和Core Graphics的字符串绘制方法来实现的。如下面层级体系图所示：<br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/TextRenderingArchitecture-iOS6.png?imageMogr2/2/w/800"><br>iOS 7的整体构架要更清晰，所有基于文本的UIKit控件（除了UIWebView）现在都可以使用Text Kit，如下图所示：<br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/TextRenderingArchitecture-iOS7.png?imageMogr2/2/w/800"></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2014/06/17/iOS/IOS7新宠TextKit/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    <div>
+        
+    </div>
+    <div>
+        
+    </div>
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://huos3203.github.io/2014/06/11/iOS/IOS7的变革/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="boyer">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="布衣男儿">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2014/06/11/iOS/IOS7的变革/" itemprop="url">IOS7的变革</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-06-11T10:17:19Z">
+                2014-06-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/特性/" itemprop="url" rel="index">
+                    <span itemprop="name">特性</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2014/06/11/iOS/IOS7的变革/" class="leancloud_visitors" data-flag-title="IOS7的变革">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  2,969字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  14分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="性能提高以及被遗弃的功能"><a href="#性能提高以及被遗弃的功能" class="headerlink" title="性能提高以及被遗弃的功能"></a>性能提高以及被遗弃的功能</h2><h3 id="新增截屏通知-UIApplicationUserDidTakeScreenshotNotification"><a href="#新增截屏通知-UIApplicationUserDidTakeScreenshotNotification" class="headerlink" title="新增截屏通知:UIApplicationUserDidTakeScreenshotNotification"></a>新增截屏通知:<code>UIApplicationUserDidTakeScreenshotNotification</code></h3><p>在IOS 7之前，开发者使用了一种<strong><a href="http://dlj.bz/XflV" target="_blank" rel="noopener">很赞的方法</a></strong>，来<strong>拦截</strong>截屏事件的.<br>比如，Snapchat的实现原理: 用户通过<strong>Snapchat</strong>发送的照片将会在数秒内自动被删除，而且在浏览照片时，必须将手指按在屏幕上，否则会立即关闭。然而，在 iOS 6 中，<font color="red"><strong>截屏将打断触控操作</strong></font>，开发者就利用这个功能点，在恰当时机捕捉到了截屏事件。  </p>
+<p>在iOS 7中，专门为<font color="red"><strong>截屏完成后</strong></font>提供了一个通知:<br>  <code>UIApplicationUserDidTakeScreenshotNotification</code>.同时，也规避了IOS 6中<font color="red"><strong>截屏将打断触控操作</strong></font>的关键功能点。以至于在截屏之前，无法拦截用户的截屏操作。<br>注册<font color="red"><strong>截屏完成后</strong></font>通知:<br><figure class="highlight objc"><figcaption><span>注册监听事件，接收截屏完成后的通知</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[[<span class="built_in">NSNotificationCenter</span> defaultCenter]  addObserver:<span class="keyword">self</span> </span><br><span class="line">										  selector:<span class="keyword">@selector</span>(mymethod:)</span><br><span class="line">										  	    name:<span class="built_in">UIApplicationUserDidTakeScreenshotNotification</span> </span><br><span class="line">										    object:<span class="literal">nil</span>];</span><br></pre></td></tr></table></figure></p>
+<p>Note:<br>    1.This notification is posted after the screenshot is taken.<br>    2.This notification does not contain a userInfo dictionary.</p>
+<h3 id="新增手势-UIScreenEdgePanGestureRecognizer"><a href="#新增手势-UIScreenEdgePanGestureRecognizer" class="headerlink" title="新增手势: UIScreenEdgePanGestureRecognizer"></a>新增手势: UIScreenEdgePanGestureRecognizer</h3><p><code>UIScreenEdgePanGestureRecognizer</code> inherits from <code>UIPanGestureRecognizer</code> and lets you <strong>detect gestures starting near the edge of the screen</strong>.<br>Using this new gesture recognizer is quite simple, as shown below:<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">UIScreenEdgePanGestureRecognizer</span> *recognizer = [[<span class="built_in">UIScreenEdgePanGestureRecognizer</span> alloc] </span><br><span class="line">													initWithTarget:<span class="keyword">self</span> </span><br><span class="line">														action:<span class="keyword">@selector</span>(handleScreenEdgeRecognizer:)];</span><br><span class="line"><span class="comment">// accept gestures that start from the left; we're probably building another hamburger menu!</span></span><br><span class="line">recognizer.edges = <span class="built_in">UIRectEdgeLeft</span>; </span><br><span class="line">[<span class="keyword">self</span>.view addGestureRecognizer:recognizer];</span><br></pre></td></tr></table></figure></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2014/06/11/iOS/IOS7的变革/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    <div>
+        
+    </div>
+    <div>
+        
+    </div>
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://huos3203.github.io/2014/06/11/iOS/在IOS中像SnapChat一样监控screenshots/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -932,7 +1522,7 @@ daovoice('update');
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">143</span>
+                <span class="site-state-item-count">146</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1130,7 +1720,7 @@ daovoice('update');
     <span id="busuanzi_container_site_pv">
      本站总<span id="busuanzi_value_site_pv"></span>次访问 |
     </span>
-    <span class="post-count"> 博客全站共182.7k字</span>
+    <span class="post-count"> 博客全站共184.1k字</span>
 </div>
 <div class="copyright">
     <span id="timeDate">载入天数...</span>

@@ -92,17 +92,17 @@
 
 
 
-<meta name="description" content="安装MonoMac下需要使用.Net编译后的程序，首先需要用到跨平台的方案Mono(现阶段微软已推出跨平台的方案.Net Core，不过暂时只支持控制台程序)。下载地址 配置Mono环境 下载证书从Mozilla LXR上下载所有受信任的root证书，存于Mono的证书库里。root证书能用于请求https地址： 1/Library/Frameworks/Mono.framework/Versi">
+<meta name="description" content="安装MonoMac下需要使用.Net编译后的程序，首先需要用到跨平台的方案Mono(现阶段微软已推出跨平台的方案.Net Core，不过暂时只支持控制台程序)。下载地址 配置Mono环境 下载证书从Mozilla LXR上下载所有受信任的root证书，存于Mono的证书库里。root证书能用于请求https地址：12$cd /Library/Frameworks/Mono.framework/V">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在Mac安装Fiddler">
 <meta property="og:url" content="https://huos3203.github.io/2018/06/01/工具/在Mac安装Fiddler/index.html">
 <meta property="og:site_name" content="布衣男儿">
-<meta property="og:description" content="安装MonoMac下需要使用.Net编译后的程序，首先需要用到跨平台的方案Mono(现阶段微软已推出跨平台的方案.Net Core，不过暂时只支持控制台程序)。下载地址 配置Mono环境 下载证书从Mozilla LXR上下载所有受信任的root证书，存于Mono的证书库里。root证书能用于请求https地址： 1/Library/Frameworks/Mono.framework/Versi">
+<meta property="og:description" content="安装MonoMac下需要使用.Net编译后的程序，首先需要用到跨平台的方案Mono(现阶段微软已推出跨平台的方案.Net Core，不过暂时只支持控制台程序)。下载地址 配置Mono环境 下载证书从Mozilla LXR上下载所有受信任的root证书，存于Mono的证书库里。root证书能用于请求https地址：12$cd /Library/Frameworks/Mono.framework/V">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-31T18:09:56.000Z">
+<meta property="og:updated_time" content="2018-06-01T10:07:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在Mac安装Fiddler">
-<meta name="twitter:description" content="安装MonoMac下需要使用.Net编译后的程序，首先需要用到跨平台的方案Mono(现阶段微软已推出跨平台的方案.Net Core，不过暂时只支持控制台程序)。下载地址 配置Mono环境 下载证书从Mozilla LXR上下载所有受信任的root证书，存于Mono的证书库里。root证书能用于请求https地址： 1/Library/Frameworks/Mono.framework/Versi">
+<meta name="twitter:description" content="安装MonoMac下需要使用.Net编译后的程序，首先需要用到跨平台的方案Mono(现阶段微软已推出跨平台的方案.Net Core，不过暂时只支持控制台程序)。下载地址 配置Mono环境 下载证书从Mozilla LXR上下载所有受信任的root证书，存于Mono的证书库里。root证书能用于请求https地址：12$cd /Library/Frameworks/Mono.framework/V">
 
 
 
@@ -428,7 +428,7 @@ daovoice('update');
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  203字
+                  226字
                 </span>
               
 
@@ -464,14 +464,18 @@ daovoice('update');
       
         <link rel="stylesheet" href="/owl.css"><script src="/assets/js/APlayer.min.js"> </script><h3 id="安装Mono"><a href="#安装Mono" class="headerlink" title="安装Mono"></a>安装Mono</h3><p>Mac下需要使用.Net编译后的程序，首先需要用到跨平台的方案<code>Mono</code>(现阶段微软已推出跨平台的方案.Net Core，不过暂时只支持控制台程序)。<br><a href="http://www.mono-project.com/download/stable/#download-mac" target="_blank" rel="noopener">下载地址</a></p>
 <h3 id="配置Mono环境"><a href="#配置Mono环境" class="headerlink" title="配置Mono环境"></a>配置Mono环境</h3><ol>
-<li><p>下载证书<br>从Mozilla LXR上下载所有受信任的root证书，存于Mono的证书库里。root证书能用于请求https地址：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/Library/Frameworks/Mono.framework/Versions/&lt;mono version&gt;/bin/mozroots --import --sync&lt;/mono version&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>配置Mono环境变量</p>
+<li>下载证书<br>从Mozilla LXR上下载所有受信任的root证书，存于Mono的证书库里。root证书能用于请求https地址：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$cd /Library/Frameworks/Mono.framework/Versions/&lt;mono version&gt;/bin/</span><br><span class="line">$./mozroots --import --sync</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
+<blockquote>
+<p>./mozroots命令失效，./cert-sync新命令，暂时不知道怎么使用</p>
+<ol>
+<li>配置Mono环境变量</li>
+</ol>
+</blockquote>
 <p>在<code>.bash_profile</code>中加入如下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export MONO_HOME=/Library/Frameworks/Mono.framework/Versions/5.0.1</span><br><span class="line">export PATH=$PATH:$MONO_HOME/bin</span><br></pre></td></tr></table></figure></p>
-<h2 id="Fiddler"><a href="#Fiddler" class="headerlink" title="Fiddler"></a>Fiddler</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>下载<a href="https://www.telerik.com/download/fiddler" target="_blank" rel="noopener">Fiddler-mac.zip</a>压缩包，解压到非中文字符的路径下。</p>
+<h2 id="Fiddler"><a href="#Fiddler" class="headerlink" title="Fiddler"></a>Fiddler</h2><p><a href="http://docs.telerik.com/fiddler/Configure-Fiddler/Tasks/InstallFiddler" target="_blank" rel="noopener">官方文档</a></p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>下载<a href="https://www.telerik.com/download/fiddler" target="_blank" rel="noopener">Fiddler-mac.zip</a>压缩包，解压到非中文字符的路径下。</p>
 <h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p>打开Terminal，进入到刚才解压的Fiddler路径，执行命令运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mono Fiddler.exe</span><br></pre></td></tr></table></figure></p>
 <p><a href="http://www.cocoachina.com/apple/20170704/19729.html" target="_blank" rel="noopener">参看</a></p>
 
@@ -560,6 +564,10 @@ daovoice('update');
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/05/hexo/uml类图常用语法/" rel="prev" title="uml类图常用语法">
+                uml类图常用语法 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -656,7 +664,7 @@ daovoice('update');
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">143</span>
+                <span class="site-state-item-count">146</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -870,7 +878,7 @@ daovoice('update');
     <span id="busuanzi_container_site_pv">
      本站总<span id="busuanzi_value_site_pv"></span>次访问 |
     </span>
-    <span class="post-count"> 博客全站共182.7k字</span>
+    <span class="post-count"> 博客全站共184.1k字</span>
 </div>
 <div class="copyright">
     <span id="timeDate">载入天数...</span>

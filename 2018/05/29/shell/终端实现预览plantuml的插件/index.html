@@ -92,17 +92,19 @@
 
 
 
-<meta name="description" content="安装依赖123Plug &apos;huos3203/plantuml-syntax&apos;  &quot;plantuml语法高亮 Plug &apos;aklt/plantuml-syntax&apos;Plug &apos;tyru/open-browser.vim&apos;Plug &apos;weirongxu/plantuml-previewer.vim&apos; &quot;在线工具：http://sujoyu.github.io/plantuml-previewer/">
+<meta name="description" content="loadStyle(&quot;/hexo-github/style.css&quot;);   loadStyle(&quot;/hexo-github/octicons/octicons.css&quot;);   new Badge(&quot;#badge-container-weirongxu-plantuml-previewer.vim-bf4b3e5&quot;, &quot;weirongxu&quot;, &quot;plantuml-previewer.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="终端实现预览plantuml的插件">
 <meta property="og:url" content="https://huos3203.github.io/2018/05/29/shell/终端实现预览plantuml的插件/index.html">
 <meta property="og:site_name" content="布衣男儿">
-<meta property="og:description" content="安装依赖123Plug &apos;huos3203/plantuml-syntax&apos;  &quot;plantuml语法高亮 Plug &apos;aklt/plantuml-syntax&apos;Plug &apos;tyru/open-browser.vim&apos;Plug &apos;weirongxu/plantuml-previewer.vim&apos; &quot;在线工具：http://sujoyu.github.io/plantuml-previewer/">
+<meta property="og:description" content="loadStyle(&quot;/hexo-github/style.css&quot;);   loadStyle(&quot;/hexo-github/octicons/octicons.css&quot;);   new Badge(&quot;#badge-container-weirongxu-plantuml-previewer.vim-bf4b3e5&quot;, &quot;weirongxu&quot;, &quot;plantuml-previewer.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-29T12:26:48.000Z">
+<meta property="og:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/plantumlpreviewer.png?imageMogr2/2/w/800">
+<meta property="og:updated_time" content="2018-06-01T10:07:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="终端实现预览plantuml的插件">
-<meta name="twitter:description" content="安装依赖123Plug &apos;huos3203/plantuml-syntax&apos;  &quot;plantuml语法高亮 Plug &apos;aklt/plantuml-syntax&apos;Plug &apos;tyru/open-browser.vim&apos;Plug &apos;weirongxu/plantuml-previewer.vim&apos; &quot;在线工具：http://sujoyu.github.io/plantuml-previewer/">
+<meta name="twitter:description" content="loadStyle(&quot;/hexo-github/style.css&quot;);   loadStyle(&quot;/hexo-github/octicons/octicons.css&quot;);   new Badge(&quot;#badge-container-weirongxu-plantuml-previewer.vim-bf4b3e5&quot;, &quot;weirongxu&quot;, &quot;plantuml-previewer.">
+<meta name="twitter:image" content="http://p27uwfdhv.bkt.clouddn.com/static/images/plantumlpreviewer.png?imageMogr2/2/w/800">
 
 
 
@@ -462,11 +464,20 @@ daovoice('update');
       
 
       
-        <link rel="stylesheet" href="/owl.css"><script src="/assets/js/APlayer.min.js"> </script><h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Plug <span class="string">'huos3203/plantuml-syntax'</span>  <span class="string">"plantuml语法高亮 Plug 'aklt/plantuml-syntax'</span></span><br><span class="line"><span class="string">Plug 'tyru/open-browser.vim'</span></span><br><span class="line"><span class="string">Plug 'weirongxu/plantuml-previewer.vim' "</span>在线工具：http://sujoyu.github.io/plantuml-previewer/</span><br></pre></td></tr></table></figure>
+        <link rel="stylesheet" href="/owl.css"><script src="/assets/js/APlayer.min.js"> </script><div id="badge-container-weirongxu-plantuml-previewer.vim-bf4b3e5" class="hexo-github" style="width: ="></div>
+<script src="/hexo-github/badge.js"></script>
+<script type="text/javascript">
+  loadStyle("/hexo-github/style.css");
+  loadStyle("/hexo-github/octicons/octicons.css");
+  new Badge("#badge-container-weirongxu-plantuml-previewer.vim-bf4b3e5", "weirongxu", "plantuml-previewer.vim", "bf4b3e5", false);
+</script>
+
+<h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Plug <span class="string">'huos3203/plantuml-syntax'</span>  <span class="string">"plantuml语法高亮 Plug 'aklt/plantuml-syntax'</span></span><br><span class="line"><span class="string">Plug 'tyru/open-browser.vim'</span></span><br><span class="line"><span class="string">Plug 'weirongxu/plantuml-previewer.vim' "</span>在线工具：http://sujoyu.github.io/plantuml-previewer/</span><br></pre></td></tr></table></figure>
 <h3 id="Graphviz"><a href="#Graphviz" class="headerlink" title="Graphviz"></a>Graphviz</h3><p><a href="https://www.graphviz.org/download/" target="_blank" rel="noopener">下载地址</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install graphviz</span><br></pre></td></tr></table></figure></p>
 <h3 id="打开浏览器safari插件工具"><a href="#打开浏览器safari插件工具" class="headerlink" title="打开浏览器safari插件工具"></a>打开浏览器safari插件工具</h3><p>open-browser.vim</p>
 <h3 id="语法高亮插件"><a href="#语法高亮插件" class="headerlink" title="语法高亮插件"></a>语法高亮插件</h3><p>aklt/plantuml-syntax (vim syntax file for plantuml)</p>
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="创建uml文件"><a href="#创建uml文件" class="headerlink" title="创建uml文件"></a>创建uml文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi test.uml</span><br></pre></td></tr></table></figure>
+<img title="历史下载" src="http://p27uwfdhv.bkt.clouddn.com/static/images/plantumlpreviewer.png?imageMogr2/2/w/800">
 <h3 id="预览uml图"><a href="#预览uml图" class="headerlink" title="预览uml图"></a>预览uml图</h3><p>通过命令打开浏览器预览界面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:PlantumlOpen</span><br></pre></td></tr></table></figure></p>
 <p>在vi中执行保存命令<code>:w</code>,预览界面会自动刷新</p>
 
@@ -546,8 +557,8 @@ daovoice('update');
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/29/作文作曲/GB乐理知识体系/" rel="next" title="GB乐理知识体系">
-                <i class="fa fa-chevron-left"></i> GB乐理知识体系
+              <a href="/2018/05/29/hexo/pyenv切换python的版本/" rel="next" title="pyenv切换python的版本">
+                <i class="fa fa-chevron-left"></i> pyenv切换python的版本
               </a>
             
           </div>
@@ -556,8 +567,8 @@ daovoice('update');
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/29/hexo/npm降级的两种方法/" rel="prev" title="npm降级的两种方法">
-                npm降级的两种方法 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/29/作文作曲/GB乐理知识体系/" rel="prev" title="GB乐理知识体系">
+                GB乐理知识体系 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -655,7 +666,7 @@ daovoice('update');
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">143</span>
+                <span class="site-state-item-count">146</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -869,7 +880,7 @@ daovoice('update');
     <span id="busuanzi_container_site_pv">
      本站总<span id="busuanzi_value_site_pv"></span>次访问 |
     </span>
-    <span class="post-count"> 博客全站共182.7k字</span>
+    <span class="post-count"> 博客全站共184.1k字</span>
 </div>
 <div class="copyright">
     <span id="timeDate">载入天数...</span>
