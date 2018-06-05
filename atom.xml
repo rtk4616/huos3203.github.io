@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huos3203.github.io/"/>
-  <updated>2018-06-04T21:27:15.000Z</updated>
+  <updated>2018-06-05T21:20:48.000Z</updated>
   <id>https://huos3203.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>执法巡查开发状态总结</title>
+    <link href="https://huos3203.github.io/2018/06/05/%E4%B8%AA%E4%BA%BA%E9%A1%B9%E7%9B%AE/%E6%89%A7%E6%B3%95%E5%B7%A1%E6%9F%A5%E5%BC%80%E5%8F%91%E7%8A%B6%E6%80%81%E6%80%BB%E7%BB%93/"/>
+    <id>https://huos3203.github.io/2018/06/05/个人项目/执法巡查开发状态总结/</id>
+    <published>2018-06-05T10:18:33.000Z</published>
+    <updated>2018-06-05T21:20:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><script src="/assets/js/APlayer.min.js"> </script><h2 id="UML状态图"><a href="#UML状态图" class="headerlink" title="UML状态图"></a>UML状态图</h2><p>使用状态图，查漏补觉，梳理相关业务流程。<br>建议：优化流程，使用流程图（活动图）/时序图来完善流程<br><img src="http://www.plantuml.com/plantuml/svg/TLFBRjfG4DtVh_2wKcZwI1UMsdqMMLLTLLsWs56GeX21fQf2GI02CU5XIaj9moEuWO1QrL25Gi4yViPpVRtY5thjwo13WhsmP-RCwyoC592EH0w6BMDQ9PeASj6AwMJssRmOu5WSAZE4ZiG3YJiK_O8OGizyN3IAqx-meXZZZA4FuA9ZVjMXUMOMKj4eUkwZiLHytO9f2PAjnIIBqsryLyArXFMzOFtCacwSp2j4TVNeXOypVrUiM1fAAUFV5UabIBVqRXUzN0OQzM5y2tAPg1squ-EiPCwSQZ2w0wLdwcUq12GU2svvuNq_xURLzZRtCI18X-ZzamzRMs-y5Q6mv9T4pbjL17a1IxofVy7rAXyGDfZ_w53Fy2oGsSvHsQgae20l9hBqwKHylREOfD4fycQYpapaGUaQUilbmCLGAwttlkPI2hG1pKEwFv1Nu9d02C6b7ivfD2F8AKlzQsTSmPBvETQRkAPIcYZAEhUvUsgg6cXN3y1MkGFZijkTCtuQSWL2w-BsWe9un1kJXXKhXgLWIDmLN4uVzO-uHiSjWfYt2oNTMvn8hkgOkwEwDtWZCiCfVT6ZwMpcsC8uUhi1ngUBhlRibVOApapOFcTDlMysucXDtjJr6epdw76GzWsk5vOwEqKjHl93KBvjTACtGxIvLTPmlWNA3KDxIsHJtlEVlBL3C0eUHA67H8TgJ7FCa_xOP-9Sfp7AG25lt-Bbp6oElUH3CGlDDZJxLb76ZI5C5BJ6dxkLzDaNZoKnn1q4W_I3xFEeNTktnnJ_0G00"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;h2 id=&quot;UML状态图&quot;&gt;&lt;a href=&quot;#UML状态图&quot; class=&quot;headerlink
+      
+    
+    </summary>
+    
+      <category term="个人项目" scheme="https://huos3203.github.io/categories/%E4%B8%AA%E4%BA%BA%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>uml活动图常用语法</title>
@@ -205,9 +228,9 @@
     <link href="https://huos3203.github.io/2018/05/29/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/GB%E4%B9%90%E7%90%86%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/"/>
     <id>https://huos3203.github.io/2018/05/29/作文作曲/GB乐理知识体系/</id>
     <published>2018-05-29T11:32:04.000Z</published>
-    <updated>2018-06-01T10:07:54.000Z</updated>
+    <updated>2018-06-05T21:20:48.000Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><script src="/assets/js/APlayer.min.js"> </script><h2 id="使用puml来梳理乐理知识点"><a href="#使用puml来梳理乐理知识点" class="headerlink" title="使用puml来梳理乐理知识点"></a>使用puml来梳理乐理知识点</h2><h2 id="UML时序图"><a href="#UML时序图" class="headerlink" title="UML时序图"></a>UML时序图</h2><p><img src="http://www.plantuml.com/plantuml/svg/TLFBRjfG4DtVh_2wKcZwI1UMsdqMMLLTLLsWs56GeX21fQf2GI02CU5XIaj9moEuWO1QrL25Gi4yViPpVRtY5thjwo13WhsmP-RCwyoC592EH0w6BMDQ9PeASj6AwMJssRmOu5WSAZE4ZiG3YJiK_O8OGizyN3IAqx-meXZZZA4FuA9ZVjMXUMOMKj4eUkwZiLHytO9f2PAjnIIBqsryLyArXFMzOFtCacwSp2j4TVNeXOypVrUiM1fAAUFV5UabIBVqRXUzN0OQzM5y2tAPg1squ-EiPCwSQZ2w0wLdwcUq12GU2svvuNq_xURLzZRtCI18X-ZzamzRMs-y5Q6mv9T4pbjL17a1IxofVy7rAXyGDfZ_w53Fy2oGsSvHsQgae20l9hBqwKHylREOfD4fycQYpapaGUaQUilbmCLGAwttlkPI2hG1pKEwFv1Nu9d02C6b7ivfD2F8AKlzQsTSmPBvETQRkAPIcYZAEhUvUsgg6cXN3y1MkGFZijkTCtuQSWL2w-BsWe9un1kJXXKhXgLWIDmLN4uVzO-uHiSjWfYt2oNTMvn8hkgOkwEwDtWZCiCfVT6ZwMpcsC8uUhi1ngUBhlRibVOApapOFcTDlMysucXDtjJr6epdw76GzWsk5vOwEqKjHl93KBvjTACtGxIvLTPmlWNA3KDxIsHJtlEVlBL3C0eUHA67H8TgJ7FCa_xOP-9Sfp7AG25lt-Bbp6oElUH3CGlDDZJxLb76ZI5C5BJ6dxkLzDaNZoKnn1q4W_I3xFEeNTktnnJ_0G00"></p><h2 id="大音阶"><a href="#大音阶" class="headerlink" title="大音阶"></a>大音阶</h2><p> 12个调：7个大键 5个黑键 ： 全音/半音<br> 音名：C Db D Eb E Fb F Gb G Ab A Bb B<br> 音组：十二平均律<br> 音性质：高低，强弱，长短，音色<br> 音符时效：全音符，二分音符，四分音符，八分音符，十六分音符。<br> 斧头/符干/符尾   书写方法：斧头下干居右，斧头上干居左，符尾永居右<br> 节：<br> 拍号：<br> 乐速：BPM<br> 五线谱：<br> 音程： 度数：两个音符跨度的线和间的个数，音数：两个音符相差全音和半音的个数<br> 音程名：音数和度数决定。纯一度，小二度，大二度…<br> 节奏读法：短音符：嗒，二倍音符：嗒啊，三倍音符：嗒啊啊，休止符：嗯/嗯啊<br> 调式/调域/音阶<br> 调的主音+调式类别<br> C大调：<br> 自然大调：全全半全全全半 的音级关系<br> 自然小调：全半全全半半全全<br> 关系（大/小）调：c大调是a小调的关系大调。a小调是c大调的关系小调，使用其关系（大/小）调的首调唱名方法。<br> 和弦：以两个以上的音，按照三度的重叠关系，在纵向上加以结合，就是和弦。<br> 顺阶和弦：根音/三音/五音<br> 七个顺阶和弦：大三和弦（CFG）/小三和弦（m）/减三和弦（dim）<br> 大三和弦：根音–大三度–三音—小三度—五音<br> 小三和弦：根音–小三度–三音—大三度—五音<br> 减三和弦：根音–小三度–三音—小三度—五音<br> 调号：变音音符，为了让读者便于识别调式，同时方便写谱，五线谱就将相关调域自然大调音阶中出现的变音记号，按照一定的次序，记在谱号的后边，这些记号就是五线谱的调号。</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">调试</span><br><span class="line">音阶</span><br><span class="line">调域</span><br><span class="line">固定唱名法/首调唱名法</span><br><span class="line">自然大调/自然小调</span><br><span class="line">和弦的---顺阶和弦</span><br><span class="line">调号</span><br><span class="line">五度圈</span><br><span class="line">大调中的主要和弦的功能与进行</span><br></pre></td></tr></table></figure><h3 id="C大调音阶"><a href="#C大调音阶" class="headerlink" title="C大调音阶"></a>C大调音阶</h3><p> do 在C上<br> 音名：C，D，E，F，G，A，B，C<br> 指法：1 ，2，3，1，2，3，4，5</p><h3 id="G大调音阶"><a href="#G大调音阶" class="headerlink" title="G大调音阶"></a>G大调音阶</h3><p> 音名：G，A，B，半音 C，D，E，全音F#，半音G</p><ol><li><del>扫描事件动画处理</del></li><li>巡查录入，执法权限验证进行执法</li><li>筛选商业调试UI</li><li>巡查年度列表</li><li>配置平台组件</li></ol>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><script src="/assets/js/APlayer.min.js"> </script><h2 id="使用puml来梳理乐理知识点"><a href="#使用puml来梳理乐理知识点" class="headerlink" title="使用puml来梳理乐理知识点"></a>使用puml来梳理乐理知识点</h2><p>相关概念<br><img src="http://www.plantuml.com/plantuml/svg/RLBRJi9047tVhzWVQ7Wdn7yXKAC9WGHuKn94BWeKQWA90KtZ3KZmmgL6MxdyJBVRFlaBpZ354lHfPiwPEMSok_dZV4hbZgLBlIeCMzuLfV7alLLboNBlvm2oX9hEgrb-fCQJQfRvnPwthZdB6z5VKOCxA8dr-_UYwNPD57aqlVAL_z1oUoPJqybWBf6AvtBSD-OdZ7EtEFJCKHHBY008xSoncyAQYzkQM3K00KheMWI2_2fZHsK4UKHeTGZ4o-T1b0BoaxPNBqNSXYRQ7wmG-e513C81-d9_VEqiMvY9XIqMqmtMNKlZ9LJQ35tEG2CK0IQsjoC91di5avpMsrROVb7TfVlzFQ0o3e5VmpqdCd8-p_tEArCKx1vE56M3Oc4FjobSZ6GxKqmBZ9Hvx5HH_joORaCStZIeCrJYGdJy_wUtt-8mau70TZyGlZh1Fm00"></p><p><img src="http://www.plantuml.com/plantuml/svg/TLBBJi905DtFLtIf2HjG9A4hnSTt42bg993KVW0eBu4A9A0HD0rgi55H23LAAV0plTEouXUSwGY2ukxEEVUSU-xCI4TIHE3CNiagfV5xmbBpK1zEZ2pM-f1JdVeSxGjHIH2vGo4O4aGqZjViKSOSt10MttMfi7aAe_U9KS1LZHpXGREJvV7z1QvfI8Y6ldKdKb2Ka7-iT6rDvL4u9XuZFnWw61sU57B2r0lGwy9j1eRvAK-wBVsHHz6O970H8ImXjyVyV6BmnAWXAigcpLxU_8nRjQJRWryQ-B97mxmLcIdfD0SovVj9ceUZPiZl8pxMzM1SUVLIntwPL6mi5pm87aMTuL2IIRZ0zixktkRM8WkL3cFTdhLrxuRlZvQCerht2hIBqBfY0LPT0OyhiEOAhFDE5cVD1M5rP2ajdZcyD6SNbLBdWMatMtyP0_NwVqpg-Jz6Ja2gDKVE4ZffrFbdmTNsBx7UTB2PXgQhMFh8RdUcEZjtYlFoeeu0KFnOnEpssL9CKURzVwhf5mt7oDEAYFrdK7Ih4QTT3Fu2"><br><img src="http://www.plantuml.com/plantuml/svg/VPFBJi9058RtynHTDn8lb0t4XQA-1v6A90GCzW6g0WeMHOCneSGB4crCH8mrZXNbPMPwMV4Adg6bfKPPTURCEV__pT-Cb9Lo8aS-6bQZOhxjMTenLRz7WoDJ_wGrRRokeaqnBub5RbjCfSKYSkIMFJmaNsquDJklRF1-dmxVHWF5lD1XIxkwNJfpxaxCbex4VDgRYplNhw2VGBixkQmqtfeN_GJA5oIHoubR4d8R27uYk4lm8sp9nx5pgLigfkyzHCiQbEYvGkirrjegmRobzX3FkrhBJhC7d_abdcU-75DstRXK9fNDepWrxWFFOZQpBI7VYxOrOZGjOsZtNmYksUyQT2DREQ2gJYjbiohJ-WqS4tp2c7nttuajWhknA1jr_xQqeO1So3afH99275d6Cy4o77g9aA_w0gYxjK0zxlSbmdSYXX8KmQX_Ega4oQuBaGrXpjVd-KKM4dCPj_wNLlSX9ELZhmaJLco0rdJSGGXXI5pz3UbL0iWLo2Fc2VDyTDPl1B3fSHziFGIsz3VOBorLdIQ3b2ULW2p9uXiDMXEss2ospbL8m6NR42Ah8RReFsnJI-_PRHMWfOZSDqgl3UjMPbrk-GS0"><br><img src="http://www.plantuml.com/plantuml/svg/lLNTKjf05BxFKt2T6-_jfHTz3gP6POR13iq3f0eI_gcYA6AfhGYZLL6Y1fBemtJFRdBbA_HiDec9uFIkCmopUyxkTxxzphSRDQDcbHIPjbXhXzv_PQCg73-zs3erBAYC_75P-gJaL2MVsb3IgqfUyhIk-rmYJW-pzEU4RppVWkVx5xj6zmsSmfdX5hvvlngqQqXARZNOj-oEjy5kVf1ocwgIoYfhgaGh5RSwWEaTCUlGgdcNXyHfi6x1wq_OR8Y0S6mmQv-O6Z4ls6W2rrtC4lCAdhUZDHAjbN65oF4edg4uOHEBMGLcbTpxHteouEJq5Z5d_duEHtjbsfiHPmzN_j6sED4KPoPz-PpDg89jln-mpMVMDrJfjN2t4B64Llt5xgx0sH1tO9cFOiIkoWdKvMXpN01sRCAiBOGHYDWARziXrY1Q3xO6mohL3rojoAmzUjBdmA8BWYIjbV3qqBwLvTNDh2mdD18yVvzpfQ3uG9mZCOVU28LZnM5m35yoBhc-0_ebROpOTGUUEb2QBLIdTC4A3p1k8eFuWQ0Lo4AcLQzZO7K1BA56iWp54TGh_5_y_B4inrHAXv117M9QlcJ-D9LUJsToF5Xv9twrA5Y5s-_pyOL1NFmUI5YHSnNaad3-CR7tI_EY16Bvle3TMboxg3reIhTaSAc9i_FQ--OXr0vuLsviJ6F4EtmGfMXxYbdULK_xWTx6taO-eeM-EonJdTSHLol10Nk11WlDOkt1-4cAamhpsNIKJlO_F7GSD75J_cs3EISaRB2o09FUdUAT9PP5d7sebvQyepeq7pbqUFMWFY5MaTfj63JPaUErhmM9EVV-P_TWyzvOvnqJYVw-VI7zhYBmcwSFz75yAfJsRtaeFctiWjwX1rFSBru_zsOGVsomME9olz8AdlorJGpd9V5zWFwCdMfyaGZ_1G00"><br>音 –&gt; 音质 —&gt; 高低 —&gt; 十二平均律(七键) —&gt;音级/音名/唱名/音组 —&gt;<br>音 –&gt; 音质 —&gt; 长短 —&gt; 音符（全音/半音）<br>五线谱 –&gt; 节拍  拍号，调号，调域，<br></p><h2 id="大音阶"><a href="#大音阶" class="headerlink" title="大音阶"></a>大音阶</h2><p> 12个调：7个大键 5个黑键 ： 全音/半音<br> 音名：C Db D Eb E Fb F Gb G Ab A Bb B<br> 音组：十二平均律<br> 音性质：高低，强弱，长短，音色<br> 音符时效：全音符，二分音符，四分音符，八分音符，十六分音符。<br> 斧头/符干/符尾   书写方法：斧头下干居右，斧头上干居左，符尾永居右<br> 节：<br> 拍号：<br> 乐速：BPM<br> 五线谱：<br> 音程： 度数：两个音符跨度的线和间的个数，音数：两个音符相差全音和半音的个数<br> 音程名：音数和度数决定。纯一度，小二度，大二度…<br> 节奏读法：短音符：嗒，二倍音符：嗒啊，三倍音符：嗒啊啊，休止符：嗯/嗯啊<br> 调式/调域/音阶<br> 调的主音+调式类别<br> C大调：<br> 自然大调：全全半全全全半 的音级关系<br> 自然小调：全半全全半半全全<br> 关系（大/小）调：c大调是a小调的关系大调。a小调是c大调的关系小调，使用其关系（大/小）调的首调唱名方法。<br> 和弦：以两个以上的音，按照三度的重叠关系，在纵向上加以结合，就是和弦。<br> 顺阶和弦：根音/三音/五音<br> 七个顺阶和弦：大三和弦（CFG）/小三和弦（m）/减三和弦（dim）<br> 大三和弦：根音–大三度–三音—小三度—五音<br> 小三和弦：根音–小三度–三音—大三度—五音<br> 减三和弦：根音–小三度–三音—小三度—五音<br> 调号：变音音符，为了让读者便于识别调式，同时方便写谱，五线谱就将相关调域自然大调音阶中出现的变音记号，按照一定的次序，记在谱号的后边，这些记号就是五线谱的调号。</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">调试</span><br><span class="line">音阶</span><br><span class="line">调域</span><br><span class="line">固定唱名法/首调唱名法</span><br><span class="line">自然大调/自然小调</span><br><span class="line">和弦的---顺阶和弦</span><br><span class="line">调号</span><br><span class="line">五度圈</span><br><span class="line">大调中的主要和弦的功能与进行</span><br></pre></td></tr></table></figure><h3 id="C大调音阶"><a href="#C大调音阶" class="headerlink" title="C大调音阶"></a>C大调音阶</h3><p> do 在C上<br> 音名：C，D，E，F，G，A，B，C<br> 指法：1 ，2，3，1，2，3，4，5</p><h3 id="G大调音阶"><a href="#G大调音阶" class="headerlink" title="G大调音阶"></a>G大调音阶</h3><p> 音名：G，A，B，半音 C，D，E，全音F#，半音G</p><ol><li><del>扫描事件动画处理</del></li><li>巡查录入，执法权限验证进行执法</li><li>筛选商业调试UI</li><li>巡查年度列表</li><li>配置平台组件</li></ol>]]></content>
     
     <summary type="html">
     
@@ -455,29 +478,6 @@
     </summary>
     
       <category term="git" scheme="https://huos3203.github.io/categories/git/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>A++审核问题总结</title>
-    <link href="https://huos3203.github.io/2018/04/03/%E6%B5%8B%E8%AF%95/A++%E5%AE%A1%E6%A0%B8%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
-    <id>https://huos3203.github.io/2018/04/03/测试/A++审核问题总结/</id>
-    <published>2018-04-03T15:29:08.000Z</published>
-    <updated>2018-04-03T15:29:08.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><script src="/assets/js/APlayer.min.js"> </script><p><a href="https://developer.apple.com/cn/app-store/review/guidelines/" target="_blank" rel="noopener">苹果审核规则</a><br>答审核人员回访时提到的几个问题：</p><ol><li>处理非法内容的预防措施<br>答：我们平台会采取24小时内删除非法内容并将违规用户拉黑销号处理，通过后台运作实现有效的防范措施。</li><li>app完整及数据内容规范化<br>答：我们对含有测试文本及敏感文字的数据进行清理，保证了功能完善内容规范。</li><li>经营模式<br>举例说明：A有事想，通过发布任务给B，询问B是否有朋友可以帮忙，如果有并且愿意介绍，A愿意以红包的方式进行打赏B，这个红包是象征意义的红包，目前不会在APP内进行支付，会在线下支付，也可不支付。主要通过寻找朋友的人脉寻求帮助的场景建立起一个社交的应用场景。</li><li>通讯录权限描述不清晰<br>答：我们重新校正了权限描述，让用户更清晰准确的理解APP使用通讯录的目的。</li></ol><p>希望早日通过审核，Thanks。</p><h2 id="规则1-2-Safety-User-Generated-Content"><a href="#规则1-2-Safety-User-Generated-Content" class="headerlink" title="规则1. 2 Safety: User Generated Content"></a>规则1. 2 Safety: User Generated Content</h2><pre><code>添加举报功能</code></pre><h2 id="规则5-1-2通讯录权限"><a href="#规则5-1-2通讯录权限" class="headerlink" title="规则5.1.2通讯录权限"></a>规则5.1.2通讯录权限</h2><p>微信通讯录权限描述:</p><h4 id="登录之后弹出两个提示"><a href="#登录之后弹出两个提示" class="headerlink" title="登录之后弹出两个提示:"></a>登录之后弹出两个提示:</h4><ol><li>说明APP使用目的<br>微信将上传手机通讯录至微信服务器以匹配及推荐朋友.\n(上传通讯录仅用于匹配,不会保存资料,亦不会用作他用)</li><li>说明APP请求使用权限<br>如果不允许,微信将无法推荐通讯录中的朋友给你.微信仅使用特征码用于匹配识别,不会保存你的通讯录内容.</li></ol><p>规避封帐号的风险：</p><ol><li>总结常被拒的问题，每次发布时做好自查。</li><li>把被拒概率大的单独申请账号审核。</li></ol><h2 id="被苹果惩罚的原因（不做以下勾当就不会招来苹果惩罚）"><a href="#被苹果惩罚的原因（不做以下勾当就不会招来苹果惩罚）" class="headerlink" title="被苹果惩罚的原因（不做以下勾当就不会招来苹果惩罚）"></a>被苹果惩罚的原因（不做以下勾当就不会招来苹果惩罚）</h2><p>✕ 刷榜<br>众所周知，刷榜绝对是开发者被苹果惩罚的最主要原因。<br>✕ 诱导性运营活动<br>引导用户评论以及消费都属于诱导性运营活动。<br>✕ 被刷榜<br>这边要说下这点。所谓“被刷榜”是指，被竞争对手恶意刷好评通过苹果机制强制下架。竞争对手采用这种方式陷害竞品，而目前苹果很难界定刷榜行为的主动和被动，所以这块开发者也要注意了。<br>✕ 违规做热搜排名<br>热搜排名在ASO优化中占据重要位置，但其实热搜带来的下载量并不多，并且这种行为很容易被苹果检测到，而一些开发者仍然乐意在这块冒险。<br>✕ 加入非官方支付代码<br>有些开发商为了方便玩家支付，擅自绕开苹果的支付体系，加入支付宝代码等，这种行为被苹果发现后绝对是会直接封号，毫不留情。<br>✕ 涉政、违法<br>这点大家应该都很清楚，如果应用的功能涉及侵犯他人的隐私滥用隐私权限或者存在与宗教、法律相悖的内容，也会遭到下架。</p><h2 id="对策"><a href="#对策" class="headerlink" title="对策"></a>对策</h2><p>✓ 1.一旦你的产品被惩罚，第一时间，邮件，电话等等方式找苹果，表示自己毫不知情，是受害者，希望能够恢复。态度一定要诚恳，据说这招很灵，不妨一试。<br>✓ 2.发动用户找苹果投诉，表示自己在App Store找不到喜欢的产品了，影响了用户体验。不过这招一定不能用力过猛，否则可能再给你的应用帮倒忙。<br>✓ 3.没办法中的办法，就是重新申请一个开发者账号，重新申请一个新的应用，换一张皮，重新上架。<br>原文：<a href="http://m.ifeng.com/news/x1PWh003/shareNews?aid=108804258&amp;fresh=1&amp;autoFresh=1" target="_blank" rel="noopener">被苹果惩罚了之后怎么办？如何去规避风险呢</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/cn/app-stor
-      
-    
-    </summary>
-    
-      <category term="分类" scheme="https://huos3203.github.io/categories/%E5%88%86%E7%B1%BB/"/>
     
     
   </entry>
