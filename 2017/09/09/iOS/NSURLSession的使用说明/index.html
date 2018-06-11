@@ -1,0 +1,1046 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>NSURLSession的使用说明 | 布衣男儿</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="boyer">
+    
+
+    
+    <meta name="description" content="iOS 7 和 Mac OS X 10.9 Mavericks 中一个显著的变化就是对 Foundation URL 加载系统的彻底重构。 现在已经有人在深入苹果的网络层基础架构的地方做研究了，所以我想是时候来分享一些对于我对于这些新的 API 的看法和心得了，新的 API 将如何影响我们编写程序，以及它们对于 API 设计理念的影响。 NSURLConnection机制NSURLConnect">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NSURLSession的使用说明">
+<meta property="og:url" content="http://boyers.coding.me/2017/09/09/iOS/NSURLSession的使用说明/index.html">
+<meta property="og:site_name" content="布衣男儿">
+<meta property="og:description" content="iOS 7 和 Mac OS X 10.9 Mavericks 中一个显著的变化就是对 Foundation URL 加载系统的彻底重构。 现在已经有人在深入苹果的网络层基础架构的地方做研究了，所以我想是时候来分享一些对于我对于这些新的 API 的看法和心得了，新的 API 将如何影响我们编写程序，以及它们对于 API 设计理念的影响。 NSURLConnection机制NSURLConnect">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://www.objccn.io/images/issues/issue-5/NSURLSession.png">
+<meta property="og:updated_time" content="2017-09-08T18:50:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NSURLSession的使用说明">
+<meta name="twitter:description" content="iOS 7 和 Mac OS X 10.9 Mavericks 中一个显著的变化就是对 Foundation URL 加载系统的彻底重构。 现在已经有人在深入苹果的网络层基础架构的地方做研究了，所以我想是时候来分享一些对于我对于这些新的 API 的看法和心得了，新的 API 将如何影响我们编写程序，以及它们对于 API 设计理念的影响。 NSURLConnection机制NSURLConnect">
+<meta name="twitter:image" content="https://www.objccn.io/images/issues/issue-5/NSURLSession.png">
+
+    
+    <link rel="alternative" href="/atom.xml" title="布衣男儿" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="布衣男儿" title="布衣男儿"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="布衣男儿">布衣男儿</a></h1>
+				<h2 class="blog-motto">不物喜，不己悲，善假物，易参行！</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/MyClippings">阅读笔记</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+ 					
+						<form class="search" action="" target="_blank">
+							<label>Search</label>
+						<input name="s" type="hidden" value= SE_zzsearchcode_shhzc78w ><input type="text" name="q" size="30" placeholder="Search"><br>
+						</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/09/09/iOS/NSURLSession的使用说明/" title="NSURLSession的使用说明" itemprop="url">NSURLSession的使用说明</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="boyer" target="_blank" itemprop="author">boyer</a>
+		
+  <p class="article-time">
+    <time datetime="2017-09-08T18:48:43.000Z" itemprop="datePublished"> Published 2017-09-09</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#NSURLConnection机制"><span class="toc-number">1.</span> <span class="toc-text">NSURLConnection机制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#缓存策略"><span class="toc-number">1.1.</span> <span class="toc-text">缓存策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#鉴权查询"><span class="toc-number">1.2.</span> <span class="toc-text">鉴权查询</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NSURLSession成员"><span class="toc-number">2.</span> <span class="toc-text">NSURLSession成员</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#NSURLSessionTask"><span class="toc-number">2.1.</span> <span class="toc-text">NSURLSessionTask</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#工厂方法"><span class="toc-number">2.1.1.</span> <span class="toc-text">工厂方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#数据加载工厂"><span class="toc-number">2.1.1.1.</span> <span class="toc-text">数据加载工厂</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#数据上传工厂"><span class="toc-number">2.1.1.2.</span> <span class="toc-text">数据上传工厂</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#数据下载工厂"><span class="toc-number">2.1.1.3.</span> <span class="toc-text">数据下载工厂</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#NSURLSession-的-delegate-方法"><span class="toc-number">2.1.2.</span> <span class="toc-text">NSURLSession 的 delegate 方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#连接层-任务层代理"><span class="toc-number">2.1.2.1.</span> <span class="toc-text">连接层/任务层代理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#block参数回调代理模式"><span class="toc-number">2.1.2.2.</span> <span class="toc-text">block参数回调代理模式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NSURLSessionConfiguration"><span class="toc-number">2.2.</span> <span class="toc-text">NSURLSessionConfiguration</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#三个配置类工厂方法"><span class="toc-number">2.2.1.</span> <span class="toc-text">三个配置类工厂方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置属性"><span class="toc-number">2.2.2.</span> <span class="toc-text">配置属性</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#基本配置"><span class="toc-number">2.2.2.1.</span> <span class="toc-text">基本配置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Cookie-策略"><span class="toc-number">2.2.2.2.</span> <span class="toc-text">Cookie 策略</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#安全策略"><span class="toc-number">2.2.2.3.</span> <span class="toc-text">安全策略</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#缓存策略-1"><span class="toc-number">2.2.2.4.</span> <span class="toc-text">缓存策略</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#自定义协议"><span class="toc-number">2.2.2.5.</span> <span class="toc-text">自定义协议</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结论"><span class="toc-number">3.</span> <span class="toc-text">结论</span></a></li></ol>
+		
+		</div>
+		
+		<link rel="stylesheet" href="/owl.css"><script src="/assets/js/APlayer.min.js"> </script><p>iOS 7 和 Mac OS X 10.9 Mavericks 中一个显著的变化就是对 Foundation URL 加载系统的彻底重构。</p>
+<p>现在已经有人在深入苹果的网络层基础架构的地方做研究了，所以我想是时候来分享一些对于我对于这些新的 API 的看法和心得了，新的 API 将如何影响我们编写程序，以及它们对于 API 设计理念的影响。</p>
+<h2 id="NSURLConnection机制"><a href="#NSURLConnection机制" class="headerlink" title="NSURLConnection机制"></a>NSURLConnection机制</h2><p><code>NSURLConnection</code> 作为 Core Foundation / CFNetwork 框架的 API 之上的一个抽象，在 2003 年，随着第一版的 Safari 的发布就发布了。<code>NSURLConnection</code> 这个名字，实际上是指代的 Foundation 框架的 URL 加载系统中一系列有关联的组件：<code>NSURLRequest</code>、<code>NSURLResponse</code>、<code>NSURLProtocol</code>、 <code>NSURLCache</code>、 <code>NSHTTPCookieStorage</code>、<code>NSURLCredentialStorage</code> 以及同名类 <code>NSURLConnection</code>。</p>
+<p><code>NSURLRequest</code> 被传递给 <code>NSURLConnection</code>。被委托对象（遵守以前的非正式协议 <code>&lt;NSURLConnectionDelegate&gt;</code> 和 <code>&lt;NSURLConnectionDataDelegate&gt;</code>）异步地返回一个 <code>NSURLResponse</code> 以及包含服务器返回信息的 <code>NSData</code>。</p>
+<h3 id="缓存策略"><a href="#缓存策略" class="headerlink" title="缓存策略"></a>缓存策略</h3><p>在一个请求被发送到服务器之前，系统会先查询共享的缓存信息，然后根据<strong>策略（policy）</strong>以及<strong>可用性（availability）</strong>的不同，一个已经被缓存的响应可能会被立即返回。如果没有缓存的响应可用，则这个请求将根据我们指定的策略来缓存它的响应以便将来的请求可以使用。</p>
+<h3 id="鉴权查询"><a href="#鉴权查询" class="headerlink" title="鉴权查询"></a>鉴权查询</h3><p>在把请求发送给服务器的过程中，服务器可能会发出<strong>鉴权查询（authentication challenge）</strong>，这可以由共享的 cookie 或<strong>机密存储（credential storage）</strong>来自动响应，或者由被委托对象来响应。发送中的请求也可以被注册的 <code>NSURLProtocol</code> 对象所拦截，以便在必要的时候无缝地改变其加载行为。</p>
+<p>不管怎样，<code>NSURLConnection</code> 作为网络基础架构，已经服务了成千上万的 iOS 和 Mac OS 程序，并且做的还算相当不错。但是这些年，一些用例——尤其是在 iPhone 和 iPad 上面——已经对 <code>NSURLConnection</code> 的几个核心概念提出了挑战，让苹果有理由对它进行重构。</p>
+<p>在 2013 的 WWDC 上，苹果推出了 <code>NSURLConnection</code> 的继任者：<code>NSURLSession</code>。</p>
+<hr>
+<h2 id="NSURLSession成员"><a href="#NSURLSession成员" class="headerlink" title="NSURLSession成员"></a>NSURLSession成员</h2><p>和 <code>NSURLConnection</code> 一样，<code>NSURLSession</code> 指的也不仅是同名类 <code>NSURLSession</code>，还包括一系列相互关联的类。<code>NSURLSession</code> 包括了与之前相同的组件，<code>NSURLRequest</code> 与 <code>NSURLCache</code>，但是把 <code>NSURLConnection</code> 替换成了 <code>NSURLSession</code>、<code>NSURLSessionConfiguration</code> 以及 <code>NSURLSessionTask</code> 的 3 个子类：<code>NSURLSessionDataTask</code>，<code>NSURLSessionUploadTask</code>，<code>NSURLSessionDownloadTask</code>。</p>
+<ol>
+<li>NSURLSessionConfiguration可配置性初始化<br>与 <code>NSURLConnection</code> 相比，<code>NSURLsession</code> 最直接的改进就是可以配置每个 session 的缓存，协议，cookie，以及<strong>证书策略（credential policy）</strong>，甚至跨程序共享这些信息。这将允许程序和网络基础框架之间相互独立，不会发生干扰。每个 <code>NSURLSession</code> 对象都由一个 <code>NSURLSessionConfiguration</code> 对象来进行初始化，后者指定了刚才提到的那些策略以及一些用来增强移动设备上性能的新选项。</li>
+<li>抽象类NSURLSessionTask数据加载<br><code>NSURLSession</code> 中另一大块就是 session task。它负责处理数据的加载以及文件和数据在客户端与服务端之间的上传和下载。<code>NSURLSessionTask</code> 与 <code>NSURLConnection</code> 最大的相似之处在于它也负责数据的加载，最大的不同之处在于所有的 task 共享其创造者 <code>NSURLSession</code> 这一<strong>公共委托者（common delegate）</strong>。</li>
+</ol>
+<p>我们先来深入探讨 task，过后再来讨论 <code>NSURLSessionConfiguration</code>。</p>
+<h3 id="NSURLSessionTask"><a href="#NSURLSessionTask" class="headerlink" title="NSURLSessionTask"></a>NSURLSessionTask</h3><p><code>NSURLsessionTask</code> 是一个抽象类，其下有 3 个实体子类封装了现代程序三个最基本的网络任务：</p>
+<ol>
+<li><code>NSURLSessionDataTask</code>：加载数据，当加载任务完成时，它会返回相关联的数据，比如 JSON 或者 XML</li>
+<li><code>NSURLSessionUploadTask</code>：上传文件，当上传任务完成时，也会有上传相关数据返回，所以继承自 <code>NSURLSessionDataTask</code>。</li>
+<li><code>NSURLSessionDownloadTask</code>：下载文件，当下载任务结束时，它会返回已下载文件的一个临时的文件路径。</li>
+</ol>
+<p><img alt="NSURLSessionTask class diagram" src="https://www.objccn.io/images/issues/issue-5/NSURLSession.png" width="612" height="294"></p>
+<p>所有的 task 都是可以取消，暂停或者恢复的。当一个 download task 取消时，可以通过选项来创建一个<strong>恢复数据（resume data）</strong>，然后可以传递给下一次新创建的 download task，以便继续之前的下载。</p>
+<h4 id="工厂方法"><a href="#工厂方法" class="headerlink" title="工厂方法"></a>工厂方法</h4><p>不同于直接使用 <code>alloc-init</code> 初始化方法，task 是由一个 <code>NSURLSession</code> 创建的。每个 task 的构造方法都对应有或者没有 <code>completionHandler</code> 这个 block 的两个版本:</p>
+<ol>
+<li>block回调构造方式: <code>–dataTaskWithRequest:completionHandler:</code><br>通过指定 <code>completionHandler</code> 这个 block 将创建一个隐式的 delegate，来替代该 task 原来的 delegate——session。</li>
+<li>代理回调构造方式：<code>–dataTaskWithRequest:</code><br>对于需要 <code>override</code> 原有 session task 的 delegate 的默认行为的情况,使用代理回调</li>
+</ol>
+<p>这里不会立即运行 task，而是将该 task 对象先返回，允许我们进一步的配置，然后可以使用 <code>resume</code> 方法来让它开始运行。</p>
+<h5 id="数据加载工厂"><a href="#数据加载工厂" class="headerlink" title="数据加载工厂"></a>数据加载工厂</h5><p>Data task 可以通过 <code>NSURL</code> 或 <code>NSURLRequest</code> 创建（使用前者相当于是使用一个对于该 URL 进行标准 <code>GET</code> 请求的 <code>NSURLRequest</code>，这是一种快捷方法）：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSURL</span> *URL = [<span class="built_in">NSURL</span> URLWithString:<span class="string">@"http://example.com"</span>];</span><br><span class="line"><span class="built_in">NSURLRequest</span> *request = [<span class="built_in">NSURLRequest</span> requestWithURL:URL];</span><br><span class="line"></span><br><span class="line"><span class="built_in">NSURLSession</span> *session = [<span class="built_in">NSURLSession</span> sharedSession];</span><br><span class="line"><span class="built_in">NSURLSessionDataTask</span> *task = [session dataTaskWithRequest:request</span><br><span class="line">completionHandler:</span><br><span class="line">^(<span class="built_in">NSData</span> *data, <span class="built_in">NSURLResponse</span> *response, <span class="built_in">NSError</span> *error) &#123;</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line">[task resume];</span><br></pre></td></tr></table></figure></p>
+<h5 id="数据上传工厂"><a href="#数据上传工厂" class="headerlink" title="数据上传工厂"></a>数据上传工厂</h5><p>Upload task 的创建需要使用一个 request，另外加上一个要上传的 <code>NSData</code> 对象或者是一个本地文件的路径对应的 <code>NSURL</code>：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSURL</span> *URL = [<span class="built_in">NSURL</span> URLWithString:<span class="string">@"http://example.com/upload"</span>];</span><br><span class="line"><span class="built_in">NSURLRequest</span> *request = [<span class="built_in">NSURLRequest</span> requestWithURL:URL];</span><br><span class="line"><span class="built_in">NSData</span> *data = ...;</span><br><span class="line"></span><br><span class="line"><span class="built_in">NSURLSession</span> *session = [<span class="built_in">NSURLSession</span> sharedSession];</span><br><span class="line"><span class="built_in">NSURLSessionUploadTask</span> *uploadTask = [session uploadTaskWithRequest:request</span><br><span class="line">fromData:data</span><br><span class="line">completionHandler:</span><br><span class="line">^(<span class="built_in">NSData</span> *data, <span class="built_in">NSURLResponse</span> *response, <span class="built_in">NSError</span> *error) &#123;</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line">[uploadTask resume];</span><br></pre></td></tr></table></figure></p>
+<h5 id="数据下载工厂"><a href="#数据下载工厂" class="headerlink" title="数据下载工厂"></a>数据下载工厂</h5><p>Download task 也需要一个 request，不同之处在于 <code>completionHandler</code> 这个 block。Data task 和 upload task 会在任务完成时一次性返回，但是 Download task 是将数据一点点地写入本地的临时文件。所以在 <code>completionHandler</code> 这个 block 里，我们需要把文件从一个临时地址移动到一个永久的地址保存起来：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSURL</span> *URL = [<span class="built_in">NSURL</span> URLWithString:<span class="string">@"http://example.com/file.zip"</span>];</span><br><span class="line"><span class="built_in">NSURLRequest</span> *request = [<span class="built_in">NSURLRequest</span> requestWithURL:URL];</span><br><span class="line"></span><br><span class="line"><span class="built_in">NSURLSession</span> *session = [<span class="built_in">NSURLSession</span> sharedSession];</span><br><span class="line"><span class="built_in">NSURLSessionDownloadTask</span> *downloadTask = [session downloadTaskWithRequest:request</span><br><span class="line">completionHandler:</span><br><span class="line">^(<span class="built_in">NSURL</span> *location, <span class="built_in">NSURLResponse</span> *response, <span class="built_in">NSError</span> *error) &#123;</span><br><span class="line"><span class="built_in">NSString</span> *documentsPath = [<span class="built_in">NSSearchPathForDirectoriesInDomains</span>(<span class="built_in">NSDocumentDirectory</span>, <span class="built_in">NSUserDomainMask</span>, <span class="literal">YES</span>) firstObject];</span><br><span class="line"><span class="built_in">NSURL</span> *documentsDirectoryURL = [<span class="built_in">NSURL</span> fileURLWithPath:documentsPath];</span><br><span class="line"><span class="built_in">NSURL</span> *newFileLocation = [documentsDirectoryURL URLByAppendingPathComponent:[[response URL] lastPathComponent]];</span><br><span class="line">[[<span class="built_in">NSFileManager</span> defaultManager] copyItemAtURL:location toURL:newFileLocation error:<span class="literal">nil</span>];</span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line">[downloadTask resume];</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p><span class="secondary radius label">编者注</span> 原文中这块代码以及上文的表述中存有一些问题，详见这个 <a href="https://github.com/objcio/articles/issues/24" target="_blank" rel="noopener">issue</a>，本文已进行更正，如果您有不同意见，欢迎在 <a href="https://github.com/objccn/articles" target="_blank" rel="noopener">Github</a> 上给我们反馈。</p>
+</blockquote>
+<h4 id="NSURLSession-的-delegate-方法"><a href="#NSURLSession-的-delegate-方法" class="headerlink" title="NSURLSession 的 delegate 方法"></a>NSURLSession 的 delegate 方法</h4><p><code>NSURLSession</code> 的 delegate 方法是 <code>NSURLConnection</code> 的演化的十年中对于 ad-hoc 模式的一个显著改善。您可以查看这个<a href="https://gist.github.com/floriankugler/6870499" target="_blank" rel="noopener">映射表</a>来进行一个完整的概览。</p>
+<h5 id="连接层-任务层代理"><a href="#连接层-任务层代理" class="headerlink" title="连接层/任务层代理"></a>连接层/任务层代理</h5><p><code>NSURLSession</code> 既拥有 seesion 的 delegate 方法，又拥有 task 的 delegate 方法用来处理鉴权查询。</p>
+<ol>
+<li>session 的 delegate 方法处理连接层的问题：诸如服务器信任，客户端证书的评估，<a href="http://en.wikipedia.org/wiki/NTLM" target="_blank" rel="noopener">NTLM</a> 和 <a href="http://zh.wikipedia.org/wiki/Kerberos" target="_blank" rel="noopener">Kerberos</a> 协议这类问题。</li>
+<li>task 的 delegate 处理网络请求为基础的问题：如 Basic，Digest，以及<strong>代理身份验证（Proxy authentication）</strong>等。</li>
+<li>网络请求结束代理<br>在 <code>NSURLConnection</code> 中两个delegate方法：<br>数据加载完成：<code>NSURLConnectionDataDelegate</code> 中的 <code>-connectionDidFinishLoading:</code><br>网络连接失败： <code>NSURLConnectionDelegate</code> 中的 <code>-connection:didFailWithError:</code>，<br>在 <code>NSURLSession</code> 中改为一个 delegate 方法：<ol>
+<li><code>NSURLSessionTaskDelegate</code> 的 <code>-URLSession:task:didCompleteWithError:</code></li>
+<li><code>NSURLSession</code> 中表示传输多少字节的参数类型现在改为 <code>int64_t</code>，以前在 <code>NSURLConnection</code> 中相应的参数的类型是 <code>long long</code>。</li>
+</ol>
+</li>
+</ol>
+<h5 id="block参数回调代理模式"><a href="#block参数回调代理模式" class="headerlink" title="block参数回调代理模式"></a>block参数回调代理模式</h5><p><code>NSURLSession</code> 给 Foundation 框架引入了一种全新的模式：即 代理方法中以<code>completionHandler:</code>  这种block 作为参数的方式。</p>
+<ol>
+<li>这种模式允许 delegate 方法可以安全地在主线程与运行，而不会阻塞主线程；</li>
+<li>Delgate 只需要简单地调用 <code>dispatch_async</code> 就可以切换到后台进行相关的操作，然后在操作完成时调用 <code>completionHandler</code> 即可。</li>
+<li>它还可以有效地拥有多个返回值，而不需要我们使用笨拙的参数指针。</li>
+</ol>
+<p>以 <code>NSURLSessionTaskDelegate</code>代理中的方法为例：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-URLSession:task:didReceiveChallenge:completionHandler:</span><br></pre></td></tr></table></figure></p>
+<p><code>completionHandler</code> 接受的两个参数：<br>参数一：<code>NSURLSessionAuthChallengeDisposition</code>:鉴权查询的策略<br>参数二：<code>NSURLCredential</code>:证书（仅当第一个参数——应对鉴权查询的策略为使用证书，即 <code>NSURLSessionAuthChallengeUseCredential</code> 时有效，否则该参数为 <code>NULL</code>）。</p>
+<blockquote>
+<p>想要查看更多关于 session task 的信息，可以查看 <a href="http://asciiwwdc.com/2013/sessions/705" target="_blank" rel="noopener">WWDC Session 705: “What’s New in Foundation Networking”</a></p>
+</blockquote>
+<h3 id="NSURLSessionConfiguration"><a href="#NSURLSessionConfiguration" class="headerlink" title="NSURLSessionConfiguration"></a>NSURLSessionConfiguration</h3><p><code>NSURLSessionConfiguration</code> 对象用于对 <code>NSURLSession</code> 对象进行初始化。</p>
+<ol>
+<li>配置开发灵活性<br><code>NSURLSessionConfiguration</code> 扩充了 <code>NSMutableURLRequest</code> 所提供的<a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableURLRequest_Class/Reference/Reference.html" target="_blank" rel="noopener">网络请求层的设置选项</a>，从指定可用网络，到 cookie，安全性，缓存策略，再到使用自定义协议，启动事件的设置，以及用于移动设备优化的几个新属性，你会发现使用 <code>NSURLSessionConfiguration</code> 可以找到几乎任何你想要进行配置的选项，提供给我们相当大的灵活性和控制权。</li>
+<li>配置加载机制<br><code>NSURLSession</code> 在初始化时会把配置它的 <code>NSURLSessionConfiguration</code> 对象进行一次 copy，并保存到自己的 <code>configuration</code> 属性中，而且这个属性是只读的。因此之后再修改最初配置 session 的那个 configuration 对象对于 session 是没有影响的。也就是说，configuration 只在初始化时被读取一次，之后都是不会变化的。</li>
+</ol>
+<h4 id="三个配置类工厂方法"><a href="#三个配置类工厂方法" class="headerlink" title="三个配置类工厂方法"></a>三个配置类工厂方法</h4><p>针对<code>NSURLSession</code> 不同的使用场景，如下三个配置类方法：</p>
+<ol>
+<li><code>+defaultSessionConfiguration</code>： 返回一个标准的 configuration，这个配置实际上与 <code>NSURLConnection</code> 的<strong>网络堆栈（networking stack）</strong>是一样的，具有相同的共享 <code>NSHTTPCookieStorage</code>，共享 <code>NSURLCache</code> 和共享 <code>NSURLCredentialStorage</code>。</li>
+<li><code>+ephemeralSessionConfiguration</code>： 返回一个预设配置，这个配置中不会对缓存，Cookie 和证书进行持久性的存储。这对于实现像秘密浏览这种功能来说是很理想的。</li>
+<li><code>+backgroundSessionConfiguration:(NSString *)identifier</code> 的独特之处在于，它会创建一个<em>后台 session</em>。后台 session 不同于常规的，普通的 session，它甚至可以在应用程序挂起，退出或者崩溃的情况下运行上传和下载任务。初始化时指定的标识符，被用于向任何可能在进程外恢复后台传输的<strong>守护进程（daemon）</strong>提供上下文。</li>
+</ol>
+<p>想要查看更多关于后台 session 的信息，可以查看 <a href="http://asciiwwdc.com/2013/sessions/204" target="_blank" rel="noopener">WWDC Session 204: “What’s New with Multitasking”</a></p>
+<h4 id="配置属性"><a href="#配置属性" class="headerlink" title="配置属性"></a>配置属性</h4><p><code>NSURLSessionConfiguration</code> 拥有 20 个配置属性。熟练掌握这些配置属性的用处，可以让应用程序充分地利用其网络环境。</p>
+<h5 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h5><ol>
+<li><p><code>HTTPAdditionalHeaders</code>: 指定了一组默认的可以设置<strong>出站请求（outbound request）</strong>的数据头。这对于跨 session 共享信息，如内容类型，语言，用户代理和身份认证，是很有用的。</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *userPasswordString = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@:%@"</span>, user, password];</span><br><span class="line"><span class="built_in">NSData</span> * userPasswordData = [userPasswordString dataUsingEncoding:<span class="built_in">NSUTF8StringEncoding</span>];</span><br><span class="line"><span class="built_in">NSString</span> *base64EncodedCredential = [userPasswordData base64EncodedStringWithOptions:<span class="number">0</span>];</span><br><span class="line"><span class="built_in">NSString</span> *authString = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"Basic %@"</span>, base64EncodedCredential];</span><br><span class="line"><span class="built_in">NSString</span> *userAgentString = <span class="string">@"AppName/com.example.app (iPhone 5s; iOS 7.0.2; Scale/2.0)"</span>;</span><br><span class="line"></span><br><span class="line">configuration.HTTPAdditionalHeaders = @&#123;<span class="string">@"Accept"</span>: <span class="string">@"application/json"</span>,</span><br><span class="line"><span class="string">@"Accept-Language"</span>: <span class="string">@"en"</span>,</span><br><span class="line"><span class="string">@"Authorization"</span>: authString,</span><br><span class="line"><span class="string">@"User-Agent"</span>: userAgentString&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>networkServiceType</code>: 对标准的网络流量，网络电话，语音，视频，以及由一个后台进程使用的流量进行了区分。大多数应用程序都不需要设置这个。</p>
+</li>
+<li><code>allowsCellularAccess</code> 和 <code>discretionary</code> 被用于节省通过蜂窝网络连接的带宽。对于后台传输的情况，推荐大家使用 <code>discretionary</code> 这个属性，而不是 <code>allowsCellularAccess</code>，因为前者会把 WiFi 和电源的可用性考虑在内。</li>
+<li><code>timeoutIntervalForRequest</code> 和 <code>timeoutIntervalForResource</code> 分别指定了对于请求和资源的超时间隔。许多开发人员试图使用 <code>timeoutInterval</code> 去限制发送请求的总时间，但其实它真正的含义是：<strong>分组（packet）</strong>之间的时间。实际上我们应该使用 <code>timeoutIntervalForResource</code> 来规定整体超时的总时间，但应该只将其用于后台传输，而不是用户实际上可能想要去等待的任何东西。</li>
+<li><code>HTTPMaximumConnectionsPerHost</code>: 是 Foundation 框架中 URL 加载系统的一个新的配置选项。它曾经被 <code>NSURLConnection</code> 用于管理私有的连接池。现在有了 <code>NSURLSession</code>，开发者可以在需要时限制连接到特定主机的数量。</li>
+<li><code>HTTPShouldUsePipelining</code>: 这个属性在 <code>NSMutableURLRequest</code> 下也有，它可以被用于开启 <strong>HTTP 管线化（<a href="http://en.wikipedia.org/wiki/HTTP_pipelining" target="_blank" rel="noopener">HTTP pipelining</a>）</strong>，这可以显着降低请求的加载时间，但是由于没有被服务器广泛支持，默认是禁用的。</li>
+<li><code>sessionSendsLaunchEvents</code>: 是另一个新的属性，该属性指定该 session 是否应该从后台启动。</li>
+<li><code>connectionProxyDictionary</code>: 指定了 session 连接中的代理服务器。同样地，大多数面向消费者的应用程序都不需要代理，所以基本上不需要配置这个属性。</li>
+</ol>
+<blockquote>
+<p>关于连接代理的更多信息可以在 <a href="https://developer.apple.com/library/mac/documentation/CoreFoundation/Reference/CFProxySupport/Reference/reference.html" target="_blank" rel="noopener"><code>CFProxySupport</code> Reference</a> 找到。</p>
+</blockquote>
+<h5 id="Cookie-策略"><a href="#Cookie-策略" class="headerlink" title="Cookie 策略"></a>Cookie 策略</h5><ol>
+<li><code>HTTPCookieStorage</code>: 存储了 session 所使用的 cookie。默认情况下会使用 <code>NSHTTPCookieShorage</code> 的 <code>+sharedHTTPCookieStorage</code> 这个单例对象，这与 <code>NSURLConnection</code> 是相同的。</li>
+<li><code>HTTPCookieAcceptPolicy</code>: 决定了什么情况下 session 应该接受从服务器发出的 cookie。</li>
+<li><code>HTTPShouldSetCookies</code>: 指定了请求是否应该使用 session 存储的 cookie，即 <code>HTTPCookieSorage</code> 属性的值。</li>
+</ol>
+<h5 id="安全策略"><a href="#安全策略" class="headerlink" title="安全策略"></a>安全策略</h5><ol>
+<li><code>URLCredentialStorage</code>: 存储了 session 所使用的证书。默认情况下会使用 <code>NSURLCredentialStorage</code> 的 <code>+sharedCredentialStorage</code> 这个单例对象，这与 <code>NSURLConnection</code> 是相同的。</li>
+<li><code>TLSMaximumSupportedProtocol</code> 和 <code>TLSMinimumSupportedProtocol</code> 确定 session 是否支持 <a href="http://zh.wikipedia.org/wiki/安全套接层" target="_blank" rel="noopener">SSL 协议</a>。</li>
+</ol>
+<h5 id="缓存策略-1"><a href="#缓存策略-1" class="headerlink" title="缓存策略"></a>缓存策略</h5><ol>
+<li><code>URLCache</code> : 是 session 使用的缓存。默认情况下会使用 <code>NSURLCache</code> 的 <code>+sharedURLCache</code> 这个单例对象，这与 <code>NSURLConnection</code> 是相同的。</li>
+<li><code>requestCachePolicy</code> : 指定了一个请求的缓存响应应该在什么时候返回。这相当于 <code>NSURLRequest</code> 的 <code>-cachePolicy</code> 方法。</li>
+</ol>
+<h5 id="自定义协议"><a href="#自定义协议" class="headerlink" title="自定义协议"></a>自定义协议</h5><ol>
+<li><code>protocolClasses</code>: 用来配置特定某个 session 所使用的自定义协议（该协议是 <code>NSURLProtocol</code> 的子类）的数组。</li>
+</ol>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>iOS 7 和 Mac OS X 10.9 Mavericks 中 URL 加载系统的变化，是对 <code>NSURLConnection</code> 进行深思熟虑后的一个自然而然的进化。总体而言，苹果的 Foundation 框架团队干了一件令人钦佩的的工作，他们研究并预测了移动开发者现有的和新兴的用例，创造了能够满足日常任务而且非常好用的 API 。</p>
+<p>尽管在这个体系结构中，某些决定对于可组合性和可扩展性而言是一种倒退，但是 <code>NSURLSession</code> 仍然是实现更高级别网络功能的一个强大的基础框架。</p>
+<hr>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/iOS/">iOS</a>►<a class="article-category-link" href="/categories/iOS/API/">API</a>
+</div>
+
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	<div class="share-jiathis">
+	  
+<div class="jiathis_style_24x24">
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_weixin"></a>
+	<a class="jiathis_button_renren"></a>
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_googleplus"></a>
+	<a class="jiathis_button_douban"></a>
+	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+    var jiathis_config={
+    data_track_clickback:true,
+    sm:"copy,renren,cqq",
+    pic:"",
+    summary:"",
+     ralateuid:{"tsina":"1791281385"},hideMore:false}
+    
+  </script> 
+<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=
+" charset="utf-8"></script>      
+
+	 </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2017/09/10/个人项目/iResearcher简介/" title="iResearcher简介">
+  <strong>上一篇：</strong><br/>
+  <span>
+  iResearcher简介</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2017/09/09/macOS/支持OSX浏览PDF简单视图/"  title="支持OSX浏览PDF简单视图">
+ <strong>下一篇：</strong><br/> 
+ <span>支持OSX浏览PDF简单视图
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#NSURLConnection机制"><span class="toc-number">1.</span> <span class="toc-text">NSURLConnection机制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#缓存策略"><span class="toc-number">1.1.</span> <span class="toc-text">缓存策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#鉴权查询"><span class="toc-number">1.2.</span> <span class="toc-text">鉴权查询</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NSURLSession成员"><span class="toc-number">2.</span> <span class="toc-text">NSURLSession成员</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#NSURLSessionTask"><span class="toc-number">2.1.</span> <span class="toc-text">NSURLSessionTask</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#工厂方法"><span class="toc-number">2.1.1.</span> <span class="toc-text">工厂方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#数据加载工厂"><span class="toc-number">2.1.1.1.</span> <span class="toc-text">数据加载工厂</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#数据上传工厂"><span class="toc-number">2.1.1.2.</span> <span class="toc-text">数据上传工厂</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#数据下载工厂"><span class="toc-number">2.1.1.3.</span> <span class="toc-text">数据下载工厂</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#NSURLSession-的-delegate-方法"><span class="toc-number">2.1.2.</span> <span class="toc-text">NSURLSession 的 delegate 方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#连接层-任务层代理"><span class="toc-number">2.1.2.1.</span> <span class="toc-text">连接层/任务层代理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#block参数回调代理模式"><span class="toc-number">2.1.2.2.</span> <span class="toc-text">block参数回调代理模式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NSURLSessionConfiguration"><span class="toc-number">2.2.</span> <span class="toc-text">NSURLSessionConfiguration</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#三个配置类工厂方法"><span class="toc-number">2.2.1.</span> <span class="toc-text">三个配置类工厂方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置属性"><span class="toc-number">2.2.2.</span> <span class="toc-text">配置属性</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#基本配置"><span class="toc-number">2.2.2.1.</span> <span class="toc-text">基本配置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Cookie-策略"><span class="toc-number">2.2.2.2.</span> <span class="toc-text">Cookie 策略</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#安全策略"><span class="toc-number">2.2.2.3.</span> <span class="toc-text">安全策略</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#缓存策略-1"><span class="toc-number">2.2.2.4.</span> <span class="toc-text">缓存策略</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#自定义协议"><span class="toc-number">2.2.2.5.</span> <span class="toc-text">自定义协议</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结论"><span class="toc-number">3.</span> <span class="toc-text">结论</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+<div class="github-card">
+<p class="asidetitle">Github Card</p>
+<div class="github-card" data-github="huos3203" data-width="220" data-height="119" data-theme="medium">
+<script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
+</div>
+  </div>
+
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/iOS/API/" title="API">API<sup>7</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/git/API/" title="API">API<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/资源/AR/" title="AR">AR<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/git/IDE/" title="IDE">IDE<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/macOS/JS/" title="JS">JS<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/swift/JS混编/" title="JS混编">JS混编<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/swift/OC混编/" title="OC混编">OC混编<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/macOS/PDF/" title="PDF">PDF<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/开源库/RxSwift/" title="RxSwift">RxSwift<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/xcode/SB/" title="SB">SB<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/docker/" title="docker">docker<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/git/" title="git">git<sup>13</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/git/gitLab/" title="gitLab">gitLab<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/hexo/" title="hexo">hexo<sup>10</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/iOS/" title="iOS">iOS<sup>29</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/xcode/instrument/" title="instrument">instrument<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/macOS/" title="macOS">macOS<sup>13</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/swift/playground/" title="playground">playground<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/podcast/" title="podcast">podcast<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/工具/ruby/" title="ruby">ruby<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/iOS/schemes/" title="schemes">schemes<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/shell/" title="shell">shell<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/git/svn/" title="svn">svn<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/swift/" title="swift">swift<sup>11</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/vim/" title="vim">vim<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/xcode/" title="xcode">xcode<sup>13</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/个人项目/" title="个人项目">个人项目<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/作文作曲/" title="作文作曲">作文作曲<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/其他/" title="其他">其他<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/分类/" title="分类">分类<sup>5</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/swift/包管理/" title="包管理">包管理<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/项目/发布/" title="发布">发布<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/导图/" title="导图">导图<sup>5</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/其他/小程序/" title="小程序">小程序<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/vim/工具/" title="工具">工具<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/工具/" title="工具">工具<sup>9</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/git/工具/" title="工具">工具<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/开源库/" title="开源库">开源库<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/git/恢复/" title="恢复">恢复<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/iOS/控件/" title="控件">控件<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/xcode/插件/" title="插件">插件<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/swift/数据库/" title="数据库">数据库<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/xcode/文档/" title="文档">文档<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/旅行/" title="旅行">旅行<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/架构/" title="架构">架构<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/xcode/测试/" title="测试">测试<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/xcode/特性/" title="特性">特性<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/iOS/特性/" title="特性">特性<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/管理/" title="管理">管理<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/macOS/终端/" title="终端">终端<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/项目/结构/" title="结构">结构<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/xcode/编译/" title="编译">编译<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/工具/网络/" title="网络">网络<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/macOS/视图/" title="视图">视图<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/iOS/视图/" title="视图">视图<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/视频/" title="视频">视频<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/macOS/视频/" title="视频">视频<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/设备/" title="设备">设备<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/iOS/设备/" title="设备">设备<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/iOS/设计/" title="设计">设计<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/swift/语法/" title="语法">语法<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/shell/语法/" title="语法">语法<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/xcode/调试/" title="调试">调试<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/macOS/调试/" title="调试">调试<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/资源/" title="资源">资源<sup>5</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/shell/路由器/" title="路由器">路由器<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/iOS/转场/" title="转场">转场<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/iOS/配置/" title="配置">配置<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/项目/重构/" title="重构">重构<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/阅读/" title="阅读">阅读<sup>7</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/工具/集成/" title="集成">集成<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/项目/" title="项目">项目<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/项目/预览/" title="预览">预览<sup>1</sup></a></li>
+		  
+		
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/工具/" title="工具">工具<sup>39</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/管理/" title="管理">管理<sup>20</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/语法/" title="语法">语法<sup>16</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/搭建/" title="搭建">搭建<sup>8</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/UI/" title="UI">UI<sup>8</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/测试/" title="测试">测试<sup>7</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/混编/" title="混编">混编<sup>7</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/git/" title="git">git<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/资源/" title="资源">资源<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/macOS/" title="macOS">macOS<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/协议/" title="协议">协议<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/SDK/" title="SDK">SDK<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/iOS/" title="iOS">iOS<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/脚本/" title="脚本">脚本<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/坑/" title="坑">坑<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Storyboard/" title="Storyboard">Storyboard<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/转场/" title="转场">转场<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/swift/" title="swift">swift<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/汇总/" title="汇总">汇总<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/单元测试/" title="单元测试">单元测试<sup>2</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  
+  <div class="tagcloudlist">
+    <p class="asidetitle">Tag Cloud</p>
+    <div class="tagcloudlist clearfix">
+       <a href="/tags/工具/" style="font-size: 10px;"><#工具#></a> <a href="/tags/管理/" style="font-size: 10px;"><#管理#></a> <a href="/tags/AR/" style="font-size: 10px;">AR</a> <a href="/tags/AppleScript/" style="font-size: 11.11px;">AppleScript</a> <a href="/tags/AutoLayout/" style="font-size: 10px;">AutoLayout</a> <a href="/tags/BDD/" style="font-size: 10px;">BDD</a> <a href="/tags/IOS7/" style="font-size: 10px;">IOS7</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Java​Script​Core/" style="font-size: 11.11px;">Java​Script​Core</a> <a href="/tags/LBS-AR/" style="font-size: 10px;">LBS+AR</a> <a href="/tags/PDF/" style="font-size: 10px;">PDF</a> <a href="/tags/QQ红包/" style="font-size: 10px;">QQ红包</a> <a href="/tags/ResilioSync/" style="font-size: 10px;">ResilioSync</a> <a href="/tags/SDK/" style="font-size: 12.22px;">SDK</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/Scrum/" style="font-size: 10px;">Scrum</a> <a href="/tags/Storyboard/" style="font-size: 12.22px;">Storyboard</a> <a href="/tags/TDD/" style="font-size: 10px;">TDD</a> <a href="/tags/TextKit/" style="font-size: 11.11px;">TextKit</a> <a href="/tags/UI/" style="font-size: 16.67px;">UI</a> <a href="/tags/audio/" style="font-size: 10px;">audio</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/ffmpeg/" style="font-size: 10px;">ffmpeg</a> <a href="/tags/git/" style="font-size: 14.44px;">git</a> <a href="/tags/git-svn/" style="font-size: 10px;">git-svn</a> <a href="/tags/gitBook/" style="font-size: 10px;">gitBook</a> <a href="/tags/gitLab/" style="font-size: 10px;">gitLab</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/iOS/" style="font-size: 12.22px;">iOS</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/kindle/" style="font-size: 11.11px;">kindle</a> <a href="/tags/macOS/" style="font-size: 13.33px;">macOS</a> <a href="/tags/mou/" style="font-size: 10px;">mou</a> <a href="/tags/mpv/" style="font-size: 10px;">mpv</a> <a href="/tags/objc/" style="font-size: 10px;">objc</a> <a href="/tags/octopress/" style="font-size: 10px;">octopress</a> <a href="/tags/pod/" style="font-size: 10px;">pod</a> <a href="/tags/realm/" style="font-size: 10px;">realm</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/scheme/" style="font-size: 10px;">scheme</a> <a href="/tags/shell/" style="font-size: 11.11px;">shell</a> <a href="/tags/socket/" style="font-size: 10px;">socket</a> <a href="/tags/svn/" style="font-size: 11.11px;">svn</a> <a href="/tags/swift/" style="font-size: 12.22px;">swift</a> <a href="/tags/targets/" style="font-size: 10px;">targets</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/书籍/" style="font-size: 11.11px;">书籍</a> <a href="/tags/加密/" style="font-size: 10px;">加密</a> <a href="/tags/动画/" style="font-size: 11.11px;">动画</a> <a href="/tags/协议/" style="font-size: 12.22px;">协议</a> <a href="/tags/单元测试/" style="font-size: 11.11px;">单元测试</a> <a href="/tags/发布/" style="font-size: 10px;">发布</a> <a href="/tags/命令/" style="font-size: 11.11px;">命令</a> <a href="/tags/坑/" style="font-size: 12.22px;">坑</a> <a href="/tags/安全/" style="font-size: 10px;">安全</a> <a href="/tags/安装/" style="font-size: 10px;">安装</a> <a href="/tags/小程序/" style="font-size: 10px;">小程序</a> <a href="/tags/小米路由/" style="font-size: 10px;">小米路由</a> <a href="/tags/工具/" style="font-size: 20px;">工具</a> <a href="/tags/布局/" style="font-size: 10px;">布局</a> <a href="/tags/思维导图/" style="font-size: 10px;">思维导图</a> <a href="/tags/截屏/" style="font-size: 11.11px;">截屏</a> <a href="/tags/指南/" style="font-size: 10px;">指南</a> <a href="/tags/插件/" style="font-size: 10px;">插件</a> <a href="/tags/搭建/" style="font-size: 16.67px;">搭建</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/案例/" style="font-size: 10px;">案例</a> <a href="/tags/概念/" style="font-size: 10px;">概念</a> <a href="/tags/汇总/" style="font-size: 12.22px;">汇总</a> <a href="/tags/沙盒/" style="font-size: 10px;">沙盒</a> <a href="/tags/测试/" style="font-size: 15.56px;">测试</a> <a href="/tags/混编/" style="font-size: 15.56px;">混编</a> <a href="/tags/直播/" style="font-size: 10px;">直播</a> <a href="/tags/私库/" style="font-size: 10px;">私库</a> <a href="/tags/管理/" style="font-size: 18.89px;">管理</a> <a href="/tags/经历/" style="font-size: 11.11px;">经历</a> <a href="/tags/编译/" style="font-size: 10px;">编译</a> <a href="/tags/脚本/" style="font-size: 12.22px;">脚本</a> <a href="/tags/腾讯云/" style="font-size: 10px;">腾讯云</a> <a href="/tags/设备/" style="font-size: 10px;">设备</a> <a href="/tags/语法/" style="font-size: 17.78px;">语法</a> <a href="/tags/资源/" style="font-size: 14.44px;">资源</a> <a href="/tags/转场/" style="font-size: 12.22px;">转场</a> <a href="/tags/逻辑思维/" style="font-size: 10px;">逻辑思维</a> <a href="/tags/配置/" style="font-size: 10px;">配置</a> <a href="/tags/阅读器/" style="font-size: 10px;">阅读器</a> <a href="/tags/集成/" style="font-size: 10px;">集成</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+
+  <div class="weixin">
+<p class="asidetitle">微信公众号</p>
+<img src=/img/weixinimg.jpg width="230px" />
+</div>
+
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+<iframe width="100%" height="500" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=500&fansRow=1&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=1&isFans=0&uid=1791281385&verifier=8c6f2d1f&dpc=1"></iframe>
+</div>
+
+
+  <div class="earth">
+<p class="asidetitle">访客地图</p>
+<script type="text/javascript" src="http://jg.revolvermaps.com/2/4.js?i=6j7ij8f0xzy&amp;m=0&amp;h=128&amp;c=ff0000&amp;r=35" async="async"></script>
+</div>
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/BuildingCocoaApps/" target="_blank" title="swift文档">swift文档</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.objccn.io" target="_blank" title="objc中国">objc中国</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://nshipster.cn" target="_blank" title="NSHipster">NSHipster</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://github.com/AttackOnDobby/iOS-Core-Animation-Advanced-Techniques" target="_blank" title="动画">动画</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://git-scm.com/book/zh" target="_blank" title="Git Pro">Git Pro</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://kaopu.so/pan" target="_blank" title="全盘搜">全盘搜</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wherebt.com" target="_blank" title="BT导航网">BT导航网</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://mp.weixin.qq.com" target="_blank" title="小程序官方">小程序官方</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://onevcat.com" target="_blank" title="王维">王维</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://blog.devtang.com" target="_blank" title="唐巧">唐巧</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> 嗨，见文如晤，多多指教. <br/>
+			粗浅见解，修葺成文，盼广交同道中人.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/1791281385" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/huos3203" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		<a href="http://stackoverflow.com/users/6211905" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
+		
+		
+		
+		
+		<a href="https://www.linkedin.com/in/boyerswift" target="_blank" class="icon-linkedin" title="linkedin"></a>
+		
+		
+		<a href="https://www.douban.com/people/boyers" target="_blank" class="icon-douban" title="豆瓣"></a>
+		
+		
+		<a href="http://www.zhihu.com/people/boyers" target="_blank" class="icon-zhihu" title="知乎"></a>
+		
+		
+		
+		<a href="mailto:724987481@qq.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2018 
+		
+		<a href="/about" target="_blank" title="boyer">boyer</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+
+<!--百度统计 coding-->
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?b4a2528a681e2f23855d15a4de0abfc2";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+
+<!--百度统计 github-->
+  var hmgit = document.createElement("script");
+  hmgit.src = "//hm.baidu.com/hm.js?cda1b75e08a0a3e897aa6f92112910b4";
+  var sgit = document.getElementsByTagName("script")[0];
+  sgit.parentNode.insertBefore(hmgit, sgit);
+
+})();
+
+
+</script>
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>
