@@ -5,9 +5,9 @@
   <subtitle>不物喜，不己悲，善假物，易参行！</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://huos3203.github.io/"/>
+  <link href="http://boyers.coding.me/"/>
   <updated>2018-06-11T20:32:02.000Z</updated>
-  <id>https://huos3203.github.io/</id>
+  <id>http://boyers.coding.me/</id>
   
   <author>
     <name>boyer</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Git如何永久删除文件(包括历史记录)</title>
-    <link href="https://huos3203.github.io/2018/06/12/git/Git%E5%A6%82%E4%BD%95%E6%B0%B8%E4%B9%85%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6(%E5%8C%85%E6%8B%AC%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95)/"/>
-    <id>https://huos3203.github.io/2018/06/12/git/Git如何永久删除文件(包括历史记录)/</id>
+    <link href="http://boyers.coding.me/2018/06/12/git/Git%E5%A6%82%E4%BD%95%E6%B0%B8%E4%B9%85%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6(%E5%8C%85%E6%8B%AC%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95)/"/>
+    <id>http://boyers.coding.me/2018/06/12/git/Git如何永久删除文件(包括历史记录)/</id>
     <published>2018-06-11T20:32:02.000Z</published>
     <updated>2018-06-11T20:32:02.000Z</updated>
     
@@ -34,15 +34,15 @@
     
     </summary>
     
-      <category term="git" scheme="https://huos3203.github.io/categories/git/"/>
+      <category term="git" scheme="http://boyers.coding.me/categories/git/"/>
     
     
   </entry>
   
   <entry>
     <title>5个图表解决工作中的12大难题</title>
-    <link href="https://huos3203.github.io/2018/06/12/%E9%98%85%E8%AF%BB/5%E4%B8%AA%E5%9B%BE%E8%A1%A8%E8%A7%A3%E5%86%B3%E5%B7%A5%E4%BD%9C%E4%B8%AD%E7%9A%8412%E5%A4%A7%E9%9A%BE%E9%A2%98/"/>
-    <id>https://huos3203.github.io/2018/06/12/阅读/5个图表解决工作中的12大难题/</id>
+    <link href="http://boyers.coding.me/2018/06/12/%E9%98%85%E8%AF%BB/5%E4%B8%AA%E5%9B%BE%E8%A1%A8%E8%A7%A3%E5%86%B3%E5%B7%A5%E4%BD%9C%E4%B8%AD%E7%9A%8412%E5%A4%A7%E9%9A%BE%E9%A2%98/"/>
+    <id>http://boyers.coding.me/2018/06/12/阅读/5个图表解决工作中的12大难题/</id>
     <published>2018-06-11T19:43:53.000Z</published>
     <updated>2018-06-11T19:43:53.000Z</updated>
     
@@ -57,15 +57,15 @@
     
     </summary>
     
-      <category term="阅读" scheme="https://huos3203.github.io/categories/%E9%98%85%E8%AF%BB/"/>
+      <category term="阅读" scheme="http://boyers.coding.me/categories/%E9%98%85%E8%AF%BB/"/>
     
     
   </entry>
   
   <entry>
     <title>执法巡查开发状态总结</title>
-    <link href="https://huos3203.github.io/2018/06/05/%E4%B8%AA%E4%BA%BA%E9%A1%B9%E7%9B%AE/%E6%89%A7%E6%B3%95%E5%B7%A1%E6%9F%A5%E5%BC%80%E5%8F%91%E7%8A%B6%E6%80%81%E6%80%BB%E7%BB%93/"/>
-    <id>https://huos3203.github.io/2018/06/05/个人项目/执法巡查开发状态总结/</id>
+    <link href="http://boyers.coding.me/2018/06/05/%E4%B8%AA%E4%BA%BA%E9%A1%B9%E7%9B%AE/%E6%89%A7%E6%B3%95%E5%B7%A1%E6%9F%A5%E5%BC%80%E5%8F%91%E7%8A%B6%E6%80%81%E6%80%BB%E7%BB%93/"/>
+    <id>http://boyers.coding.me/2018/06/05/个人项目/执法巡查开发状态总结/</id>
     <published>2018-06-05T10:18:33.000Z</published>
     <updated>2018-06-08T12:11:07.000Z</updated>
     
@@ -80,15 +80,15 @@
     
     </summary>
     
-      <category term="个人项目" scheme="https://huos3203.github.io/categories/%E4%B8%AA%E4%BA%BA%E9%A1%B9%E7%9B%AE/"/>
+      <category term="个人项目" scheme="http://boyers.coding.me/categories/%E4%B8%AA%E4%BA%BA%E9%A1%B9%E7%9B%AE/"/>
     
     
   </entry>
   
   <entry>
     <title>uml活动图常用语法</title>
-    <link href="https://huos3203.github.io/2018/06/05/hexo/uml%E6%B4%BB%E5%8A%A8%E5%9B%BE%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/"/>
-    <id>https://huos3203.github.io/2018/06/05/hexo/uml活动图常用语法/</id>
+    <link href="http://boyers.coding.me/2018/06/05/hexo/uml%E6%B4%BB%E5%8A%A8%E5%9B%BE%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/"/>
+    <id>http://boyers.coding.me/2018/06/05/hexo/uml活动图常用语法/</id>
     <published>2018-06-04T21:27:15.000Z</published>
     <updated>2018-06-04T21:27:15.000Z</updated>
     
@@ -103,15 +103,15 @@
     
     </summary>
     
-      <category term="hexo" scheme="https://huos3203.github.io/categories/hexo/"/>
+      <category term="hexo" scheme="http://boyers.coding.me/categories/hexo/"/>
     
     
   </entry>
   
   <entry>
     <title>uml用例图常用语法</title>
-    <link href="https://huos3203.github.io/2018/06/05/hexo/uml%E7%94%A8%E4%BE%8B%E5%9B%BE%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/"/>
-    <id>https://huos3203.github.io/2018/06/05/hexo/uml用例图常用语法/</id>
+    <link href="http://boyers.coding.me/2018/06/05/hexo/uml%E7%94%A8%E4%BE%8B%E5%9B%BE%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/"/>
+    <id>http://boyers.coding.me/2018/06/05/hexo/uml用例图常用语法/</id>
     <published>2018-06-04T21:20:41.000Z</published>
     <updated>2018-06-04T21:27:15.000Z</updated>
     
@@ -126,15 +126,15 @@
     
     </summary>
     
-      <category term="hexo" scheme="https://huos3203.github.io/categories/hexo/"/>
+      <category term="hexo" scheme="http://boyers.coding.me/categories/hexo/"/>
     
     
   </entry>
   
   <entry>
     <title>uml类图常用语法</title>
-    <link href="https://huos3203.github.io/2018/06/05/hexo/uml%E7%B1%BB%E5%9B%BE%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/"/>
-    <id>https://huos3203.github.io/2018/06/05/hexo/uml类图常用语法/</id>
+    <link href="http://boyers.coding.me/2018/06/05/hexo/uml%E7%B1%BB%E5%9B%BE%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/"/>
+    <id>http://boyers.coding.me/2018/06/05/hexo/uml类图常用语法/</id>
     <published>2018-06-04T20:49:36.000Z</published>
     <updated>2018-06-04T21:27:15.000Z</updated>
     
@@ -149,15 +149,15 @@
     
     </summary>
     
-      <category term="hexo" scheme="https://huos3203.github.io/categories/hexo/"/>
+      <category term="hexo" scheme="http://boyers.coding.me/categories/hexo/"/>
     
     
   </entry>
   
   <entry>
     <title>在Mac安装Fiddler</title>
-    <link href="https://huos3203.github.io/2018/06/01/%E5%B7%A5%E5%85%B7/%E5%9C%A8Mac%E5%AE%89%E8%A3%85Fiddler/"/>
-    <id>https://huos3203.github.io/2018/06/01/工具/在Mac安装Fiddler/</id>
+    <link href="http://boyers.coding.me/2018/06/01/%E5%B7%A5%E5%85%B7/%E5%9C%A8Mac%E5%AE%89%E8%A3%85Fiddler/"/>
+    <id>http://boyers.coding.me/2018/06/01/工具/在Mac安装Fiddler/</id>
     <published>2018-05-31T16:38:52.000Z</published>
     <updated>2018-06-01T10:07:54.000Z</updated>
     
@@ -172,15 +172,15 @@
     
     </summary>
     
-      <category term="工具" scheme="https://huos3203.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="http://boyers.coding.me/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
   </entry>
   
   <entry>
     <title></title>
-    <link href="https://huos3203.github.io/2018/05/31/hexo/hexo%E5%8D%9A%E6%96%87%E7%BD%AE%E9%A1%B6%E6%96%B9%E6%B3%95/"/>
-    <id>https://huos3203.github.io/2018/05/31/hexo/hexo博文置顶方法/</id>
+    <link href="http://boyers.coding.me/2018/05/31/hexo/hexo%E5%8D%9A%E6%96%87%E7%BD%AE%E9%A1%B6%E6%96%B9%E6%B3%95/"/>
+    <id>http://boyers.coding.me/2018/05/31/hexo/hexo博文置顶方法/</id>
     <published>2018-05-31T11:44:33.000Z</published>
     <updated>2018-05-31T12:10:07.000Z</updated>
     
@@ -195,15 +195,15 @@
     
     </summary>
     
-      <category term="分类" scheme="https://huos3203.github.io/categories/%E5%88%86%E7%B1%BB/"/>
+      <category term="分类" scheme="http://boyers.coding.me/categories/%E5%88%86%E7%B1%BB/"/>
     
     
   </entry>
   
   <entry>
     <title>+0800格式转NSDate</title>
-    <link href="https://huos3203.github.io/2018/05/31/iOS/+0800%E6%A0%BC%E5%BC%8F%E8%BD%ACNSDate/"/>
-    <id>https://huos3203.github.io/2018/05/31/iOS/+0800格式转NSDate/</id>
+    <link href="http://boyers.coding.me/2018/05/31/iOS/+0800%E6%A0%BC%E5%BC%8F%E8%BD%ACNSDate/"/>
+    <id>http://boyers.coding.me/2018/05/31/iOS/+0800格式转NSDate/</id>
     <published>2018-05-30T18:42:20.000Z</published>
     <updated>2018-05-30T18:42:20.000Z</updated>
     
@@ -218,15 +218,15 @@
     
     </summary>
     
-      <category term="iOS" scheme="https://huos3203.github.io/categories/iOS/"/>
+      <category term="iOS" scheme="http://boyers.coding.me/categories/iOS/"/>
     
     
   </entry>
   
   <entry>
     <title>高德地图API使用</title>
-    <link href="https://huos3203.github.io/2018/05/30/iOS/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%BD%BF%E7%94%A8/"/>
-    <id>https://huos3203.github.io/2018/05/30/iOS/高德地图API使用/</id>
+    <link href="http://boyers.coding.me/2018/05/30/iOS/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%BD%BF%E7%94%A8/"/>
+    <id>http://boyers.coding.me/2018/05/30/iOS/高德地图API使用/</id>
     <published>2018-05-30T14:40:56.000Z</published>
     <updated>2018-05-30T18:42:20.000Z</updated>
     
@@ -241,15 +241,15 @@
     
     </summary>
     
-      <category term="iOS" scheme="https://huos3203.github.io/categories/iOS/"/>
+      <category term="iOS" scheme="http://boyers.coding.me/categories/iOS/"/>
     
     
   </entry>
   
   <entry>
     <title>npm降级的两种方法</title>
-    <link href="https://huos3203.github.io/2018/05/29/hexo/npm%E9%99%8D%E7%BA%A7%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95/"/>
-    <id>https://huos3203.github.io/2018/05/29/hexo/npm降级的两种方法/</id>
+    <link href="http://boyers.coding.me/2018/05/29/hexo/npm%E9%99%8D%E7%BA%A7%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95/"/>
+    <id>http://boyers.coding.me/2018/05/29/hexo/npm降级的两种方法/</id>
     <published>2018-05-29T12:06:24.000Z</published>
     <updated>2018-05-29T12:26:48.000Z</updated>
     
@@ -264,38 +264,15 @@
     
     </summary>
     
-      <category term="hexo" scheme="https://huos3203.github.io/categories/hexo/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>终端实现预览plantuml的插件</title>
-    <link href="https://huos3203.github.io/2018/05/29/shell/%E7%BB%88%E7%AB%AF%E5%AE%9E%E7%8E%B0%E9%A2%84%E8%A7%88plantuml%E7%9A%84%E6%8F%92%E4%BB%B6/"/>
-    <id>https://huos3203.github.io/2018/05/29/shell/终端实现预览plantuml的插件/</id>
-    <published>2018-05-29T11:32:04.000Z</published>
-    <updated>2018-06-01T10:07:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><script src="/assets/js/APlayer.min.js"> </script><div id="badge-container-weirongxu-plantuml-previewer.vim-bf4b3e5" class="hexo-github" style="width: ="></div><script src="/hexo-github/badge.js"></script><script type="text/javascript">  loadStyle("/hexo-github/style.css");  loadStyle("/hexo-github/octicons/octicons.css");  new Badge("#badge-container-weirongxu-plantuml-previewer.vim-bf4b3e5", "weirongxu", "plantuml-previewer.vim", "bf4b3e5", false);</script><h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Plug <span class="string">'huos3203/plantuml-syntax'</span>  <span class="string">"plantuml语法高亮 Plug 'aklt/plantuml-syntax'</span></span><br><span class="line"><span class="string">Plug 'tyru/open-browser.vim'</span></span><br><span class="line"><span class="string">Plug 'weirongxu/plantuml-previewer.vim' "</span>在线工具：http://sujoyu.github.io/plantuml-previewer/</span><br></pre></td></tr></table></figure><h3 id="Graphviz"><a href="#Graphviz" class="headerlink" title="Graphviz"></a>Graphviz</h3><p><a href="https://www.graphviz.org/download/" target="_blank" rel="noopener">下载地址</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install graphviz</span><br></pre></td></tr></table></figure></p><h3 id="打开浏览器safari插件工具"><a href="#打开浏览器safari插件工具" class="headerlink" title="打开浏览器safari插件工具"></a>打开浏览器safari插件工具</h3><p>open-browser.vim</p><h3 id="语法高亮插件"><a href="#语法高亮插件" class="headerlink" title="语法高亮插件"></a>语法高亮插件</h3><p>aklt/plantuml-syntax (vim syntax file for plantuml)</p><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="创建uml文件"><a href="#创建uml文件" class="headerlink" title="创建uml文件"></a>创建uml文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi test.uml</span><br></pre></td></tr></table></figure><img title="历史下载" src="http://p27uwfdhv.bkt.clouddn.com/static/images/plantumlpreviewer.png?imageMogr2/2/w/800"><h3 id="预览uml图"><a href="#预览uml图" class="headerlink" title="预览uml图"></a>预览uml图</h3><p>通过命令打开浏览器预览界面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:PlantumlOpen</span><br></pre></td></tr></table></figure></p><p>在vi中执行保存命令<code>:w</code>,预览界面会自动刷新</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;div id=&quot;badge-container-weirongxu-plantuml-preview
-      
-    
-    </summary>
-    
-      <category term="shell" scheme="https://huos3203.github.io/categories/shell/"/>
+      <category term="hexo" scheme="http://boyers.coding.me/categories/hexo/"/>
     
     
   </entry>
   
   <entry>
     <title>GB乐理知识体系</title>
-    <link href="https://huos3203.github.io/2018/05/29/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/GB%E4%B9%90%E7%90%86%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/"/>
-    <id>https://huos3203.github.io/2018/05/29/作文作曲/GB乐理知识体系/</id>
+    <link href="http://boyers.coding.me/2018/05/29/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/GB%E4%B9%90%E7%90%86%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/"/>
+    <id>http://boyers.coding.me/2018/05/29/作文作曲/GB乐理知识体系/</id>
     <published>2018-05-29T11:32:04.000Z</published>
     <updated>2018-06-11T19:43:53.000Z</updated>
     
@@ -310,15 +287,38 @@
     
     </summary>
     
-      <category term="作文作曲" scheme="https://huos3203.github.io/categories/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/"/>
+      <category term="作文作曲" scheme="http://boyers.coding.me/categories/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>终端实现预览plantuml的插件</title>
+    <link href="http://boyers.coding.me/2018/05/29/shell/%E7%BB%88%E7%AB%AF%E5%AE%9E%E7%8E%B0%E9%A2%84%E8%A7%88plantuml%E7%9A%84%E6%8F%92%E4%BB%B6/"/>
+    <id>http://boyers.coding.me/2018/05/29/shell/终端实现预览plantuml的插件/</id>
+    <published>2018-05-29T11:32:04.000Z</published>
+    <updated>2018-06-01T10:07:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><script src="/assets/js/APlayer.min.js"> </script><div id="badge-container-weirongxu-plantuml-previewer.vim-bf4b3e5" class="hexo-github" style="width: ="></div><script src="/hexo-github/badge.js"></script><script type="text/javascript">  loadStyle("/hexo-github/style.css");  loadStyle("/hexo-github/octicons/octicons.css");  new Badge("#badge-container-weirongxu-plantuml-previewer.vim-bf4b3e5", "weirongxu", "plantuml-previewer.vim", "bf4b3e5", false);</script><h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Plug <span class="string">'huos3203/plantuml-syntax'</span>  <span class="string">"plantuml语法高亮 Plug 'aklt/plantuml-syntax'</span></span><br><span class="line"><span class="string">Plug 'tyru/open-browser.vim'</span></span><br><span class="line"><span class="string">Plug 'weirongxu/plantuml-previewer.vim' "</span>在线工具：http://sujoyu.github.io/plantuml-previewer/</span><br></pre></td></tr></table></figure><h3 id="Graphviz"><a href="#Graphviz" class="headerlink" title="Graphviz"></a>Graphviz</h3><p><a href="https://www.graphviz.org/download/" target="_blank" rel="noopener">下载地址</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install graphviz</span><br></pre></td></tr></table></figure></p><h3 id="打开浏览器safari插件工具"><a href="#打开浏览器safari插件工具" class="headerlink" title="打开浏览器safari插件工具"></a>打开浏览器safari插件工具</h3><p>open-browser.vim</p><h3 id="语法高亮插件"><a href="#语法高亮插件" class="headerlink" title="语法高亮插件"></a>语法高亮插件</h3><p>aklt/plantuml-syntax (vim syntax file for plantuml)</p><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="创建uml文件"><a href="#创建uml文件" class="headerlink" title="创建uml文件"></a>创建uml文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi test.uml</span><br></pre></td></tr></table></figure><img title="历史下载" src="http://p27uwfdhv.bkt.clouddn.com/static/images/plantumlpreviewer.png?imageMogr2/2/w/800"><h3 id="预览uml图"><a href="#预览uml图" class="headerlink" title="预览uml图"></a>预览uml图</h3><p>通过命令打开浏览器预览界面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:PlantumlOpen</span><br></pre></td></tr></table></figure></p><p>在vi中执行保存命令<code>:w</code>,预览界面会自动刷新</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;div id=&quot;badge-container-weirongxu-plantuml-preview
+      
+    
+    </summary>
+    
+      <category term="shell" scheme="http://boyers.coding.me/categories/shell/"/>
     
     
   </entry>
   
   <entry>
     <title>pyenv切换python的版本</title>
-    <link href="https://huos3203.github.io/2018/05/29/hexo/pyenv%E5%88%87%E6%8D%A2python%E7%9A%84%E7%89%88%E6%9C%AC/"/>
-    <id>https://huos3203.github.io/2018/05/29/hexo/pyenv切换python的版本/</id>
+    <link href="http://boyers.coding.me/2018/05/29/hexo/pyenv%E5%88%87%E6%8D%A2python%E7%9A%84%E7%89%88%E6%9C%AC/"/>
+    <id>http://boyers.coding.me/2018/05/29/hexo/pyenv切换python的版本/</id>
     <published>2018-05-29T10:33:30.000Z</published>
     <updated>2018-05-29T12:26:48.000Z</updated>
     
@@ -333,15 +333,15 @@
     
     </summary>
     
-      <category term="hexo" scheme="https://huos3203.github.io/categories/hexo/"/>
+      <category term="hexo" scheme="http://boyers.coding.me/categories/hexo/"/>
     
     
   </entry>
   
   <entry>
     <title>雨夜</title>
-    <link href="https://huos3203.github.io/2018/05/17/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/%E9%9B%A8%E5%A4%9C/"/>
-    <id>https://huos3203.github.io/2018/05/17/作文作曲/雨夜/</id>
+    <link href="http://boyers.coding.me/2018/05/17/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/%E9%9B%A8%E5%A4%9C/"/>
+    <id>http://boyers.coding.me/2018/05/17/作文作曲/雨夜/</id>
     <published>2018-05-17T10:58:36.000Z</published>
     <updated>2018-05-30T21:51:16.000Z</updated>
     
@@ -356,15 +356,15 @@
     
     </summary>
     
-      <category term="作文作曲" scheme="https://huos3203.github.io/categories/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/"/>
+      <category term="作文作曲" scheme="http://boyers.coding.me/categories/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/"/>
     
     
   </entry>
   
   <entry>
     <title>汉字拼音排序方法</title>
-    <link href="https://huos3203.github.io/2018/05/17/iOS/%E6%B1%89%E5%AD%97%E6%8B%BC%E9%9F%B3%E6%8E%92%E5%BA%8F%E6%96%B9%E6%B3%95/"/>
-    <id>https://huos3203.github.io/2018/05/17/iOS/汉字拼音排序方法/</id>
+    <link href="http://boyers.coding.me/2018/05/17/iOS/%E6%B1%89%E5%AD%97%E6%8B%BC%E9%9F%B3%E6%8E%92%E5%BA%8F%E6%96%B9%E6%B3%95/"/>
+    <id>http://boyers.coding.me/2018/05/17/iOS/汉字拼音排序方法/</id>
     <published>2018-05-17T10:46:57.000Z</published>
     <updated>2018-05-17T10:46:57.000Z</updated>
     
@@ -380,15 +380,15 @@
     
     </summary>
     
-      <category term="分类" scheme="https://huos3203.github.io/categories/%E5%88%86%E7%B1%BB/"/>
+      <category term="分类" scheme="http://boyers.coding.me/categories/%E5%88%86%E7%B1%BB/"/>
     
     
   </entry>
   
   <entry>
     <title>水关长城天漠行</title>
-    <link href="https://huos3203.github.io/2018/04/13/%E6%97%85%E8%A1%8C/%E6%B0%B4%E5%85%B3%E9%95%BF%E5%9F%8E%E5%A4%A9%E6%BC%A0%E8%A1%8C/"/>
-    <id>https://huos3203.github.io/2018/04/13/旅行/水关长城天漠行/</id>
+    <link href="http://boyers.coding.me/2018/04/13/%E6%97%85%E8%A1%8C/%E6%B0%B4%E5%85%B3%E9%95%BF%E5%9F%8E%E5%A4%A9%E6%BC%A0%E8%A1%8C/"/>
+    <id>http://boyers.coding.me/2018/04/13/旅行/水关长城天漠行/</id>
     <published>2018-04-13T11:52:28.000Z</published>
     <updated>2018-04-24T11:49:45.000Z</updated>
     
@@ -403,15 +403,15 @@
     
     </summary>
     
-      <category term="旅行" scheme="https://huos3203.github.io/categories/%E6%97%85%E8%A1%8C/"/>
+      <category term="旅行" scheme="http://boyers.coding.me/categories/%E6%97%85%E8%A1%8C/"/>
     
     
   </entry>
   
   <entry>
     <title>Git工具交互式暂存</title>
-    <link href="https://huos3203.github.io/2018/04/13/git/Git%E5%B7%A5%E5%85%B7%E4%BA%A4%E4%BA%92%E5%BC%8F%E6%9A%82%E5%AD%98/"/>
-    <id>https://huos3203.github.io/2018/04/13/git/Git工具交互式暂存/</id>
+    <link href="http://boyers.coding.me/2018/04/13/git/Git%E5%B7%A5%E5%85%B7%E4%BA%A4%E4%BA%92%E5%BC%8F%E6%9A%82%E5%AD%98/"/>
+    <id>http://boyers.coding.me/2018/04/13/git/Git工具交互式暂存/</id>
     <published>2018-04-12T19:41:46.000Z</published>
     <updated>2018-04-12T19:41:46.000Z</updated>
     
@@ -426,15 +426,15 @@
     
     </summary>
     
-      <category term="git" scheme="https://huos3203.github.io/categories/git/"/>
+      <category term="git" scheme="http://boyers.coding.me/categories/git/"/>
     
     
   </entry>
   
   <entry>
     <title>Otherlinkerflags设置ld命令执行的参数</title>
-    <link href="https://huos3203.github.io/2018/04/12/xcode/Otherlinkerflags%E8%AE%BE%E7%BD%AEld%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E7%9A%84%E5%8F%82%E6%95%B0/"/>
-    <id>https://huos3203.github.io/2018/04/12/xcode/Otherlinkerflags设置ld命令执行的参数/</id>
+    <link href="http://boyers.coding.me/2018/04/12/xcode/Otherlinkerflags%E8%AE%BE%E7%BD%AEld%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E7%9A%84%E5%8F%82%E6%95%B0/"/>
+    <id>http://boyers.coding.me/2018/04/12/xcode/Otherlinkerflags设置ld命令执行的参数/</id>
     <published>2018-04-11T16:42:57.000Z</published>
     <updated>2018-04-11T19:16:17.000Z</updated>
     
@@ -450,15 +450,15 @@
     
     </summary>
     
-      <category term="xcode" scheme="https://huos3203.github.io/categories/xcode/"/>
+      <category term="xcode" scheme="http://boyers.coding.me/categories/xcode/"/>
     
     
   </entry>
   
   <entry>
     <title>iOS插件化开发之Small</title>
-    <link href="https://huos3203.github.io/2018/04/12/xcode/iOS%E6%8F%92%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91%E4%B9%8BSmall/"/>
-    <id>https://huos3203.github.io/2018/04/12/xcode/iOS插件化开发之Small/</id>
+    <link href="http://boyers.coding.me/2018/04/12/xcode/iOS%E6%8F%92%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91%E4%B9%8BSmall/"/>
+    <id>http://boyers.coding.me/2018/04/12/xcode/iOS插件化开发之Small/</id>
     <published>2018-04-11T16:42:17.000Z</published>
     <updated>2018-04-11T19:16:17.000Z</updated>
     
@@ -473,7 +473,7 @@
     
     </summary>
     
-      <category term="xcode" scheme="https://huos3203.github.io/categories/xcode/"/>
+      <category term="xcode" scheme="http://boyers.coding.me/categories/xcode/"/>
     
     
   </entry>
