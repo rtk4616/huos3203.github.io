@@ -334,6 +334,234 @@ daovoice('update');
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://huos3203.github.io/2014/07/04/iOS/TextKit之便笺实战/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="boyer">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="布衣男儿">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2014/07/04/iOS/TextKit之便笺实战/" itemprop="url">TextKit之便笺实战</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-07-03T17:29:00Z">
+                2014-07-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/控件/" itemprop="url" rel="index">
+                    <span itemprop="name">控件</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2014/07/04/iOS/TextKit之便笺实战/" class="leancloud_visitors" data-flag-title="TextKit之便笺实战">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  6,721字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  28分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="便笺练习功能点"><a href="#便笺练习功能点" class="headerlink" title="便笺练习功能点:"></a>便笺练习功能点:</h2><p>通过实现以下特效，练习并掌握布局管理器（layout manger），文本容器（text containers）和文本存储器（text storage）等用法。</p>
+<ul>
+<li>动态样式（Dynamic type）  </li>
+<li>凸版印刷效果（Letterpress effects）  </li>
+<li>环绕路径（Exclusion paths）  </li>
+<li>动态文本格式及存储（Dynamic text formatting and storage）  </li>
+</ul>
+<p>这个应用中我们将实现回流文本，字体大小的动态变换，以及闪回文本等效果。<br>效果图:<br><img src="/images/bianqian.png" alt="image"><br>App开始运行后自动生成一组便笺实例并利用<code>tableViewController</code>显示出来。<code>Storyboards</code>和<code>segues</code>会将被选中的单元格所对应的便笺内容显示出来以供用户编辑。<br>项目开发包：<a href="http://cdn4.raywenderlich.com/wp-content/uploads/2013/09/TextKitNotepad-starter.zip" target="_blank" rel="noopener">Notepad.zip</a></p>
+<h2 id="动态样式"><a href="#动态样式" class="headerlink" title="动态样式"></a>动态样式</h2><p><code>动态样式（Dynamic type）</code>是iOS 7里面变化最大的特性之一; 它使得app可以遵从用户选择的字体大小和粗细。<br>选择 <strong>通用-&gt;文字大小</strong> 或 <strong>通用-&gt;辅助功能</strong> 来查看app中的字体设置。</p>
+<p><img src="/images/UserTextPreferences.png" alt="image"><br>iOS 7 支持通过<code>粗体</code>、<code>设置字体大小</code>等方式提高支持动态文本的应用的易读性。<br>例如<strong><code>UIFont</code></strong>新增的一个方法： <strong><code>preferredFontForTextStyle</code></strong> 用来根据用户对字体大小的设置来自动制定字体样式。<br>下面表格中是六种可用字体样式的示例：<br><img src="/images/TextStyles.png" alt="image"><br>最左边一列是最小字体；中间一列是最大字体；最右边一列是粗体效果。  </p>
+<h3 id="使用系统动态字体样式"><a href="#使用系统动态字体样式" class="headerlink" title="使用系统动态字体样式"></a>使用系统动态字体样式</h3><p>使用动态文本，是通过给<code>文本字体</code>设置字体样式<strong>style</strong>而不是指定具体的<code>字体名称</code>和<code>大小</code>。这样，系统会在运行时自动根据这一样式以及用户的字体大小设置来选择使用合适的字体。</p>
+<h4 id="preferredFontForTextStyle-方法设置字体样式"><a href="#preferredFontForTextStyle-方法设置字体样式" class="headerlink" title="preferredFontForTextStyle:方法设置字体样式"></a><code>preferredFontForTextStyle:</code>方法设置字体样式</h4><ol>
+<li>打开 <code>NoteEditorViewController.m/swift</code> 在<code>viewDidLoad：</code>方法实现的最后面加入以下代码：<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">self</span>.textView.font = [<span class="built_in">UIFont</span> preferredFontForTextStyle:<span class="built_in">UIFontTextStyleBody</span>];</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">self</span>.textView.font = <span class="type">UIFont</span>.preferredFont(forTextStyle: .body)</span><br></pre></td></tr></table></figure></li>
+<li>打开 <code>NotesListViewController.m/swift</code> 在 <code>tableView:cellForRowAtIndexPath:</code> 方法中增加如下代码:<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cell.textLabel.font = [<span class="built_in">UIFont</span> preferredFontForTextStyle:<span class="built_in">UIFontTextStyleHeadline</span>];</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cell.textLabel?.font = <span class="type">UIFont</span>.preferredFont(forTextStyle: .headline)</span><br></pre></td></tr></table></figure>
+上面两行代码都用到了新版iOS的字体样式.   <blockquote>
+<p>字体样式：通过语义法命名字体，例如 <code>UIFontTextStyleSubHeadline</code>, 可以避免在代码里每一处都指定具体的字体名称和样式， 而且确保app能对用户的字体大小设置做出恰当的回应。</p>
+</blockquote>
+</li>
+</ol>
+<h4 id="APP响应用户字体设置"><a href="#APP响应用户字体设置" class="headerlink" title="APP响应用户字体设置"></a>APP响应用户字体设置</h4><ol>
+<li>设置系统字体<br>返回到<strong>通用-&gt;文字大小</strong>重新修改字体设置.<br>再运行App, <strong>Note</strong>页面的文字大小是当前设定的字体大小；前后截屏对比,分辨率小了一半。<br><img src="/images/NotepadWithDynamicType.png" alt="image"> </li>
+<li>设置系统字体生效<br>当我们返回到<strong>通用-&gt;文字大小</strong>重新修改字体设置. 再打开<strong>Note</strong>页面, 会发现app并没有<strong>立即</strong>对字体设置的变化做出相应反应。</li>
+</ol>
+<h5 id="监听系统通知：实现APP响应用户字体设置"><a href="#监听系统通知：实现APP响应用户字体设置" class="headerlink" title="监听系统通知：实现APP响应用户字体设置"></a>监听系统通知：实现APP响应用户字体设置</h5><p>当用户修改了他们的字体大小设置之后，这一样式对应的字体并不会自动更新，必须重新请求才能获取新的值。用户设置变化后，<code>preferredFontForTextStyle:</code>方法返回的字体也会变化。</p>
+<ol>
+<li>添加监听系统通知<code>UIContentSizeCategoryDidChangeNotification</code>通知APP响应用户字体设置的变化<br>打开 <code>NoteEditorViewController.m</code> 并在 <code>viewDidLoad</code> 方法的实现的最后加入以下代码：<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[[<span class="built_in">NSNotificationCenter</span> defaultCenter]</span><br><span class="line">                              addObserver:<span class="keyword">self</span></span><br><span class="line">                                 selector:<span class="keyword">@selector</span>(preferredContentSizeChanged:)</span><br><span class="line">                                     name:<span class="built_in">UIContentSizeCategoryDidChangeNotification</span></span><br><span class="line">                                   object:<span class="literal">nil</span>];</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//字体变化通知:调用preferredContentSizeChanged:方法</span></span><br><span class="line"><span class="type">NotificationCenter</span>.<span class="keyword">default</span>.addObserver(<span class="keyword">self</span>, selector: #selector(<span class="type">NoteEditorViewController</span>.preferredContentSizeChanged(<span class="number">_</span>:)), name: <span class="type">NSNotification</span>.<span class="type">Name</span>.<span class="type">UIContentSizeCategoryDidChange</span>, object: <span class="literal">nil</span>)</span><br></pre></td></tr></table></figure></li>
+<li>添加系统通知响应事件<br>收到用于指定本类接收字体设定变化的通知后，调用<code>preferredContentSizeChanged:</code>方法<br>在<code>NoteEditorViewController.m</code>中<code>viewDidLoad</code>方法之后紧接着添加以下方法：<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)preferredContentSizeChanged:(<span class="built_in">NSNotification</span> *)notification</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">self</span>.textView.font = [<span class="built_in">UIFont</span> preferredFontForTextStyle:<span class="built_in">UIFontTextStyleBody</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//字体变化通知时调用</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">preferredContentSizeChanged</span><span class="params">(<span class="number">_</span> notification:NSNotification)</span></span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">self</span>.textView.font = <span class="type">UIFont</span>.preferredFont(forTextStyle: .body)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+这一方法作用是根据新的字体设置来设定<code>textView</code>中的字体。<br>Build并运行app，修改字体大小设置，Note页面就可以即时更新字体大小了。
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2014/07/04/iOS/TextKit之便笺实战/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    <div>
+        
+    </div>
+    <div>
+        
+    </div>
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://huos3203.github.io/2014/07/02/iOS/iOSDocumentInteraction编程指南/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1951,7 +2179,7 @@ daovoice('update');
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">148</span>
+                <span class="site-state-item-count">149</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2149,7 +2377,7 @@ daovoice('update');
     <span id="busuanzi_container_site_pv">
      本站总<span id="busuanzi_value_site_pv"></span>次访问 |
     </span>
-    <span class="post-count"> 博客全站共184.2k字</span>
+    <span class="post-count"> 博客全站共185.0k字</span>
 </div>
 <div class="copyright">
     <span id="timeDate">载入天数...</span>
