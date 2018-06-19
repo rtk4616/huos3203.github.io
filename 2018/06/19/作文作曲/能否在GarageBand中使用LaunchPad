@@ -99,7 +99,7 @@
 <meta property="og:site_name" content="布衣男儿">
 <meta property="og:description" content="Garageband不支持控件表面，因此无法使用Launchpad/LaunchKey的全部功能。 在Garageband中，仅可以使用Launchpad来演奏虚拟乐器。原因：Faders和Knobs将为输出MIDI CC消息(详细介绍)到支持手动操作的MIDI设备的插件。此外，打击垫还将发送固定的Note数据。然而，Garageband本身没有传输、卷或Pan控件，不支持Launchpad的Vo">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-19T16:30:01.000Z">
+<meta property="og:updated_time" content="2018-06-19T18:27:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="能否在GarageBand中使用LaunchPad?">
 <meta name="twitter:description" content="Garageband不支持控件表面，因此无法使用Launchpad/LaunchKey的全部功能。 在Garageband中，仅可以使用Launchpad来演奏虚拟乐器。原因：Faders和Knobs将为输出MIDI CC消息(详细介绍)到支持手动操作的MIDI设备的插件。此外，打击垫还将发送固定的Note数据。然而，Garageband本身没有传输、卷或Pan控件，不支持Launchpad的Vo">
@@ -541,8 +541,8 @@ daovoice('update');
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/19/作文作曲/LaunchPadMini说明书/" rel="next" title="LaunchPadMini说明书">
-                <i class="fa fa-chevron-left"></i> LaunchPadMini说明书
+              <a href="/2018/06/19/作文作曲/AbletonLive10安装使用/" rel="next" title="AbletonLive10安装使用">
+                <i class="fa fa-chevron-left"></i> AbletonLive10安装使用
               </a>
             
           </div>
@@ -550,6 +550,10 @@ daovoice('update');
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/20/macOS/MacOS系统下运行exe小程序/" rel="prev" title="MacOS系统下运行exe小程序">
+                MacOS系统下运行exe小程序 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -637,7 +641,7 @@ daovoice('update');
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">152</span>
+                <span class="site-state-item-count">153</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -835,7 +839,7 @@ daovoice('update');
     <span id="busuanzi_container_site_pv">
      本站总<span id="busuanzi_value_site_pv"></span>次访问 |
     </span>
-    <span class="post-count"> 博客全站共185.8k字</span>
+    <span class="post-count"> 博客全站共186.0k字</span>
 </div>
 <div class="copyright">
     <span id="timeDate">载入天数...</span>

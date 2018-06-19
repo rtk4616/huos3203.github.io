@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huos3203.github.io/"/>
-  <updated>2018-06-19T16:30:01.000Z</updated>
+  <updated>2018-06-19T18:27:17.000Z</updated>
   <id>https://huos3203.github.io/</id>
   
   <author>
@@ -17,13 +17,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>能否在GarageBand中使用LaunchPad?</title>
-    <link href="https://huos3203.github.io/2018/06/19/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/%E8%83%BD%E5%90%A6%E5%9C%A8GarageBand%E4%B8%AD%E4%BD%BF%E7%94%A8LaunchPad?/"/>
-    <id>https://huos3203.github.io/2018/06/19/作文作曲/能否在GarageBand中使用LaunchPad?/</id>
-    <published>2018-06-19T15:39:56.000Z</published>
-    <updated>2018-06-19T16:30:01.000Z</updated>
+    <title>MacOS系统下运行exe小程序</title>
+    <link href="https://huos3203.github.io/2018/06/20/macOS/MacOS%E7%B3%BB%E7%BB%9F%E4%B8%8B%E8%BF%90%E8%A1%8Cexe%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    <id>https://huos3203.github.io/2018/06/20/macOS/MacOS系统下运行exe小程序/</id>
+    <published>2018-06-19T18:09:18.000Z</published>
+    <updated>2018-06-19T18:27:17.000Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>Garageband不支持控件表面，因此无法使用Launchpad/LaunchKey的全部功能。</p><p>在Garageband中，仅可以使用Launchpad来演奏虚拟乐器。<br>原因：<code>Faders</code>和<code>Knobs</code>将为输出MIDI CC消息(<a href="http://global.novationmusic.com/answerbase/what-midi-cc-messages-do-the-controls-on-the-launchkey-send" target="_blank" rel="noopener">详细介绍</a>)到支持手动操作的MIDI设备的插件。此外，打击垫还将发送固定的Note数据。<br>然而，Garageband本身没有传输、卷或Pan控件，不支持Launchpad的Volume or Pan Control。因此，只能在支持<code>HUI Protocol</code>的<a href="http://us.novationmusic.com/sites/default/files/novation/downloads/10606/launchkey-mk2-daw-setup-guide.pdf" target="_blank" rel="noopener">DAW</a>的DAW，或者选择<code>Ableton Live</code>，Launchpad才能发挥最大的作用。<br><a href="https://support.novationmusic.com/hc/en-gb/articles/207556325-Can-I-use-my-Launchkey-in-Garageband-" target="_blank" rel="noopener">原文</a></p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h3 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h3><p>例如，当急需在Mac系统上，安装abletonLive，涉及到破解机exe小程序，使用文中提到的两种方法，就解了燃眉之急。</p><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p><a href="http://xiazai.crossoverchina.com/trial/Mac/crossover_mac_17.5.5.zip" target="_blank" rel="noopener">crossover</a></p><h3 id="Wrappe-k-小应用"><a href="#Wrappe-k-小应用" class="headerlink" title="Wrappe[k]小应用"></a>Wrappe[k]小应用</h3><p>这款软件适用于一些小型exe程序，其他，推荐方法一<br><a href="https://pan.baidu.com/s/1ujHKuXNr8G6m8PTPMO9ajQ" target="_blank" rel="noopener">下载</a> 密码: khqa<br><a href="http://www.sdifen.com/mac-exe.html" target="_blank" rel="noopener">参看</a></p>]]></content>
     
     <summary type="html">
     
@@ -34,19 +34,19 @@
     
     </summary>
     
-      <category term="作文作曲" scheme="https://huos3203.github.io/categories/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/"/>
+      <category term="macOS" scheme="https://huos3203.github.io/categories/macOS/"/>
     
     
   </entry>
   
   <entry>
-    <title>LaunchPadMini说明书</title>
-    <link href="https://huos3203.github.io/2018/06/19/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/LaunchPadMini%E8%AF%B4%E6%98%8E%E4%B9%A6/"/>
-    <id>https://huos3203.github.io/2018/06/19/作文作曲/LaunchPadMini说明书/</id>
-    <published>2018-06-19T14:23:13.000Z</published>
-    <updated>2018-06-19T16:30:01.000Z</updated>
+    <title>能否在GarageBand中使用LaunchPad?</title>
+    <link href="https://huos3203.github.io/2018/06/19/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/%E8%83%BD%E5%90%A6%E5%9C%A8GarageBand%E4%B8%AD%E4%BD%BF%E7%94%A8LaunchPad?/"/>
+    <id>https://huos3203.github.io/2018/06/19/作文作曲/能否在GarageBand中使用LaunchPad?/</id>
+    <published>2018-06-19T15:39:56.000Z</published>
+    <updated>2018-06-19T18:27:17.000Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p><a href="https://d2xhy469pqj8rc.cloudfront.net/sites/default/files/novation/downloads/9678/launchpad-demo-project-2014.zip" target="_blank" rel="noopener">工程demo</a><br><a href="https://global.novationmusic.com/launch/launchpad-mini/support-downloads" target="_blank" rel="noopener">官方资源</a></p><p>##<br><a href="https://global.novationmusic.com/answerbase/category/launchpad-video-tutorial" target="_blank" rel="noopener">Launchpad几种模式视频教程</a></p><h3 id="硬件设置"><a href="#硬件设置" class="headerlink" title="硬件设置"></a>硬件设置</h3><ol><li>贴纸：确保标签与相应的按钮对齐。</li><li>使用USB连接线将你的Launchpad Mini连接到你的Mac或PC上的USB端口。Ableton Live支持最多6台同时连接的设备。</li><li>配置设备在Ableton Live中的配置</li></ol><ul><li>打开Live偏好设置,选中<code>MIDI/Sync</code>选项卡，在<code>Input</code>中选择Launchpad Mini所连接的端口<br>以及窗口顶部的<code>Output</code>选择器</li><li>在<code>Control Surface</code>控制面板中选择自己的设备。</li><li>在<code>MIDI Ports</code>下，开启 <code>Track</code>和<code>Remote</code>选项.<h2 id="PRODUCT-OVERVIEW-ABLETON-LIVE"><a href="#PRODUCT-OVERVIEW-ABLETON-LIVE" class="headerlink" title="PRODUCT OVERVIEW: ABLETON LIVE"></a>PRODUCT OVERVIEW: ABLETON LIVE</h2><h3 id="Session-模式"><a href="#Session-模式" class="headerlink" title="Session 模式"></a>Session 模式</h3>当选择Launchpad作为活动控制面时，会话视图上会出现一个圆环，用于指示当前由pad矩阵控制的哪个部分。按下一个剪辑启动板，就会在相应的剪辑插槽中触发该剪辑。在没有武装的轨道上点击一个空的剪辑槽将停止在这个轨道上播放的剪辑。如果跟踪是武装到记录，按下按钮记录一个新的剪辑。<br>方向箭头和会话按钮通过在场景和跟踪中导航会话视图，增加了8×8网格的范围。你也可以使用Launchpad Mini的右手边的按钮来触发水平的剪辑(场景)。<h3 id="Session概述"><a href="#Session概述" class="headerlink" title="Session概述"></a>Session概述</h3>黄色:表示当前选定的剪辑块，它将被软件中的戒指所包围。<br>绿色:在那块剪辑中有一些剪辑在播放(虽然那可能不是被选中的剪辑块)。<br>红色:在这个范围内没有剪辑。<br>未激活色:在这个范围内没有音轨或场景。<h3 id="USER-模式"><a href="#USER-模式" class="headerlink" title="USER 模式"></a>USER 模式</h3>User1模式:说明在Lives中的MIDI音轨中可以使用<code>drum racks</code>鼓架(如果没有分配的话)<br>制造)，或在lives的MIDI可分配参数中自由分配Launchpad Mini的按钮。<br>User2模式:说明可以作为一个方便的地方来访问<code>Max for Live</code>预设配置(如果没有学习任务的话)，或者自由地分配给Live中的任何参数。<h2 id="Mixer混合器模式"><a href="#Mixer混合器模式" class="headerlink" title="Mixer混合器模式"></a>Mixer混合器模式</h2>底部的四行垫子提供了对每个轨道的直接访问控制，包括:停止、跟踪激活器、solo和跟踪臂。右下角的四个按钮为每个轨道提供额外的控制:<br>•<code>stop</code>：停止按钮，将停止当前播放的所有剪辑(可通过重新分配功能来避免)<br>•<code>trk on</code>：音轨激活器按钮，将打开所有轨道(非静音)<br>•<code>solo</code>：“独奏”按钮，将不再独奏所有曲目。<br>•<code>arm</code>: “音轨操作臂”按钮,will un-arm all armed tracks<h3 id="THE-VOLUME-PAN-SNDA-SNDB-PAGES"><a href="#THE-VOLUME-PAN-SNDA-SNDB-PAGES" class="headerlink" title="THE VOLUME / PAN / SNDA / SNDB PAGES"></a>THE VOLUME / PAN / SNDA / SNDB PAGES</h3>当Mixer模式激活时，按VOL/PAN/SNDA或SNDB按钮输入卷、PAN或发送页面，其中列的所有八个焊盘变成各自控制的连续轨迹“FADDER”。<br>VOLUME:音量<br>pan:<br>sndA:<br>sndB:<div class="row">    <embed src="https://d2xhy469pqj8rc.cloudfront.net/sites/default/files/novation/downloads/7376/launchpadminiabletonguide_0.pdf" width="100%" height="550" type="application/pdf"></div></li></ul><h3 id="launchPad-APP-for-iOS键盘功能映射"><a href="#launchPad-APP-for-iOS键盘功能映射" class="headerlink" title="launchPad APP for iOS键盘功能映射"></a>launchPad APP for iOS键盘功能映射</h3><h4 id="iPad兼容（Low-Power）vs全功率模式"><a href="#iPad兼容（Low-Power）vs全功率模式" class="headerlink" title="iPad兼容（Low Power）vs全功率模式"></a>iPad兼容（Low Power）vs全功率模式</h4><p>手机端节能模式设置</p><ol><li>在连接USB过程中，同时按住按钮<code>5</code>, <code>6</code>, <code>7</code>和<code>8</code>,开启设置节能</li><li>选择一种电源模式（左为高，右为低），参考pdf图文</li><li>完成设置后，按下绿色按钮退出<blockquote><p>在全功率模式下，Launchpad mini需要使用单独供电的USB集线器与iPad链接，否则无法正常工作。</p><h4 id="键位功能说明"><a href="#键位功能说明" class="headerlink" title="键位功能说明"></a>键位功能说明</h4></blockquote></li><li>F键位：Filters过滤器，8个垫子的每一列都变成一个滤光片:向上移动以除去低音，向下移动以除去高音。按<code>D</code>或<code>E</code>行的垫子重置Filter过滤器。</li><li>G键位：Volume音量，8个垫子的每一层都变成了一个音量调节器。按下<code>B</code>行垫子重置音量。</li><li>H键位：Trigger Sounds &amp; FX<div class="row">    <embed src="https://d2xhy469pqj8rc.cloudfront.net/sites/default/files/novation/downloads/6959/launchpad-mini-gsg-en_0.pdf" width="100%" height="550" type="application/pdf"></div></li></ol>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>Garageband不支持控件表面，因此无法使用Launchpad/LaunchKey的全部功能。</p><p>在Garageband中，仅可以使用Launchpad来演奏虚拟乐器。<br>原因：<code>Faders</code>和<code>Knobs</code>将为输出MIDI CC消息(<a href="http://global.novationmusic.com/answerbase/what-midi-cc-messages-do-the-controls-on-the-launchkey-send" target="_blank" rel="noopener">详细介绍</a>)到支持手动操作的MIDI设备的插件。此外，打击垫还将发送固定的Note数据。<br>然而，Garageband本身没有传输、卷或Pan控件，不支持Launchpad的Volume or Pan Control。因此，只能在支持<code>HUI Protocol</code>的<a href="http://us.novationmusic.com/sites/default/files/novation/downloads/10606/launchkey-mk2-daw-setup-guide.pdf" target="_blank" rel="noopener">DAW</a>的DAW，或者选择<code>Ableton Live</code>，Launchpad才能发挥最大的作用。<br><a href="https://support.novationmusic.com/hc/en-gb/articles/207556325-Can-I-use-my-Launchkey-in-Garageband-" target="_blank" rel="noopener">原文</a></p>]]></content>
     
     <summary type="html">
     
@@ -67,9 +67,32 @@
     <link href="https://huos3203.github.io/2018/06/19/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/AbletonLive10%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/"/>
     <id>https://huos3203.github.io/2018/06/19/作文作曲/AbletonLive10安装使用/</id>
     <published>2018-06-19T14:23:13.000Z</published>
-    <updated>2018-06-19T16:30:01.000Z</updated>
+    <updated>2018-06-19T18:27:17.000Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="launchPad"><a href="#launchPad" class="headerlink" title="launchPad"></a>launchPad</h2><p><a href="https://global.novationmusic.com" target="_blank" rel="noopener">设备官网</a></p><p><a href="https://global.novationmusic.com/launch/launchpad-mini/support-downloads" target="_blank" rel="noopener">官方教程资源</a><br><a href="https://intro.novationmusic.com/join-the-dub-side" target="_blank" rel="noopener">官方工程试听资源支持下载</a></p><h2 id="ableton-live-软件"><a href="#ableton-live-软件" class="headerlink" title="ableton live 软件"></a>ableton live 软件</h2><p><a href="https://www.ableton.com/en/trial/" target="_blank" rel="noopener">官网下载</a><br><a href="http://abletive.com" target="_blank" rel="noopener">中国社区</a><br><a href="https://launchpadxm.com/class/ableton-live-10-0-1-suite-破解版下载.html" target="_blank" rel="noopener">ABLETON LIVE 10.0.1 SUITE 破解版下载 WINDOWS &amp; MAC</a><br>百度网盘<a href="https://pan.baidu.com/s/1D1lKRDEltWWlIojw865ciA" target="_blank" rel="noopener">下载地址</a></p><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><h3 id="灯光"><a href="#灯光" class="headerlink" title="灯光"></a>灯光</h3><h3 id="工程制作"><a href="#工程制作" class="headerlink" title="工程制作"></a>工程制作</h3><h4 id="MIDI映射"><a href="#MIDI映射" class="headerlink" title="MIDI映射"></a>MIDI映射</h4><h4 id="采样音频"><a href="#采样音频" class="headerlink" title="采样音频"></a>采样音频</h4><h4 id="灯光使用"><a href="#灯光使用" class="headerlink" title="灯光使用"></a>灯光使用</h4>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="launchPad"><a href="#launchPad" class="headerlink" title="launchPad"></a>launchPad</h2><p><a href="https://global.novationmusic.com" target="_blank" rel="noopener">设备官网</a></p><p><a href="https://global.novationmusic.com/launch/launchpad-mini/support-downloads" target="_blank" rel="noopener">官方教程资源</a><br><a href="https://intro.novationmusic.com/join-the-dub-side" target="_blank" rel="noopener">官方工程试听资源支持下载</a></p><h2 id="ableton-live-软件"><a href="#ableton-live-软件" class="headerlink" title="ableton live 软件"></a>ableton live 软件</h2><p><a href="https://www.ableton.com/en/trial/" target="_blank" rel="noopener">官网下载</a><br><a href="http://abletive.com" target="_blank" rel="noopener">中国社区</a><br><a href="https://launchpadxm.com/class/ableton-live-10-0-1-suite-破解版下载.html" target="_blank" rel="noopener">ABLETON LIVE 10.0.1 SUITE 破解版下载 WINDOWS &amp; MAC</a><br><a href="https://share.weiyun.com/d7a2cf175853ab34f5c7d2e98d2633a6" target="_blank" rel="noopener">腾讯微云内涵破解机</a></p><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><hr><p>title: MacOS系统下运行exe小程序<br>date: 2018-06-19 18:09:18<br>updated: 2018-06-19 18:27:17<br>comments: true<br>tags: []<br>categories: macOS<br>keywords:<br>permalink:<br>copyright:<br>password: </p><h2 id="top"><a href="#top" class="headerlink" title="top:   "></a>top:   </h2><h3 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h3><p>例如，当急需在Mac系统上，安装abletonLive，涉及到破解机exe小程序，使用文中提到的两种方法，就解了燃眉之急。</p><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p><a href="http://xiazai.crossoverchina.com/trial/Mac/crossover_mac_17.5.5.zip" target="_blank" rel="noopener">crossover</a></p><h3 id="Wrappe-k-小应用"><a href="#Wrappe-k-小应用" class="headerlink" title="Wrappe[k]小应用"></a>Wrappe[k]小应用</h3><p>这款软件适用于一些小型exe程序，其他，推荐方法一<br><a href="https://pan.baidu.com/s/1ujHKuXNr8G6m8PTPMO9ajQ" target="_blank" rel="noopener">下载</a> 密码: khqa<br><a href="http://www.sdifen.com/mac-exe.html" target="_blank" rel="noopener">参看</a></p><h3 id="灯光"><a href="#灯光" class="headerlink" title="灯光"></a>灯光</h3><h3 id="工程制作"><a href="#工程制作" class="headerlink" title="工程制作"></a>工程制作</h3><h4 id="MIDI映射"><a href="#MIDI映射" class="headerlink" title="MIDI映射"></a>MIDI映射</h4><h4 id="采样音频"><a href="#采样音频" class="headerlink" title="采样音频"></a>采样音频</h4><h4 id="灯光使用"><a href="#灯光使用" class="headerlink" title="灯光使用"></a>灯光使用</h4>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
+      
+    
+    </summary>
+    
+      <category term="作文作曲" scheme="https://huos3203.github.io/categories/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>LaunchPadMini说明书</title>
+    <link href="https://huos3203.github.io/2018/06/19/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/LaunchPadMini%E8%AF%B4%E6%98%8E%E4%B9%A6/"/>
+    <id>https://huos3203.github.io/2018/06/19/作文作曲/LaunchPadMini说明书/</id>
+    <published>2018-06-19T14:23:13.000Z</published>
+    <updated>2018-06-19T18:27:17.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p><a href="https://d2xhy469pqj8rc.cloudfront.net/sites/default/files/novation/downloads/9678/launchpad-demo-project-2014.zip" target="_blank" rel="noopener">工程demo</a><br><a href="https://global.novationmusic.com/launch/launchpad-mini/support-downloads" target="_blank" rel="noopener">官方资源</a></p><p>##<br><a href="https://global.novationmusic.com/answerbase/category/launchpad-video-tutorial" target="_blank" rel="noopener">Launchpad几种模式视频教程</a></p><h3 id="硬件设置"><a href="#硬件设置" class="headerlink" title="硬件设置"></a>硬件设置</h3><ol><li>贴纸：确保标签与相应的按钮对齐。</li><li>使用USB连接线将你的Launchpad Mini连接到你的Mac或PC上的USB端口。Ableton Live支持最多6台同时连接的设备。</li><li>配置设备在Ableton Live中的配置</li></ol><ul><li>打开Live偏好设置,选中<code>MIDI/Sync</code>选项卡，在<code>Input</code>中选择Launchpad Mini所连接的端口<br>以及窗口顶部的<code>Output</code>选择器</li><li>在<code>Control Surface</code>控制面板中选择自己的设备。</li><li>在<code>MIDI Ports</code>下，开启 <code>Track</code>和<code>Remote</code>选项.<h2 id="PRODUCT-OVERVIEW-ABLETON-LIVE"><a href="#PRODUCT-OVERVIEW-ABLETON-LIVE" class="headerlink" title="PRODUCT OVERVIEW: ABLETON LIVE"></a>PRODUCT OVERVIEW: ABLETON LIVE</h2><h3 id="Session-模式"><a href="#Session-模式" class="headerlink" title="Session 模式"></a>Session 模式</h3>当选择Launchpad作为活动控制面时，会话视图上会出现一个圆环，用于指示当前由pad矩阵控制的哪个部分。按下一个剪辑启动板，就会在相应的剪辑插槽中触发该剪辑。在没有武装的轨道上点击一个空的剪辑槽将停止在这个轨道上播放的剪辑。如果跟踪是武装到记录，按下按钮记录一个新的剪辑。<br>方向箭头和会话按钮通过在场景和跟踪中导航会话视图，增加了8×8网格的范围。你也可以使用Launchpad Mini的右手边的按钮来触发水平的剪辑(场景)。<h3 id="Session概述"><a href="#Session概述" class="headerlink" title="Session概述"></a>Session概述</h3>黄色:表示当前选定的剪辑块，它将被软件中的戒指所包围。<br>绿色:在那块剪辑中有一些剪辑在播放(虽然那可能不是被选中的剪辑块)。<br>红色:在这个范围内没有剪辑。<br>未激活色:在这个范围内没有音轨或场景。<h3 id="USER-模式"><a href="#USER-模式" class="headerlink" title="USER 模式"></a>USER 模式</h3>User1模式:说明在Lives中的MIDI音轨中可以使用<code>drum racks</code>鼓架(如果没有分配的话)<br>制造)，或在lives的MIDI可分配参数中自由分配Launchpad Mini的按钮。<br>User2模式:说明可以作为一个方便的地方来访问<code>Max for Live</code>预设配置(如果没有学习任务的话)，或者自由地分配给Live中的任何参数。<h2 id="Mixer混合器模式"><a href="#Mixer混合器模式" class="headerlink" title="Mixer混合器模式"></a>Mixer混合器模式</h2>底部的四行垫子提供了对每个轨道的直接访问控制，包括:停止、跟踪激活器、solo和跟踪臂。右下角的四个按钮为每个轨道提供额外的控制:<br>•<code>stop</code>：停止按钮，将停止当前播放的所有剪辑(可通过重新分配功能来避免)<br>•<code>trk on</code>：音轨激活器按钮，将打开所有轨道(非静音)<br>•<code>solo</code>：“独奏”按钮，将不再独奏所有曲目。<br>•<code>arm</code>: “音轨操作臂”按钮,will un-arm all armed tracks<h3 id="THE-VOLUME-PAN-SNDA-SNDB-PAGES"><a href="#THE-VOLUME-PAN-SNDA-SNDB-PAGES" class="headerlink" title="THE VOLUME / PAN / SNDA / SNDB PAGES"></a>THE VOLUME / PAN / SNDA / SNDB PAGES</h3>当Mixer模式激活时，按VOL/PAN/SNDA或SNDB按钮输入卷、PAN或发送页面，其中列的所有八个焊盘变成各自控制的连续轨迹“FADDER”。<br>VOLUME:音量<br>pan:<br>sndA:<br>sndB:<div class="row">    <embed src="https://d2xhy469pqj8rc.cloudfront.net/sites/default/files/novation/downloads/7376/launchpadminiabletonguide_0.pdf" width="100%" height="550" type="application/pdf"></div></li></ul><h3 id="launchPad-APP-for-iOS键盘功能映射"><a href="#launchPad-APP-for-iOS键盘功能映射" class="headerlink" title="launchPad APP for iOS键盘功能映射"></a>launchPad APP for iOS键盘功能映射</h3><h4 id="iPad兼容（Low-Power）vs全功率模式"><a href="#iPad兼容（Low-Power）vs全功率模式" class="headerlink" title="iPad兼容（Low Power）vs全功率模式"></a>iPad兼容（Low Power）vs全功率模式</h4><p>手机端节能模式设置</p><ol><li>在连接USB过程中，同时按住按钮<code>5</code>, <code>6</code>, <code>7</code>和<code>8</code>,开启设置节能</li><li>选择一种电源模式（左为高，右为低），参考pdf图文</li><li>完成设置后，按下绿色按钮退出<blockquote><p>在全功率模式下，Launchpad mini需要使用单独供电的USB集线器与iPad链接，否则无法正常工作。</p><h4 id="键位功能说明"><a href="#键位功能说明" class="headerlink" title="键位功能说明"></a>键位功能说明</h4></blockquote></li><li>F键位：Filters过滤器，8个垫子的每一列都变成一个滤光片:向上移动以除去低音，向下移动以除去高音。按<code>D</code>或<code>E</code>行的垫子重置Filter过滤器。</li><li>G键位：Volume音量，8个垫子的每一层都变成了一个音量调节器。按下<code>B</code>行垫子重置音量。</li><li>H键位：Trigger Sounds &amp; FX<div class="row">    <embed src="https://d2xhy469pqj8rc.cloudfront.net/sites/default/files/novation/downloads/6959/launchpad-mini-gsg-en_0.pdf" width="100%" height="550" type="application/pdf"></div></li></ol>]]></content>
     
     <summary type="html">
     
@@ -412,9 +435,9 @@
     <link href="https://huos3203.github.io/2018/05/17/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/%E9%9B%A8%E5%A4%9C/"/>
     <id>https://huos3203.github.io/2018/05/17/作文作曲/雨夜/</id>
     <published>2018-05-17T10:58:36.000Z</published>
-    <updated>2018-06-19T16:30:01.000Z</updated>
+    <updated>2018-06-19T18:27:17.000Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="雨夜"><a href="#雨夜" class="headerlink" title="雨夜"></a>雨夜</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">卧听风雨天窗跃，左耳贯注天籁音</span><br><span class="line">不闻春雷潜入夜，广厦飞瀑挂屋檐</span><br></pre></td></tr></table></figure><!-- 简单示例 (id, server, type)  --><h2 id="滑板"><a href="#滑板" class="headerlink" title="滑板"></a>滑板</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">心如止水毽如飞，晨练漂移划湖心</span><br><span class="line">夜雨不及暑气盛，黑云压城君汗蒸</span><br></pre></td></tr></table></figure><h2 id="哔哩哔哩"><a href="#哔哩哔哩" class="headerlink" title="哔哩哔哩"></a>哔哩哔哩</h2><div class="owl-media owl-video owl-bilibili"><embed src="http://static.hdslb.com/miniloader.swf" flashvars="aid=1468496&page=1" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" quality="high" allowfullscreen="true"></div><h2 id="QQ视频"><a href="#QQ视频" class="headerlink" title="QQ视频"></a>QQ视频</h2><div class="owl-media owl-video owl-tencent"><embed src="http://static.video.qq.com/TPout.swf?vid=s06895oernz&auto=0" type="application/x-shockwave-flash" quality="high" allowfullscreen="true" align="middle" allowscriptaccess="always"></div><h2 id="QQ音乐"><a href="#QQ音乐" class="headerlink" title="QQ音乐"></a>QQ音乐</h2>    <div id="aplayer-uzLZLiXT" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="002rhYYR0e7jWP" data-server="tencent" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="雨夜"><a href="#雨夜" class="headerlink" title="雨夜"></a>雨夜</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">卧听风雨天窗跃，左耳贯注天籁音</span><br><span class="line">不闻春雷潜入夜，广厦飞瀑挂屋檐</span><br></pre></td></tr></table></figure><!-- 简单示例 (id, server, type)  --><h2 id="滑板"><a href="#滑板" class="headerlink" title="滑板"></a>滑板</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">心如止水毽如飞，晨练漂移划湖心</span><br><span class="line">夜雨不及暑气盛，黑云压城君汗蒸</span><br></pre></td></tr></table></figure><h2 id="哔哩哔哩"><a href="#哔哩哔哩" class="headerlink" title="哔哩哔哩"></a>哔哩哔哩</h2><div class="owl-media owl-video owl-bilibili"><embed src="http://static.hdslb.com/miniloader.swf" flashvars="aid=1468496&page=1" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" quality="high" allowfullscreen="true"></div><h2 id="QQ视频"><a href="#QQ视频" class="headerlink" title="QQ视频"></a>QQ视频</h2><div class="owl-media owl-video owl-tencent"><embed src="http://static.video.qq.com/TPout.swf?vid=s06895oernz&auto=0" type="application/x-shockwave-flash" quality="high" allowfullscreen="true" align="middle" allowscriptaccess="always"></div><h2 id="QQ音乐"><a href="#QQ音乐" class="headerlink" title="QQ音乐"></a>QQ音乐</h2>    <div id="aplayer-WmMsxKdx" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="002rhYYR0e7jWP" data-server="tencent" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>]]></content>
     
     <summary type="html">
     
@@ -449,29 +472,6 @@
     </summary>
     
       <category term="分类" scheme="https://huos3203.github.io/categories/%E5%88%86%E7%B1%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>水关长城天漠行</title>
-    <link href="https://huos3203.github.io/2018/04/13/%E6%97%85%E8%A1%8C/%E6%B0%B4%E5%85%B3%E9%95%BF%E5%9F%8E%E5%A4%A9%E6%BC%A0%E8%A1%8C/"/>
-    <id>https://huos3203.github.io/2018/04/13/旅行/水关长城天漠行/</id>
-    <published>2018-04-13T11:52:28.000Z</published>
-    <updated>2018-04-24T11:49:45.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p><blockquote class="trello-card"><a href="https://trello.com/c/fHziBC4z/1-%E8%87%AA%E9%A9%BE%E6%B8%B8" target="_blank" rel="noopener">行程安排</a></blockquote><script src="https://p.trellocdn.com/embed.min.js"></script></p><div class="row">    <embed src="http://p27uwfdhv.bkt.clouddn.com/static/pdf/%E6%B0%B4%E5%85%B3%E9%95%BF%E5%9F%8E%E5%A4%A9%E6%BC%A0%E6%B8%B8.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
-      
-    
-    </summary>
-    
-      <category term="旅行" scheme="https://huos3203.github.io/categories/%E6%97%85%E8%A1%8C/"/>
     
     
   </entry>
