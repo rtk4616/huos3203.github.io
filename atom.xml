@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huos3203.github.io/"/>
-  <updated>2018-06-11T20:32:02.000Z</updated>
+  <updated>2018-06-19T14:23:13.000Z</updated>
   <id>https://huos3203.github.io/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LaunchPadMini说明书</title>
+    <link href="https://huos3203.github.io/2018/06/19/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/LaunchPadMini%E8%AF%B4%E6%98%8E%E4%B9%A6/"/>
+    <id>https://huos3203.github.io/2018/06/19/作文作曲/LaunchPadMini说明书/</id>
+    <published>2018-06-19T14:23:13.000Z</published>
+    <updated>2018-06-19T14:23:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h3 id="硬件设置"><a href="#硬件设置" class="headerlink" title="硬件设置"></a>硬件设置</h3><ol><li>贴纸：确保标签与相应的按钮对齐。</li><li>使用USB连接线将你的Launchpad Mini连接到你的Mac或PC上的USB端口。Ableton Live支持最多6台同时连接的设备。</li><li>配置设备在Ableton Live中的配置</li></ol><ul><li>打开Live偏好设置,选中<code>MIDI/Sync</code>选项卡，在<code>Input</code>中选择Launchpad Mini所连接的端口<br>以及窗口顶部的<code>Output</code>选择器</li><li>在<code>Control Surface</code>控制面板中选择自己的设备。</li><li>在<code>MIDI Ports</code>下，开启 <code>Track</code>和<code>Remote</code>选项.<h2 id="PRODUCT-OVERVIEW-ABLETON-LIVE"><a href="#PRODUCT-OVERVIEW-ABLETON-LIVE" class="headerlink" title="PRODUCT OVERVIEW: ABLETON LIVE"></a>PRODUCT OVERVIEW: ABLETON LIVE</h2><h3 id="Session-模式"><a href="#Session-模式" class="headerlink" title="Session 模式"></a>Session 模式</h3>当选择Launchpad作为活动控制面时，会话视图上会出现一个圆环，用于指示当前由pad矩阵控制的哪个部分。按下一个剪辑启动板，就会在相应的剪辑插槽中触发该剪辑。在没有武装的轨道上点击一个空的剪辑槽将停止在这个轨道上播放的剪辑。如果跟踪是武装到记录，按下按钮记录一个新的剪辑。<br>方向箭头和会话按钮通过在场景和跟踪中导航会话视图，增加了8×8网格的范围。你也可以使用Launchpad Mini的右手边的按钮来触发水平的剪辑(场景)。<h3 id="Session概述"><a href="#Session概述" class="headerlink" title="Session概述"></a>Session概述</h3>黄色:表示当前选定的剪辑块，它将被软件中的戒指所包围。<br>绿色:在那块剪辑中有一些剪辑在播放(虽然那可能不是被选中的剪辑块)。<br>红色:在这个范围内没有剪辑。<br>未激活色:在这个范围内没有音轨或场景。<h3 id="USER-模式"><a href="#USER-模式" class="headerlink" title="USER 模式"></a>USER 模式</h3>User1模式:说明在Lives中的MIDI音轨中可以使用<code>drum racks</code>鼓架(如果没有分配的话)<br>制造)，或在lives的MIDI可分配参数中自由分配Launchpad Mini的按钮。<br>User2模式:说明可以作为一个方便的地方来访问<code>Max for Live</code>预设配置(如果没有学习任务的话)，或者自由地分配给Live中的任何参数。<h2 id="Mixer混合器模式"><a href="#Mixer混合器模式" class="headerlink" title="Mixer混合器模式"></a>Mixer混合器模式</h2>底部的四行垫子提供了对每个轨道的直接访问控制，包括:停止、跟踪激活器、solo和跟踪臂。右下角的四个按钮为每个轨道提供额外的控制:<br>•<code>stop</code>：停止按钮，将停止当前播放的所有剪辑(可通过重新分配功能来避免)<br>•<code>trk on</code>：音轨激活器按钮，将打开所有轨道(非静音)<br>•<code>solo</code>：“独奏”按钮，将不再独奏所有曲目。<br>•<code>arm</code>: “音轨操作臂”按钮,will un-arm all armed tracks<h3 id="THE-VOLUME-PAN-SNDA-SNDB-PAGES"><a href="#THE-VOLUME-PAN-SNDA-SNDB-PAGES" class="headerlink" title="THE VOLUME / PAN / SNDA / SNDB PAGES"></a>THE VOLUME / PAN / SNDA / SNDB PAGES</h3>当Mixer模式激活时，按VOL/PAN/SNDA或SNDB按钮输入卷、PAN或发送页面，其中列的所有八个焊盘变成各自控制的连续轨迹“FADDER”。<br>VOLUME:音量<br>pan:<br>sndA:<br>sndB:<div class="row">    <embed src="https://d2xhy469pqj8rc.cloudfront.net/sites/default/files/novation/downloads/7376/launchpadminiabletonguide_0.pdf" width="100%" height="550" type="application/pdf"></div></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
+      
+    
+    </summary>
+    
+      <category term="作文作曲" scheme="https://huos3203.github.io/categories/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>AbletonLive10安装使用</title>
+    <link href="https://huos3203.github.io/2018/06/19/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/AbletonLive10%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/"/>
+    <id>https://huos3203.github.io/2018/06/19/作文作曲/AbletonLive10安装使用/</id>
+    <published>2018-06-19T14:23:13.000Z</published>
+    <updated>2018-06-19T14:23:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="launchPad"><a href="#launchPad" class="headerlink" title="launchPad"></a>launchPad</h2><p><a href="https://global.novationmusic.com" target="_blank" rel="noopener">设备官网</a></p><p><a href="https://global.novationmusic.com/launch/launchpad-mini/support-downloads" target="_blank" rel="noopener">官方教程资源</a><br><a href="https://intro.novationmusic.com/join-the-dub-side" target="_blank" rel="noopener">官方工程试听资源支持下载</a></p><h2 id="ableton-live-软件"><a href="#ableton-live-软件" class="headerlink" title="ableton live 软件"></a>ableton live 软件</h2><p><a href="https://www.ableton.com/en/trial/" target="_blank" rel="noopener">官网下载</a><br><a href="http://abletive.com" target="_blank" rel="noopener">中国社区</a><br><a href="https://launchpadxm.com/class/ableton-live-10-0-1-suite-破解版下载.html" target="_blank" rel="noopener">ABLETON LIVE 10.0.1 SUITE 破解版下载 WINDOWS &amp; MAC</a><br>百度网盘<a href="https://pan.baidu.com/s/1D1lKRDEltWWlIojw865ciA" target="_blank" rel="noopener">下载地址</a></p><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><h3 id="灯光"><a href="#灯光" class="headerlink" title="灯光"></a>灯光</h3><h3 id="工程制作"><a href="#工程制作" class="headerlink" title="工程制作"></a>工程制作</h3><h4 id="MIDI映射"><a href="#MIDI映射" class="headerlink" title="MIDI映射"></a>MIDI映射</h4><h4 id="采样音频"><a href="#采样音频" class="headerlink" title="采样音频"></a>采样音频</h4><h4 id="灯光使用"><a href="#灯光使用" class="headerlink" title="灯光使用"></a>灯光使用</h4>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
+      
+    
+    </summary>
+    
+      <category term="作文作曲" scheme="https://huos3203.github.io/categories/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Git如何永久删除文件(包括历史记录)</title>
@@ -270,29 +316,6 @@
   </entry>
   
   <entry>
-    <title>GB乐理知识体系</title>
-    <link href="https://huos3203.github.io/2018/05/29/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/GB%E4%B9%90%E7%90%86%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/"/>
-    <id>https://huos3203.github.io/2018/05/29/作文作曲/GB乐理知识体系/</id>
-    <published>2018-05-29T11:32:04.000Z</published>
-    <updated>2018-06-11T19:43:53.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="使用puml来梳理乐理知识点"><a href="#使用puml来梳理乐理知识点" class="headerlink" title="使用puml来梳理乐理知识点"></a>使用puml来梳理乐理知识点</h2><p>相关概念<br><img src="http://www.plantuml.com/plantuml/svg/RLBRJi9047tVhzWVQ7Wdn7yXKAC9WGHuKn94BWeKQWA90KtZ3KZmmgL6MxdyJBVRFlaBpZ354lHfPiwPEMSok_dZV4hbZgLBlIeCMzuLfV7alLLboNBlvm2oX9hEgrb-fCQJQfRvnPwthZdB6z5VKOCxA8dr-_UYwNPD57aqlVAL_z1oUoPJqybWBf6AvtBSD-OdZ7EtEFJCKHHBY008xSoncyAQYzkQM3K00KheMWI2_2fZHsK4UKHeTGZ4o-T1b0BoaxPNBqNSXYRQ7wmG-e513C81-d9_VEqiMvY9XIqMqmtMNKlZ9LJQ35tEG2CK0IQsjoC91di5avpMsrROVb7TfVlzFQ0o3e5VmpqdCd8-p_tEArCKx1vE56M3Oc4FjobSZ6GxKqmBZ9Hvx5HH_joORaCStZIeCrJYGdJy_wUtt-8mau70TZyGlZh1Fm00"></p><p><img src="http://www.plantuml.com/plantuml/svg/TLBBJi905DtFLtIf2HjG9A4hnSTt42bg993KVW0eBu4A9A0HD0rgi55H23LAAV0plTEouXUSwGY2ukxEEVUSU-xCI4TIHE3CNiagfV5xmbBpK1zEZ2pM-f1JdVeSxGjHIH2vGo4O4aGqZjViKSOSt10MttMfi7aAe_U9KS1LZHpXGREJvV7z1QvfI8Y6ldKdKb2Ka7-iT6rDvL4u9XuZFnWw61sU57B2r0lGwy9j1eRvAK-wBVsHHz6O970H8ImXjyVyV6BmnAWXAigcpLxU_8nRjQJRWryQ-B97mxmLcIdfD0SovVj9ceUZPiZl8pxMzM1SUVLIntwPL6mi5pm87aMTuL2IIRZ0zixktkRM8WkL3cFTdhLrxuRlZvQCerht2hIBqBfY0LPT0OyhiEOAhFDE5cVD1M5rP2ajdZcyD6SNbLBdWMatMtyP0_NwVqpg-Jz6Ja2gDKVE4ZffrFbdmTNsBx7UTB2PXgQhMFh8RdUcEZjtYlFoeeu0KFnOnEpssL9CKURzVwhf5mt7oDEAYFrdK7Ih4QTT3Fu2"></p><p><img src="http://www.plantuml.com/plantuml/svg/VPFBJi9058RtynHTDn8lb0t4XQA-1v6A90GCzW6g0WeMHOCneSGB4crCH8mrZXNbPMPwMV4Adg6bfKPPTURCEV__pT-Cb9Lo8aS-6bQZOhxjMTenLRz7WoDJ_wGrRRokeaqnBub5RbjCfSKYSkIMFJmaNsquDJklRF1-dmxVHWF5lD1XIxkwNJfpxaxCbex4VDgRYplNhw2VGBixkQmqtfeN_GJA5oIHoubR4d8R27uYk4lm8sp9nx5pgLigfkyzHCiQbEYvGkirrjegmRobzX3FkrhBJhC7d_abdcU-75DstRXK9fNDepWrxWFFOZQpBI7VYxOrOZGjOsZtNmYksUyQT2DREQ2gJYjbiohJ-WqS4tp2c7nttuajWhknA1jr_xQqeO1So3afH99275d6Cy4o77g9aA_w0gYxjK0zxlSbmdSYXX8KmQX_Ega4oQuBaGrXpjVd-KKM4dCPj_wNLlSX9ELZhmaJLco0rdJSGGXXI5pz3UbL0iWLo2Fc2VDyTDPl1B3fSHziFGIsz3VOBorLdIQ3b2ULW2p9uXiDMXEss2ospbL8m6NR42Ah8RReFsnJI-_PRHMWfOZSDqgl3UjMPbrk-GS0"><br><img src="http://www.plantuml.com/plantuml/svg/lLNTKjf05BxFKt2T6-_jfHTz3gP6POR13iq3f0eI_gcYA6AfhGYZLL6Y1fBemtJFRdBbA_HiDec9uFIkCmopUyxkTxxzphSRDQDcbHIPjbXhXzv_PQCg73-zs3erBAYC_75P-gJaL2MVsb3IgqfUyhIk-rmYJW-pzEU4RppVWkVx5xj6zmsSmfdX5hvvlngqQqXARZNOj-oEjy5kVf1ocwgIoYfhgaGh5RSwWEaTCUlGgdcNXyHfi6x1wq_OR8Y0S6mmQv-O6Z4ls6W2rrtC4lCAdhUZDHAjbN65oF4edg4uOHEBMGLcbTpxHteouEJq5Z5d_duEHtjbsfiHPmzN_j6sED4KPoPz-PpDg89jln-mpMVMDrJfjN2t4B64Llt5xgx0sH1tO9cFOiIkoWdKvMXpN01sRCAiBOGHYDWARziXrY1Q3xO6mohL3rojoAmzUjBdmA8BWYIjbV3qqBwLvTNDh2mdD18yVvzpfQ3uG9mZCOVU28LZnM5m35yoBhc-0_ebROpOTGUUEb2QBLIdTC4A3p1k8eFuWQ0Lo4AcLQzZO7K1BA56iWp54TGh_5_y_B4inrHAXv117M9QlcJ-D9LUJsToF5Xv9twrA5Y5s-_pyOL1NFmUI5YHSnNaad3-CR7tI_EY16Bvle3TMboxg3reIhTaSAc9i_FQ--OXr0vuLsviJ6F4EtmGfMXxYbdULK_xWTx6taO-eeM-EonJdTSHLol10Nk11WlDOkt1-4cAamhpsNIKJlO_F7GSD75J_cs3EISaRB2o09FUdUAT9PP5d7sebvQyepeq7pbqUFMWFY5MaTfj63JPaUErhmM9EVV-P_TWyzvOvnqJYVw-VI7zhYBmcwSFz75yAfJsRtaeFctiWjwX1rFSBru_zsOGVsomME9olz8AdlorJGpd9V5zWFwCdMfyaGZ_1G00"></p><h2 id="五度圈"><a href="#五度圈" class="headerlink" title="五度圈"></a>五度圈</h2><p><img src="http://www.plantuml.com/plantuml/svg/hLNVJzDG57w_VyLzrWu3BZ7fWycwjdlH5taqFb3NoHAocJ7ZQmDZJA0m5uooZU0KDiEFWO9OomR_2_QstHF_WkVsjck11y6GPTlfFT_tdNE-UtTNp1QdL6oPgyHiasRbebSX2nlkRD-Btw4fDLF4a-f4MYsWWLPtp-QjVfCqJkqlXqwrRBTdoDdFYzwI_U487idcaLjwF_YwRDUFqEYOPMmFDWulUdKl9BKbqci3rdjo3sPjhOD6Hx2xNoQL7SlGINK9LidABy2GlK-a-SsfbuW-xtOFOF71O4rd4HeRmKwhIxfr1hUCHG1QnYoLdTzsIiTGrJ4xiEYSbEnAbJLXdInRnWd4fAUHpkAWPLg6Pd_k0OpYTzlt1rgPpEr5bz33e1HzhfUOFDdiU9KNe4K8B6EFDhhwdLHrg0CSc2hQ3iEp5jpzBP22IgmuAUlG2AiAOxjdQupeD0moTxKYACFeqPLXNUjqtTvjMOO9LSwrfZo1nVmK7eVtCnK_cS1FitWyUwwjqwrQt_BTyrePIlpHPf2QI_jx_VpU2nnBvz_cOezn4YLnxCrhY5AyO-wpivBaH4xYP2v5apvGfcdIQ8Hf9FlCPCW43fVW12w9Kj4aumKf8KPF7kIaC0VhL1L9E5R8lfgaMI6KzPgXR2GnrKJ832CVXH8C8uNyCF8wy2hvA37a-paaHchuVDyF41UZTZ5UO5OmiXWI_P51L1uwAIWXLVRoWd8jxTSL52vmMr02X1GH628K92c1hvSa92KmpuFu6eceHW1HK6Ae8KKr4afWcmVnDSIeHW1Ha3ZKI4GrH2Nma4B2SnMFYFWOEOxaE0vKnAYA7EU6dYfHb12H2K1824yJgnFO6hWQHm9Fhusg3jyjq_vuFAXL7bbztUbt8ONPpuUVpYAPdqvdfk6LXW_O33uH1pjvCGw6yAauZCGdQTjyIa6vV575Nc6Spy0v8Yi_tDeCsTov7hYLcjtK_mbWajw5JHKL_fOCwTOCGRbHsrTc5Uzirg5awkubfV-Hl6mFR3U-fQCoVwKDE2mtq7Yfvefg0MVom2qWwtUL_Xblc4vBerSwM_uB"></p><p><img src="http://www.plantuml.com/plantuml/svg/AyaioKbLUBPWujEzYvxldlniNWjNScfUIMgHGaPgOafg4HUo52usLsfU2bGvbqDnIM9HIN5YJWbNDPS245I7W2aGq5O8po_AIK7mjHKSSrEBCfCJaOIq5PmJyn9JK8L2WnsH-TeAVgdb2f7vHTceeaxvnINvUIWwVLChCfFpaQrqBItABqX5KUHPafXJYIBYdbgKcvXNYMPyQb5EPXwAyzFWhg_bgkLo00O4sElGC4pBpoz12qDGM4640G00"></p><h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p><img src="http://www.plantuml.com/plantuml/svg/AyaioKbLUB5mnRC5UxYIK_DAKeiKCb8JKrABkA22gNafK04kX-AInAAIuiIS4gvgPIu5LA2dK0CadVDpIdFp58mKG3mennYiD2Y_76goWY5OQLbYJcaga0rM2k4OeQiq0ievAkJavwKh9AVcv81KQd7LSZa07GLs1ip9QVdv9IXEXWW00000"></p><h2 id="MD表格"><a href="#MD表格" class="headerlink" title="MD表格"></a>MD表格</h2><p><img src="http://www.plantuml.com/plantuml/svg/AyaioKbLy7LviN35imLxk99JyqfIYnGoKXDJKekuuCAfUIbG8QuIa0Qk6bi582f9J09g1Z8WaWerN3KAYGerC765elnoi5WIXXZGG0M8IT5QiGgwkdOAmIM99Qc6N7dv9QaAHPdf6ILKiGDa71VCLsdvG1wgho120000"><br>音 –&gt; 音质 —&gt; 高低 —&gt; 十二平均律(七键) —&gt;音级/音名/唱名/音组 —&gt;<br>音 –&gt; 音质 —&gt; 长短 —&gt; 音符（全音/半音）<br>五线谱 –&gt; 节拍  拍号，调号，调域<br></p><h2 id="大音阶"><a href="#大音阶" class="headerlink" title="大音阶"></a>大音阶</h2><p> 12个调：7个大键 5个黑键 ： 全音/半音<br> 音名：C Db D Eb E Fb F Gb G Ab A Bb B<br> 音组：十二平均律<br> 音性质：高低，强弱，长短，音色<br> 音符时效：全音符，二分音符，四分音符，八分音符，十六分音符。<br> 斧头/符干/符尾   书写方法：斧头下干居右，斧头上干居左，符尾永居右<br> 节：<br> 拍号：<br> 乐速：BPM<br> 五线谱：<br> 音程： 度数：两个音符跨度的线和间的个数，音数：两个音符相差全音和半音的个数<br> 音程名：音数和度数决定。纯一度，小二度，大二度…<br> 节奏读法：短音符：嗒，二倍音符：嗒啊，三倍音符：嗒啊啊，休止符：嗯/嗯啊<br> 调式/调域/音阶<br> 调的主音+调式类别<br> C大调：<br> 自然大调：全全半全全全半 的音级关系<br> 自然小调：全半全全半半全全<br> 关系（大/小）调：c大调是a小调的关系大调。a小调是c大调的关系小调，使用其关系（大/小）调的首调唱名方法。<br> 和弦：以两个以上的音，按照三度的重叠关系，在纵向上加以结合，就是和弦。<br> 顺阶和弦：根音/三音/五音<br> 七个顺阶和弦：大三和弦（CFG）/小三和弦（m）/减三和弦（dim）<br> 大三和弦：根音–大三度–三音—小三度—五音<br> 小三和弦：根音–小三度–三音—大三度—五音<br> 减三和弦：根音–小三度–三音—小三度—五音<br> 调号：变音音符，为了让读者便于识别调式，同时方便写谱，五线谱就将相关调域自然大调音阶中出现的变音记号，按照一定的次序，记在谱号的后边，这些记号就是五线谱的调号。</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">调试</span><br><span class="line">音阶</span><br><span class="line">调域</span><br><span class="line">固定唱名法/首调唱名法</span><br><span class="line">自然大调/自然小调</span><br><span class="line">和弦的---顺阶和弦</span><br><span class="line">调号</span><br><span class="line">五度圈</span><br><span class="line">大调中的主要和弦的功能与进行</span><br></pre></td></tr></table></figure><h3 id="C大调音阶"><a href="#C大调音阶" class="headerlink" title="C大调音阶"></a>C大调音阶</h3><p> do 在C上<br> 音名：C，D，E，F，G，A，B，C<br> 指法：1 ，2，3，1，2，3，4，5</p><h3 id="G大调音阶"><a href="#G大调音阶" class="headerlink" title="G大调音阶"></a>G大调音阶</h3><p> 音名：G，A，B，半音 C，D，E，全音F#，半音G</p><ol><li><del>扫描事件动画处理</del></li><li>巡查录入，执法权限验证进行执法</li><li>筛选商业调试UI</li><li>巡查年度列表</li><li>配置平台组件</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
-      
-    
-    </summary>
-    
-      <category term="作文作曲" scheme="https://huos3203.github.io/categories/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>终端实现预览plantuml的插件</title>
     <link href="https://huos3203.github.io/2018/05/29/shell/%E7%BB%88%E7%AB%AF%E5%AE%9E%E7%8E%B0%E9%A2%84%E8%A7%88plantuml%E7%9A%84%E6%8F%92%E4%BB%B6/"/>
     <id>https://huos3203.github.io/2018/05/29/shell/终端实现预览plantuml的插件/</id>
@@ -311,6 +334,29 @@
     </summary>
     
       <category term="shell" scheme="https://huos3203.github.io/categories/shell/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>GB乐理知识体系</title>
+    <link href="https://huos3203.github.io/2018/05/29/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/GB%E4%B9%90%E7%90%86%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/"/>
+    <id>https://huos3203.github.io/2018/05/29/作文作曲/GB乐理知识体系/</id>
+    <published>2018-05-29T11:32:04.000Z</published>
+    <updated>2018-06-11T19:43:53.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="使用puml来梳理乐理知识点"><a href="#使用puml来梳理乐理知识点" class="headerlink" title="使用puml来梳理乐理知识点"></a>使用puml来梳理乐理知识点</h2><p>相关概念<br><img src="http://www.plantuml.com/plantuml/svg/RLBRJi9047tVhzWVQ7Wdn7yXKAC9WGHuKn94BWeKQWA90KtZ3KZmmgL6MxdyJBVRFlaBpZ354lHfPiwPEMSok_dZV4hbZgLBlIeCMzuLfV7alLLboNBlvm2oX9hEgrb-fCQJQfRvnPwthZdB6z5VKOCxA8dr-_UYwNPD57aqlVAL_z1oUoPJqybWBf6AvtBSD-OdZ7EtEFJCKHHBY008xSoncyAQYzkQM3K00KheMWI2_2fZHsK4UKHeTGZ4o-T1b0BoaxPNBqNSXYRQ7wmG-e513C81-d9_VEqiMvY9XIqMqmtMNKlZ9LJQ35tEG2CK0IQsjoC91di5avpMsrROVb7TfVlzFQ0o3e5VmpqdCd8-p_tEArCKx1vE56M3Oc4FjobSZ6GxKqmBZ9Hvx5HH_joORaCStZIeCrJYGdJy_wUtt-8mau70TZyGlZh1Fm00"></p><p><img src="http://www.plantuml.com/plantuml/svg/TLBBJi905DtFLtIf2HjG9A4hnSTt42bg993KVW0eBu4A9A0HD0rgi55H23LAAV0plTEouXUSwGY2ukxEEVUSU-xCI4TIHE3CNiagfV5xmbBpK1zEZ2pM-f1JdVeSxGjHIH2vGo4O4aGqZjViKSOSt10MttMfi7aAe_U9KS1LZHpXGREJvV7z1QvfI8Y6ldKdKb2Ka7-iT6rDvL4u9XuZFnWw61sU57B2r0lGwy9j1eRvAK-wBVsHHz6O970H8ImXjyVyV6BmnAWXAigcpLxU_8nRjQJRWryQ-B97mxmLcIdfD0SovVj9ceUZPiZl8pxMzM1SUVLIntwPL6mi5pm87aMTuL2IIRZ0zixktkRM8WkL3cFTdhLrxuRlZvQCerht2hIBqBfY0LPT0OyhiEOAhFDE5cVD1M5rP2ajdZcyD6SNbLBdWMatMtyP0_NwVqpg-Jz6Ja2gDKVE4ZffrFbdmTNsBx7UTB2PXgQhMFh8RdUcEZjtYlFoeeu0KFnOnEpssL9CKURzVwhf5mt7oDEAYFrdK7Ih4QTT3Fu2"></p><p><img src="http://www.plantuml.com/plantuml/svg/VPFBJi9058RtynHTDn8lb0t4XQA-1v6A90GCzW6g0WeMHOCneSGB4crCH8mrZXNbPMPwMV4Adg6bfKPPTURCEV__pT-Cb9Lo8aS-6bQZOhxjMTenLRz7WoDJ_wGrRRokeaqnBub5RbjCfSKYSkIMFJmaNsquDJklRF1-dmxVHWF5lD1XIxkwNJfpxaxCbex4VDgRYplNhw2VGBixkQmqtfeN_GJA5oIHoubR4d8R27uYk4lm8sp9nx5pgLigfkyzHCiQbEYvGkirrjegmRobzX3FkrhBJhC7d_abdcU-75DstRXK9fNDepWrxWFFOZQpBI7VYxOrOZGjOsZtNmYksUyQT2DREQ2gJYjbiohJ-WqS4tp2c7nttuajWhknA1jr_xQqeO1So3afH99275d6Cy4o77g9aA_w0gYxjK0zxlSbmdSYXX8KmQX_Ega4oQuBaGrXpjVd-KKM4dCPj_wNLlSX9ELZhmaJLco0rdJSGGXXI5pz3UbL0iWLo2Fc2VDyTDPl1B3fSHziFGIsz3VOBorLdIQ3b2ULW2p9uXiDMXEss2ospbL8m6NR42Ah8RReFsnJI-_PRHMWfOZSDqgl3UjMPbrk-GS0"><br><img src="http://www.plantuml.com/plantuml/svg/lLNTKjf05BxFKt2T6-_jfHTz3gP6POR13iq3f0eI_gcYA6AfhGYZLL6Y1fBemtJFRdBbA_HiDec9uFIkCmopUyxkTxxzphSRDQDcbHIPjbXhXzv_PQCg73-zs3erBAYC_75P-gJaL2MVsb3IgqfUyhIk-rmYJW-pzEU4RppVWkVx5xj6zmsSmfdX5hvvlngqQqXARZNOj-oEjy5kVf1ocwgIoYfhgaGh5RSwWEaTCUlGgdcNXyHfi6x1wq_OR8Y0S6mmQv-O6Z4ls6W2rrtC4lCAdhUZDHAjbN65oF4edg4uOHEBMGLcbTpxHteouEJq5Z5d_duEHtjbsfiHPmzN_j6sED4KPoPz-PpDg89jln-mpMVMDrJfjN2t4B64Llt5xgx0sH1tO9cFOiIkoWdKvMXpN01sRCAiBOGHYDWARziXrY1Q3xO6mohL3rojoAmzUjBdmA8BWYIjbV3qqBwLvTNDh2mdD18yVvzpfQ3uG9mZCOVU28LZnM5m35yoBhc-0_ebROpOTGUUEb2QBLIdTC4A3p1k8eFuWQ0Lo4AcLQzZO7K1BA56iWp54TGh_5_y_B4inrHAXv117M9QlcJ-D9LUJsToF5Xv9twrA5Y5s-_pyOL1NFmUI5YHSnNaad3-CR7tI_EY16Bvle3TMboxg3reIhTaSAc9i_FQ--OXr0vuLsviJ6F4EtmGfMXxYbdULK_xWTx6taO-eeM-EonJdTSHLol10Nk11WlDOkt1-4cAamhpsNIKJlO_F7GSD75J_cs3EISaRB2o09FUdUAT9PP5d7sebvQyepeq7pbqUFMWFY5MaTfj63JPaUErhmM9EVV-P_TWyzvOvnqJYVw-VI7zhYBmcwSFz75yAfJsRtaeFctiWjwX1rFSBru_zsOGVsomME9olz8AdlorJGpd9V5zWFwCdMfyaGZ_1G00"></p><h2 id="五度圈"><a href="#五度圈" class="headerlink" title="五度圈"></a>五度圈</h2><p><img src="http://www.plantuml.com/plantuml/svg/hLNVJzDG57w_VyLzrWu3BZ7fWycwjdlH5taqFb3NoHAocJ7ZQmDZJA0m5uooZU0KDiEFWO9OomR_2_QstHF_WkVsjck11y6GPTlfFT_tdNE-UtTNp1QdL6oPgyHiasRbebSX2nlkRD-Btw4fDLF4a-f4MYsWWLPtp-QjVfCqJkqlXqwrRBTdoDdFYzwI_U487idcaLjwF_YwRDUFqEYOPMmFDWulUdKl9BKbqci3rdjo3sPjhOD6Hx2xNoQL7SlGINK9LidABy2GlK-a-SsfbuW-xtOFOF71O4rd4HeRmKwhIxfr1hUCHG1QnYoLdTzsIiTGrJ4xiEYSbEnAbJLXdInRnWd4fAUHpkAWPLg6Pd_k0OpYTzlt1rgPpEr5bz33e1HzhfUOFDdiU9KNe4K8B6EFDhhwdLHrg0CSc2hQ3iEp5jpzBP22IgmuAUlG2AiAOxjdQupeD0moTxKYACFeqPLXNUjqtTvjMOO9LSwrfZo1nVmK7eVtCnK_cS1FitWyUwwjqwrQt_BTyrePIlpHPf2QI_jx_VpU2nnBvz_cOezn4YLnxCrhY5AyO-wpivBaH4xYP2v5apvGfcdIQ8Hf9FlCPCW43fVW12w9Kj4aumKf8KPF7kIaC0VhL1L9E5R8lfgaMI6KzPgXR2GnrKJ832CVXH8C8uNyCF8wy2hvA37a-paaHchuVDyF41UZTZ5UO5OmiXWI_P51L1uwAIWXLVRoWd8jxTSL52vmMr02X1GH628K92c1hvSa92KmpuFu6eceHW1HK6Ae8KKr4afWcmVnDSIeHW1Ha3ZKI4GrH2Nma4B2SnMFYFWOEOxaE0vKnAYA7EU6dYfHb12H2K1824yJgnFO6hWQHm9Fhusg3jyjq_vuFAXL7bbztUbt8ONPpuUVpYAPdqvdfk6LXW_O33uH1pjvCGw6yAauZCGdQTjyIa6vV575Nc6Spy0v8Yi_tDeCsTov7hYLcjtK_mbWajw5JHKL_fOCwTOCGRbHsrTc5Uzirg5awkubfV-Hl6mFR3U-fQCoVwKDE2mtq7Yfvefg0MVom2qWwtUL_Xblc4vBerSwM_uB"></p><p><img src="http://www.plantuml.com/plantuml/svg/AyaioKbLUBPWujEzYvxldlniNWjNScfUIMgHGaPgOafg4HUo52usLsfU2bGvbqDnIM9HIN5YJWbNDPS245I7W2aGq5O8po_AIK7mjHKSSrEBCfCJaOIq5PmJyn9JK8L2WnsH-TeAVgdb2f7vHTceeaxvnINvUIWwVLChCfFpaQrqBItABqX5KUHPafXJYIBYdbgKcvXNYMPyQb5EPXwAyzFWhg_bgkLo00O4sElGC4pBpoz12qDGM4640G00"></p><h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p><img src="http://www.plantuml.com/plantuml/svg/AyaioKbLUB5mnRC5UxYIK_DAKeiKCb8JKrABkA22gNafK04kX-AInAAIuiIS4gvgPIu5LA2dK0CadVDpIdFp58mKG3mennYiD2Y_76goWY5OQLbYJcaga0rM2k4OeQiq0ievAkJavwKh9AVcv81KQd7LSZa07GLs1ip9QVdv9IXEXWW00000"></p><h2 id="MD表格"><a href="#MD表格" class="headerlink" title="MD表格"></a>MD表格</h2><p><img src="http://www.plantuml.com/plantuml/svg/AyaioKbLy7LviN35imLxk99JyqfIYnGoKXDJKekuuCAfUIbG8QuIa0Qk6bi582f9J09g1Z8WaWerN3KAYGerC765elnoi5WIXXZGG0M8IT5QiGgwkdOAmIM99Qc6N7dv9QaAHPdf6ILKiGDa71VCLsdvG1wgho120000"><br>音 –&gt; 音质 —&gt; 高低 —&gt; 十二平均律(七键) —&gt;音级/音名/唱名/音组 —&gt;<br>音 –&gt; 音质 —&gt; 长短 —&gt; 音符（全音/半音）<br>五线谱 –&gt; 节拍  拍号，调号，调域<br></p><h2 id="大音阶"><a href="#大音阶" class="headerlink" title="大音阶"></a>大音阶</h2><p> 12个调：7个大键 5个黑键 ： 全音/半音<br> 音名：C Db D Eb E Fb F Gb G Ab A Bb B<br> 音组：十二平均律<br> 音性质：高低，强弱，长短，音色<br> 音符时效：全音符，二分音符，四分音符，八分音符，十六分音符。<br> 斧头/符干/符尾   书写方法：斧头下干居右，斧头上干居左，符尾永居右<br> 节：<br> 拍号：<br> 乐速：BPM<br> 五线谱：<br> 音程： 度数：两个音符跨度的线和间的个数，音数：两个音符相差全音和半音的个数<br> 音程名：音数和度数决定。纯一度，小二度，大二度…<br> 节奏读法：短音符：嗒，二倍音符：嗒啊，三倍音符：嗒啊啊，休止符：嗯/嗯啊<br> 调式/调域/音阶<br> 调的主音+调式类别<br> C大调：<br> 自然大调：全全半全全全半 的音级关系<br> 自然小调：全半全全半半全全<br> 关系（大/小）调：c大调是a小调的关系大调。a小调是c大调的关系小调，使用其关系（大/小）调的首调唱名方法。<br> 和弦：以两个以上的音，按照三度的重叠关系，在纵向上加以结合，就是和弦。<br> 顺阶和弦：根音/三音/五音<br> 七个顺阶和弦：大三和弦（CFG）/小三和弦（m）/减三和弦（dim）<br> 大三和弦：根音–大三度–三音—小三度—五音<br> 小三和弦：根音–小三度–三音—大三度—五音<br> 减三和弦：根音–小三度–三音—小三度—五音<br> 调号：变音音符，为了让读者便于识别调式，同时方便写谱，五线谱就将相关调域自然大调音阶中出现的变音记号，按照一定的次序，记在谱号的后边，这些记号就是五线谱的调号。</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">调试</span><br><span class="line">音阶</span><br><span class="line">调域</span><br><span class="line">固定唱名法/首调唱名法</span><br><span class="line">自然大调/自然小调</span><br><span class="line">和弦的---顺阶和弦</span><br><span class="line">调号</span><br><span class="line">五度圈</span><br><span class="line">大调中的主要和弦的功能与进行</span><br></pre></td></tr></table></figure><h3 id="C大调音阶"><a href="#C大调音阶" class="headerlink" title="C大调音阶"></a>C大调音阶</h3><p> do 在C上<br> 音名：C，D，E，F，G，A，B，C<br> 指法：1 ，2，3，1，2，3，4，5</p><h3 id="G大调音阶"><a href="#G大调音阶" class="headerlink" title="G大调音阶"></a>G大调音阶</h3><p> 音名：G，A，B，半音 C，D，E，全音F#，半音G</p><ol><li><del>扫描事件动画处理</del></li><li>巡查录入，执法权限验证进行执法</li><li>筛选商业调试UI</li><li>巡查年度列表</li><li>配置平台组件</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
+      
+    
+    </summary>
+    
+      <category term="作文作曲" scheme="https://huos3203.github.io/categories/%E4%BD%9C%E6%96%87%E4%BD%9C%E6%9B%B2/"/>
     
     
   </entry>
@@ -345,7 +391,7 @@
     <published>2018-05-17T10:58:36.000Z</published>
     <updated>2018-05-30T21:51:16.000Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="雨夜"><a href="#雨夜" class="headerlink" title="雨夜"></a>雨夜</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">卧听风雨天窗跃，左耳贯注天籁音</span><br><span class="line">不闻春雷潜入夜，广厦飞瀑挂屋檐</span><br></pre></td></tr></table></figure><!-- 简单示例 (id, server, type)  --><h2 id="滑板"><a href="#滑板" class="headerlink" title="滑板"></a>滑板</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">心如止水毽如飞，晨练漂移划湖心</span><br><span class="line">夜雨不及暑气盛，黑云压城君汗蒸</span><br></pre></td></tr></table></figure><div class="owl-media owl-video owl-bilibili"><embed src="http://static.hdslb.com/miniloader.swf" flashvars="aid=1468496&page=1" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" quality="high" allowfullscreen="true"></div><h2 id="QQ视频"><a href="#QQ视频" class="headerlink" title="QQ视频"></a>QQ视频</h2><div class="owl-media owl-video owl-tencent"><embed src="http://static.video.qq.com/TPout.swf?vid=s06895oernz&auto=0" type="application/x-shockwave-flash" quality="high" allowfullscreen="true" align="middle" allowscriptaccess="always"></div><h2 id="QQ音乐"><a href="#QQ音乐" class="headerlink" title="QQ音乐"></a>QQ音乐</h2>    <div id="aplayer-eSCUyWPr" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="002rhYYR0e7jWP" data-server="tencent" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="雨夜"><a href="#雨夜" class="headerlink" title="雨夜"></a>雨夜</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">卧听风雨天窗跃，左耳贯注天籁音</span><br><span class="line">不闻春雷潜入夜，广厦飞瀑挂屋檐</span><br></pre></td></tr></table></figure><!-- 简单示例 (id, server, type)  --><h2 id="滑板"><a href="#滑板" class="headerlink" title="滑板"></a>滑板</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">心如止水毽如飞，晨练漂移划湖心</span><br><span class="line">夜雨不及暑气盛，黑云压城君汗蒸</span><br></pre></td></tr></table></figure><div class="owl-media owl-video owl-bilibili"><embed src="http://static.hdslb.com/miniloader.swf" flashvars="aid=1468496&page=1" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" quality="high" allowfullscreen="true"></div><h2 id="QQ视频"><a href="#QQ视频" class="headerlink" title="QQ视频"></a>QQ视频</h2><div class="owl-media owl-video owl-tencent"><embed src="http://static.video.qq.com/TPout.swf?vid=s06895oernz&auto=0" type="application/x-shockwave-flash" quality="high" allowfullscreen="true" align="middle" allowscriptaccess="always"></div><h2 id="QQ音乐"><a href="#QQ音乐" class="headerlink" title="QQ音乐"></a>QQ音乐</h2>    <div id="aplayer-gbUKoTte" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="002rhYYR0e7jWP" data-server="tencent" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>]]></content>
     
     <summary type="html">
     
@@ -426,52 +472,6 @@
     </summary>
     
       <category term="git" scheme="https://huos3203.github.io/categories/git/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Otherlinkerflags设置ld命令执行的参数</title>
-    <link href="https://huos3203.github.io/2018/04/12/xcode/Otherlinkerflags%E8%AE%BE%E7%BD%AEld%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E7%9A%84%E5%8F%82%E6%95%B0/"/>
-    <id>https://huos3203.github.io/2018/04/12/xcode/Otherlinkerflags设置ld命令执行的参数/</id>
-    <published>2018-04-11T16:42:57.000Z</published>
-    <updated>2018-04-11T19:16:17.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>Other linker flags设置的值实际上就是ld命令执行时后面所加的参数。</p><p>3个常用参数：<br><code>-ObjC</code>：加了这个参数后，链接器就会把静态库中所有的Objective-C类和分类都加载到最后的可执行文件中<br><code>-all_load</code>：会让链接器把所有找到的目标文件都加载到可执行文件中，但是千万不要随便使用这个参数！假如你使用了不止一个静态库文件，然后又使用了这个参数，那么你很有可能会遇到<code>ld: duplicate symbol</code>错误，因为不同的库文件里面可能会有相同的目标文件，所以建议在遇到<code>-ObjC</code>失效的情况下使用<code>-force_load</code>参数。<br><code>-force_load</code>：所做的事情跟<code>-all_load</code>其实是一样的，但是<code>-force_load</code>需要指定要进行全部加载的库文件的路径，这样的话，你就只是完全加载了一个库文件，不影响其余库文件的按需加载.</p><h3 id="加载FrameWork"><a href="#加载FrameWork" class="headerlink" title="加载FrameWork"></a>加载FrameWork</h3><h3 id="加载静态库"><a href="#加载静态库" class="headerlink" title="加载静态库"></a>加载静态库</h3>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
-      
-    
-    </summary>
-    
-      <category term="xcode" scheme="https://huos3203.github.io/categories/xcode/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>iOS插件化开发之Small</title>
-    <link href="https://huos3203.github.io/2018/04/12/xcode/iOS%E6%8F%92%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91%E4%B9%8BSmall/"/>
-    <id>https://huos3203.github.io/2018/04/12/xcode/iOS插件化开发之Small/</id>
-    <published>2018-04-11T16:42:17.000Z</published>
-    <updated>2018-04-11T19:16:17.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><div id="badge-container-huos3203-Small-04f08ae4a26" class="hexo-github" style="width: ="></div><script src="/hexo-github/badge.js"></script><script type="text/javascript">  loadStyle("/hexo-github/style.css");  loadStyle("/hexo-github/octicons/octicons.css");  new Badge("#badge-container-huos3203-Small-04f08ae4a26", "huos3203", "Small", "04f08ae4a26", false);</script><p><a href="http://code.wequick.net/Small/cn/home" target="_blank" rel="noopener">官网</a></p><h2 id="iOS组件化基础"><a href="#iOS组件化基础" class="headerlink" title="iOS组件化基础"></a>iOS组件化基础</h2><p>iOS组件化基于<a href="https://developer.apple.com/library/ios/documentation/General/Conceptual/DevPedia-CocoaCore/Framework.html#//apple_ref/doc/uid/TP40008195-CH56-SW1" target="_blank" rel="noopener">Cocoa Touch Framework</a>（以下简称CTF）通过<a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/cl/NSBundle" target="_blank" rel="noopener">NSBundle</a>实现。</p><ul><li>CTF首次公开在WWDC2014，要求Xcode6 beta以上版本。</li><li>CTF官方表示支持8.0以上系统，但在6.0、7.0上测试正常。</li><li>如果你的App包含了CTF，但是<strong>Deployment Target</strong> &lt; 8.0，上传二进制文件到App Store时会报警中断。</li></ul><p>受苹果官方限制，如果你的CTF没有签名，将无法实现代码级别更新。</p><p>Framework 模式无法上传到App Store。只能应用到企业版</p><h2 id="使用文档"><a href="#使用文档" class="headerlink" title="使用文档"></a>使用文档</h2><ol><li><p>导入模板，重启Xcode</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/wequick/Small.git</span><br><span class="line"><span class="built_in">cd</span> Small/iOS</span><br><span class="line">cp -r Templates ~/Library/Developer/Xcode/Templates</span><br></pre></td></tr></table></figure></li><li><p>新建工程<br><code>File-&gt;New-&gt;Project...</code>，选择Small-pods模板<br><img src="https://camo.githubusercontent.com/25aac173476e3a5eecdf2853b0e233bf8179bece/687474703a2f2f636f64652e7765717569636b2e6e65742f6173736574732f696d616765732f736d616c6c2d696f732d74656d706c6174652e706e67" alt="Small iOS Template"></p></li><li><p>安装Pods</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> [your-project-path]</span><br><span class="line">pod install --no-repo-update</span><br></pre></td></tr></table></figure></li><li><p>关闭工程并打开xcworkspace</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open *.xcworkspace</span><br></pre></td></tr></table></figure></li></ol><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><ul><li>使用者模式<a href="Sample">Sample</a></li></ul><blockquote><p>需要先编译Pods</p></blockquote><ul><li>开发者模式<a href="DevSample">DevSample</a></li></ul><blockquote><p>需要去除并行编译模式：<code>Edit Scheme...-&gt;Build-&gt;Build Options-&gt; [ ] Parallelize Build</code></p><p>各个组件需要签名后才支持代码级别更新。示例中更新例子为xib内容更新。<br><br>在没有设置签名之前，请在模拟器上跑示例。</p></blockquote><h2 id="TODO-List"><a href="#TODO-List" class="headerlink" title="TODO List"></a>TODO List</h2><ul><li>Sample支持CocoaPods</li><li>设置签名脚本（现在需要对每个组件Project手动设置签名）</li><li>热更新（现在需要重启生效）</li><li>Xcode Template for creating new <code>Small Bundle</code></li></ul><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://github.com/wequick/small/wiki/iOS" target="_blank" rel="noopener">Wiki/iOS</a><br><a href="http://www.cocoachina.com/industry/20140613/8810.html" target="_blank" rel="noopener">WWDC2014之iOS使用动态库</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
-      
-    
-    </summary>
-    
-      <category term="xcode" scheme="https://huos3203.github.io/categories/xcode/"/>
     
     
   </entry>
