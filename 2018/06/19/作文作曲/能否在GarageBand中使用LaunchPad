@@ -99,7 +99,7 @@
 <meta property="og:site_name" content="布衣男儿">
 <meta property="og:description" content="Garageband不支持控件表面，因此无法使用Launchpad/LaunchKey的全部功能。 在Garageband中，仅可以使用Launchpad来演奏虚拟乐器。原因：Faders和Knobs将为输出MIDI CC消息(详细介绍)到支持手动操作的MIDI设备的插件。此外，打击垫还将发送固定的Note数据。然而，Garageband本身没有传输、卷或Pan控件，不支持Launchpad的Vo">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-19T15:39:56.000Z">
+<meta property="og:updated_time" content="2018-06-19T16:30:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="能否在GarageBand中使用LaunchPad?">
 <meta name="twitter:description" content="Garageband不支持控件表面，因此无法使用Launchpad/LaunchKey的全部功能。 在Garageband中，仅可以使用Launchpad来演奏虚拟乐器。原因：Faders和Knobs将为输出MIDI CC消息(详细介绍)到支持手动操作的MIDI设备的插件。此外，打击垫还将发送固定的Note数据。然而，Garageband本身没有传输、卷或Pan控件，不支持Launchpad的Vo">
@@ -835,7 +835,7 @@ daovoice('update');
     <span id="busuanzi_container_site_pv">
      本站总<span id="busuanzi_value_site_pv"></span>次访问 |
     </span>
-    <span class="post-count"> 博客全站共185.7k字</span>
+    <span class="post-count"> 博客全站共185.8k字</span>
 </div>
 <div class="copyright">
     <span id="timeDate">载入天数...</span>
