@@ -92,17 +92,17 @@
 
 
 
-<meta name="description" content="loadStyle(&quot;/hexo-github/style.css&quot;);   loadStyle(&quot;/hexo-github/octicons/octicons.css&quot;);   new Badge(&quot;#badge-container-huos3203-ArcProgressUI-23f33a&quot;, &quot;huos3203&quot;, &quot;ArcProgressUI&quot;, &quot;23f33a&quot;, false">
+<meta name="description" content="loadStyle(&quot;/hexo-github/style.css&quot;);   loadStyle(&quot;/hexo-github/octicons/octicons.css&quot;);   new Badge(&quot;#badge-container-huos3203-ArcProgressUI-4b9bc85&quot;, &quot;huos3203&quot;, &quot;ArcProgressUI&quot;, &quot;4b9bc85&quot;, fal">
 <meta property="og:type" content="article">
 <meta property="og:title" content="弧形表盘进度仪表">
 <meta property="og:url" content="https://huos3203.github.io/2018/06/20/个人项目/弧形表盘进度仪表/index.html">
 <meta property="og:site_name" content="布衣男儿">
-<meta property="og:description" content="loadStyle(&quot;/hexo-github/style.css&quot;);   loadStyle(&quot;/hexo-github/octicons/octicons.css&quot;);   new Badge(&quot;#badge-container-huos3203-ArcProgressUI-23f33a&quot;, &quot;huos3203&quot;, &quot;ArcProgressUI&quot;, &quot;23f33a&quot;, false">
+<meta property="og:description" content="loadStyle(&quot;/hexo-github/style.css&quot;);   loadStyle(&quot;/hexo-github/octicons/octicons.css&quot;);   new Badge(&quot;#badge-container-huos3203-ArcProgressUI-4b9bc85&quot;, &quot;huos3203&quot;, &quot;ArcProgressUI&quot;, &quot;4b9bc85&quot;, fal">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-20T17:30:23.000Z">
+<meta property="og:updated_time" content="2018-06-22T19:58:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="弧形表盘进度仪表">
-<meta name="twitter:description" content="loadStyle(&quot;/hexo-github/style.css&quot;);   loadStyle(&quot;/hexo-github/octicons/octicons.css&quot;);   new Badge(&quot;#badge-container-huos3203-ArcProgressUI-23f33a&quot;, &quot;huos3203&quot;, &quot;ArcProgressUI&quot;, &quot;23f33a&quot;, false">
+<meta name="twitter:description" content="loadStyle(&quot;/hexo-github/style.css&quot;);   loadStyle(&quot;/hexo-github/octicons/octicons.css&quot;);   new Badge(&quot;#badge-container-huos3203-ArcProgressUI-4b9bc85&quot;, &quot;huos3203&quot;, &quot;ArcProgressUI&quot;, &quot;4b9bc85&quot;, fal">
 
 
 
@@ -428,7 +428,7 @@ daovoice('update');
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  92字
+                  453字
                 </span>
               
 
@@ -444,7 +444,7 @@ daovoice('update');
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  1分钟
+                  2分钟
                 </span>
               
             </div>
@@ -463,18 +463,43 @@ daovoice('update');
 
       
         <link rel="stylesheet" href="/owl.css"><!--github库卡片-->
-<div id="badge-container-huos3203-ArcProgressUI-23f33a" class="hexo-github" style="width: ="></div>
+<div id="badge-container-huos3203-ArcProgressUI-4b9bc85" class="hexo-github" style="width: ="></div>
 <script src="/hexo-github/badge.js"></script>
 <script type="text/javascript">
   loadStyle("/hexo-github/style.css");
   loadStyle("/hexo-github/octicons/octicons.css");
-  new Badge("#badge-container-huos3203-ArcProgressUI-23f33a", "huos3203", "ArcProgressUI", "23f33a", false);
+  new Badge("#badge-container-huos3203-ArcProgressUI-4b9bc85", "huos3203", "ArcProgressUI", "4b9bc85", false);
 </script>
 
 <h1 id="ArcProgressUI"><a href="#ArcProgressUI" class="headerlink" title="ArcProgressUI"></a>ArcProgressUI</h1><h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p>To run the example project, clone the repo, and run <code>pod install</code> from the Example directory first.</p>
 <h2 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h2><h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>ArcProgressUI is available through <a href="https://cocoapods.org" target="_blank" rel="noopener">CocoaPods</a>. To install<br>it, simply add the following line to your Podfile:</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod <span class="string">'ArcProgressUI'</span></span><br></pre></td></tr></table></figure>
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">"ArcProgressView.h"</span></span></span><br><span class="line"><span class="built_in">NSArray</span> *viewArr = [[<span class="built_in">NSBundle</span> mainBundle] loadNibNamed:<span class="string">@"ArcProgressView"</span> owner:<span class="literal">nil</span> options:<span class="literal">nil</span>];</span><br><span class="line"><span class="built_in">UIView</span> *arcView = viewArr.lastObject;</span><br><span class="line">arcView.backgroundColor = [<span class="built_in">UIColor</span> redColor];</span><br><span class="line">[<span class="keyword">self</span>.view addSubview:arcView];</span><br></pre></td></tr></table></figure>
+<h2 id="静态库开发："><a href="#静态库开发：" class="headerlink" title="静态库开发："></a>静态库开发：</h2><p>设想：通过cocoapod管理静态库的依赖关系。在项目调用静态库</p>
+<ol>
+<li>主工程：prj</li>
+<li>一级静态库: first.a ：组件</li>
+<li><p>二级静态库：组件依赖的静态库</p>
+<p> sec.a    : 二级静态库.a<br> pod.a  ：包含二级静态库的集合</p>
+</li>
+</ol>
+<p>其他经验：通过pod来开发一级静态库即组件。会生成组件的工作空间：<code>workspace</code> 将<code>prj主工程</code>拖入工作空间，来协作开发。</p>
+<blockquote>
+<p>坑：当再次切换prj主工程,关联.a组件依赖时，例如：libJHPatrol.a的other linker tag 路径一定要更新。</p>
+</blockquote>
+<p>结果：</p>
+<ol>
+<li>手动配置一级静态库组件，依赖的二级静态库可用<br>资源bundle文件直接添加到主工程资源拷贝列表中，在代码中会正常映射出IBoutlet相应的UI实例。参见 上述使用说明</li>
+<li><code>-ObjC</code>设置<br>在主工程build setting 配置的<code>Other linker</code> ：<code>-ObjC</code>：表示尽可能的加载所有依赖静态库中的objc源码资源。<br>解决的问题：可以解决通过资源（xib/storyboard）初始化实例式<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this class is not key value coding-compliant for the key ibReviewLabel</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>解决在storyboard中使用源码自定义UI控件时，无效果的问题。</p>
+<ol>
+<li><p>在封装静态库中，storyboard/xib中的控件不要设置model属性。</p>
+</li>
+<li><p>使用pod来一级静态库组件，管理依赖的二级静态库libpod.a无效</p>
+</li>
+</ol>
 <h2 id="Author"><a href="#Author" class="headerlink" title="Author"></a>Author</h2><p>huo3203@hotmail.com, 724987481</p>
 <h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>ArcProgressUI is available under the MIT license. See the LICENSE file for more info.</p>
 
@@ -674,7 +699,7 @@ daovoice('update');
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">75</span>
+                <span class="site-state-item-count">74</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -849,7 +874,7 @@ daovoice('update');
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ArcProgressUI"><span class="nav-number">1.</span> <span class="nav-text">ArcProgressUI</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Example"><span class="nav-number">1.1.</span> <span class="nav-text">Example</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Requirements"><span class="nav-number">1.2.</span> <span class="nav-text">Requirements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Installation"><span class="nav-number">1.3.</span> <span class="nav-text">Installation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">1.4.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Author"><span class="nav-number">1.5.</span> <span class="nav-text">Author</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#License"><span class="nav-number">1.6.</span> <span class="nav-text">License</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ArcProgressUI"><span class="nav-number">1.</span> <span class="nav-text">ArcProgressUI</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Example"><span class="nav-number">1.1.</span> <span class="nav-text">Example</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Requirements"><span class="nav-number">1.2.</span> <span class="nav-text">Requirements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Installation"><span class="nav-number">1.3.</span> <span class="nav-text">Installation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">1.4.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#静态库开发："><span class="nav-number">1.5.</span> <span class="nav-text">静态库开发：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Author"><span class="nav-number">1.6.</span> <span class="nav-text">Author</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#License"><span class="nav-number">1.7.</span> <span class="nav-text">License</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -877,7 +902,7 @@ daovoice('update');
     <span id="busuanzi_container_site_pv">
      本站总<span id="busuanzi_value_site_pv"></span>次访问 |
     </span>
-    <span class="post-count"> 博客全站共186.8k字</span>
+    <span class="post-count"> 博客全站共186.2k字</span>
 </div>
 <div class="copyright">
     <span id="timeDate">载入天数...</span>

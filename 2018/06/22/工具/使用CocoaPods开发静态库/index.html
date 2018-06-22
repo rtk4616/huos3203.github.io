@@ -92,16 +92,14 @@
 
 
 
-<meta name="description" content="不物喜，不己悲，善假物，易参行！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="布衣男儿">
-<meta property="og:url" content="https://huos3203.github.io/categories/swift/包管理/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用CocoaPods开发静态库">
+<meta property="og:url" content="https://huos3203.github.io/2018/06/22/工具/使用CocoaPods开发静态库/index.html">
 <meta property="og:site_name" content="布衣男儿">
-<meta property="og:description" content="不物喜，不己悲，善假物，易参行！">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-06-21T21:43:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="布衣男儿">
-<meta name="twitter:description" content="不物喜，不己悲，善假物，易参行！">
+<meta name="twitter:title" content="使用CocoaPods开发静态库">
 
 
 
@@ -138,7 +136,7 @@
 </script>
 
 
-  <link rel="canonical" href="https://huos3203.github.io/categories/swift/包管理/"/>
+  <link rel="canonical" href="https://huos3203.github.io/2018/06/22/工具/使用CocoaPods开发静态库/"/>
 
 
 
@@ -154,7 +152,7 @@ daovoice('update');
 </script>
 
 
-  <title>分类: 包管理 | 布衣男儿</title>
+  <title>使用CocoaPods开发静态库 | 布衣男儿</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -188,7 +186,7 @@ daovoice('update');
     
   
 
-  <div class="container sidebar-position-right  ">
+  <div class="container sidebar-position-right page-post-detail ">
     <div class="headband"></div>
     <a href="https://github.com/huos3203"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub"></a>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -322,73 +320,299 @@ daovoice('update');
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h1>包管理<small>分类</small>
-      </h1>
-    </div>
-
+  <div id="posts" class="posts-expand">
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/17/swift/Swift包管理器SPM/" itemprop="url">
-              
-                <span itemprop="name">Swift包管理器SPM</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-17T14:52:23Z"
-              content="2017-08-17" >
-          08-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/02/28/swift/使用Cocoapods创建私有podspec/" itemprop="url">
-              
-                <span itemprop="name">使用Cocoapods创建私有podspec</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-02-28T15:46:16Z"
-              content="2017-02-28" >
-          02-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-  </section>
 
   
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://huos3203.github.io/2018/06/22/工具/使用CocoaPods开发静态库/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="boyer">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="布衣男儿">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">使用CocoaPods开发静态库</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-22T05:37:16+08:00">
+                2018-06-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工具/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/06/22/工具/使用CocoaPods开发静态库/" class="leancloud_visitors" data-flag-title="使用CocoaPods开发静态库">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  0字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  1分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <link rel="stylesheet" href="/owl.css"><!--github库卡片
+<div id="badge-container-huos3203-width-=" class="hexo-github" style="width: 100%"></div>
+<script src="/hexo-github/badge.js"></script>
+<script type="text/javascript">
+  loadStyle("/hexo-github/style.css");
+  loadStyle("/hexo-github/octicons/octicons.css");
+  new Badge("#badge-container-huos3203-width-=", "huos3203", "width", "=", false);
+</script>
+
+<p>–&gt;<br>Cocoapods作为OS X和iOS开发平台的类库管理工具，已经非常完善和强大。通常我们用pod来管理第三方开源类库，但我们也极有可能会开发一个用pod管理依赖关系的静态类库给其他人使用，而又不愿意公开源代码，比如一些SDK，那么就需要打包成.a文件。本文将以一个依赖于ASIHTTPRequest的静态类库，来演示如何创建使用了CocoaPods的静态类库以及打包的过程。</p>
+<h2 id="开发静态库（Static-Library）"><a href="#开发静态库（Static-Library）" class="headerlink" title="开发静态库（Static Library）"></a>开发静态库（Static Library）</h2><h3 id="搭建pod静态库项目"><a href="#搭建pod静态库项目" class="headerlink" title="搭建pod静态库项目"></a>搭建pod静态库项目</h3><h4 id="不基于pod手动创建-deprecated"><a href="#不基于pod手动创建-deprecated" class="headerlink" title="不基于pod手动创建(deprecated)"></a>不基于pod手动创建(deprecated)</h4><ol>
+<li>在Xcode中创建一个Cocoa Touch Static Library；</li>
+<li>创建Podfile文件；</li>
+<li>执行pod install完成整个项目的搭建；</li>
+<li>如果需要demo，手动创建示例程序，使用pod添加对私有静态库的依赖，重复执行pod install完成示例项目的搭建。</li>
+</ol>
+<h4 id="基于pod自动创建"><a href="#基于pod自动创建" class="headerlink" title="基于pod自动创建"></a>基于pod自动创建</h4><p>只需要输入<code>pod lib</code>命令即可完成初始项目的搭建，下面详细说明具体步骤，以<code>JHLib</code>作为项目名演示。<br>1.执行命令<code>pod lib create JHLib</code>。在此期间需要确认下面4个问题。</p>
+<h2 id="打包类库"><a href="#打包类库" class="headerlink" title="打包类库"></a>打包类库</h2><p>需要使用一个cocoapods的插件<code>cocoapods-packager</code>来完成类库的打包。当然也可以手动编译打包，但是过程会相当繁琐。</p>
+<ol>
+<li><p>安装打包插件<br>终端执行以下命令</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gem install cocoapods-packager</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打包<br>命令很简单，执行</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod package BZLib.podspec --library --force</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>其中<code>--library</code>指定打包成.a文件，如果不带上将会打包成.framework文件。<code>--force</code>是指强制覆盖。最终的目录结构如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">|____BZLib.podspec</span><br><span class="line">|____ios</span><br><span class="line">| |____libBZLib.a</span><br></pre></td></tr></table></figure></p>
+<p>需要特别强调的是，该插件通过对引用的三方库进行重命名很好的解决了类库命名冲突的问题。<br>比如你的类库使用了ASI，然后打包成静态库.a文件。外部调用的项目也使用了ASI，那么不会造成冲突。因为在打包的时候，你的类库里的ASI被重命名为项目+ASI的前缀。</p>
+<p><a href="https://onevcat.com/2016/01/create-framework/">如何打造一个让人愉快的框架</a><br><a href="http://www.cnblogs.com/brycezhang/p/4117180.html">使用CocoaPods开发并打包静态库</a><br><a href="https://www.jianshu.com/p/2ea267bf0363">iOS动态库,静态库以及framework</a></p>
+-->
+      
+    </div>
+    <div>
+        
+            <div>
+
+<div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+
+</div>
+
+        
+    </div>
+    <div>
+        
+        
+
+        
+    </div>
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/weixinimg.jpg" alt="boyer wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/weixin.jpg" alt="boyer WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/zhifubao.jpg" alt="boyer Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/21/git/使用tag管理多个相关组件的版本发布/" rel="next" title="使用tag管理多个相关组件的版本发布">
+                <i class="fa fa-chevron-left"></i> 使用tag管理多个相关组件的版本发布
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -396,6 +620,12 @@ daovoice('update');
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
 
         </div>
         
@@ -442,7 +672,7 @@ daovoice('update');
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">75</span>
+                <span class="site-state-item-count">74</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -629,7 +859,7 @@ daovoice('update');
     <span id="busuanzi_container_site_pv">
      本站总<span id="busuanzi_value_site_pv"></span>次访问 |
     </span>
-    <span class="post-count"> 博客全站共186.8k字</span>
+    <span class="post-count"> 博客全站共186.2k字</span>
 </div>
 <div class="copyright">
     <span id="timeDate">载入天数...</span>
@@ -730,6 +960,10 @@ setInterval("createtime()",250);
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
 
   
 
@@ -762,12 +996,27 @@ setInterval("createtime()",250);
     
 
     
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2132971"></script>
+      <!-- UY END -->
+    
   
 
 
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
