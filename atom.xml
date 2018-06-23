@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huos3203.github.io/"/>
-  <updated>2018-06-22T20:27:12.000Z</updated>
+  <updated>2018-06-23T16:41:58.000Z</updated>
   <id>https://huos3203.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Framework:实现使用swift开发</title>
+    <link href="https://huos3203.github.io/2018/06/24/swift/Framework:%E5%AE%9E%E7%8E%B0%E4%BD%BF%E7%94%A8swift%E5%BC%80%E5%8F%91/"/>
+    <id>https://huos3203.github.io/2018/06/24/swift/Framework:实现使用swift开发/</id>
+    <published>2018-06-23T16:41:58.000Z</published>
+    <updated>2018-06-23T16:41:58.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><!--github库卡片--><div id="badge-container-huos3203-JHHomeAPP-813e4b" class="hexo-github" style="width: ="></div><script src="/hexo-github/badge.js"></script><script type="text/javascript">  loadStyle("/hexo-github/style.css");  loadStyle("/hexo-github/octicons/octicons.css");  new Badge("#badge-container-huos3203-JHHomeAPP-813e4b", "huos3203", "JHHomeAPP", "813e4b", false);</script><p>设想：<br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/IMG_3714.JPG?imageMogr2/2/w/800"></p><h3 id="创建三个角色"><a href="#创建三个角色" class="headerlink" title="创建三个角色"></a>创建三个角色</h3><ol><li>主项目：<code>JHHomeAPP</code></li><li>静态库组件：<code>FirstPlug</code> <ul><li><code>SwiftInStaticLib</code>(包含Swift源码实现的静态库)</li></ul></li><li>动态库<code>secondFramework</code></li></ol><h3 id="静态库：问题1"><a href="#静态库：问题1" class="headerlink" title="静态库：问题1"></a>静态库：问题1</h3><p>当静态库组件中存在swift源码时，依赖该组件的主工程会报错：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ld: warning: Auto-Linking library not found for -lswiftDispatch</span><br><span class="line">ld: warning: Auto-Linking library not found for -lswiftCoreFoundation</span><br><span class="line">ld: warning: Auto-Linking library not found for -lswiftObjectiveC</span><br><span class="line">ld: warning: Auto-Linking library not found for -lswiftDarwin</span><br><span class="line">ld: warning: Auto-Linking library not found for -lswiftFoundation</span><br><span class="line">ld: warning: Auto-Linking library not found for -lswiftCoreGraphics</span><br><span class="line">ld: warning: Auto-Linking library not found for -lswiftCore</span><br><span class="line">ld: warning: Auto-Linking library not found for -lswiftSwiftOnoneSupport</span><br></pre></td></tr></table></figure></p><ol><li>联想方法：<br>设置 <code>Always Embed Swift Standard Libraries</code>: <code>YES</code><br>结果无效。</li><li>适用的解决方法<br>在主工程中新建一个空的swift源文件，不需要自动新建<code>$(SWIFT_MODULE_NAME)-Swift.h</code>映射文件和<code>JHHomeAPP/JHHomeAPP-Bridging-Header.h</code>头文件。<br><strong>使用方法2，问题1就不存在了，证明了在静态库中可以使用swift源码文件进行开发,同样证明了静态库可以封装包含swift源码的静态库。</strong></li></ol><h3 id="Framework：问题2"><a href="#Framework：问题2" class="headerlink" title="Framework：问题2"></a>Framework：问题2</h3><ol><li>在动态库中objc源码方法可以封装到静态库，并在可执行文件中调用。</li><li>当在Framework中新建swift源文件时，第一次编译运行出现崩溃问题：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dyld: Library not loaded: @rpath/libswiftCoreImage.dylib</span><br><span class="line">Referenced from: .../../Debug-iphonesimulator/SecondFramework.framework/SecondFramework</span><br><span class="line">Reason: image not found</span><br></pre></td></tr></table></figure></li></ol><p>解决办法：需要在<code>ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES</code>设置为<code>YES</code>.再次编译出现问题3。</p><h3 id="Framework-问题3"><a href="#Framework-问题3" class="headerlink" title="Framework: 问题3"></a>Framework: 问题3</h3><p>当在oc源码文件中用引用<code>-Swift.h</code>头文件时，出现一下问题:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&apos;SecondFramework-Swift.h&apos; file not found</span><br><span class="line">#import &quot;SecondFramework-Swift.h&quot;</span><br><span class="line">^~~~~~~~~~~~~~~~~~~~~~~~~</span><br></pre></td></tr></table></figure></p><p>结果将：<code>Install Objective-C Compatibility Header</code> : <code>NO</code>可以正常调用swift方法了。</p><blockquote><p>验证：framework可以封装到静态库中，当有swift源码实现时需要设置ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES=YES</p></blockquote><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol><li>Product Module Name: 该项默认为项目名或自定义的名称</li><li>Defines Module: 设置为YES （framework默认为YES，静态库默认为NO）</li><li>Embedded Content Contains Swift: 设置为YES</li><li>Install Objective-C Compatibility Header：设置为YES （如上题说：在framework中设置为NO，才能正常运行，在静态库中似乎不影响）</li><li>Objective-C Bridging Header: 自定义需要桥接到Swift中的OC头文件（EX：$(SRCROOT)/Swift-Bridging-Header.h）</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
+      
+    
+    </summary>
+    
+      <category term="swift" scheme="https://huos3203.github.io/categories/swift/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>使用CocoaPods开发静态库</title>
@@ -449,29 +472,6 @@
     </summary>
     
       <category term="iOS" scheme="https://huos3203.github.io/categories/iOS/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>npm降级的两种方法</title>
-    <link href="https://huos3203.github.io/2018/05/29/hexo/npm%E9%99%8D%E7%BA%A7%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95/"/>
-    <id>https://huos3203.github.io/2018/05/29/hexo/npm降级的两种方法/</id>
-    <published>2018-05-29T12:06:24.000Z</published>
-    <updated>2018-05-29T12:26:48.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h3 id="方法一：简单暴力"><a href="#方法一：简单暴力" class="headerlink" title="方法一：简单暴力"></a>方法一：简单暴力</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install npm@4 -g</span><br></pre></td></tr></table></figure><h3 id="方法二：nvm工具"><a href="#方法二：nvm工具" class="headerlink" title="方法二：nvm工具"></a>方法二：nvm工具</h3><p>nvm是node版本管理工具</p><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install nvm</span><br></pre></td></tr></table></figure><p>装nvm之前，建议把现有的所有nodejs版本全部删除，以后就让nvm全权管理就好了。保存着旧的node反而容易造成版本管理的困难。</p><p>官网nvm安装指南：<a href="https://github.com/creationix/nvm#installation" target="_blank" rel="noopener">https://github.com/creationix/nvm#installation</a></p><h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>nvm有了后，直接装对应版本的node，会安装对应版本npm。<br>如：node 8 对应 npm v5，node 7 对应 npm v4<br>如果需要npm v5, 则<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvm install 8</span><br><span class="line">nvm use 8</span><br></pre></td></tr></table></figure></p><p>如果需要npm v4了，装上node 7就可以了<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvm install 7</span><br><span class="line">nvm use 7</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
-      
-    
-    </summary>
-    
-      <category term="hexo" scheme="https://huos3203.github.io/categories/hexo/"/>
     
     
   </entry>
