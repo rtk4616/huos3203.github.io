@@ -334,6 +334,404 @@ daovoice('update');
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://huos3203.github.io/2015/09/19/工具/Xcode和Jenkins持续集成的几种实现方式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="boyer">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="布衣男儿">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/09/19/工具/Xcode和Jenkins持续集成的几种实现方式/" itemprop="url">Xcode&amp;Jenkins持续集成的几种实现方式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-09-18T23:52:06Z">
+                2015-09-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工具/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工具/集成/" itemprop="url" rel="index">
+                    <span itemprop="name">集成</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2015/09/19/工具/Xcode和Jenkins持续集成的几种实现方式/" class="leancloud_visitors" data-flag-title="Xcode&amp;Jenkins持续集成的几种实现方式">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  3,231字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  13分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="CI服务器"><a href="#CI服务器" class="headerlink" title="CI服务器"></a>CI服务器</h2><p>写到这儿，对于iOS开发者来说，需要准备好：</p>
+<ul>
+<li>一个比较容易获取的源代码仓库(包含源代码)</li>
+<li>一套自动化构建脚本</li>
+<li>一系列围绕构建的可执行测试  </li>
+</ul>
+<p>接下来就需要一个CI服务器来根据源代码的变更触发构建，监控测试结果。</p>
+<p>目前，业界比较流行的，支持iOS构建的CI服务器有</p>
+<ul>
+<li><a href="https://travis-ci.org" target="_blank" rel="noopener">Travis CI</a>：是一个免费的云服务平台，基本上支持所有目前主流的语言，Object-C自然也在其中，但是只支持github极大的限制了其应用场景。目前国内无法访问，<a href="http://www.infoq.com/cn/articles/build-ios-continuous-integration-platform-part3" target="_blank" rel="noopener">详见</a></li>
+<li><strong>Jenkins</strong>：经过多年的发展，其活跃的社区和丰富的插件让其成为了业界最受欢迎的CI服务器。通过使用Xcode插件，可以非常方便在Jenkins中运行iOS项目的构建脚本。</li>
+</ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/09/19/工具/Xcode和Jenkins持续集成的几种实现方式/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    <div>
+        
+    </div>
+    <div>
+        
+    </div>
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://huos3203.github.io/2015/08/14/编译/mupdf集成pyc加密算法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="boyer">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="布衣男儿">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/08/14/编译/mupdf集成pyc加密算法/" itemprop="url">mupdf集成pyc加密算法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-08-14T10:45:35Z">
+                2015-08-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2015/08/14/编译/mupdf集成pyc加密算法/" class="leancloud_visitors" data-flag-title="mupdf集成pyc加密算法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  680字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  3分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="加密算法中区分64位"><a href="#加密算法中区分64位" class="headerlink" title="加密算法中区分64位"></a>加密算法中区分64位</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#if __LP64__ || (TARGET_OS_EMBEDDED &amp;&amp; !TARGET_OS_IPHONE) || TARGET_OS_WIN32 || NS_BUILD_32_LIKE_64</span><br><span class="line">    #ifndef uint32</span><br><span class="line">        #define uint32 unsigned int</span><br><span class="line">    #endif</span><br><span class="line">#else</span><br><span class="line">    #ifndef uint32</span><br><span class="line">        #define uint32 unsigned long int</span><br><span class="line">    #endif</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+<ol>
+<li>把SMS4.h文件内容合并到include/mupdf/fitz/stream.h文件中，然后删除SMS4.h文件</li>
+<li>把SMS4.c文件内容合并到source/fitz/stream-open.c 文件中，然后删除SMS4.c</li>
+<li>在include/mupdf/fitz/stream.h增加以下内容:  用于方法声明，供其他类使用。
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/08/14/编译/mupdf集成pyc加密算法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    <div>
+        
+    </div>
+    <div>
+        
+    </div>
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://huos3203.github.io/2015/08/11/git/如何使用gitBook协作Octopress同时完成博客和书籍/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1149,7 +1547,7 @@ daovoice('update');
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://huos3203.github.io/2014/09/02/iOS/代码实现AutoLayout相关特性/">
+    <link itemprop="mainEntityOfPage" href="https://huos3203.github.io/2014/09/02/iOS/UI/代码实现AutoLayout相关特性/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="boyer">
@@ -1168,7 +1566,7 @@ daovoice('update');
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2014/09/02/iOS/代码实现AutoLayout相关特性/" itemprop="url">代码实现AutoLayout相关特性</a></h1>
+                <a class="post-title-link" href="/2014/09/02/iOS/UI/代码实现AutoLayout相关特性/" itemprop="url">代码实现AutoLayout相关特性</a></h1>
         
 
         <div class="post-meta">
@@ -1231,7 +1629,7 @@ daovoice('update');
 
           
           
-             <span id="/2014/09/02/iOS/代码实现AutoLayout相关特性/" class="leancloud_visitors" data-flag-title="代码实现AutoLayout相关特性">
+             <span id="/2014/09/02/iOS/UI/代码实现AutoLayout相关特性/" class="leancloud_visitors" data-flag-title="代码实现AutoLayout相关特性">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1304,7 +1702,7 @@ daovoice('update');
 运行结果：  <img src="http://p27uwfdhv.bkt.clouddn.com/static/images/runbtn1.png?imageMogr2/2/w/800"><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/runbtn2.png?imageMogr2/2/w/800">
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2014/09/02/iOS/代码实现AutoLayout相关特性/#more" rel="contents">
+            <a class="btn" href="/2014/09/02/iOS/UI/代码实现AutoLayout相关特性/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1768,7 +2166,7 @@ daovoice('update');
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://huos3203.github.io/2014/07/22/iOS/Storyboard之Segue/">
+    <link itemprop="mainEntityOfPage" href="https://huos3203.github.io/2014/07/22/iOS/UI/Storyboard之Segue/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="boyer">
@@ -1787,7 +2185,7 @@ daovoice('update');
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2014/07/22/iOS/Storyboard之Segue/" itemprop="url">Storyboard之Segue</a></h1>
+                <a class="post-title-link" href="/2014/07/22/iOS/UI/Storyboard之Segue/" itemprop="url">Storyboard之Segue</a></h1>
         
 
         <div class="post-meta">
@@ -1850,7 +2248,7 @@ daovoice('update');
 
           
           
-             <span id="/2014/07/22/iOS/Storyboard之Segue/" class="leancloud_visitors" data-flag-title="Storyboard之Segue">
+             <span id="/2014/07/22/iOS/UI/Storyboard之Segue/" class="leancloud_visitors" data-flag-title="Storyboard之Segue">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1921,7 +2319,7 @@ daovoice('update');
 <p>在源视图控制器的prepareForSegue:sender:的方法中，执行对目标视图控制器所有必要的属性配置，包括委托设置（如目标视图控制器有协议）。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2014/07/22/iOS/Storyboard之Segue/#more" rel="contents">
+            <a class="btn" href="/2014/07/22/iOS/UI/Storyboard之Segue/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1972,7 +2370,7 @@ daovoice('update');
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://huos3203.github.io/2014/07/04/iOS/TextKit之便笺实战/">
+    <link itemprop="mainEntityOfPage" href="https://huos3203.github.io/2014/07/04/iOS/UI/TextKit之便笺实战/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="boyer">
@@ -1991,7 +2389,7 @@ daovoice('update');
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2014/07/04/iOS/TextKit之便笺实战/" itemprop="url">TextKit之便笺实战</a></h1>
+                <a class="post-title-link" href="/2014/07/04/iOS/UI/TextKit之便笺实战/" itemprop="url">TextKit之便笺实战</a></h1>
         
 
         <div class="post-meta">
@@ -2054,7 +2452,7 @@ daovoice('update');
 
           
           
-             <span id="/2014/07/04/iOS/TextKit之便笺实战/" class="leancloud_visitors" data-flag-title="TextKit之便笺实战">
+             <span id="/2014/07/04/iOS/UI/TextKit之便笺实战/" class="leancloud_visitors" data-flag-title="TextKit之便笺实战">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -2149,7 +2547,7 @@ daovoice('update');
 这一方法作用是根据新的字体设置来设定<code>textView</code>中的字体。<br>Build并运行app，修改字体大小设置，Note页面就可以即时更新字体大小了。
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2014/07/04/iOS/TextKit之便笺实战/#more" rel="contents">
+            <a class="btn" href="/2014/07/04/iOS/UI/TextKit之便笺实战/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2828,7 +3226,7 @@ daovoice('update');
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://huos3203.github.io/2014/06/17/iOS/IOS7新宠TextKit/">
+    <link itemprop="mainEntityOfPage" href="https://huos3203.github.io/2014/06/17/iOS/UI/IOS7新宠TextKit/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="boyer">
@@ -2847,7 +3245,7 @@ daovoice('update');
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2014/06/17/iOS/IOS7新宠TextKit/" itemprop="url">IOS7新宠Text Kit</a></h1>
+                <a class="post-title-link" href="/2014/06/17/iOS/UI/IOS7新宠TextKit/" itemprop="url">IOS7新宠TextKit</a></h1>
         
 
         <div class="post-meta">
@@ -2899,7 +3297,7 @@ daovoice('update');
 
           
           
-             <span id="/2014/06/17/iOS/IOS7新宠TextKit/" class="leancloud_visitors" data-flag-title="IOS7新宠Text Kit">
+             <span id="/2014/06/17/iOS/UI/IOS7新宠TextKit/" class="leancloud_visitors" data-flag-title="IOS7新宠TextKit">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -2968,7 +3366,7 @@ daovoice('update');
 <p>IOS6之前，想实现一些丰富的文本排版，例如在textView中显示不同样式的文本，或者图片和文字混排等，就需要借助于UIWebView或者深入研究一下<code>Core Text</code>。后来iOS6，增加一个很棒的属性:<code>NSAttributedString</code>，主要用于支持UILabel、UITextField、UITextView等UIKit控件自主排版的功能。很显然，IOS7并没有满足于这一改进，同时推出一款功能更为齐全，易用的<code>Text Kit</code>新宠。<br>在iOS 6中, 用于文本的UIKit控件是基于WebKit和Core Graphics的字符串绘制方法来实现的。如下面层级体系图所示：<br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/TextRenderingArchitecture-iOS6.png?imageMogr2/2/w/800"><br>iOS 7的整体构架要更清晰，所有基于文本的UIKit控件（除了UIWebView）现在都可以使用Text Kit，如下图所示：<br><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/TextRenderingArchitecture-iOS7.png?imageMogr2/2/w/800"></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2014/06/17/iOS/IOS7新宠TextKit/#more" rel="contents">
+            <a class="btn" href="/2014/06/17/iOS/UI/IOS7新宠TextKit/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -3817,7 +4215,7 @@ daovoice('update');
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">157</span>
+                <span class="site-state-item-count">159</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -4015,7 +4413,7 @@ daovoice('update');
     <span id="busuanzi_container_site_pv">
      本站总<span id="busuanzi_value_site_pv"></span>次访问 |
     </span>
-    <span class="post-count"> 博客全站共188.3k字</span>
+    <span class="post-count"> 博客全站共188.4k字</span>
 </div>
 <div class="copyright">
     <span id="timeDate">载入天数...</span>
