@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huos3203.github.io/"/>
-  <updated>2018-07-03T12:30:31.000Z</updated>
+  <updated>2018-07-17T17:59:05.000Z</updated>
   <id>https://huos3203.github.io/</id>
   
   <author>
@@ -17,13 +17,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>FSCalendar支持自定义的日历开源库</title>
+    <link href="https://huos3203.github.io/2018/07/18/%E5%BC%80%E6%BA%90%E5%BA%93/FSCalendar%E6%94%AF%E6%8C%81%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E6%97%A5%E5%8E%86%E5%BC%80%E6%BA%90%E5%BA%93/"/>
+    <id>https://huos3203.github.io/2018/07/18/开源库/FSCalendar支持自定义的日历开源库/</id>
+    <published>2018-07-17T17:59:05.000Z</published>
+    <updated>2018-07-17T17:59:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><!--github库卡片--><div id="badge-container-huos3203-FSCalendar-1a026a4c" class="hexo-github" style="width: ="></div><script src="/hexo-github/badge.js"></script><script type="text/javascript">  loadStyle("/hexo-github/style.css");  loadStyle("/hexo-github/octicons/octicons.css");  new Badge("#badge-container-huos3203-FSCalendar-1a026a4c", "huos3203", "FSCalendar", "1a026a4c", false);</script><p><blockquote class="trello-card"><a href="https://trello.com/c/Tq2jnc1E/33-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%97%A5%E5%8E%86%E6%8E%A7%E4%BB%B6%EF%BC%8C%E6%97%A5%E6%9C%9F%E5%9B%BE%E6%A0%87" target="_blank" rel="noopener">自定义日历控件，日期图标</a></blockquote><script src="https://p.trellocdn.com/embed.min.js"></script></p><p><a href="https://github.com/huos3203/FSCalendar" target="_blank" rel="noopener">FSCalendar</a><br>FSCalendar是一款开源iOS日历控件，支持横向、纵向滑动模式，全屏模式，带有子标题、事件设置等功能。以下是项目截图：<br><img src="https://cloud.githubusercontent.com/assets/5186464/10262249/4fabae40-69f2-11e5-97ab-afbacd0a3da2.jpg" alt=""><br>Use Interface Builder<br>1、 Drag an UIView object to ViewController Scene 2、 Change the Custom Class to FSCalendar<br>3、 Link dataSource and delegate to the ViewController<br>4、 Finally, implement FSCalendarDataSource and FSCalendarDelegate in your ViewController<br><img src="https://cloud.githubusercontent.com/assets/5186464/9488580/a360297e-4c0d-11e5-8548-ee9274e7c4af.jpg" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
+      
+    
+    </summary>
+    
+      <category term="开源库" scheme="https://huos3203.github.io/categories/%E5%BC%80%E6%BA%90%E5%BA%93/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>高效人士的七个习惯</title>
     <link href="https://huos3203.github.io/2018/07/03/%E9%98%85%E8%AF%BB/%E9%AB%98%E6%95%88%E4%BA%BA%E5%A3%AB%E7%9A%84%E4%B8%83%E4%B8%AA%E4%B9%A0%E6%83%AF/"/>
     <id>https://huos3203.github.io/2018/07/03/阅读/高效人士的七个习惯/</id>
     <published>2018-07-03T12:30:31.000Z</published>
     <updated>2018-07-03T12:30:31.000Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p><a href="https://book.douban.com/annotation/18551525/" target="_blank" rel="noopener">豆瓣导图</a><br><a href="https://book.douban.com/annotation/39594570/" target="_blank" rel="noopener">豆瓣总结</a></p><h2 id="前言-如何善用本书"><a href="#前言-如何善用本书" class="headerlink" title="前言 如何善用本书"></a>前言 如何善用本书</h2><h2 id="第一部分-重新探索自我"><a href="#第一部分-重新探索自我" class="headerlink" title="第一部分 重新探索自我"></a>第一部分 重新探索自我</h2><h2 id="第一章-由内而外全面造就自己"><a href="#第一章-由内而外全面造就自己" class="headerlink" title="第一章 由内而外全面造就自己"></a>第一章 由内而外全面造就自己</h2><h2 id="第二章-七个习惯——概论"><a href="#第二章-七个习惯——概论" class="headerlink" title="第二章 七个习惯——概论"></a>第二章 七个习惯——概论</h2><h1 id="第二部分-个人的成功：从依赖到独立"><a href="#第二部分-个人的成功：从依赖到独立" class="headerlink" title="第二部分 个人的成功：从依赖到独立"></a>第二部分 个人的成功：从依赖到独立</h1><h2 id="第三章-习惯一：积极主动——个人愿景的原则"><a href="#第三章-习惯一：积极主动——个人愿景的原则" class="headerlink" title="第三章 习惯一：积极主动——个人愿景的原则"></a>第三章 习惯一：积极主动——个人愿景的原则</h2><h2 id="第四章-习惯二：以终为始——自我领导的原则"><a href="#第四章-习惯二：以终为始——自我领导的原则" class="headerlink" title="第四章 习惯二：以终为始——自我领导的原则"></a>第四章 习惯二：以终为始——自我领导的原则</h2><h2 id="第五章-习惯三：要事第一——自我管理的原则"><a href="#第五章-习惯三：要事第一——自我管理的原则" class="headerlink" title="第五章 习惯三：要事第一——自我管理的原则"></a>第五章 习惯三：要事第一——自我管理的原则</h2><p><a href="https://book.douban.com/people/140683087/annotation/1048007/?start=0" target="_blank" rel="noopener">豆瓣笔记</a></p><h1 id="第三部分-公众的成功：从独立到互赖"><a href="#第三部分-公众的成功：从独立到互赖" class="headerlink" title="第三部分 公众的成功：从独立到互赖"></a>第三部分 公众的成功：从独立到互赖</h1><h2 id="第六章-你不是一座孤岛"><a href="#第六章-你不是一座孤岛" class="headerlink" title="第六章 你不是一座孤岛"></a>第六章 你不是一座孤岛</h2><h2 id="第七章-习惯四：双赢思维——人际领导的原则"><a href="#第七章-习惯四：双赢思维——人际领导的原则" class="headerlink" title="第七章 习惯四：双赢思维——人际领导的原则"></a>第七章 习惯四：双赢思维——人际领导的原则</h2><h2 id="第八章-习惯五：知彼知己——同理心交流的原则"><a href="#第八章-习惯五：知彼知己——同理心交流的原则" class="headerlink" title="第八章 习惯五：知彼知己——同理心交流的原则"></a>第八章 习惯五：知彼知己——同理心交流的原则</h2><h2 id="第九章-习惯六：统合综效——创造性合作的原则"><a href="#第九章-习惯六：统合综效——创造性合作的原则" class="headerlink" title="第九章 习惯六：统合综效——创造性合作的原则"></a>第九章 习惯六：统合综效——创造性合作的原则</h2><h1 id="第四部分-全面观照生命"><a href="#第四部分-全面观照生命" class="headerlink" title="第四部分 全面观照生命"></a>第四部分 全面观照生命</h1><h2 id="第十章-习惯七：不断更新——平衡的自我更新的原则"><a href="#第十章-习惯七：不断更新——平衡的自我更新的原则" class="headerlink" title="第十章 习惯七：不断更新——平衡的自我更新的原则"></a>第十章 习惯七：不断更新——平衡的自我更新的原则</h2><h2 id="第十一章-再次由内而外造就自己"><a href="#第十一章-再次由内而外造就自己" class="headerlink" title="第十一章 再次由内而外造就自己"></a>第十一章 再次由内而外造就自己</h2><p>附录<br>一、你是哪种类型的人？——生活重心面面观<br>二、第四代时间管理——高效能人士的一天</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p><a href="https://book.douban.com/annotation/18551525/" target="_blank" rel="noopener">豆瓣导图</a><br><a href="https://book.douban.com/annotation/39594570/" target="_blank" rel="noopener">豆瓣总结</a></p><h2 id="前言-如何善用本书"><a href="#前言-如何善用本书" class="headerlink" title="前言 如何善用本书"></a>前言 如何善用本书</h2><h2 id="第一部分-重新探索自我"><a href="#第一部分-重新探索自我" class="headerlink" title="第一部分 重新探索自我"></a>第一部分 重新探索自我</h2><h2 id="第一章-由内而外全面造就自己"><a href="#第一章-由内而外全面造就自己" class="headerlink" title="第一章 由内而外全面造就自己"></a>第一章 由内而外全面造就自己</h2><h2 id="第二章-七个习惯——概论"><a href="#第二章-七个习惯——概论" class="headerlink" title="第二章 七个习惯——概论"></a>第二章 七个习惯——概论</h2><h1 id="第二部分-个人的成功：从依赖到独立"><a href="#第二部分-个人的成功：从依赖到独立" class="headerlink" title="第二部分 个人的成功：从依赖到独立"></a>第二部分 个人的成功：从依赖到独立</h1><h2 id="第三章-习惯一：积极主动——个人愿景的原则"><a href="#第三章-习惯一：积极主动——个人愿景的原则" class="headerlink" title="第三章 习惯一：积极主动——个人愿景的原则"></a>第三章 习惯一：积极主动——个人愿景的原则</h2><h2 id="第四章-习惯二：以终为始——自我领导的原则"><a href="#第四章-习惯二：以终为始——自我领导的原则" class="headerlink" title="第四章 习惯二：以终为始——自我领导的原则"></a>第四章 习惯二：以终为始——自我领导的原则</h2><h3 id="个人使命宣言"><a href="#个人使命宣言" class="headerlink" title="个人使命宣言"></a>个人使命宣言</h3><p>以终为始最有效的方法，就是撰写一份个人使命宣言，即人生哲学或基础信念。<br>宣言：主要说明自己想成为怎样的品行的人。成什么样的事业，及为此奠基的价值观和原则。<br>家庭第一<br>借重宗教的力量<br>在诚信问题上决不妥协<br>念及相关的每个人<br>未听取正反双方的意见，不妄下断语<br>征求他人意见<br>维护不在场的人<br>诚恳但立场坚定<br>每年掌握一种新技能<br>今天计划明天的工作<br>利用等待的空闲时间<br>态度积极<br>保持幽默感<br>生活与工作有条不紊<br>别怕犯错，怕的是不能吸取教训<br>协助属下成功<br>多请教别人<br>专注于当前的工作，不为下一次任务或提升操心</p><p>定期储蓄或利用部分收入做投资</p><p>一个人的应变能力取决于他对自己的本性，人生目标以及价值观的不变的信念。<br>只要心中秉持着恒久不变的真理，就能屹立于动荡的环境中。</p><p>标记疗法的基础原理：许多心智或情感疾病，都是由于失落感或空虚感作祟，而标记疗法可以帮助病人找回生命的意义与使命感，以祛除这些感觉。</p><h2 id="第五章-习惯三：要事第一——自我管理的原则"><a href="#第五章-习惯三：要事第一——自我管理的原则" class="headerlink" title="第五章 习惯三：要事第一——自我管理的原则"></a>第五章 习惯三：要事第一——自我管理的原则</h2><p><a href="https://book.douban.com/people/140683087/annotation/1048007/?start=0" target="_blank" rel="noopener">豆瓣笔记</a></p><h1 id="第三部分-公众的成功：从独立到互赖"><a href="#第三部分-公众的成功：从独立到互赖" class="headerlink" title="第三部分 公众的成功：从独立到互赖"></a>第三部分 公众的成功：从独立到互赖</h1><h2 id="第六章-你不是一座孤岛"><a href="#第六章-你不是一座孤岛" class="headerlink" title="第六章 你不是一座孤岛"></a>第六章 你不是一座孤岛</h2><h2 id="第七章-习惯四：双赢思维——人际领导的原则"><a href="#第七章-习惯四：双赢思维——人际领导的原则" class="headerlink" title="第七章 习惯四：双赢思维——人际领导的原则"></a>第七章 习惯四：双赢思维——人际领导的原则</h2><h2 id="第八章-习惯五：知彼知己——同理心交流的原则"><a href="#第八章-习惯五：知彼知己——同理心交流的原则" class="headerlink" title="第八章 习惯五：知彼知己——同理心交流的原则"></a>第八章 习惯五：知彼知己——同理心交流的原则</h2><h2 id="第九章-习惯六：统合综效——创造性合作的原则"><a href="#第九章-习惯六：统合综效——创造性合作的原则" class="headerlink" title="第九章 习惯六：统合综效——创造性合作的原则"></a>第九章 习惯六：统合综效——创造性合作的原则</h2><h1 id="第四部分-全面观照生命"><a href="#第四部分-全面观照生命" class="headerlink" title="第四部分 全面观照生命"></a>第四部分 全面观照生命</h1><h2 id="第十章-习惯七：不断更新——平衡的自我更新的原则"><a href="#第十章-习惯七：不断更新——平衡的自我更新的原则" class="headerlink" title="第十章 习惯七：不断更新——平衡的自我更新的原则"></a>第十章 习惯七：不断更新——平衡的自我更新的原则</h2><h2 id="第十一章-再次由内而外造就自己"><a href="#第十一章-再次由内而外造就自己" class="headerlink" title="第十一章 再次由内而外造就自己"></a>第十一章 再次由内而外造就自己</h2><p>附录<br>一、你是哪种类型的人？——生活重心面面观<br>二、第四代时间管理——高效能人士的一天</p>]]></content>
     
     <summary type="html">
     
@@ -449,29 +472,6 @@
     </summary>
     
       <category term="uml" scheme="https://huos3203.github.io/categories/uml/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>在Mac安装Fiddler</title>
-    <link href="https://huos3203.github.io/2018/06/01/%E5%B7%A5%E5%85%B7/%E5%9C%A8Mac%E5%AE%89%E8%A3%85Fiddler/"/>
-    <id>https://huos3203.github.io/2018/06/01/工具/在Mac安装Fiddler/</id>
-    <published>2018-05-31T16:38:52.000Z</published>
-    <updated>2018-06-01T10:07:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h3 id="安装Mono"><a href="#安装Mono" class="headerlink" title="安装Mono"></a>安装Mono</h3><p>Mac下需要使用.Net编译后的程序，首先需要用到跨平台的方案<code>Mono</code>(现阶段微软已推出跨平台的方案.Net Core，不过暂时只支持控制台程序)。<br><a href="http://www.mono-project.com/download/stable/#download-mac" target="_blank" rel="noopener">下载地址</a></p><h3 id="配置Mono环境"><a href="#配置Mono环境" class="headerlink" title="配置Mono环境"></a>配置Mono环境</h3><ol><li>下载证书<br>从Mozilla LXR上下载所有受信任的root证书，存于Mono的证书库里。root证书能用于请求https地址：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$cd /Library/Frameworks/Mono.framework/Versions/&lt;mono version&gt;/bin/</span><br><span class="line">$./mozroots --import --sync</span><br></pre></td></tr></table></figure></li></ol><blockquote><p>./mozroots命令失效，./cert-sync新命令，暂时不知道怎么使用</p><ol><li>配置Mono环境变量</li></ol></blockquote><p>在<code>.bash_profile</code>中加入如下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export MONO_HOME=/Library/Frameworks/Mono.framework/Versions/5.0.1</span><br><span class="line">export PATH=$PATH:$MONO_HOME/bin</span><br></pre></td></tr></table></figure></p><h2 id="Fiddler"><a href="#Fiddler" class="headerlink" title="Fiddler"></a>Fiddler</h2><p><a href="http://docs.telerik.com/fiddler/Configure-Fiddler/Tasks/InstallFiddler" target="_blank" rel="noopener">官方文档</a></p><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>下载<a href="https://www.telerik.com/download/fiddler" target="_blank" rel="noopener">Fiddler-mac.zip</a>压缩包，解压到非中文字符的路径下。</p><h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p>打开Terminal，进入到刚才解压的Fiddler路径，执行命令运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mono Fiddler.exe</span><br></pre></td></tr></table></figure></p><p><a href="http://www.cocoachina.com/apple/20170704/19729.html" target="_blank" rel="noopener">参看</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
-      
-    
-    </summary>
-    
-      <category term="工具" scheme="https://huos3203.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
   </entry>
