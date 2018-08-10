@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huos3203.github.io/"/>
-  <updated>2018-08-10T15:50:21.000Z</updated>
+  <updated>2018-08-10T16:40:19.000Z</updated>
   <id>https://huos3203.github.io/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>iCompleteMe支持swift语法提示</title>
+    <link href="https://huos3203.github.io/2018/08/11/shell/iCompleteMe%E6%94%AF%E6%8C%81swift%E8%AF%AD%E6%B3%95%E6%8F%90%E7%A4%BA/"/>
+    <id>https://huos3203.github.io/2018/08/11/shell/iCompleteMe支持swift语法提示/</id>
+    <published>2018-08-10T16:40:19.000Z</published>
+    <updated>2018-08-10T16:40:19.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><!--github库卡片--><div id="badge-container-jerrymarino-iCompleteMe-ad0e1fe" class="hexo-github" style="width: ="></div><script src="/hexo-github/badge.js"></script><script type="text/javascript">  loadStyle("/hexo-github/style.css");  loadStyle("/hexo-github/octicons/octicons.css");  new Badge("#badge-container-jerrymarino-iCompleteMe-ad0e1fe", "jerrymarino", "iCompleteMe", "ad0e1fe", false);</script><p>iCompleteMe是基于YouCompleteMe。在花了一年多的时间试图实现对YouCompleteMe的快速支持之后，发现在YCM无法支持swift自动补齐。<br>iCompleteMe实现的行为对于Swift的补齐提示。iCompleteMe的核心子系统只与Swift一起工作。代码基占用的空间要小得多，这使得在CI上更容易安装、更容易理解和更稳定(理论上)。</p><h3 id="在space-vim中添加插件支持"><a href="#在space-vim中添加插件支持" class="headerlink" title="在space-vim中添加插件支持"></a>在space-vim中添加插件支持</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Plugin &apos;jerrymarino/iCompleteMe&apos;</span><br></pre></td></tr></table></figure><p>安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.vim/plugged/iCompleteMe/</span><br><span class="line">brew install cmake</span><br><span class="line">./install.py</span><br></pre></td></tr></table></figure></p><p>然后 <code>&lt;Leader&gt; f R</code> 使配置生效，并执行   <code>:PlugInstall</code>进行安装.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
+      
+    
+    </summary>
+    
+      <category term="shell" scheme="https://huos3203.github.io/categories/shell/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>SwiftPlayground</title>
     <link href="https://huos3203.github.io/2018/08/10/shell/SwiftPlayground/"/>
     <id>https://huos3203.github.io/2018/08/10/shell/SwiftPlayground/</id>
     <published>2018-08-10T15:50:21.000Z</published>
-    <updated>2018-08-10T15:50:21.000Z</updated>
+    <updated>2018-08-10T16:40:19.000Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><!--github库卡片--><div id="badge-container-jerrymarino-SwiftPlayground.vim-f603700" class="hexo-github" style="width: ="></div><script src="/hexo-github/badge.js"></script><script type="text/javascript">  loadStyle("/hexo-github/style.css");  loadStyle("/hexo-github/octicons/octicons.css");  new Badge("#badge-container-jerrymarino-SwiftPlayground.vim-f603700", "jerrymarino", "SwiftPlayground.vim", "f603700", false);</script><h2 id="执行环境"><a href="#执行环境" class="headerlink" title="执行环境"></a>执行环境</h2><p>在playgrounds后缀的目录中执行swift文件</p><h2 id="熟悉vim快捷键用法"><a href="#熟悉vim快捷键用法" class="headerlink" title="熟悉vim快捷键用法"></a>熟悉vim快捷键用法</h2><p>空格 + fs 保存文件：此时插件会自动运行playgrounds，显示效果<br>shift + H ：行头<br>shift + L：行尾</p>]]></content>
     
@@ -438,29 +461,6 @@
     <updated>2018-06-04T21:27:15.000Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">start</span><br><span class="line">:ClickServlet.handleRequest();</span><br><span class="line">:new page;</span><br><span class="line">if (Page.onSecurityCheck) then (true)</span><br><span class="line">:Page.onInit();</span><br><span class="line">if (isForward?) then (no)</span><br><span class="line">:Process controls;</span><br><span class="line">if (continue processing?) then (no)</span><br><span class="line">stop</span><br><span class="line">endif</span><br><span class="line"></span><br><span class="line">if (isPost?) then (yes)</span><br><span class="line">:Page.onPost();</span><br><span class="line">else (no)</span><br><span class="line">:Page.onGet();</span><br><span class="line">endif</span><br><span class="line">:Page.onRender();</span><br><span class="line">endif</span><br><span class="line">else (false)</span><br><span class="line">endif</span><br><span class="line"></span><br><span class="line">if (do redirect?) then (yes)</span><br><span class="line">:redirect process;</span><br><span class="line">else</span><br><span class="line">if (do forward?) then (yes)</span><br><span class="line">:Forward request;</span><br><span class="line">else (no)</span><br><span class="line">:Render page template;</span><br><span class="line">endif</span><br><span class="line">endif</span><br><span class="line">stop</span><br></pre></td></tr></table></figure><p><img src="http://www.plantuml.com/plantuml/svg/NL6xZiCW4Epv2agxoGSunHMHShekIhu0mJX6uS2tkqwKlpzZJ5uDiBipEwE1nP2eRXUylPn0rm3P32QwW2F-9h0qxLPr4JSzcZEsolUwESolJOeds8cyt7S3xANLCY3gHcX2gxeLyXFziY2pFEyJtGovhugDAICfMJ1hcw9G2bp0kV9nWXxBsCVp6uqbZGhH-Lwjom-9vG6vWvycyYIRG61KqJBvHXaiUshpE9UWPx_GUZDVxQkaIvhWFC5-wjPsDL-aAwd_IA5mrcpcbKlgRswBe-K3jE1t34RmSBUSEOv_"></p><p>title <code>uml模型图题目支持MD</code><br>center header<br><code>在此处添加标头</code><br>endheader<br>start ‘开始’<br>‘&gt;&gt;&gt;&gt;&gt; 活动关系模块 支持嵌套，条件/循环/并行&gt;&gt;&gt;&gt;&gt;&gt;’<br>if(<code>环境条件</code>) then (<code>分流线名</code>)<br>:<code>分支1活动</code>;<br>-[<code>颜色</code>]-&gt; <code>线备注</code>;<br>note left<br><code>活动备注</code><br>end note<br>elseif(<code>分流线名</code>)<br>:<code>分支2活动</code>;<br>else (<code>分流线名</code>)<br>:<code>分支3活动</code>;<br>endif</p><p>repeat<br>:<code>循环活动</code>;<br>repeat while (<code>环境条件</code>)</p><p>while (<code>环境条件</code>)<br>:<code>循环活动</code>;<br>endwhile</p><p>fork<br>:<code>并行活动</code>;<br>fork again<br>:<code>并行活动</code>;<br>end fork</p><p>‘&amp;&amp;&amp;&amp;&amp; 活动图组合模块 &amp;&amp;&amp;&amp;&amp;&amp;’<br>partition <code>活动组名</code>{<br>:<code>单元活动名称</code>;<br>}</p><p>|<code>#颜色</code> | <code>泳道名称</code>|<br>:<code>当前泳道活动</code>;</p><p>stop ‘结束／end关键字’<br>center footer<br><code>在此处添加脚注</code><br>endfooter</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
-      
-    
-    </summary>
-    
-      <category term="uml" scheme="https://huos3203.github.io/categories/uml/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>uml用例图常用语法</title>
-    <link href="https://huos3203.github.io/2018/06/05/hexo/uml%E7%94%A8%E4%BE%8B%E5%9B%BE%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/"/>
-    <id>https://huos3203.github.io/2018/06/05/hexo/uml用例图常用语法/</id>
-    <published>2018-06-04T21:20:41.000Z</published>
-    <updated>2018-06-04T21:27:15.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">:Main Admin: as Admin</span><br><span class="line">(Use the application) as (Use)</span><br><span class="line"></span><br><span class="line">User -&gt; (Start)</span><br><span class="line">User --&gt; (Use)</span><br><span class="line"></span><br><span class="line">Admin ---&gt; (Use)</span><br><span class="line"></span><br><span class="line">note right of Admin : This is an example.</span><br><span class="line"></span><br><span class="line">note right of (Use)</span><br><span class="line">A note can also be on several lines</span><br><span class="line">end note</span><br><span class="line"></span><br><span class="line">note &quot;This note is connected\nto several objects.&quot; as N2</span><br><span class="line">(Start) .. N2</span><br><span class="line">N2 .. (Use)</span><br></pre></td></tr></table></figure><p>效果图<br><img src="http://www.plantuml.com/plantuml/svg/NKyn3eCm3DppYXCJ36LWPAZ40yhITkjYm2sfWeEIgEhpcmJKIfMYv7ntFiVjYRIWcnOjBSXlI9LNpmWpWzRLw962jb8bEGcLKl5sE1nHdWEvKErr8ZOzfqJYnuWD3ASVSu2zRrFGuZ9hZtX8m6zQLiFrltNhxv3PCHh9U8k1OGMUN-p8m6XXhrYcxDeJYXoUONn7Ay9ZuEacmNuRxV2CfA-Bj5lVg7qVr7Mg-YQ1_84F"></p><p>title <code>uml模型图题目支持MD</code><br>center header<br><code>在此处添加标头</code><br>endheader</p><p>‘<strong><em>*</em></strong>  声明用例模块 usecase <strong><em>*</em></strong>‘<br>(<code>用例名称</code>) as (<code>别名</code>) &lt;&lt;<code>构造类型</code>&gt;&gt;</p><h2 id="usecase-用例名称-as-“-描述一"><a href="#usecase-用例名称-as-“-描述一" class="headerlink" title="usecase 用例名称 as “ 描述一"></a>usecase <code>用例名称</code> as “ <code>描述一</code></h2><h1 id="描述2"><a href="#描述2" class="headerlink" title="描述2"></a><code>描述2</code></h1><p><code>描述3</code><br>.. <code>描述标题</code> ..<br><code>描述4</code><br>“<br>‘<strong><em>*</em></strong>  声明角色模块 actor <strong><em>*</em></strong>‘<br>:<code>角色名称</code>: as <code>别名</code><br>actor <code>角色名称</code></p><p>‘—- 声明备注:用例线备注可以当做用例来参与到关系连接中—‘<br>note “<code>备注内容</code>“ as <code>备注对象</code></p><p>‘#####  备注模块 位置：left/right/top/bottom  #####’<br>note <code>位置</code>  of <code>用例/角色</code>: <code>描述信息</code></p><p>‘&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;  关系模块  &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;’<br>left to right dirction  ‘指定布局方向’<br><code>角色</code> –&gt; <code>用例</code>:<code>关系线描述</code></p><p>‘—- 用例关系中的备注对象 —-‘<br><code>角色</code> –&gt;<code>备注对象</code><br><code>备注对象</code> –&gt;<code>用例</code></p><p>center footer<br><code>在此处添加脚注</code><br>endfooter</p>]]></content>
     
     <summary type="html">
     
