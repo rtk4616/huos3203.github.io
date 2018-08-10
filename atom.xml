@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huos3203.github.io/"/>
-  <updated>2018-08-10T16:40:19.000Z</updated>
+  <updated>2018-08-10T18:15:30.000Z</updated>
   <id>https://huos3203.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://huos3203.github.io/2018/08/11/shell/iCompleteMe%E6%94%AF%E6%8C%81swift%E8%AF%AD%E6%B3%95%E6%8F%90%E7%A4%BA/"/>
     <id>https://huos3203.github.io/2018/08/11/shell/iCompleteMe支持swift语法提示/</id>
     <published>2018-08-10T16:40:19.000Z</published>
-    <updated>2018-08-10T16:40:19.000Z</updated>
+    <updated>2018-08-10T18:15:30.000Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><!--github库卡片--><div id="badge-container-jerrymarino-iCompleteMe-ad0e1fe" class="hexo-github" style="width: ="></div><script src="/hexo-github/badge.js"></script><script type="text/javascript">  loadStyle("/hexo-github/style.css");  loadStyle("/hexo-github/octicons/octicons.css");  new Badge("#badge-container-jerrymarino-iCompleteMe-ad0e1fe", "jerrymarino", "iCompleteMe", "ad0e1fe", false);</script><p>iCompleteMe是基于YouCompleteMe。在花了一年多的时间试图实现对YouCompleteMe的快速支持之后，发现在YCM无法支持swift自动补齐。<br>iCompleteMe实现的行为对于Swift的补齐提示。iCompleteMe的核心子系统只与Swift一起工作。代码基占用的空间要小得多，这使得在CI上更容易安装、更容易理解和更稳定(理论上)。</p><h3 id="在space-vim中添加插件支持"><a href="#在space-vim中添加插件支持" class="headerlink" title="在space-vim中添加插件支持"></a>在space-vim中添加插件支持</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Plugin &apos;jerrymarino/iCompleteMe&apos;</span><br></pre></td></tr></table></figure><p>安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.vim/plugged/iCompleteMe/</span><br><span class="line">brew install cmake</span><br><span class="line">./install.py</span><br></pre></td></tr></table></figure></p><p>然后 <code>&lt;Leader&gt; f R</code> 使配置生效，并执行   <code>:PlugInstall</code>进行安装.</p>]]></content>
     
@@ -41,12 +41,12 @@
   
   <entry>
     <title>SwiftPlayground</title>
-    <link href="https://huos3203.github.io/2018/08/10/shell/SwiftPlayground/"/>
-    <id>https://huos3203.github.io/2018/08/10/shell/SwiftPlayground/</id>
+    <link href="https://huos3203.github.io/2018/08/10/shell/SwiftPlayground%E5%91%BD%E4%BB%A4%E6%93%8D%E4%BD%9C/"/>
+    <id>https://huos3203.github.io/2018/08/10/shell/SwiftPlayground命令操作/</id>
     <published>2018-08-10T15:50:21.000Z</published>
     <updated>2018-08-10T16:40:19.000Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><!--github库卡片--><div id="badge-container-jerrymarino-SwiftPlayground.vim-f603700" class="hexo-github" style="width: ="></div><script src="/hexo-github/badge.js"></script><script type="text/javascript">  loadStyle("/hexo-github/style.css");  loadStyle("/hexo-github/octicons/octicons.css");  new Badge("#badge-container-jerrymarino-SwiftPlayground.vim-f603700", "jerrymarino", "SwiftPlayground.vim", "f603700", false);</script><h2 id="执行环境"><a href="#执行环境" class="headerlink" title="执行环境"></a>执行环境</h2><p>在playgrounds后缀的目录中执行swift文件</p><h2 id="熟悉vim快捷键用法"><a href="#熟悉vim快捷键用法" class="headerlink" title="熟悉vim快捷键用法"></a>熟悉vim快捷键用法</h2><p>空格 + fs 保存文件：此时插件会自动运行playgrounds，显示效果<br>shift + H ：行头<br>shift + L：行尾</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><!--github库卡片--><div id="badge-container-jerrymarino-SwiftPlayground.vim-f603700" class="hexo-github" style="width: ="></div><script src="/hexo-github/badge.js"></script><script type="text/javascript">  loadStyle("/hexo-github/style.css");  loadStyle("/hexo-github/octicons/octicons.css");  new Badge("#badge-container-jerrymarino-SwiftPlayground.vim-f603700", "jerrymarino", "SwiftPlayground.vim", "f603700", false);</script><h2 id="执行环境"><a href="#执行环境" class="headerlink" title="执行环境"></a>执行环境</h2><p>在playgrounds后缀的目录中执行swift文件</p><h2 id="熟悉vim快捷键用法"><a href="#熟悉vim快捷键用法" class="headerlink" title="熟悉vim快捷键用法"></a>熟悉vim快捷键用法</h2><p>空格 + fs 保存文件：此时插件会自动运行playgrounds，显示效果<br>shift + H ：行头<br>shift + L：行尾<br>:copen : AsyncRun显示运行日志<br>:AsyncRun  shell命令</p>]]></content>
     
     <summary type="html">
     
