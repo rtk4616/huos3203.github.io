@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huos3203.github.io/"/>
-  <updated>2018-08-10T18:42:08.000Z</updated>
+  <updated>2018-08-18T14:36:18.000Z</updated>
   <id>https://huos3203.github.io/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>图文组件及多媒体组件类图</title>
+    <link href="https://huos3203.github.io/2018/08/18/%E4%B8%AA%E4%BA%BA%E9%A1%B9%E7%9B%AE/%E5%9B%BE%E6%96%87%E7%BB%84%E4%BB%B6%E5%8F%8A%E5%A4%9A%E5%AA%92%E4%BD%93%E7%BB%84%E4%BB%B6%E7%B1%BB%E5%9B%BE/"/>
+    <id>https://huos3203.github.io/2018/08/18/个人项目/图文组件及多媒体组件类图/</id>
+    <published>2018-08-18T14:36:18.000Z</published>
+    <updated>2018-08-18T14:36:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p><img src="http://www.plantuml.com/plantuml/svg/pLbRJnj95dwlNr6QI6ERu6IJbVQXbo01cMYz8WG5af5sjOeQTmLQCMvlTnk2cAm8YRc4woGa9Dm22GdCp6A8s0rWO_nZrjMsd_8NzbHLkxlTDfUNbRPVS5UVElVprJa5CbKpHh3rBbDwbgFlZqhfdUANB5q-GL4IDucE-uYi41rP7_QBysEmRhqPBsQV5x9V6LbglxZFYByTJzFqMd5sZwvi2newiLZQs2uSxeXrBtzh_O0Upo4ILspUAD0W7inuVjoptivQsnjqTH7Rwm4KO5_MfgHeJ3QCHhd7C7KvQZQgJCM7SfGqol6uPigcgiKRIJpP3pjAwNnvCKtVlvU2uL1nwwcrCjaOl1Ggv5Uj5vkDmN-4w7IgidmvH5F_X5y1n0NWTdb8Ive_n7lLEBclai4sBMxgMYn6z64K3cFhpP6r_nhSWCDX50uEQAeI6bILNc96-kLUiIEcHX_zg9fzDsLJbZ1wWcpMRTojVgQNEsNTn0q9MOVFx3SATtJTJffoJuoqwBeyr23hEbitG7uzyNzF4dseUr3ZD4nk9sSb1GNZaE1SePOLvOS1sD111Ws-GmfsT74vG0gIO5q80xt1hmJhQc-VYRM7TTL7T6ALRatHwJTqSud--hAGU-LPygG3Ypbc_2fk9h8Uxp8rdRIhXbdhQCVGi6jeJ9ELUmRH-JO3bnUtQMRHPc-J9996NtSxsE0gw_M3wTCDR3mzthW1ubtFQ8apR4PdsN3kPbJlesSNYuzl9pQOh8Y2WyoKAvgkC5_8PjB0DsxWtuNemMUwUrJEpGlZHB4ruwemnd5CZJ_2g3ooLCgFD_KqSvwgqdIrfzbQ_MHDZzFqalLcpvhzHES-DYBwOhsKorNLyEizQoPjPURTa9vgof__r99KLEs-gX2D-KWwqu8_X9maibRp32Z-vvedvEWZADiQHN5Jqoqj1jerDm_R6TlIUKgcSddqoveriWMvUlb-2qk9eJRP9BtmjrBPLOleSaTNbwchyLxSOBi4E7NVkNb7mhpmcHX7NOQ8QrF0ssPzd-W6eDstuoNh80jcUcsaEvyBH-kb_3BDV2uk7m9C2yqSziNSpyNiYb1Q59bRO81YNW4SJ43bY2AromRx4zMI02o6ffkjGnAmx8bfqKTqUQsqzypbvUVI9iTYFU1dANY_fRMhfJDobnW9M2TGar3775MNHkdEMy628rioeO2hskHe7s4e6WoXCAl-geLm8RDPoBnq1MDXXUD0IL6LBX8ZKVEkDjXYHk8AUTmfctqIUeBX4TbbQWa6RlMYYmIs52Sdt8IfHyTJtHTsoLfxNXvPftEZ44RSv94byXZPtuM4fUU2yE9oRETATEOrJJsprez5jjIJv91KvSRE9180SLNi11sgAkCC1LW0UcI3t4aGdP-xaeWVe9fVE0OXHy0z2dGAifR_nGfq-cdXA0KOZ7Yat3H_lGTuxpyeV7uTzfPEbEMcUxvMksROINcGIJ-i2G-p2dq8gMJYX4vw8VqCx7LBvT3hqKnJwsU9KSqKbRO-Mclp8cokutY1GYU4e0coTZQXOu7snobE-cBPRg-y1LbZPurRFHQyNQTxpwiwDGyhEh4dLA6PLwBpuYNTUkTEUsXGLqtYjO2NKBTsirKQh5HtFQDhb44YnavpnymMaNEC5rfwjG4wlvtrykhwCAAJM-NbCIWr8U3iL-n_vuzliMBL6GL-7GKvujzKZKHC7keUIX3y_VUOdqr6dpR85-1WkXP25Cwax4Rfwtuf_wvm-AkrkW5ziBNurMaeIhkVeDyjd4ov1fyltb7PtGJPx1vANBkx90e79Kjuxw5qHdssyMsTO17HRn9JLcE-Hi8vPakxdwrdAGVcS1Ek0n-vL-MHIMlgboY9nHnphLSpXToAxqJ23TWOgClSjUzyzUpEeVj73vralTon5axeksr0k0koy5Nk1NPTkV9JCtQ814cdhfbQL8j9XUn768F0HVZ22bHpQetynJMZT9AYBtu1e01xVBRMWtdVQL8tcohHlwqDg4ImEYVkbUp3q2HMKEWyonWeqVUPuiP8JSlZP87XzNkurWsuOI2Xm5_MFNdxiuLTTZPa5g2HWnRM2t5CIhsMoV6dzUyqVR5jROnPRq-AcnaV4sjs2ygLeUAz23C7M9014cS_6HFkNBUFKEEgoLgVsvf2OgnhgROkP0p0fkBe4HtFMjEJvPTfdypoX-UbBHk5tEQA0KeNanhfx-Kj9fIwSBel_ip3OZfrR0_NU7Z0qHkCPzx1GP1HqVoMBlSJgVyi_Uts-CrUQMki_E5dmS8PixWwzRUwnsrDN3tji7FO-bb4axhJ3bTI15Wwu_nfzJViwEme7BwGmdy4zY30GLKOzsdgYxZ8k2YYTX1xGfH4-qmFFj7K0HHYfMeSWk7_uqRx2Jh5jxW9hApaPfkSC9CwaUZyRd5XsqbgnrWV7URf-YNhg7KvwAU0AFJ13AJmbfsnA-GthAUxrlmAm8_VDMQVJaWa_b3Zbm3ZT6UHLV7aE9sVi2RclSt-lGY_SW7sKQq_4IEFkybZirulumG7UQFdFN8Ty3iLEw53gO2d0vi2HNboUIzuQYTtSNDKTGys3e01PcW94g-CzPA0D_JW0NQEMNRcYeF77euUF12cTrU6d3QW01UuGm_RSalJ_IDFc0C4f0pRmBexbdCIBiqUq3akHZHjwEfLB5fsW8RoOXO-qfD5kdj4CmjiJ05qMnvZv11onhED6LvXoyBMoc-M9FwgI5KOrsB2prPeAjb7riW3eGC8x0LQSzLLpeRV3WRN8MuMp8Goz7aRlz5KobRNo_-s-fWexIrtMHaB4Sw57Hig_seaePd5jIB-XdZ5baT6owaPRvZkHUZXC_fb1AIS5bgisSrAbN5SMoO4HgAQZxZf9tkFNs5KRv590BaIJgZHDWOBDwuvVLhLrGZhr5mQw4tPrQptHlPugP3BGqt3G0Wjh2WhzqRMswI3l66MXwTD72mD0R4TbL3rI5LRXC2GpqRBUMlcWtD90-C1qt5p1fIo--hgaQBsVgDgXBfs1GiAyVxjU0bTlu9jVdnGGx-ll8lnnJKqK3SkTSE20nKx-J200kAylrfUcYyjpa4XD3hu9nI1uHgEcVtoGXhWItGrulRQlRGMDzKe48O7YujlvrQzcCdJpN5hVxkHpkqMifyWhlJf4WFZaobh5HmtMZYSXJ5BK9VoQ-1DS2NaU3Y00jpptzc1F_XiZweyp8wptTUQAthRmMCfcZvYCnut5JphdP8Xjyglys2b0FBli6pWE9Gfs7E9F_msdvjWt-Qxj_ihlz6z4v674bUra9ifvj8I5lINAa-WxkrpRG4YOL5TUr5JJ_Ef5l98rJKF3FlFoAYRAgZo3v676hoUzmyHjayG_XS0"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
+      
+    
+    </summary>
+    
+      <category term="个人项目" scheme="https://huos3203.github.io/categories/%E4%B8%AA%E4%BA%BA%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>&lt;#标题#&gt;</title>
+    <link href="https://huos3203.github.io/2018/08/13/%3C#%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5#%3E/"/>
+    <id>https://huos3203.github.io/2018/08/13/&lt;#永久链接#&gt;/</id>
+    <published>2018-08-13T03:10:22.000Z</published>
+    <updated>2018-08-13T03:10:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h3 id="在升级xcode之后，出现playground无法运行的情况，live-view-不显示等问题。"><a href="#在升级xcode之后，出现playground无法运行的情况，live-view-不显示等问题。" class="headerlink" title="在升级xcode之后，出现playground无法运行的情况，live view 不显示等问题。"></a>在升级xcode之后，出现playground无法运行的情况，live view 不显示等问题。</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
+      
+    
+    </summary>
+    
+      <category term="分类" scheme="https://huos3203.github.io/categories/%E5%88%86%E7%B1%BB/"/>
+    
+    
+      <category term="&lt;#工具#&gt;" scheme="https://huos3203.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="&lt;#管理#&gt;" scheme="https://huos3203.github.io/tags/%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
   
   <entry>
     <title>iCompleteMe支持swift语法提示</title>
@@ -270,29 +320,6 @@
   </entry>
   
   <entry>
-    <title>使用local命令行新建remote库</title>
-    <link href="https://huos3203.github.io/2018/06/20/git/%E4%BD%BF%E7%94%A8local%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%96%B0%E5%BB%BAremote%E5%BA%93/"/>
-    <id>https://huos3203.github.io/2018/06/20/git/使用local命令行新建remote库/</id>
-    <published>2018-06-20T11:14:00.000Z</published>
-    <updated>2018-06-20T14:49:37.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>使用命令行直接生成github中的项目</p><h2 id="新建远程仓库"><a href="#新建远程仓库" class="headerlink" title="新建远程仓库"></a>新建远程仓库</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -u username <span class="symbol">https:</span>/<span class="regexp">/api.github.com/user</span><span class="regexp">/repos -d '&#123; "name": "repo-name" &#125;'</span></span><br></pre></td></tr></table></figure><p>执行打印结果，是json格式：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="attr">"name"</span>: <span class="string">"ArcProgressUI"</span>,</span><br><span class="line"><span class="attr">"full_name"</span>: <span class="string">"huos3203/ArcProgressUI"</span>,</span><br><span class="line"><span class="attr">"owner"</span>: &#123;</span><br><span class="line">    <span class="attr">"url"</span>: <span class="string">"https://api.github.com/users/huos3203"</span>,</span><br><span class="line">    <span class="attr">"repos_url"</span>: <span class="string">"https://api.github.com/users/huos3203/repos"</span>,</span><br><span class="line">    ---</span><br><span class="line">&#125;,</span><br><span class="line">"git_url": "git://github.com/huos3203/ArcProgressUI.git",</span><br><span class="line">"ssh_url": "git@github.com:huos3203/ArcProgressUI.git",</span><br><span class="line">"clone_url": "https://github.com/huos3203/ArcProgressUI.git",</span><br><span class="line">"svn_url": "https://github.com/huos3203/ArcProgressUI",</span><br><span class="line">"default_branch": "master",</span><br><span class="line">"permissions": &#123;</span><br><span class="line">    "admin": true,</span><br><span class="line">    "push": true,</span><br><span class="line">    "pull": true</span><br><span class="line">&#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2 id="初始化远程仓库"><a href="#初始化远程仓库" class="headerlink" title="初始化远程仓库"></a>初始化远程仓库</h2><p>找到仓库路径的字段<code>clone_url</code>或者``<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin clone_url</span><br><span class="line">//或者使用ssh,避免输入密码</span><br><span class="line">//git remote add origin ssh_url</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure></p><h2 id="删除远程仓库"><a href="#删除远程仓库" class="headerlink" title="删除远程仓库"></a>删除远程仓库</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">githubDelRepo()&#123;</span><br><span class="line">    <span class="keyword">if</span> [[ $# != <span class="number">2</span> ]] ; <span class="keyword">then</span></span><br><span class="line">        echo <span class="string">"Needs username and repo-name as args 1 and 2 respectively."</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        curl -X DELETE -u <span class="string">"$&#123;1&#125;"</span> <span class="symbol">https:</span>/<span class="regexp">/api.github.com/repos</span><span class="regexp">/"$&#123;1&#125;"/</span><span class="string">"$&#123;2&#125;"</span></span><br><span class="line">    fi</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
-      
-    
-    </summary>
-    
-      <category term="git" scheme="https://huos3203.github.io/categories/git/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>MacOS系统下运行exe小程序</title>
     <link href="https://huos3203.github.io/2018/06/20/macOS/MacOS%E7%B3%BB%E7%BB%9F%E4%B8%8B%E8%BF%90%E8%A1%8Cexe%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     <id>https://huos3203.github.io/2018/06/20/macOS/MacOS系统下运行exe小程序/</id>
@@ -449,29 +476,6 @@
     </summary>
     
       <category term="个人项目" scheme="https://huos3203.github.io/categories/%E4%B8%AA%E4%BA%BA%E9%A1%B9%E7%9B%AE/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>uml活动图常用语法</title>
-    <link href="https://huos3203.github.io/2018/06/05/hexo/uml%E6%B4%BB%E5%8A%A8%E5%9B%BE%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/"/>
-    <id>https://huos3203.github.io/2018/06/05/hexo/uml活动图常用语法/</id>
-    <published>2018-06-04T21:27:15.000Z</published>
-    <updated>2018-06-04T21:27:15.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">start</span><br><span class="line">:ClickServlet.handleRequest();</span><br><span class="line">:new page;</span><br><span class="line">if (Page.onSecurityCheck) then (true)</span><br><span class="line">:Page.onInit();</span><br><span class="line">if (isForward?) then (no)</span><br><span class="line">:Process controls;</span><br><span class="line">if (continue processing?) then (no)</span><br><span class="line">stop</span><br><span class="line">endif</span><br><span class="line"></span><br><span class="line">if (isPost?) then (yes)</span><br><span class="line">:Page.onPost();</span><br><span class="line">else (no)</span><br><span class="line">:Page.onGet();</span><br><span class="line">endif</span><br><span class="line">:Page.onRender();</span><br><span class="line">endif</span><br><span class="line">else (false)</span><br><span class="line">endif</span><br><span class="line"></span><br><span class="line">if (do redirect?) then (yes)</span><br><span class="line">:redirect process;</span><br><span class="line">else</span><br><span class="line">if (do forward?) then (yes)</span><br><span class="line">:Forward request;</span><br><span class="line">else (no)</span><br><span class="line">:Render page template;</span><br><span class="line">endif</span><br><span class="line">endif</span><br><span class="line">stop</span><br></pre></td></tr></table></figure><p><img src="http://www.plantuml.com/plantuml/svg/NL6xZiCW4Epv2agxoGSunHMHShekIhu0mJX6uS2tkqwKlpzZJ5uDiBipEwE1nP2eRXUylPn0rm3P32QwW2F-9h0qxLPr4JSzcZEsolUwESolJOeds8cyt7S3xANLCY3gHcX2gxeLyXFziY2pFEyJtGovhugDAICfMJ1hcw9G2bp0kV9nWXxBsCVp6uqbZGhH-Lwjom-9vG6vWvycyYIRG61KqJBvHXaiUshpE9UWPx_GUZDVxQkaIvhWFC5-wjPsDL-aAwd_IA5mrcpcbKlgRswBe-K3jE1t34RmSBUSEOv_"></p><p>title <code>uml模型图题目支持MD</code><br>center header<br><code>在此处添加标头</code><br>endheader<br>start ‘开始’<br>‘&gt;&gt;&gt;&gt;&gt; 活动关系模块 支持嵌套，条件/循环/并行&gt;&gt;&gt;&gt;&gt;&gt;’<br>if(<code>环境条件</code>) then (<code>分流线名</code>)<br>:<code>分支1活动</code>;<br>-[<code>颜色</code>]-&gt; <code>线备注</code>;<br>note left<br><code>活动备注</code><br>end note<br>elseif(<code>分流线名</code>)<br>:<code>分支2活动</code>;<br>else (<code>分流线名</code>)<br>:<code>分支3活动</code>;<br>endif</p><p>repeat<br>:<code>循环活动</code>;<br>repeat while (<code>环境条件</code>)</p><p>while (<code>环境条件</code>)<br>:<code>循环活动</code>;<br>endwhile</p><p>fork<br>:<code>并行活动</code>;<br>fork again<br>:<code>并行活动</code>;<br>end fork</p><p>‘&amp;&amp;&amp;&amp;&amp; 活动图组合模块 &amp;&amp;&amp;&amp;&amp;&amp;’<br>partition <code>活动组名</code>{<br>:<code>单元活动名称</code>;<br>}</p><p>|<code>#颜色</code> | <code>泳道名称</code>|<br>:<code>当前泳道活动</code>;</p><p>stop ‘结束／end关键字’<br>center footer<br><code>在此处添加脚注</code><br>endfooter</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
-      
-    
-    </summary>
-    
-      <category term="uml" scheme="https://huos3203.github.io/categories/uml/"/>
     
     
   </entry>
