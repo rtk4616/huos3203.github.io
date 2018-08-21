@@ -99,7 +99,7 @@
 <meta property="og:site_name" content="布衣男儿">
 <meta property="og:description" content="loadStyle(&quot;/hexo-github/style.css&quot;);   loadStyle(&quot;/hexo-github/octicons/octicons.css&quot;);   new Badge(&quot;#badge-container-realm-SwiftLint-8deb453&quot;, &quot;realm&quot;, &quot;SwiftLint&quot;, &quot;8deb453&quot;, false);   配置swift">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-21T17:02:47.000Z">
+<meta property="og:updated_time" content="2018-08-21T17:46:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SwiftLint检查代码使用">
 <meta name="twitter:description" content="loadStyle(&quot;/hexo-github/style.css&quot;);   loadStyle(&quot;/hexo-github/octicons/octicons.css&quot;);   new Badge(&quot;#badge-container-realm-SwiftLint-8deb453&quot;, &quot;realm&quot;, &quot;SwiftLint&quot;, &quot;8deb453&quot;, false);   配置swift">
@@ -428,7 +428,7 @@ daovoice('update');
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  183字
+                  274字
                 </span>
               
 
@@ -477,12 +477,21 @@ daovoice('update');
 </li>
 </ol>
 <h3 id="终端插件集成swiftLint"><a href="#终端插件集成swiftLint" class="headerlink" title="终端插件集成swiftLint"></a>终端插件集成swiftLint</h3><p>支持vim编辑器：<br><a href="https://github.com/keith/swift.vim" target="_blank" rel="noopener">keith/swift.vim</a></p>
+<h4 id="安装-syntastic"><a href="#安装-syntastic" class="headerlink" title="安装 syntastic"></a>安装 <a href="https://github.com/scrooloose/syntastic/" target="_blank" rel="noopener">syntastic</a></h4><p>使用<a href="https://github.com/tpope/vim-pathogen.git" target="_blank" rel="noopener">vim-pathogen</a>安装syntastic，</p>
 <ol>
-<li>安装 <a href="https://github.com/scrooloose/syntastic/" target="_blank" rel="noopener">syntastic</a></li>
-<li>当存在<code>Package.swift</code>的swift目录中启动vim，swiftpm将自动可用。</li>
-<li>当存在<code>.swiftlint.yml</code>的swift目录中启动vim，且SwiftLint已安装，自动启用swiftlint。</li>
-<li>在<code>vimrc</code>中添加配置，当启动vim即可使用：<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> g:syntastic_swift_checkers = [<span class="string">'swiftpm'</span>, <span class="string">'swiftlint'</span>]</span><br></pre></td></tr></table></figure>
+<li>第一步安装 <code>pathogen.vim</code><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p ~/.vim/<span class="built_in">autoload</span> ~/.vim/bundle &amp;&amp; \</span><br><span class="line">curl -LSso ~/.vim/<span class="built_in">autoload</span>/pathogen.vim https://tpo.pe/pathogen.vim</span><br></pre></td></tr></table></figure>
 </li>
+</ol>
+<p>设置<code>~/.vimrc</code>配置项：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">execute pathogen<span class="comment">#infect()</span></span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>第二步将<code>syntastic</code> 作为 <code>Pathogen</code> bundle的资源方式安装<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.vim/bundle &amp;&amp; \</span><br><span class="line">git <span class="built_in">clone</span> --depth=1 https://github.com/vim-syntastic/syntastic.git</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="终端集成使用"><a href="#终端集成使用" class="headerlink" title="终端集成使用"></a>终端集成使用</h4><p>在<code>vimrc</code>中添加配置，当启动vim即可使用：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> g:syntastic_swift_checkers = [<span class="string">'swiftpm'</span>, <span class="string">'swiftlint'</span>]</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>终端支持<code>Package.swift</code><br>当存在<code>Package.swift</code>的swift目录中启动vim，swiftpm将自动可用。</li>
+<li>终端支持<code>.swiftlint.yml</code></li>
+<li>当存在<code>.swiftlint.yml</code>的swift目录中启动vim，且SwiftLint已安装，自动启用swiftlint。</li>
 </ol>
 
       
@@ -852,7 +861,7 @@ daovoice('update');
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置swiftlint语法矫正工具"><span class="nav-number">1.</span> <span class="nav-text">配置swiftlint语法矫正工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#终端插件集成swiftLint"><span class="nav-number">2.</span> <span class="nav-text">终端插件集成swiftLint</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置swiftlint语法矫正工具"><span class="nav-number">1.</span> <span class="nav-text">配置swiftlint语法矫正工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#终端插件集成swiftLint"><span class="nav-number">2.</span> <span class="nav-text">终端插件集成swiftLint</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-syntastic"><span class="nav-number">2.1.</span> <span class="nav-text">安装 syntastic</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#终端集成使用"><span class="nav-number">2.2.</span> <span class="nav-text">终端集成使用</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -880,7 +889,7 @@ daovoice('update');
     <span id="busuanzi_container_site_pv">
      本站总<span id="busuanzi_value_site_pv"></span>次访问 |
     </span>
-    <span class="post-count"> 博客全站共189.2k字</span>
+    <span class="post-count"> 博客全站共189.3k字</span>
 </div>
 <div class="copyright">
     <span id="timeDate">载入天数...</span>
