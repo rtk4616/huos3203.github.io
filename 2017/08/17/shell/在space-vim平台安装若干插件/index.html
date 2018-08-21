@@ -99,7 +99,7 @@
 <meta property="og:site_name" content="布衣男儿">
 <meta property="og:description" content="space-vim首次启用一个 layer，需要执行 SPC f R, 或者 :so $MYVIMRC, 重新加载 .vimrc 并执行 :PlugInstall 安装所需的相关插件 。或者退出重新打开 vim, vim-plug 将会检测并自动安装缺失的插件。基于vim-plug的插件管理平台vim-plug命令工具 Commands   Command Description     Plug">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-17T15:02:27.000Z">
+<meta property="og:updated_time" content="2018-08-21T17:02:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在space-vim平台安装若干插件">
 <meta name="twitter:description" content="space-vim首次启用一个 layer，需要执行 SPC f R, 或者 :so $MYVIMRC, 重新加载 .vimrc 并执行 :PlugInstall 安装所需的相关插件 。或者退出重新打开 vim, vim-plug 将会检测并自动安装缺失的插件。基于vim-plug的插件管理平台vim-plug命令工具 Commands   Command Description     Plug">
@@ -439,7 +439,7 @@ daovoice('update');
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,121字
+                  607字
                 </span>
               
 
@@ -455,7 +455,7 @@ daovoice('update');
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  5分钟
+                  3分钟
                 </span>
               
             </div>
@@ -568,29 +568,10 @@ daovoice('update');
 <p>参考：<a href="http://www.cocoachina.com/ios/20170224/18751.html" target="_blank" rel="noopener">征服恐惧！用 Vim 写 iOS App</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install cmake</span><br><span class="line">./install.py --clang-completer --system-libclang</span><br></pre></td></tr></table></figure></p>
 <p><code>--clang-completer</code>: 告诉脚本需要 clang 的支持<br><code>--system-libclang</code>: 告诉编译脚本使用系统的 clang，因为之前 clang 升级 4.0 的时候，并没有已经编译好的包给我下载，所以这里不用系统 clang 的话，编译脚本会下载一个 clang 3.0，这样就无法支持 iOS 10.0 以后的 sdk 了，因为 iOS 10.0 以后的 sdk 为了支持 swift 引入了一些 clang 3.0 不支持的新语法，所以这里要加上 –system-libclang。</p>
 <ol>
-<li>FlagsForFile脚本获取编译参数<br>YCMD 是通过每个项目路径下的 <code>.ycm_extra_conf.py</code> 脚本文件，定义了<code>FlagsForFile</code> 的函数来获取某一个特定文件需要的编译参数，一般情况下大部分文件的编译参数是相同的。</li>
-</ol>
-<h3 id="配置swiftlint语法矫正工具"><a href="#配置swiftlint语法矫正工具" class="headerlink" title="配置swiftlint语法矫正工具"></a>配置swiftlint语法矫正工具</h3><p>安装<br>方式一：<code>brew install swiftlint</code><br>方式二：下载[swiftlint.pkg][<a href="https://github.com/realm/SwiftLint/releases/latest" target="_blank" rel="noopener">https://github.com/realm/SwiftLint/releases/latest</a>]<br>方式三：<code>pod &#39;SwiftLint&#39;</code>，对单个项目集成swiftlint</p>
-<p>配置<br>在Xcode中<br>新增一个： “Run Script Phase”:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="built_in">which</span> swiftlint &gt;/dev/null; <span class="keyword">then</span></span><br><span class="line">swiftlint</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint"</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure></p>
-<p>在终端预览：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ swiftlint <span class="built_in">help</span></span><br><span class="line">Available commands:</span><br><span class="line"></span><br><span class="line">autocorrect  Automatically correct warnings and errors</span><br><span class="line"><span class="built_in">help</span>         Display general or <span class="built_in">command</span>-specific <span class="built_in">help</span></span><br><span class="line">lint         Print lint warnings and errors <span class="keyword">for</span> the Swift files <span class="keyword">in</span> the current directory (default <span class="built_in">command</span>)</span><br><span class="line">rules        Display the list of rules and their identifiers</span><br><span class="line">version      Display the current version of SwiftLint</span><br></pre></td></tr></table></figure>
-<p>支持vim编辑器：<br><a href="https://github.com/keith/swift.vim" target="_blank" rel="noopener">keith/swift.vim</a></p>
-<ol>
-<li>安装 <a href="https://github.com/scrooloose/syntastic/" target="_blank" rel="noopener">syntastic</a></li>
-<li>当在存在<code>Package.swift</code>的swift目录中启动vim，swiftpm将自动可用。</li>
-<li>当在存在<code>.swiftlint.yml</code>的swift目录中启动vim，且SwiftLint已安装，自动启用swiftlint。</li>
-<li>在vimrc中添加配置，当启动vim即可使用：<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> g:syntastic_swift_checkers = [<span class="string">'swiftpm'</span>, <span class="string">'swiftlint'</span>]</span><br></pre></td></tr></table></figure>
+<li><p>FlagsForFile脚本获取编译参数<br>YCMD 是通过每个项目路径下的 <code>.ycm_extra_conf.py</code> 脚本文件，定义了<code>FlagsForFile</code> 的函数来获取某一个特定文件需要的编译参数，一般情况下大部分文件的编译参数是相同的。</p>
 </li>
-</ol>
-<h3 id="支持swift自动补齐"><a href="#支持swift自动补齐" class="headerlink" title="支持swift自动补齐"></a>支持swift自动补齐</h3><p>keith/sourcekittendaemon.vim：这个插件提供了Vim集成SourceKittenDaemon。这意味着你可以在vim中开发swift项目<br>需要两步：<br>    方式一：<code>brew install sourcekitten</code><br>    方式二：clone源码 ,运行<code>swift build</code><br>    方式三： clone 源码，运行 <code>make install</code><br>    方式三： <a href="https://github.com/jpsim/SourceKitten/releases" target="_blank" rel="noopener">pkg安装包</a><br>    执行<code>sourcekitten help</code>验证安装成功。</p>
-<ol>
-<li>安装SourceKittenDaemon环境<br> 安装并设置<a href="https://github.com/terhechte/SourceKittenDaemon" target="_blank" rel="noopener">SourceKittenDaemon</a><br> 方式一：<a href="https://github.com/terhechte/SourceKittenDaemon/releases/" target="_blank" rel="noopener">pkg安装包</a><br> 方式二：1. Clone the repository  2. 安装 <code>make install</code><br> 执行<code>SourceKittenDaemon help</code>验证安装成功。<br> 启动后台驻守服务HTTP：<a href="https://github.com/terhechte/SourceKittenDaemon/blob/master/Protocol.org" target="_blank" rel="noopener">参考Protocol.org</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SourceKittenDaemon start --port 44876 --project /private/tmp/abcde/abcde.xcodeproj</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p><code>--port</code>: 服务使用的端口号，默认为<code>8081</code>，vim目前不支持指定SourceKittenDaemon端口，使用默认的8081。<br><code>--project=</code>: 指定服务将要加载的<code>.xcodeproj</code>文件路径，不支持指定<code>.xcworkspaces</code>文件路径</p>
-<p>使用get方法请求后驻服务：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/complete  # X-Offset|X-Path|X-File</span><br><span class="line">/stop     # 停止后驻服务. 一般用于为其他target提供服务时，重新启动服务。</span><br><span class="line">/ping     # ping后驻服务，运行正常 return OK</span><br><span class="line">/project  # 打印当前加载的project文件路径。</span><br><span class="line">/files    # 打印一个当前加载的project中包含的所有swift文件列表</span><br></pre></td></tr></table></figure></p>
-<ol>
-<li>安装vim插件<br>使用vim-plug安装<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Plug &apos;keith/sourcekittendaemon.vim&apos;</span><br></pre></td></tr></table></figure>
+<li><p>安装vim插件<br>使用vim-plug安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Plug &apos;keith/sourcekittendaemon.vim&apos;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>NOTE: This plugin doesn’t provide Swift runtime files. If you’d like those checkout swift.vim</p>
@@ -781,7 +762,7 @@ daovoice('update');
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">164</span>
+                <span class="site-state-item-count">167</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -967,7 +948,7 @@ daovoice('update');
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#space-vim"><span class="nav-number">1.</span> <span class="nav-text">space-vim</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Commands"><span class="nav-number">1.1.</span> <span class="nav-text">Commands</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Plug-options"><span class="nav-number">1.2.</span> <span class="nav-text">Plug options</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装objc-自动提示插件YouCompleteMe"><span class="nav-number">2.</span> <span class="nav-text">安装objc 自动提示插件YouCompleteMe</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置swiftlint语法矫正工具"><span class="nav-number">2.1.</span> <span class="nav-text">配置swiftlint语法矫正工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#支持swift自动补齐"><span class="nav-number">2.2.</span> <span class="nav-text">支持swift自动补齐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AsyncRun-shell-command"><span class="nav-number">2.3.</span> <span class="nav-text">AsyncRun shell command</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#space-vim"><span class="nav-number">1.</span> <span class="nav-text">space-vim</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Commands"><span class="nav-number">1.1.</span> <span class="nav-text">Commands</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Plug-options"><span class="nav-number">1.2.</span> <span class="nav-text">Plug options</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装objc-自动提示插件YouCompleteMe"><span class="nav-number">2.</span> <span class="nav-text">安装objc 自动提示插件YouCompleteMe</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AsyncRun-shell-command"><span class="nav-number">2.1.</span> <span class="nav-text">AsyncRun shell command</span></a></li></ol></li></ol></div>
             
 
           </div>
