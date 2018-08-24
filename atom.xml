@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huos3203.github.io/"/>
-  <updated>2018-08-23T13:34:25.000Z</updated>
+  <updated>2018-08-24T04:04:01.000Z</updated>
   <id>https://huos3203.github.io/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>&lt;#标题#&gt;</title>
+    <link href="https://huos3203.github.io/2018/08/24/%3C#%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5#%3E/"/>
+    <id>https://huos3203.github.io/2018/08/24/&lt;#永久链接#&gt;/</id>
+    <published>2018-08-24T04:04:01.000Z</published>
+    <updated>2018-08-24T04:04:01.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><!--github库卡片--><div id="badge-container-huos3203-<#库名#>-<#哈希值#>" class="hexo-github" style="width: ="></div><script src="/hexo-github/badge.js"></script><script type="text/javascript">  loadStyle("/hexo-github/style.css");  loadStyle("/hexo-github/octicons/octicons.css");  new Badge("#badge-container-huos3203-<#库名#>-<#哈希值#>", "huos3203", "<#库名#>", "<#哈希值#>", false);</script><!--音乐欣赏-->         <div id="aplayer-pWUhNhSh" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;width:70%;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-pWUhNhSh"),            narrow: false,            autoplay: true,            showlrc: false,            music: {              title: "<#歌曲名#>",              author: "<#歌手名#>",              url: "/images/<#音频文件名#>",              pic: "/images/<#封面图#>.png",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
+      
+    
+    </summary>
+    
+      <category term="分类" scheme="https://huos3203.github.io/categories/%E5%88%86%E7%B1%BB/"/>
+    
+    
+      <category term="&lt;#工具#&gt;" scheme="https://huos3203.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="&lt;#管理#&gt;" scheme="https://huos3203.github.io/tags/%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title>使用Safari浏览器调试WebView</title>
     <link href="https://huos3203.github.io/2018/08/23/%E8%B0%83%E8%AF%95/%E4%BD%BF%E7%94%A8Safari%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B0%83%E8%AF%95WebView/"/>
     <id>https://huos3203.github.io/2018/08/23/调试/使用Safari浏览器调试WebView/</id>
     <published>2018-08-23T13:34:25.000Z</published>
-    <updated>2018-08-23T13:34:25.000Z</updated>
+    <updated>2018-08-24T12:01:35.000Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><!--github库卡片--><div id="badge-container-huos3203-width-=" class="hexo-github" style="width: 100%"></div><script src="/hexo-github/badge.js"></script><script type="text/javascript">  loadStyle("/hexo-github/style.css");  loadStyle("/hexo-github/octicons/octicons.css");  new Badge("#badge-container-huos3203-width-=", "huos3203", "width", "=", false);</script><h3 id="使用RxSwift开发爬虫工具"><a href="#使用RxSwift开发爬虫工具" class="headerlink" title="使用RxSwift开发爬虫工具"></a>使用RxSwift开发爬虫工具</h3><h3 id="设置真机"><a href="#设置真机" class="headerlink" title="设置真机"></a>设置真机</h3><ol><li>首先打开模拟器或者真机设置中”Safari浏览器”→”高级”→”Web检查器”的开关。</li><li>然后我们打开Mac电脑的Safari浏览器,打开系统偏好设置(快捷键 commond + ,)，点击菜单中的”高级”,然后勾选”在菜单栏中显示”开发”菜单”.方便我们进行快速的调试。</li><li>这时候真机连接上数据线.或者开启模拟器就能在菜单栏”开发”选项中找到我们的设备或者是模拟器.</li><li>接下来我们只需要跑起我们的工程进入对应的WebView页面即可进行调试.</li></ol>]]></content>
     
@@ -44,9 +71,9 @@
     <link href="https://huos3203.github.io/2018/08/23/swift/RxSwift%E5%87%BD%E6%95%B0%E5%93%8D%E5%BA%94%E5%BC%8F%E5%BC%80%E5%8F%91/"/>
     <id>https://huos3203.github.io/2018/08/23/swift/RxSwift函数响应式开发/</id>
     <published>2018-08-23T09:56:38.000Z</published>
-    <updated>2018-08-23T13:34:25.000Z</updated>
+    <updated>2018-08-24T12:01:34.000Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><!--github库卡片--><div id="badge-container-beeth0ven-RxSwift-Chinese-Documentation-cbbc87e" class="hexo-github" style="width: ="></div><script src="/hexo-github/badge.js"></script><script type="text/javascript">  loadStyle("/hexo-github/style.css");  loadStyle("/hexo-github/octicons/octicons.css");  new Badge("#badge-container-beeth0ven-RxSwift-Chinese-Documentation-cbbc87e", "beeth0ven", "RxSwift-Chinese-Documentation", "cbbc87e", false);</script><h1 id="RxSwift学习"><a href="#RxSwift学习" class="headerlink" title="RxSwift学习"></a>RxSwift学习</h1><p><a href="https://beeth0ven.github.io/RxSwift-Chinese-Documentation/" target="_blank" rel="noopener">RxSwift 中文文档</a></p><h1 id="更多示例"><a href="#更多示例" class="headerlink" title="更多示例"></a>更多示例</h1><table style="width:100%"><br><tr><br><td><img src="https://beeth0ven.github.io/RxSwift-Chinese-Documentation/assets/MoreDemo/ImagePicker/ImagePickerFull.gif"></td><br><td><img src="https://beeth0ven.github.io/RxSwift-Chinese-Documentation/assets/MoreDemo/TableViewSectionedViewController/TableViewSectionedViewControllerFull.png"></td><br><td><img src="https://beeth0ven.github.io/RxSwift-Chinese-Documentation/assets/MoreDemo/Calculator/CalculatorFull.gif"></td><br></tr><br></table><p><a href="https://github.com/ReactiveX/RxSwift/tree/master/RxExample/RxExample/Examples" target="_blank" rel="noopener">RxExample</a> 中包含许多具有代表性的示例。它们都是<strong>很好的学习材料</strong>。这里我们取出其中几个示例来展示如何应用 <strong>RxSwift</strong> ：</p><ul><li><p><strong><a href="more_demo/image_picker.md">ImagePicker</a> - 图片选择器</strong></p></li><li><p><strong><a href="more_demo/tableView_sectioned_viewController.md">TableViewSectionedViewController</a> - 多层级的列表页</strong></p></li><li><p><strong><a href="more_demo/calculator.md">Calculator</a> - 计算器</strong></p></li></ul><p>有兴趣的同学还可以研究一下 <a href="https://github.com/ReactiveX/RxSwift/tree/master/RxExample/RxExample/Examples" target="_blank" rel="noopener">RxExample</a> 中其他的示例。</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><!--github库卡片--><div id="badge-container-beeth0ven-RxSwift-Chinese-Documentation-cbbc87e" class="hexo-github" style="width: ="></div><script src="/hexo-github/badge.js"></script><script type="text/javascript">  loadStyle("/hexo-github/style.css");  loadStyle("/hexo-github/octicons/octicons.css");  new Badge("#badge-container-beeth0ven-RxSwift-Chinese-Documentation-cbbc87e", "beeth0ven", "RxSwift-Chinese-Documentation", "cbbc87e", false);</script><h1 id="RxSwift学习"><a href="#RxSwift学习" class="headerlink" title="RxSwift学习"></a>RxSwift学习</h1><p><a href="https://beeth0ven.github.io/RxSwift-Chinese-Documentation/" target="_blank" rel="noopener">RxSwift 中文文档</a></p><h1 id="更多示例"><a href="#更多示例" class="headerlink" title="更多示例"></a>更多示例</h1><table style="width:100%"><br><tr><br><td><img src="https://beeth0ven.github.io/RxSwift-Chinese-Documentation/assets/MoreDemo/ImagePicker/ImagePickerFull.gif"></td><br><td><img src="https://beeth0ven.github.io/RxSwift-Chinese-Documentation/assets/MoreDemo/TableViewSectionedViewController/TableViewSectionedViewControllerFull.png"></td><br><td><img src="https://beeth0ven.github.io/RxSwift-Chinese-Documentation/assets/MoreDemo/Calculator/CalculatorFull.gif"></td><br></tr><br></table><p><a href="https://github.com/ReactiveX/RxSwift/tree/master/RxExample/RxExample/Examples" target="_blank" rel="noopener">RxExample</a> 中包含许多具有代表性的示例。它们都是<strong>很好的学习材料</strong>。这里我们取出其中几个示例来展示如何应用 <strong>RxSwift</strong> ：<br>演示RxExample的两种方式</p><ol><li>clone库，在根目录执行：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open Rx.xcworkspace</span><br></pre></td></tr></table></figure></li></ol><p>然后，选择想要演示的schemes (RxExample-iOS, RxExample-OSX) and hit Run。</p><ol><li>使用pod工具创建RxExample项目<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod try RxSwift</span><br></pre></td></tr></table></figure></li></ol><ul><li><p><strong><a href="more_demo/image_picker.md">ImagePicker</a> - 图片选择器</strong></p></li><li><p><strong><a href="more_demo/tableView_sectioned_viewController.md">TableViewSectionedViewController</a> - 多层级的列表页</strong></p></li><li><p><strong><a href="more_demo/calculator.md">Calculator</a> - 计算器</strong></p></li></ul><p>有兴趣的同学还可以研究一下 <a href="https://github.com/ReactiveX/RxSwift/tree/master/RxExample/RxExample/Examples" target="_blank" rel="noopener">RxExample</a> 中其他的示例。</p>]]></content>
     
     <summary type="html">
     
@@ -453,29 +480,6 @@
     </summary>
     
       <category term="iOS" scheme="https://huos3203.github.io/categories/iOS/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>MacOS系统下运行exe小程序</title>
-    <link href="https://huos3203.github.io/2018/06/20/macOS/MacOS%E7%B3%BB%E7%BB%9F%E4%B8%8B%E8%BF%90%E8%A1%8Cexe%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    <id>https://huos3203.github.io/2018/06/20/macOS/MacOS系统下运行exe小程序/</id>
-    <published>2018-06-19T18:09:18.000Z</published>
-    <updated>2018-06-19T19:44:09.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h3 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h3><p>例如，当急需在Mac系统上，安装abletonLive，涉及到破解机exe小程序，使用文中提到的两种方法，就解了燃眉之急。</p><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p><a href="http://xiazai.crossoverchina.com/trial/Mac/crossover_mac_17.5.5.zip" target="_blank" rel="noopener">crossover</a></p><h3 id="Wrappe-k-小应用"><a href="#Wrappe-k-小应用" class="headerlink" title="Wrappe[k]小应用"></a>Wrappe[k]小应用</h3><p>这款软件适用于一些小型exe程序，其他，推荐方法一<br><a href="https://pan.baidu.com/s/1ujHKuXNr8G6m8PTPMO9ajQ" target="_blank" rel="noopener">下载</a> 密码: khqa<br><a href="http://www.sdifen.com/mac-exe.html" target="_blank" rel="noopener">参看</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
-      
-    
-    </summary>
-    
-      <category term="macOS" scheme="https://huos3203.github.io/categories/macOS/"/>
     
     
   </entry>
