@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huos3203.github.io/"/>
-  <updated>2018-08-31T16:58:22.000Z</updated>
+  <updated>2018-09-03T15:01:52.000Z</updated>
   <id>https://huos3203.github.io/</id>
   
   <author>
@@ -17,13 +17,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Thisdeviceisnotcurrentlyonline</title>
-    <link href="https://huos3203.github.io/2018/09/01/%E8%B0%83%E8%AF%95/Thisdeviceisnotcurrentlyonline/"/>
-    <id>https://huos3203.github.io/2018/09/01/调试/Thisdeviceisnotcurrentlyonline/</id>
-    <published>2018-08-31T16:58:22.000Z</published>
-    <updated>2018-08-31T16:58:22.000Z</updated>
+    <title>习惯三要事第一自我管理原则</title>
+    <link href="https://huos3203.github.io/2018/09/03/%E9%98%85%E8%AF%BB/%E4%B9%A0%E6%83%AF%E4%B8%89%E8%A6%81%E4%BA%8B%E7%AC%AC%E4%B8%80%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86%E5%8E%9F%E5%88%99/"/>
+    <id>https://huos3203.github.io/2018/09/03/阅读/习惯三要事第一自我管理原则/</id>
+    <published>2018-09-03T15:01:52.000Z</published>
+    <updated>2018-09-03T15:01:52.000Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p><a href="https://forums.developer.apple.com/thread/16242" target="_blank" rel="noopener">参考</a></p><ol><li>you can restart your device!  then connect your device  to your mac-&gt;open Xcode-&gt;press command + i</li></ol><p>I’ve encountered this issue today. The record button is disabled and the tooltip says “This device is not currently online”. However my iPhone is connecting with my Mac and can be debugged with Xcode without any problem.</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h3 id="1）我的时间是怎样度过的"><a href="#1）我的时间是怎样度过的" class="headerlink" title="1）我的时间是怎样度过的"></a>1）我的时间是怎样度过的</h3><p>1.很不同意2.不同意3.略不同意4.略微同意5.同意6.很同意</p><table><thead><tr><th style="text-align:left">问题</th><th style="text-align:left">态度</th></tr></thead><tbody><tr><td style="text-align:left">1.我花了很多时间在重要而且需要立刻关注的活动上，例如危机、紧迫问题、截止日期即将到期的项目。</td><td style="text-align:left">打分</td></tr><tr><td style="text-align:left">2.我觉得总是到处救火，不断处理危机</td><td style="text-align:left">打分</td></tr><tr><td style="text-align:left">3.我觉得自己浪费了好多时间。</td><td style="text-align:left">打分</td></tr><tr><td style="text-align:left">4.我花了很多时间在虽然紧迫但与我的最高优先毫无关系的事情上（诸如无端的干扰、不重要的会议，、非紧急的电话和电子邮件）</td><td style="text-align:left">打分</td></tr><tr><td style="text-align:left">5.我花了很多时间在重要但不紧迫的事务上，例如做计划、准备、防范、改善人际关系、恢复和休整</td><td style="text-align:left">打分</td></tr><tr><td style="text-align:left">6.我花了很多时间在繁忙的工作、强制性习惯、垃圾邮件、过多的电视节目、琐事和玩游戏上。</td><td style="text-align:left">打分</td></tr><tr><td style="text-align:left">7.我觉得由于防范得当、精心准备和周密计划，一切由我掌控。</td><td style="text-align:left">打分</td></tr><tr><td style="text-align:left">8.我觉得自己总是在处理对他人重要、但却对自己不重要的事情。</td><td style="text-align:left">打分</td></tr></tbody></table><p>以上表格的设计，是用来帮你快速评估自己花费在时间矩阵的每个象限中的时间和精力各有多少。对于上面的8个问题圈出你的反应，从1到6.<br>得分操作指南：</p><ol><li>对于这8个问题圈出相应于你的反应的数字，从1到6.</li><li>把你在每个象限中的得分相加。</li><li>在每个象限中用阴影涂画出四分之一圆，其中半径等于你在该象限的得分。</li></ol>]]></content>
     
     <summary type="html">
     
@@ -34,7 +34,99 @@
     
     </summary>
     
-      <category term="调试" scheme="https://huos3203.github.io/categories/%E8%B0%83%E8%AF%95/"/>
+      <category term="阅读" scheme="https://huos3203.github.io/categories/%E9%98%85%E8%AF%BB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>习惯二以终为始自我领导原则</title>
+    <link href="https://huos3203.github.io/2018/09/03/%E9%98%85%E8%AF%BB/%E4%B9%A0%E6%83%AF%E4%BA%8C%E4%BB%A5%E7%BB%88%E4%B8%BA%E5%A7%8B%E8%87%AA%E6%88%91%E9%A2%86%E5%AF%BC%E5%8E%9F%E5%88%99/"/>
+    <id>https://huos3203.github.io/2018/09/03/阅读/习惯二以终为始自我领导原则/</id>
+    <published>2018-09-03T14:26:21.000Z</published>
+    <updated>2018-09-03T15:01:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>把你做本章开篇的参加葬礼心灵演练时的新的列表整理下来。</p><hr><h3 id="1）检查你的愿景"><a href="#1）检查你的愿景" class="headerlink" title="1）检查你的愿景"></a>1）检查你的愿景</h3><p>现在是时候了，让我们对自己的愿景作一次检查。花一分钟思考下述问题，写下你的想法。我现在的生活状况如何？它是否让我快乐？我是否有成就感？</p><hr><p>是什么在一直吸引着我？它是否与我目前正在做的事情有所不同？</p><hr><p>我少年时想做的是什么？这些事情仍然给我带来满足感吗？我目前是在做着其中的一些事情吗？</p><hr><p>目前最让我感兴趣的是什么？</p><hr><p>最让我的灵魂感到满足的是什么？</p><hr><p>我做什么事情最擅长？我的显著特点和优势是什么？</p><hr><h3 id="2）制定一份个人使命宣言"><a href="#2）制定一份个人使命宣言" class="headerlink" title="2）制定一份个人使命宣言"></a>2）制定一份个人使命宣言</h3><p>为了帮你制定自己的使命宣言，下面列出制定过程的六个步骤。</p><h4 id="步骤1：开动脑筋畅想"><a href="#步骤1：开动脑筋畅想" class="headerlink" title="步骤1：开动脑筋畅想"></a>步骤1：开动脑筋畅想</h4><p>将你对下面三个问题的回答一口气写下来，不要停顿。这是自由发挥。如果你想到了一个观点，别太在意用词和语法，只管不停地写下去。记住，你只是在畅想，不是定稿，目的是把自己的想法写在纸上。在每个问题上花2-3分钟。<br>1．标识一个对你有影响的人。确定一个对你的生活有积极影响的人。你最赞赏这个人的什么品质？你从这个人那里学到了什么品质？</p><hr><p>2．详细说明你想成为怎样的人。<br>设想现在已是20年后，你已经达成了自己所希望的所有成就。你的成就清单是什么？你想拥有什么？你想成为怎样的人？你想成就怎样的事业？</p><hr><p>3．请确定，目前对你最重要的是什么？</p><hr><h4 id="步骤2：放松一下"><a href="#步骤2：放松一下" class="headerlink" title="步骤2：放松一下"></a>步骤2：放松一下</h4><p>现在深呼吸一下，然后放松下来。把你写的放在一边，走开几分钟。</p><h4 id="步骤3：整理你的思绪"><a href="#步骤3：整理你的思绪" class="headerlink" title="步骤3：整理你的思绪"></a>步骤3：整理你的思绪</h4><p>回顾你所写的，圈出你想列入自己使命宣言的关键想法、语句和词语。</p><h4 id="步骤4：写出初稿"><a href="#步骤4：写出初稿" class="headerlink" title="步骤4：写出初稿"></a>步骤4：写出初稿</h4><p>现在是写出你的初稿的时候了。前文已经列举了几个使命宣言的范本，以助于你思考。一周内随身带着这个初稿，每天写下备注或根据需要加以增删。也许每天或每两天你都想重写一份初稿。这是一个不断进行的过程。你的使命宣言将随着时间而不断修改。现在，花一点时间写出你的使命宣言初稿。</p><p>使命宣言初稿</p><hr><h4 id="步骤5：完成你的使命宣言"><a href="#步骤5：完成你的使命宣言" class="headerlink" title="步骤5：完成你的使命宣言"></a>步骤5：完成你的使命宣言</h4><p>周末写出你的使命宣言的定稿，放在一个便于随时翻阅的地方。</p><p>我的使命宣言</p><hr><h4 id="步骤6：定期检查并加以评估"><a href="#步骤6：定期检查并加以评估" class="headerlink" title="步骤6：定期检查并加以评估"></a>步骤6：定期检查并加以评估</h4><p>每个月问自己下列问题：<br>●我是否觉得这个使命宣言代表了最佳的自我？<br>●当我回顾这个使命宣言的时候是否感到有了方向、目标、挑战和动力？<br>●我的生活是否遵从了这个使命宣言中的理想和价值观？</p><h3 id="3）你的角色"><a href="#3）你的角色" class="headerlink" title="3）你的角色"></a>3）你的角色</h3><p>既然你已有了逐步进展中的个人使命宣言初稿，重要的是考虑你在生活中的角色和目标，以及它们与你的使命宣言有着怎样的关系。</p><hr><p>在下页的空白处写下你的各个角色。别太在意一次把它们弄正确。只要写下你觉得正确的就行。尝试把列出的角色限制在七个以内。如果超过了七个，可以把若干职能归并为一个。在写下的角色旁边描述一下，你认为自己可能在该角色领域做出的最理想的业绩。<br>例如：<br>艺术家、护理者、同伴、指导者、激励者、朋友、祖父母、发明家、邻居、调解者、儿子、教师、训练员、志愿者、作家</p><table><thead><tr><th style="text-align:left">角色</th><th style="text-align:left">在角色领域的最理想的业绩</th></tr></thead><tbody><tr><td style="text-align:left">志愿者</td><td style="text-align:left">在儿童中心服务两个小时</td></tr><tr><td style="text-align:left"></td><td style="text-align:left"></td></tr><tr><td style="text-align:left"></td><td style="text-align:left"></td></tr><tr><td style="text-align:left"></td><td style="text-align:left"></td></tr><tr><td style="text-align:left"></td><td style="text-align:left"></td></tr><tr><td style="text-align:left"></td></tr></tbody></table><h3 id="4）你的生活中心"><a href="#4）你的生活中心" class="headerlink" title="4）你的生活中心"></a>4）你的生活中心</h3><p>阅读本书附录一所列的各种生活中心，看看你的行为符合其中哪个类型？他们是否让你的日常行为有一定依据？你是否满意？</p><hr><h3 id="5）告诉你自己怎么做"><a href="#5）告诉你自己怎么做" class="headerlink" title="5）告诉你自己怎么做"></a>5）告诉你自己怎么做</h3><p>设想近期内可能会从事的某个项目，用智力创造的原则，写下你的希望获得的结果与应采取的步骤。</p><hr><p>向家人或者同事讲述本章的精华，并建议大家共同拟定家庭或者团队的使用宣言。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
+      
+    
+    </summary>
+    
+      <category term="阅读" scheme="https://huos3203.github.io/categories/%E9%98%85%E8%AF%BB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>习惯一积极主动个人愿景原则</title>
+    <link href="https://huos3203.github.io/2018/09/03/%E9%98%85%E8%AF%BB/%E4%B9%A0%E6%83%AF%E4%B8%80%E7%A7%AF%E6%9E%81%E4%B8%BB%E5%8A%A8%E4%B8%AA%E4%BA%BA%E6%84%BF%E6%99%AF%E5%8E%9F%E5%88%99/"/>
+    <id>https://huos3203.github.io/2018/09/03/阅读/习惯一积极主动个人愿景原则/</id>
+    <published>2018-09-03T13:53:19.000Z</published>
+    <updated>2018-09-03T15:01:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h3 id="1）多培养积极主动性"><a href="#1）多培养积极主动性" class="headerlink" title="1）多培养积极主动性"></a>1）多培养积极主动性</h3><p>积极的人使用积极的语言：“我能”、“我要”、“我宁愿”等等。消极的人使用消极的语言：“但愿”、“我办不到”、“我不得不”、“要是”。<br>想想过去几周内自己以消极方式做出回应的两三件事情。<br>描述一下自己是怎么说的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1．____________________________</span><br><span class="line">2．____________________________</span><br><span class="line">3．____________________________</span><br></pre></td></tr></table></figure></p><p>现在，想想在同样情况下自己可以采取的几种积极的回应。请写在下面。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1．____________________________</span><br><span class="line">2．____________________________</span><br><span class="line">3．____________________________</span><br></pre></td></tr></table></figure></p><p>请记住，在下周仔细倾听自己使用的语言，你的语言是更积极了，还是更消极了？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">______________________________</span><br></pre></td></tr></table></figure></p><h3 id="2）你的圈子有多大"><a href="#2）你的圈子有多大" class="headerlink" title="2）你的圈子有多大"></a>2）你的圈子有多大</h3><p>写下你在本周内所面临的各种挑战和问题。它们分别归入哪个圈子？你的瞬间回应又是什么？  </p><table><thead><tr><th style="text-align:center"></th><th style="text-align:center">挑战/问题</th><th style="text-align:center">圈子</th><th style="text-align:center">回应</th></tr></thead><tbody><tr><td style="text-align:center"></td><td style="text-align:center">_交通拥堵</td><td style="text-align:center">关注圈</td><td style="text-align:center">愤怒、咒骂</td></tr><tr><td style="text-align:center">_</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center">_</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center">_</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center">_</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center">_</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center">_</td><td style="text-align:center"></td><td style="text-align:center"></td></tr></tbody></table><p>你需要设法让自己的影响圈逐步扩大。这两个圈子中，从每个圈子选一个你本来打算在下周做出应对的挑战。你将怎样改变自己的回应以更有效地应对该挑战？<br>1．影响圈<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_________________________________</span><br></pre></td></tr></table></figure></p><p>2．关注圈</p><hr><h3 id="3）采取主动"><a href="#3）采取主动" class="headerlink" title="3）采取主动"></a>3）采取主动</h3><p>找出一个在工作或生活中令你备感挫折的问题，判断它属于直接控制、间接控制还是无法控制的问题，然后在影响圈内找出解决问题的第一个步骤，并付诸行动。</p><hr><p>试行“积极主动”的原则30天，写下自己的影响圈有何变化？</p><hr><p>你是否有什么事情一直想做，但又觉得缺乏天赋、时间或能力？为了克服自己的弱点，你应当做些什么呢？作为一周伊始，你又能在本周做一件什么事呢？</p><hr><p>如果你能开发自己的一项新的才能，你想要什么？</p><hr><p>如果你能到世界任何一个地方去旅行，你想去哪里？</p><hr><p>如果你能改变自己生活中的某件事情，你想改变哪一件？</p><hr><p>制定让你实现上面三个愿望（对三个问题的回答）的计划，把它写下来。</p><hr>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
+      
+    
+    </summary>
+    
+      <category term="阅读" scheme="https://huos3203.github.io/categories/%E9%98%85%E8%AF%BB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>七个习惯题一</title>
+    <link href="https://huos3203.github.io/2018/09/03/%E9%98%85%E8%AF%BB/%E4%B8%83%E4%B8%AA%E4%B9%A0%E6%83%AF%E9%A2%98%E4%B8%80/"/>
+    <id>https://huos3203.github.io/2018/09/03/阅读/七个习惯题一/</id>
+    <published>2018-09-03T10:11:38.000Z</published>
+    <updated>2018-09-03T15:01:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="由内而外全面造就自己"><a href="#由内而外全面造就自己" class="headerlink" title="由内而外全面造就自己"></a>由内而外全面造就自己</h2><p>你是否有过这种经验，做出推测时发现自己的判断过于匆忙？请对这种经验加以描述。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答:</span><br></pre></td></tr></table></figure></p><p>你当时做出的推测是什么？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答:</span><br></pre></td></tr></table></figure></p><p>想一下你做过的其他推测。本周你将对其中某一项采取什么行动？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答:</span><br></pre></td></tr></table></figure></p><h3 id="1）检验你的思维定式"><a href="#1）检验你的思维定式" class="headerlink" title="1）检验你的思维定式"></a>1）检验你的思维定式</h3><p>你曾经到过其他国家，或本国其他地区吗？你觉得哪些事情是陌生的或奇怪的？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答:</span><br></pre></td></tr></table></figure></p><p>人们的行为是否如你预期？你对他们的行为有何看法？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答:</span><br></pre></td></tr></table></figure></p><p>回想你的旅游经验，你认为当地人对你的看法如何？你是否认为他们对你的看法与你对他们的看法可能很类似？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答:</span><br></pre></td></tr></table></figure></p><p>如果你有机会在旅途中认识当地人，你对他们的看法或推测会有什么改变？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答:</span><br></pre></td></tr></table></figure></p><h3 id="2）转换你的思维定式"><a href="#2）转换你的思维定式" class="headerlink" title="2）转换你的思维定式"></a>2）转换你的思维定式</h3><p>回想一下通往你的工作场所或你的家的不同途径。是否有些途径比其他的更复杂？是否有时其中一条比其他的更方便？为什么方便，为什么不方便？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答:</span><br></pre></td></tr></table></figure></p><p>你是否发现过一条你以前不知道的新途径？走不同途径的新鲜感又是什么？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答:</span><br></pre></td></tr></table></figure></p><p>现在想一下你与他人打交道的方式。与他们打交道是否有好几种途径？你还有可能会尝试哪些新的方式？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答:</span><br></pre></td></tr></table></figure></p><h3 id="3）影响你生活的五个原则"><a href="#3）影响你生活的五个原则" class="headerlink" title="3）影响你生活的五个原则"></a>3）影响你生活的五个原则</h3><p>请列出影响你的日常生活的五个原则。它们以怎样的方式影响你？它们是以积极的，还是消极的方式影响你的生活？</p><ol><li><hr></li><li><hr></li><li><hr></li><li><hr></li><li><hr></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
+      
+    
+    </summary>
+    
+      <category term="阅读" scheme="https://huos3203.github.io/categories/%E9%98%85%E8%AF%BB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>七个习惯题二</title>
+    <link href="https://huos3203.github.io/2018/09/03/%E9%98%85%E8%AF%BB/%E4%B8%83%E4%B8%AA%E4%B9%A0%E6%83%AF%E9%A2%98%E4%BA%8C/"/>
+    <id>https://huos3203.github.io/2018/09/03/阅读/七个习惯题二/</id>
+    <published>2018-09-03T10:11:38.000Z</published>
+    <updated>2018-09-03T15:01:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="七个习惯概论"><a href="#七个习惯概论" class="headerlink" title="七个习惯概论"></a>七个习惯概论</h2><p><img src="http://www.plantuml.com/plantuml/svg/VL9BJW914DttAIPnpy8Jw1My0H6Y2w89ahWGa-ONnc4S_E3mKHp5A0hgO1m1fqNl8bqzpSehMCq8OUMkg-kzL-zLzyfEAffCxKGJARAtH2RTcZZJPMx4VHzkkbfQuoDhyORmzokHS_cGag3jYiiC7p8mxiSqkrW6ZJp20zRamqFnLe1UKtxcnLCBOPpPd3q6pkqaSohl4E_BOWS6BqWHne4eFKZFaTxDpuUP5dqT5MMh6mu8or1QwUQ__Y4Jo3IWw6DZGbL3K2PgBZW-zosm7D3hS69oDW3w8TjP94XgAj4PHkGA0Ui8tOPoTL8_KgpZUpZtHFEQi_uyRkX6iSerC6qi8ViOL1n92uZ1zP4mRpXUjW_WinfQddAgyFoAq6zQKMUz5yu8B1TQkJ7DpCF9ho9OREhOLel5k2KxyDpvFfLrm_Z3NvJuw0BrqOVmcB8uPCX2C8ca8uJCtj0toThshhOPZyRYIMqPtQvgYUsj3MqzdaYGVR8ItugfZ_4B"></p><table><thead><tr><th>高效能人士</th><th>低效能人士</th></tr></thead><tbody><tr><td><strong>习惯一：积极主动</strong></td><td></td></tr><tr><td><b>积极主动</b><br>积极主动的人绝不浅尝辄止。他们知道要为自己的抉择负责，做出的选择总是基于原则和价值观，而不是基于情绪或受限于周围条件。积极的人是变化的催生者。</td><td><b>消极被动</b><br>消极的人不愿为自己的抉择负责，他们总是觉得自己是受害者—受到周围环境、自己的过去和他人的拖累。他们不把自己看作是生活的主人。</td></tr><tr><td><strong>习惯二：以终为始</strong></td><td></td></tr><tr><td><strong>以终为始（先定目标后有行动）</strong><br>个人、家庭、团队、组织通过创造性的构思来设计自己的未来，他们对于任何项目，无论大小，也不管是个人的还是团队的，都下决心完成。他们标识并献身于自己生活中最重要的原则、人际关系和目标。</td><td><strong>不定目标就行动</strong><br>他们缺乏个人愿景，没有目标。他们不思考生活的意义，也不愿制定使命宣言。他们的生活总是遵循社会流行的、而不是自己选择的价值观。</td></tr><tr><td><strong>习惯三：要事第一</strong></td><td></td></tr><tr><td><strong>要事第一</strong> <br>以要事为先的人总是按照事务重要性的顺序来安排生活并付诸实践。无论情势如何，他们的生活总是遵循自己最珍视的原则。</td><td><strong>不重要的事先做</strong><br>他们总是在应付各种危机。他们之所以无法关注最重要的事务，是因为他们总是纠缠于周围环境、过去的事情或人间是非。他们陷入成堆的琐事，被紧迫的事务弄得团团转。</td></tr><tr><td><strong>习惯四：双赢思维</strong></td><td></td></tr><tr><td><strong>双赢思维</strong><br>有双赢思维的人能在交往中寻求双方获利、互相尊重。他们基于到处是机遇和富足的心态，基于“我们”而不是“我”，来进行思考。他们总是通过向感情账户存款来建立与他人的互信关系。</td><td><strong>非赢即输</strong><br>他们抱的是匮乏心态，把生活看作是一场零和游戏。他们不善与他人沟通，总是从感情账户提款，结果是时时提防他人，陷入对抗的心理。</td></tr><tr><td><strong>习惯五：知彼解己</strong></td><td></td></tr><tr><td><strong>知彼解己（先理解别人，再争取别人的理解）</strong> <br>当我们怀着理解对方的想法，而不是为了回答对方的问题去聆听时，我们就能进行真正的沟通并建立友谊。这时再坦述己见、争取理解就很自然，也容易多了。理解别人需要的是体谅，而争取别人理解需要的是勇气。效能在于这二者的平衡或适当的结合。</td><td><strong>先寻求别人的理解</strong> <br>他们并未理解对方就先讲述自己的观点，完全基于自己的经验或动机。他们不先对问题做出诊断就盲目开出处方。</td></tr><tr><td><strong>习惯六：统合综效</strong></td><td></td></tr><tr><td><strong>统合综效</strong><br>统合综效的人与对方合作，寻求第三变通方案。不是我的，也不是你的，而是第三种更好的解决方案。统合综效的基础是尊重、赞赏甚至庆贺彼此间的差异。它是某种创造性的合作，1＋1＝3，11，111，或者更多。</td><td><strong>妥协、争斗或逃避</strong> <br>低效能人士相信总体小于部分之和。他们试图在自己的形象中克隆他人。他们把自己与他人的差异看作威胁。</td></tr><tr><td><strong>习惯七：不断更新</strong></td><td></td></tr><tr><td><strong>不断更新（磨刀不误砍柴工）</strong> <br>高效能人士不断在生活的四个方面（身体、社会／情感、智力、精神）更新自己。这将增加他们实践其他有效习惯的能力。</td><td><strong>把自己累得筋疲力尽</strong><br>低效能人士没有自我更新、自我改善的规划，最终失去了过去所拥有的锋利刀刃（竞争力）。</td></tr></tbody></table><h3 id="1）在七个习惯上给自己评分"><a href="#1）在七个习惯上给自己评分" class="headerlink" title="1）在七个习惯上给自己评分"></a>1）在七个习惯上给自己评分</h3><p>这个评估能帮你了解自己在实践七个习惯方面的现状。为了了解自己的进步，你可以在读完本书后重新进行一次评估。<br>仔细阅读下列表格中的每句话，利用自己的最佳判断，圈出标识自己在每个习惯方面做得如何的数字（1表示极差，而6表示杰出）。</p><table><thead><tr><th style="text-align:center">七个习惯上的评分</th></tr></thead><tbody><tr><td style="text-align:center"></td></tr></tbody></table><table><thead><tr><th style="text-align:left">感情账户</th><th style="text-align:left"></th></tr></thead><tbody><tr><td style="text-align:left">1. 待人和蔼，体谅对方<br>2.我信守诺言<br>3. 我不在别人背后说他坏话。</td><td style="text-align:left">评分：<br><br>评分：<br><br>评分：</td></tr><tr><td style="text-align:left">产出/产能平衡</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">4. 我能在生活的各个方面（家庭、朋友、工作等）保持适当的平衡<br>5.当我致力于某个项目时，总是想着业主的需求和厉害关系。<br>6. 我努力工作，但绝不把自己累的精疲力尽。</td><td style="text-align:left">评分：<br><br>评分：<br><br>评分：</td></tr><tr><td style="text-align:left"><strong>习惯一：积极主动</strong></td><td style="text-align:left"></td></tr><tr><td style="text-align:left">7. 我能掌控自己的生活<br>8. 我把关注集中于我能有所作为的事情上，而不是集中在我无法控制的事件上。<br>9. 我敢于为自己的情绪负责，而不是埋怨环境、责备他人。</td><td style="text-align:left">评分：<br><br>评分：<br><br>评分：</td></tr><tr><td style="text-align:left"><strong>习惯二：以终为始</strong></td><td style="text-align:left"></td></tr><tr><td style="text-align:left">10. 我明白自己在生活中的追求什么。<br>11. 我的生活和工作井然有序，很少陷入危急态势。<br>12.我每周都有一个清晰的计划，注明我想完成的事情</td><td style="text-align:left">评分：<br><br>评分：<br><br>评分：</td></tr><tr><td style="text-align:left"><strong>习惯三：要事第一</strong></td><td style="text-align:left"></td></tr><tr><td style="text-align:left">13.我致力于完成自己的计划（避免延误、浪费时间等等）。<br>14. 我不让日常琐事埋没了真正重要的事务。<br>15. 我每天做的事情都是有意义的，有助于实现我的生活目标。</td><td style="text-align:left">评分：<br><br>评分：<br><br>评分：</td></tr><tr><td style="text-align:left"><strong>习惯四：双赢思维</strong></td><td style="text-align:left"></td></tr><tr><td style="text-align:left">16. 我关心别人的成功，就像关心自己的成功一样。<br>17. 我能与别人合作。<br>18. 遇到矛盾时，我努力寻求有利于各方的解决方案。</td><td style="text-align:left">评分：<br><br>评分：<br><br>评分：</td></tr><tr><td style="text-align:left"><strong>习惯五：知彼知己</strong></td><td style="text-align:left"></td></tr><tr><td style="text-align:left">19. 我对他人的感觉也很敏感。<br>20. 我尽力理解对方的观点。<br>21. 倾听时，我试图从对方的角度，而不仅从自己的角度来观察问题。</td><td style="text-align:left">评分：<br><br>评分：<br><br>评分：</td></tr><tr><td style="text-align:left"><strong>习惯六：统合综效</strong></td><td style="text-align:left"></td></tr><tr><td style="text-align:left">22. 我赞赏并力图了解他人的见解。<br>23. 我竭力寻求新的、更好的想法和解决方案。<br>24. 我鼓励他人表达他们的观点</td><td style="text-align:left">评分：<br><br>评分：<br><br>评分：</td></tr><tr><td style="text-align:left"><strong>习惯七：不断更新</strong></td><td style="text-align:left"></td></tr><tr><td style="text-align:left">25.我真系自己的身体和健康。<br>26.我努力建立并改善与他人的关系。<br>27. 我肯花时间追求生活的意义和乐趣。</td><td style="text-align:left">评分：<br><br>评分：<br><br>评分：</td></tr></tbody></table><h3 id="你的习惯"><a href="#你的习惯" class="headerlink" title="你的习惯"></a>你的习惯</h3><p><code>习惯</code>是知识、技巧和意愿的交叉点。<br><code>知识</code>是做什么和为何做，<code>技巧</code>是如何做，而<code>意愿</code>是动力——想做。所有这三者必须集合在一起才能形成一个习惯。<br>请列出你的两个习惯，一个好习惯，一个坏习惯。并写出关联于这两个习惯的知识、技巧和意愿。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p><p>习惯有巨大的引力——比大多数人认识到的或愿意承认的还要大。打破一个根深蒂固的习惯需要做出极大的努力，而且一般还会涉及生活的重大变化。<br>看看你写下的坏习惯。你愿意为了打破这个坏习惯做出一切必要的努力吗？若是，请写下三件为了打破这个习惯你将着手做的事情。请记录下你的进步过程。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1．</span><br><span class="line">2．</span><br><span class="line">3．</span><br></pre></td></tr></table></figure></p><p>看一下图2-2七个习惯模型，你位于何处？花几分钟记录下你的现状及其原因。你的什么行为和态度让你处于目前这种状况？你开始看到自己最需要在哪方面做出努力了吗？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
+      
+    
+    </summary>
+    
+      <category term="阅读" scheme="https://huos3203.github.io/categories/%E9%98%85%E8%AF%BB/"/>
     
     
   </entry>
@@ -58,6 +150,29 @@
     </summary>
     
       <category term="个人项目" scheme="https://huos3203.github.io/categories/%E4%B8%AA%E4%BA%BA%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Thisdeviceisnotcurrentlyonline</title>
+    <link href="https://huos3203.github.io/2018/09/01/%E8%B0%83%E8%AF%95/Thisdeviceisnotcurrentlyonline/"/>
+    <id>https://huos3203.github.io/2018/09/01/调试/Thisdeviceisnotcurrentlyonline/</id>
+    <published>2018-08-31T16:58:22.000Z</published>
+    <updated>2018-08-31T16:58:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p><a href="https://forums.developer.apple.com/thread/16242" target="_blank" rel="noopener">参考</a></p><ol><li>you can restart your device!  then connect your device  to your mac-&gt;open Xcode-&gt;press command + i</li></ol><p>I’ve encountered this issue today. The record button is disabled and the tooltip says “This device is not currently online”. However my iPhone is connecting with my Mac and can be debugged with Xcode without any problem.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
+      
+    
+    </summary>
+    
+      <category term="调试" scheme="https://huos3203.github.io/categories/%E8%B0%83%E8%AF%95/"/>
     
     
   </entry>
@@ -109,29 +224,6 @@
   </entry>
   
   <entry>
-    <title>解决Xcode代码高亮提示功能失效</title>
-    <link href="https://huos3203.github.io/2018/09/01/xcode/%E8%A7%A3%E5%86%B3Xcode%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE%E6%8F%90%E7%A4%BA%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/"/>
-    <id>https://huos3203.github.io/2018/09/01/xcode/解决Xcode代码高亮提示功能失效/</id>
-    <published>2018-08-31T16:20:20.000Z</published>
-    <updated>2018-08-31T16:40:53.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><ol><li>打开失效的项目，选择菜单：Xcode-&gt;File-&gt;Project Settings -&gt; Advanced..，<img src="http://p27uwfdhv.bkt.clouddn.com/static/images/137A80890FBC.png?imageMogr2/2/w/800"></li><li>删除图上所示的位置目录，重启xcode。<h3 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h3></li><li>cd进入~/Library/Developer/Xcode/DerivedData</li><li>找到你的项目所用的目录（一般以你的项目名开头）</li><li>cd 目录名</li><li>rm -r Index 删除掉你的项目所用的索引文件夹<h3 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h3></li><li>退出 Xcode</li><li>重启电脑</li><li>找到 这个 DerivedData 文件夹 删除 (路径: ~/Library/Developer/Xcode/DerivedData)</li><li>删除这个 com.apple.dt.Xcode 文件 (路径: ~/Library/Caches/com.apple.dt.Xcode)</li><li>运行 Xcode  就好了~~<blockquote><p>(1) 原文表示删除 ~/Library/Developer/Xcode/DerivedData下所有的文件，我尝试发现只需要删除当前项目相关的索引文件即可<br>(2)  DerivedData从字面上理解应该是收集到的数据，应该是Xcode针对这个项目缓存的一些数据，不会影响项目本身的完整性</p></blockquote></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
-      
-    
-    </summary>
-    
-      <category term="xcode" scheme="https://huos3203.github.io/categories/xcode/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>LLDB命令使用</title>
     <link href="https://huos3203.github.io/2018/09/01/%E8%B0%83%E8%AF%95/LLDB%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8/"/>
     <id>https://huos3203.github.io/2018/09/01/调试/LLDB命令使用/</id>
@@ -150,6 +242,29 @@
     </summary>
     
       <category term="调试" scheme="https://huos3203.github.io/categories/%E8%B0%83%E8%AF%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>解决Xcode代码高亮提示功能失效</title>
+    <link href="https://huos3203.github.io/2018/09/01/xcode/%E8%A7%A3%E5%86%B3Xcode%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE%E6%8F%90%E7%A4%BA%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/"/>
+    <id>https://huos3203.github.io/2018/09/01/xcode/解决Xcode代码高亮提示功能失效/</id>
+    <published>2018-08-31T16:20:20.000Z</published>
+    <updated>2018-08-31T16:40:53.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><ol><li>打开失效的项目，选择菜单：Xcode-&gt;File-&gt;Project Settings -&gt; Advanced..，<img src="http://p27uwfdhv.bkt.clouddn.com/static/images/137A80890FBC.png?imageMogr2/2/w/800"></li><li>删除图上所示的位置目录，重启xcode。<h3 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h3></li><li>cd进入~/Library/Developer/Xcode/DerivedData</li><li>找到你的项目所用的目录（一般以你的项目名开头）</li><li>cd 目录名</li><li>rm -r Index 删除掉你的项目所用的索引文件夹<h3 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h3></li><li>退出 Xcode</li><li>重启电脑</li><li>找到 这个 DerivedData 文件夹 删除 (路径: ~/Library/Developer/Xcode/DerivedData)</li><li>删除这个 com.apple.dt.Xcode 文件 (路径: ~/Library/Caches/com.apple.dt.Xcode)</li><li>运行 Xcode  就好了~~<blockquote><p>(1) 原文表示删除 ~/Library/Developer/Xcode/DerivedData下所有的文件，我尝试发现只需要删除当前项目相关的索引文件即可<br>(2)  DerivedData从字面上理解应该是收集到的数据，应该是Xcode针对这个项目缓存的一些数据，不会影响项目本身的完整性</p></blockquote></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
+      
+    
+    </summary>
+    
+      <category term="xcode" scheme="https://huos3203.github.io/categories/xcode/"/>
     
     
   </entry>
@@ -362,121 +477,6 @@
       <category term="&lt;#工具#&gt;" scheme="https://huos3203.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
     
       <category term="&lt;#管理#&gt;" scheme="https://huos3203.github.io/tags/%E7%AE%A1%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>iCompleteMe支持swift语法提示</title>
-    <link href="https://huos3203.github.io/2018/08/11/shell/iCompleteMe%E6%94%AF%E6%8C%81swift%E8%AF%AD%E6%B3%95%E6%8F%90%E7%A4%BA/"/>
-    <id>https://huos3203.github.io/2018/08/11/shell/iCompleteMe支持swift语法提示/</id>
-    <published>2018-08-10T16:40:19.000Z</published>
-    <updated>2018-08-10T18:42:08.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><!--github库卡片--><div id="badge-container-jerrymarino-iCompleteMe-ad0e1fe" class="hexo-github" style="width: ="></div><script src="/hexo-github/badge.js"></script><script type="text/javascript">  loadStyle("/hexo-github/style.css");  loadStyle("/hexo-github/octicons/octicons.css");  new Badge("#badge-container-jerrymarino-iCompleteMe-ad0e1fe", "jerrymarino", "iCompleteMe", "ad0e1fe", false);</script><p>iCompleteMe是基于YouCompleteMe。在花了一年多的时间试图实现对YouCompleteMe的快速支持之后，发现在YCM无法支持swift自动补齐。<br>iCompleteMe实现的行为对于Swift的补齐提示。iCompleteMe的核心子系统只与Swift一起工作。代码基占用的空间要小得多，这使得在CI上更容易安装、更容易理解和更稳定(理论上)。</p><h3 id="在space-vim中添加插件支持"><a href="#在space-vim中添加插件支持" class="headerlink" title="在space-vim中添加插件支持"></a>在space-vim中添加插件支持</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Plugin &apos;jerrymarino/iCompleteMe&apos;</span><br></pre></td></tr></table></figure><p>安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.vim/plugged/iCompleteMe/</span><br><span class="line">brew install cmake</span><br><span class="line">./install.py</span><br></pre></td></tr></table></figure></p><p>然后 <code>&lt;Leader&gt; f R</code> 使配置生效，并执行   <code>:PlugInstall</code>进行安装.</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
-      
-    
-    </summary>
-    
-      <category term="shell" scheme="https://huos3203.github.io/categories/shell/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>SwiftPlayground命令操作</title>
-    <link href="https://huos3203.github.io/2018/08/10/shell/SwiftPlayground%E5%91%BD%E4%BB%A4%E6%93%8D%E4%BD%9C/"/>
-    <id>https://huos3203.github.io/2018/08/10/shell/SwiftPlayground命令操作/</id>
-    <published>2018-08-10T15:50:21.000Z</published>
-    <updated>2018-08-10T18:42:08.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><!--github库卡片--><div id="badge-container-jerrymarino-SwiftPlayground.vim-f603700" class="hexo-github" style="width: ="></div><script src="/hexo-github/badge.js"></script><script type="text/javascript">  loadStyle("/hexo-github/style.css");  loadStyle("/hexo-github/octicons/octicons.css");  new Badge("#badge-container-jerrymarino-SwiftPlayground.vim-f603700", "jerrymarino", "SwiftPlayground.vim", "f603700", false);</script><h2 id="执行环境"><a href="#执行环境" class="headerlink" title="执行环境"></a>执行环境</h2><p>在playgrounds后缀的目录中执行swift文件</p><h2 id="熟悉vim快捷键用法"><a href="#熟悉vim快捷键用法" class="headerlink" title="熟悉vim快捷键用法"></a>熟悉vim快捷键用法</h2><p>空格 + fs 保存文件：此时插件会自动运行playgrounds，显示效果<br>shift + H ：行头<br>shift + L：行尾<br>:copen : AsyncRun显示运行日志<br>:AsyncRun  shell命令</p><h3 id="支持结构"><a href="#支持结构" class="headerlink" title="支持结构"></a>支持结构</h3><p><code>*.playgroud/Contents.swift</code><br>不支持包含：Pages页面的playground。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
-      
-    
-    </summary>
-    
-      <category term="shell" scheme="https://huos3203.github.io/categories/shell/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>FSCalendar支持自定义的日历开源库</title>
-    <link href="https://huos3203.github.io/2018/07/18/%E5%BC%80%E6%BA%90%E5%BA%93/FSCalendar%E6%94%AF%E6%8C%81%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E6%97%A5%E5%8E%86%E5%BC%80%E6%BA%90%E5%BA%93/"/>
-    <id>https://huos3203.github.io/2018/07/18/开源库/FSCalendar支持自定义的日历开源库/</id>
-    <published>2018-07-17T17:59:05.000Z</published>
-    <updated>2018-07-17T18:20:10.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><!--github库卡片--><div id="badge-container-huos3203-FSCalendar-1a026a4c" class="hexo-github" style="width: ="></div><script src="/hexo-github/badge.js"></script><script type="text/javascript">  loadStyle("/hexo-github/style.css");  loadStyle("/hexo-github/octicons/octicons.css");  new Badge("#badge-container-huos3203-FSCalendar-1a026a4c", "huos3203", "FSCalendar", "1a026a4c", false);</script><p><blockquote class="trello-card"><a href="https://trello.com/c/Tq2jnc1E/33-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%97%A5%E5%8E%86%E6%8E%A7%E4%BB%B6%EF%BC%8C%E6%97%A5%E6%9C%9F%E5%9B%BE%E6%A0%87" target="_blank" rel="noopener">自定义日历控件，日期图标</a></blockquote><script src="https://p.trellocdn.com/embed.min.js"></script></p><p><a href="https://github.com/huos3203/FSCalendar" target="_blank" rel="noopener">FSCalendar</a><br>FSCalendar是一款开源iOS日历控件，支持横向、纵向滑动模式，全屏模式，带有子标题、事件设置等功能。以下是项目截图：<br><img src="https://cloud.githubusercontent.com/assets/5186464/10262249/4fabae40-69f2-11e5-97ab-afbacd0a3da2.jpg" alt=""><br>Use Interface Builder<br>1、 Drag an UIView object to ViewController Scene 2、 Change the Custom Class to FSCalendar<br>3、 Link dataSource and delegate to the ViewController<br>4、 Finally, implement FSCalendarDataSource and FSCalendarDelegate in your ViewController<br><img src="https://cloud.githubusercontent.com/assets/5186464/9488580/a360297e-4c0d-11e5-8548-ee9274e7c4af.jpg" alt=""></p><h3 id="预览效果"><a href="#预览效果" class="headerlink" title="预览效果"></a>预览效果</h3><img src="http://p27uwfdhv.bkt.clouddn.com/static/images/FScalendardemo.gif?imageMogr2/2/w/800">]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
-      
-    
-    </summary>
-    
-      <category term="开源库" scheme="https://huos3203.github.io/categories/%E5%BC%80%E6%BA%90%E5%BA%93/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>高效人士的七个习惯</title>
-    <link href="https://huos3203.github.io/2018/07/03/%E9%98%85%E8%AF%BB/%E9%AB%98%E6%95%88%E4%BA%BA%E5%A3%AB%E7%9A%84%E4%B8%83%E4%B8%AA%E4%B9%A0%E6%83%AF/"/>
-    <id>https://huos3203.github.io/2018/07/03/阅读/高效人士的七个习惯/</id>
-    <published>2018-07-03T12:30:31.000Z</published>
-    <updated>2018-07-03T12:30:31.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p><a href="https://book.douban.com/annotation/18551525/" target="_blank" rel="noopener">豆瓣导图</a><br><a href="https://book.douban.com/annotation/39594570/" target="_blank" rel="noopener">豆瓣总结</a></p><h2 id="前言-如何善用本书"><a href="#前言-如何善用本书" class="headerlink" title="前言 如何善用本书"></a>前言 如何善用本书</h2><h2 id="第一部分-重新探索自我"><a href="#第一部分-重新探索自我" class="headerlink" title="第一部分 重新探索自我"></a>第一部分 重新探索自我</h2><h2 id="第一章-由内而外全面造就自己"><a href="#第一章-由内而外全面造就自己" class="headerlink" title="第一章 由内而外全面造就自己"></a>第一章 由内而外全面造就自己</h2><h2 id="第二章-七个习惯——概论"><a href="#第二章-七个习惯——概论" class="headerlink" title="第二章 七个习惯——概论"></a>第二章 七个习惯——概论</h2><h1 id="第二部分-个人的成功：从依赖到独立"><a href="#第二部分-个人的成功：从依赖到独立" class="headerlink" title="第二部分 个人的成功：从依赖到独立"></a>第二部分 个人的成功：从依赖到独立</h1><h2 id="第三章-习惯一：积极主动——个人愿景的原则"><a href="#第三章-习惯一：积极主动——个人愿景的原则" class="headerlink" title="第三章 习惯一：积极主动——个人愿景的原则"></a>第三章 习惯一：积极主动——个人愿景的原则</h2><h2 id="第四章-习惯二：以终为始——自我领导的原则"><a href="#第四章-习惯二：以终为始——自我领导的原则" class="headerlink" title="第四章 习惯二：以终为始——自我领导的原则"></a>第四章 习惯二：以终为始——自我领导的原则</h2><h3 id="个人使命宣言"><a href="#个人使命宣言" class="headerlink" title="个人使命宣言"></a>个人使命宣言</h3><p>以终为始最有效的方法，就是撰写一份个人使命宣言，即人生哲学或基础信念。<br>宣言：主要说明自己想成为怎样的品行的人。成什么样的事业，及为此奠基的价值观和原则。<br>家庭第一<br>借重宗教的力量<br>在诚信问题上决不妥协<br>念及相关的每个人<br>未听取正反双方的意见，不妄下断语<br>征求他人意见<br>维护不在场的人<br>诚恳但立场坚定<br>每年掌握一种新技能<br>今天计划明天的工作<br>利用等待的空闲时间<br>态度积极<br>保持幽默感<br>生活与工作有条不紊<br>别怕犯错，怕的是不能吸取教训<br>协助属下成功<br>多请教别人<br>专注于当前的工作，不为下一次任务或提升操心</p><p>定期储蓄或利用部分收入做投资</p><p>一个人的应变能力取决于他对自己的本性，人生目标以及价值观的不变的信念。<br>只要心中秉持着恒久不变的真理，就能屹立于动荡的环境中。</p><p>标记疗法的基础原理：许多心智或情感疾病，都是由于失落感或空虚感作祟，而标记疗法可以帮助病人找回生命的意义与使命感，以祛除这些感觉。</p><h2 id="第五章-习惯三：要事第一——自我管理的原则"><a href="#第五章-习惯三：要事第一——自我管理的原则" class="headerlink" title="第五章 习惯三：要事第一——自我管理的原则"></a>第五章 习惯三：要事第一——自我管理的原则</h2><p><a href="https://book.douban.com/people/140683087/annotation/1048007/?start=0" target="_blank" rel="noopener">豆瓣笔记</a></p><h1 id="第三部分-公众的成功：从独立到互赖"><a href="#第三部分-公众的成功：从独立到互赖" class="headerlink" title="第三部分 公众的成功：从独立到互赖"></a>第三部分 公众的成功：从独立到互赖</h1><h2 id="第六章-你不是一座孤岛"><a href="#第六章-你不是一座孤岛" class="headerlink" title="第六章 你不是一座孤岛"></a>第六章 你不是一座孤岛</h2><h2 id="第七章-习惯四：双赢思维——人际领导的原则"><a href="#第七章-习惯四：双赢思维——人际领导的原则" class="headerlink" title="第七章 习惯四：双赢思维——人际领导的原则"></a>第七章 习惯四：双赢思维——人际领导的原则</h2><h2 id="第八章-习惯五：知彼知己——同理心交流的原则"><a href="#第八章-习惯五：知彼知己——同理心交流的原则" class="headerlink" title="第八章 习惯五：知彼知己——同理心交流的原则"></a>第八章 习惯五：知彼知己——同理心交流的原则</h2><h2 id="第九章-习惯六：统合综效——创造性合作的原则"><a href="#第九章-习惯六：统合综效——创造性合作的原则" class="headerlink" title="第九章 习惯六：统合综效——创造性合作的原则"></a>第九章 习惯六：统合综效——创造性合作的原则</h2><h1 id="第四部分-全面观照生命"><a href="#第四部分-全面观照生命" class="headerlink" title="第四部分 全面观照生命"></a>第四部分 全面观照生命</h1><h2 id="第十章-习惯七：不断更新——平衡的自我更新的原则"><a href="#第十章-习惯七：不断更新——平衡的自我更新的原则" class="headerlink" title="第十章 习惯七：不断更新——平衡的自我更新的原则"></a>第十章 习惯七：不断更新——平衡的自我更新的原则</h2><h2 id="第十一章-再次由内而外造就自己"><a href="#第十一章-再次由内而外造就自己" class="headerlink" title="第十一章 再次由内而外造就自己"></a>第十一章 再次由内而外造就自己</h2><p>附录<br>一、你是哪种类型的人？——生活重心面面观<br>二、第四代时间管理——高效能人士的一天</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
-      
-    
-    </summary>
-    
-      <category term="阅读" scheme="https://huos3203.github.io/categories/%E9%98%85%E8%AF%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>程序员跳槽全攻略</title>
-    <link href="https://huos3203.github.io/2018/07/03/%E9%98%85%E8%AF%BB/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%B7%B3%E6%A7%BD%E5%85%A8%E6%94%BB%E7%95%A5/"/>
-    <id>https://huos3203.github.io/2018/07/03/阅读/程序员跳槽全攻略/</id>
-    <published>2018-07-02T19:52:08.000Z</published>
-    <updated>2018-07-03T12:30:31.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
-      
-    
-    </summary>
-    
-      <category term="阅读" scheme="https://huos3203.github.io/categories/%E9%98%85%E8%AF%BB/"/>
-    
     
   </entry>
   
