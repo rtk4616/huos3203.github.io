@@ -26,7 +26,7 @@
         
         
           var ap = new APlayer({
-            element: document.getElementById(&amp;quot;aplayer-oNouioQx&amp;quot;),
+            element: document.getElementById(&amp;quot;aplayer-SQboQuXv&amp;quot;),
             narrow: false,
             autoplay: true,
             showlrc: false,
