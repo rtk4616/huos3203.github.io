@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huos3203.github.io/"/>
-  <updated>2018-09-05T18:29:50.000Z</updated>
+  <updated>2018-09-05T19:07:39.000Z</updated>
   <id>https://huos3203.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一周膳食计划</title>
+    <link href="https://huos3203.github.io/2018/09/06/%E5%81%A5%E5%BA%B7/%E4%B8%80%E5%91%A8%E8%86%B3%E9%A3%9F%E8%AE%A1%E5%88%92/"/>
+    <id>https://huos3203.github.io/2018/09/06/健康/一周膳食计划/</id>
+    <published>2018-09-05T19:07:39.000Z</published>
+    <updated>2018-09-05T19:07:39.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p><blockquote class="trello-card"><a href="https://trello.com/c/hdKk3KEp/1-%E4%B8%80%E5%91%A8%E8%AE%A1%E5%88%92" target="_blank" rel="noopener">一周计划</a></blockquote><script src="https://p.trellocdn.com/embed.min.js"></script></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
+      
+    
+    </summary>
+    
+      <category term="健康" scheme="https://huos3203.github.io/categories/%E5%81%A5%E5%BA%B7/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>zeroTier内网穿透</title>
@@ -40,13 +63,13 @@
   </entry>
   
   <entry>
-    <title>swift支持的正则（textKit）</title>
-    <link href="https://huos3203.github.io/2018/09/05/swift/swift%E6%94%AF%E6%8C%81%E7%9A%84%E6%AD%A3%E5%88%99%EF%BC%88textKit%EF%BC%89/"/>
-    <id>https://huos3203.github.io/2018/09/05/swift/swift支持的正则（textKit）/</id>
+    <title>敏捷开发歌诀</title>
+    <link href="https://huos3203.github.io/2018/09/05/%E7%AE%A1%E7%90%86/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E6%AD%8C%E8%AF%80/"/>
+    <id>https://huos3203.github.io/2018/09/05/管理/敏捷开发歌诀/</id>
     <published>2018-09-05T15:52:33.000Z</published>
     <updated>2018-09-05T15:52:33.000Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p><blockquote class="trello-card"><a href="https://trello.com/c/kSIkFQXO/5-swift%E6%94%AF%E6%8C%81%E7%9A%84%E6%AD%A3%E5%88%99%EF%BC%88textkit%EF%BC%89" target="_blank" rel="noopener">swift支持的正则（textKit）</a></blockquote><script src="https://p.trellocdn.com/embed.min.js"></script></p><p><a href="https://msdn.microsoft.com/zh-cn/library/ae5bf541(VS.80" target="_blank" rel="noopener">正则表达式语法</a>.aspx)<br><a href="http://www.cocoachina.com/ios/20150415/11568.html" target="_blank" rel="noopener">iOS开发之详解正则表达式</a>原文：NSRegularExpression Tutorial: Getting Started<br><a href="http://nshipster.cn/nspredicate/" target="_blank" rel="noopener">nshipster文章NSPredicate</a><br><a href="http://www.cocoachina.com/ios/20160111/14926.html" target="_blank" rel="noopener">iOS中的谓词（NSPredicate）使用</a></p><h2 id="谓词和正则表达式的区别及适用场景"><a href="#谓词和正则表达式的区别及适用场景" class="headerlink" title="谓词和正则表达式的区别及适用场景"></a>谓词和正则表达式的区别及适用场景</h2><ol><li>谓词的对象可以是字符串，集合，同时支持sql语法和正则表达式</li><li>正则表达式，对字符串</li></ol><h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p>简短的定义：正则表达式提供了一种在指定文本文档中按指定模式进行搜索，并能基于匹配模式进行修改文本的一种方式。<br>正则表达式的通用用例：</p><ol><li>执行搜索：高亮显示搜索和替换<ol><li>UITextView的NSAttributedString属性来高亮显示搜索的结果</li><li>用text kit来实现高亮的功能</li></ol></li><li>验证用户输入</li></ol>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="trello卡片"><a href="#trello卡片" class="headerlink" title="trello卡片"></a>trello卡片</h2><p><blockquote class="trello-card"><a href="https://trello.com/c/4NID7312/26-%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E6%AD%8C%E8%AF%80%E5%8F%8A%E5%AE%A3%E8%A8%80" target="_blank" rel="noopener">敏捷开发歌诀及宣言</a></blockquote><script src="https://p.trellocdn.com/embed.min.js"></script></p><h2 id="敏捷开发歌诀"><a href="#敏捷开发歌诀" class="headerlink" title="敏捷开发歌诀"></a>敏捷开发歌诀</h2><p>迭代开发，价值优先<br>分解任务，真实进度<br>站立会议，交流畅通<br>用户参与，调整方向<br>结对编程，代码质量<br>测试驱动，安全可靠<br>持续集成，尽早反馈<br>自动部署，一键安装<br>定期回顾，持续改进<br>不断学习，提高能力</p><h2 id="敏捷开发宣言"><a href="#敏捷开发宣言" class="headerlink" title="敏捷开发宣言"></a>敏捷开发宣言</h2><ul><li>个体和交互，胜过过程和工具</li><li>可工作的软件，胜过面面俱到的文档</li><li>客户协作，胜过合同谈判</li><li>响应变化，胜过遵循计划</li></ul><p>虽然右项也有价值，左项具有更大的价值。</p><h2 id="迭代和增量式的学习"><a href="#迭代和增量式的学习" class="headerlink" title="迭代和增量式的学习"></a>迭代和增量式的学习</h2><p>每天计划用一段时间来学习新技术，它不需要很长时间，但需要经常进行。记下那些你想学习的东西–当你听到一些不熟悉的术语或者短语时，简要地把它记录下来。然后在计划的时间中深入研究它。了解最新行情。互联网上有大量关于学习新技术的资源。阅读社区讨论和邮件列表，可以了解其他人遇到的问题，以及他们发现的很酷的解决方案。选择一些公认的优秀技术博客，经常去读一读，以了解那些顶尖的博客作者们正在关注什么（最新的博客列表请参考pragmaticprogrammer.com）。参加本地的用户组活动。Java、Ruby、Delphi、.NET、过程改进、面向对象设计、Linux、Mac，以及其他的各种技术在很多地区都会有用户组。听讲座，然后积极加入到问答环节中。</p><blockquote><p>跟踪技术变化。你不需要精通所有技术，但需要清楚知道行业的动向，从而规划你的项目和职业生涯。</p></blockquote><h2 id="切身感受"><a href="#切身感受" class="headerlink" title="切身感受"></a>切身感受</h2><p>你能嗅到将要流行的新技术，知道它们已经发布或投入使用。如果必须要把工作切换到一种新的技术领域，你能做到。</p><h3 id="平衡的艺术"><a href="#平衡的艺术" class="headerlink" title="平衡的艺术"></a>平衡的艺术</h3><ul><li>许多新想法从未变得羽翼丰满，成为有用的技术。即使是大型、热门和资金充裕的项目也会有同样的下场。你要正确把握自己投入的精力。</li><li>你不可能精通每一项技术，没有必要去做这样的尝试。只要你在某些方面成为专家，就能使用同样的方法，很容易地成为新领域的专家。</li><li>你要明白为什么需要这项新技术——它试图解决什么样的问题？它可以被用在什么地方？</li><li>避免在一时冲动的情况下，只是因为想学习而将应用切换到新的技术、框架或开发语言。在做决策之前，你必须评估新技术的优势。开发一个小的原型系统，是对付技术狂热者的一剂良药。</li></ul><p>当开发项目的时候，你需要使用一些术语或者隐喻来清晰地传达设计的概念和意图。如果团队中的大部分成员不熟悉这些，就很难进行高效地工作。再比如你参加了一个课程或者研讨班之后，所学的知识如果不用，往往就会忘记。所以，你需要和其他团队成员分享所学的知识，把这些知识引入团队中。</p><p>找出你或团队中的高手擅长的领域，帮助其他的团队成员在这些方面迎头赶上（这样做还有一个好处是，可以讨论如何将这些东西应用于自己的项目中）。</p><p>“午餐会议”是在团队中分享知识非常好的方式。在一周之中挑选一天，例如星期三（一般来说任何一天都可以，但最好不要是星期一和星期五）。事先计划午餐时聚集在一起，这样就不会担心和其他会议冲突，也不需要特别的申请。为了降低成本，就让大家自带午餐。</p><p>每周，要求团队中的一个人主持讲座。他会给大家介绍一些概念，演示工具，或者做团队感兴趣的任何一件事情。你可以挑一本书，给大家说说其中一些特别内容、项目或者实践。①无论什么主题都可以。</p><p>从每周主持讲座的人开始，先让他讲15分钟，然后，进行开放式讨论，这样每个人都可以发表自己的意见，讨论这个主题对于项目的意义。讨论应该包括所能带来的益处，提供来自自己应用程序的示例，并准备好听取进一步的信息。</p><p>这些午餐会议非常有用。它促进了整个团队对这个行业的了解，你自己也可以从其他人身上学到很多东西。优秀的管理者会重用那些能提高其他团队成员价值的人，因此这些活动也直接有助于你的职业生涯。</p>]]></content>
     
     <summary type="html">
     
@@ -57,30 +80,7 @@
     
     </summary>
     
-      <category term="swift" scheme="https://huos3203.github.io/categories/swift/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>LaunchPad打击垫学习</title>
-    <link href="https://huos3203.github.io/2018/09/05/LaunchPad%E6%89%93%E5%87%BB%E5%9E%AB%E5%AD%A6%E4%B9%A0/"/>
-    <id>https://huos3203.github.io/2018/09/05/LaunchPad打击垫学习/</id>
-    <published>2018-09-05T15:52:33.000Z</published>
-    <updated>2018-09-05T15:52:33.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="trello卡片"><a href="#trello卡片" class="headerlink" title="trello卡片"></a>trello卡片</h2><p><blockquote class="trello-card"><a href="https://trello.com/c/FTCK9PPX/29-launchpad%E5%AD%A6%E4%B9%A0" target="_blank" rel="noopener">LaunchPad学习</a></blockquote><script src="https://p.trellocdn.com/embed.min.js"></script></p><p><a href="http://www.bilibili.com/video/av12189950" target="_blank" rel="noopener">第二期：Chain的选择与设置/页数的映射</a></p><ol><li><p>分轨和音频采样</p></li><li><p>音频轨道<br>拖拽音频文件或视频文件到<code>Simple</code>采样轨道中，视频格式会生成<code>asd</code>格式的新文件文件，加载到轨道中。</p></li><li><p>MIDI轨道可以为<code>Lights</code><br>1.1 灯光轨道<br>1.2 鼓点设置</p><h3 id="鼓点音色映射设置，来输出不同的音乐片段"><a href="#鼓点音色映射设置，来输出不同的音乐片段" class="headerlink" title="鼓点音色映射设置，来输出不同的音乐片段"></a>鼓点音色映射设置，来输出不同的音乐片段</h3></li><li>拖动IB控件到MIDI模块</li></ol><h3 id="鼓点灯光映射设置"><a href="#鼓点灯光映射设置" class="headerlink" title="鼓点灯光映射设置"></a>鼓点灯光映射设置</h3><ol><li>拖进MIDI Effects rack控件<br>1.1 点击黄色选项：展开Key:vel:chain:Hide页面<br>1.2 右击蓝色条，选择map selecter<br>1.3 选中右上角的<code>MIDI</code>切换到设置MIDI映射键模式。<br>1.4 选中第一个表盘，选中LauchPad上的 A—B，来映射页数的设置<br>1.5 新建八个chain，错位蓝色条，完成页数映射的设置<br>1.6 逐个选中不同的chain，在每一个chain中嵌套MIDI Effect Rock控件</li></ol><p><a href="http://www.bilibili.com/video/av12319673" target="_blank" rel="noopener">第三期：关于分轨和音频采样</a><br><a href="https://www.reddit.com/r/SongStems/" target="_blank" rel="noopener">reddit.com</a><br><a href="https://www.beatport.com/stems" target="_blank" rel="noopener">beatport.com</a><br><a href="https://splice.com/explore/contests" target="_blank" rel="noopener">splice.com</a><br>选中页数1的chain ，展开drum rack模块，点击launchpad上键盘，会高亮显示映射的鼓点位置，这时将采样的音色拖拽到改鼓点位置，再次点击launchpad键垫就可以播放音色片段。</p><p><a href="http://www.bilibili.com/video/av12431271" target="_blank" rel="noopener">第四期：基础灯光效果制作</a></p><h3 id="Arpeggiator-（A效果器）"><a href="#Arpeggiator-（A效果器）" class="headerlink" title="Arpeggiator （A效果器）"></a>Arpeggiator （A效果器）</h3><p>设置纵横方向的属性变化<br>效果：垫子灯光会从左到右，从下向上的走马灯式的移动。通过arpeggiator设置移动速度，范围</p><ol><li>rate速度：1/1一拍移动一下最慢，1/128最快。</li><li>Gate范围：1—200：依据灯光速率的亮度百分率率来看，1%:亮度不高，200%：可以在一个键上激活两个相邻的灯光</li><li>style：纵向变化的方向：up/down/upDown/DownUp…</li><li>Hold激活不用长按，即可厂量</li><li><p>repeats：设置走马灯的循环次数</p></li><li><p>A效果器在灯光效果包中，放置的位置不同起到不同效果，例如一个灯光效果在A效果器之后，则会将A效果器的属性应用到后续其他的灯光效果上。</p></li></ol><h3 id="Chord-（和弦）"><a href="#Chord-（和弦）" class="headerlink" title="Chord （和弦）"></a>Chord （和弦）</h3><ol><li>拖拽到Key列表中的一个垫子的灯光效果包上。</li><li>chord提供六个属性shift1，shift2….shift6，来设置和弦灯光错位，融合等效果<br>第一个旋钮设置1 ：说明灯光向右边移动一个单位。即当点击当前垫子时，右边相邻的垫子的灯光也会一起亮<br>第二个按钮shift2设置+2：灯光向右联动两个单位，右边相邻的两个垫子的灯光都点亮。<br>以此类推<br>一个key上可以添加多个chord：根据偏移量来激活周边的垫子灯光。+4亮起四分之一，+16：亮起半屏，-16：四分之三亮起 -32：整个lPD全亮</li></ol><h3 id="MIDI-Effect-Rack"><a href="#MIDI-Effect-Rack" class="headerlink" title="MIDI Effect Rack"></a>MIDI Effect Rack</h3><p>在主MIDI effect Rack中的chain中映射出的页数中，再嵌套子MIDI effect Rack这样每一页都可以设置自己的灯光效果。<br>设置灯光效果包</p><ol><li>选中嵌套的子MIDIeffect rack，展开chain模块 ，右击新建一个chain，即代表着一个灯光效果</li><li>选中key，点击lauchpad垫子，在钢琴键位为标红显示，即可定位将要设置灯光效果的键。即：绿色区域定位点击的键垫位置</li><li>新建Velocity（力度感应）</li><li>新建chord（和弦）</li><li>新建Arpeggiator（A效果器）</li></ol><p>Note Length<br>Pitch<br>Random<br>Scale</p><h3 id="Velocity：力度感应"><a href="#Velocity：力度感应" class="headerlink" title="Velocity：力度感应"></a>Velocity：力度感应</h3><ol><li>拖到刚才的chain上，即在该键上添加力度感应属性设置。</li><li>设置灯光颜色：<code>Out Hi</code>的表盘参数，参考MIni支持的灯光色值</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
-      
-    
-    </summary>
-    
-      <category term="LaunchPad打击垫学习.md" scheme="https://huos3203.github.io/categories/LaunchPad%E6%89%93%E5%87%BB%E5%9E%AB%E5%AD%A6%E4%B9%A0-md/"/>
+      <category term="管理" scheme="https://huos3203.github.io/categories/%E7%AE%A1%E7%90%86/"/>
     
     
   </entry>
@@ -132,13 +132,13 @@
   </entry>
   
   <entry>
-    <title>敏捷开发歌诀</title>
-    <link href="https://huos3203.github.io/2018/09/05/%E7%AE%A1%E7%90%86/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E6%AD%8C%E8%AF%80/"/>
-    <id>https://huos3203.github.io/2018/09/05/管理/敏捷开发歌诀/</id>
+    <title>swift支持的正则（textKit）</title>
+    <link href="https://huos3203.github.io/2018/09/05/swift/swift%E6%94%AF%E6%8C%81%E7%9A%84%E6%AD%A3%E5%88%99%EF%BC%88textKit%EF%BC%89/"/>
+    <id>https://huos3203.github.io/2018/09/05/swift/swift支持的正则（textKit）/</id>
     <published>2018-09-05T15:52:33.000Z</published>
     <updated>2018-09-05T15:52:33.000Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="trello卡片"><a href="#trello卡片" class="headerlink" title="trello卡片"></a>trello卡片</h2><p><blockquote class="trello-card"><a href="https://trello.com/c/4NID7312/26-%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E6%AD%8C%E8%AF%80%E5%8F%8A%E5%AE%A3%E8%A8%80" target="_blank" rel="noopener">敏捷开发歌诀及宣言</a></blockquote><script src="https://p.trellocdn.com/embed.min.js"></script></p><h2 id="敏捷开发歌诀"><a href="#敏捷开发歌诀" class="headerlink" title="敏捷开发歌诀"></a>敏捷开发歌诀</h2><p>迭代开发，价值优先<br>分解任务，真实进度<br>站立会议，交流畅通<br>用户参与，调整方向<br>结对编程，代码质量<br>测试驱动，安全可靠<br>持续集成，尽早反馈<br>自动部署，一键安装<br>定期回顾，持续改进<br>不断学习，提高能力</p><h2 id="敏捷开发宣言"><a href="#敏捷开发宣言" class="headerlink" title="敏捷开发宣言"></a>敏捷开发宣言</h2><ul><li>个体和交互，胜过过程和工具</li><li>可工作的软件，胜过面面俱到的文档</li><li>客户协作，胜过合同谈判</li><li>响应变化，胜过遵循计划</li></ul><p>虽然右项也有价值，左项具有更大的价值。</p><h2 id="迭代和增量式的学习"><a href="#迭代和增量式的学习" class="headerlink" title="迭代和增量式的学习"></a>迭代和增量式的学习</h2><p>每天计划用一段时间来学习新技术，它不需要很长时间，但需要经常进行。记下那些你想学习的东西–当你听到一些不熟悉的术语或者短语时，简要地把它记录下来。然后在计划的时间中深入研究它。了解最新行情。互联网上有大量关于学习新技术的资源。阅读社区讨论和邮件列表，可以了解其他人遇到的问题，以及他们发现的很酷的解决方案。选择一些公认的优秀技术博客，经常去读一读，以了解那些顶尖的博客作者们正在关注什么（最新的博客列表请参考pragmaticprogrammer.com）。参加本地的用户组活动。Java、Ruby、Delphi、.NET、过程改进、面向对象设计、Linux、Mac，以及其他的各种技术在很多地区都会有用户组。听讲座，然后积极加入到问答环节中。</p><blockquote><p>跟踪技术变化。你不需要精通所有技术，但需要清楚知道行业的动向，从而规划你的项目和职业生涯。</p></blockquote><h2 id="切身感受"><a href="#切身感受" class="headerlink" title="切身感受"></a>切身感受</h2><p>你能嗅到将要流行的新技术，知道它们已经发布或投入使用。如果必须要把工作切换到一种新的技术领域，你能做到。</p><h3 id="平衡的艺术"><a href="#平衡的艺术" class="headerlink" title="平衡的艺术"></a>平衡的艺术</h3><ul><li>许多新想法从未变得羽翼丰满，成为有用的技术。即使是大型、热门和资金充裕的项目也会有同样的下场。你要正确把握自己投入的精力。</li><li>你不可能精通每一项技术，没有必要去做这样的尝试。只要你在某些方面成为专家，就能使用同样的方法，很容易地成为新领域的专家。</li><li>你要明白为什么需要这项新技术——它试图解决什么样的问题？它可以被用在什么地方？</li><li>避免在一时冲动的情况下，只是因为想学习而将应用切换到新的技术、框架或开发语言。在做决策之前，你必须评估新技术的优势。开发一个小的原型系统，是对付技术狂热者的一剂良药。</li></ul><p>当开发项目的时候，你需要使用一些术语或者隐喻来清晰地传达设计的概念和意图。如果团队中的大部分成员不熟悉这些，就很难进行高效地工作。再比如你参加了一个课程或者研讨班之后，所学的知识如果不用，往往就会忘记。所以，你需要和其他团队成员分享所学的知识，把这些知识引入团队中。</p><p>找出你或团队中的高手擅长的领域，帮助其他的团队成员在这些方面迎头赶上（这样做还有一个好处是，可以讨论如何将这些东西应用于自己的项目中）。</p><p>“午餐会议”是在团队中分享知识非常好的方式。在一周之中挑选一天，例如星期三（一般来说任何一天都可以，但最好不要是星期一和星期五）。事先计划午餐时聚集在一起，这样就不会担心和其他会议冲突，也不需要特别的申请。为了降低成本，就让大家自带午餐。</p><p>每周，要求团队中的一个人主持讲座。他会给大家介绍一些概念，演示工具，或者做团队感兴趣的任何一件事情。你可以挑一本书，给大家说说其中一些特别内容、项目或者实践。①无论什么主题都可以。</p><p>从每周主持讲座的人开始，先让他讲15分钟，然后，进行开放式讨论，这样每个人都可以发表自己的意见，讨论这个主题对于项目的意义。讨论应该包括所能带来的益处，提供来自自己应用程序的示例，并准备好听取进一步的信息。</p><p>这些午餐会议非常有用。它促进了整个团队对这个行业的了解，你自己也可以从其他人身上学到很多东西。优秀的管理者会重用那些能提高其他团队成员价值的人，因此这些活动也直接有助于你的职业生涯。</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p><blockquote class="trello-card"><a href="https://trello.com/c/kSIkFQXO/5-swift%E6%94%AF%E6%8C%81%E7%9A%84%E6%AD%A3%E5%88%99%EF%BC%88textkit%EF%BC%89" target="_blank" rel="noopener">swift支持的正则（textKit）</a></blockquote><script src="https://p.trellocdn.com/embed.min.js"></script></p><p><a href="https://msdn.microsoft.com/zh-cn/library/ae5bf541(VS.80" target="_blank" rel="noopener">正则表达式语法</a>.aspx)<br><a href="http://www.cocoachina.com/ios/20150415/11568.html" target="_blank" rel="noopener">iOS开发之详解正则表达式</a>原文：NSRegularExpression Tutorial: Getting Started<br><a href="http://nshipster.cn/nspredicate/" target="_blank" rel="noopener">nshipster文章NSPredicate</a><br><a href="http://www.cocoachina.com/ios/20160111/14926.html" target="_blank" rel="noopener">iOS中的谓词（NSPredicate）使用</a></p><h2 id="谓词和正则表达式的区别及适用场景"><a href="#谓词和正则表达式的区别及适用场景" class="headerlink" title="谓词和正则表达式的区别及适用场景"></a>谓词和正则表达式的区别及适用场景</h2><ol><li>谓词的对象可以是字符串，集合，同时支持sql语法和正则表达式</li><li>正则表达式，对字符串</li></ol><h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p>简短的定义：正则表达式提供了一种在指定文本文档中按指定模式进行搜索，并能基于匹配模式进行修改文本的一种方式。<br>正则表达式的通用用例：</p><ol><li>执行搜索：高亮显示搜索和替换<ol><li>UITextView的NSAttributedString属性来高亮显示搜索的结果</li><li>用text kit来实现高亮的功能</li></ol></li><li>验证用户输入</li></ol>]]></content>
     
     <summary type="html">
     
@@ -149,7 +149,30 @@
     
     </summary>
     
-      <category term="管理" scheme="https://huos3203.github.io/categories/%E7%AE%A1%E7%90%86/"/>
+      <category term="swift" scheme="https://huos3203.github.io/categories/swift/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>LaunchPad打击垫学习</title>
+    <link href="https://huos3203.github.io/2018/09/05/LaunchPad%E6%89%93%E5%87%BB%E5%9E%AB%E5%AD%A6%E4%B9%A0/"/>
+    <id>https://huos3203.github.io/2018/09/05/LaunchPad打击垫学习/</id>
+    <published>2018-09-05T15:52:33.000Z</published>
+    <updated>2018-09-05T15:52:33.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="trello卡片"><a href="#trello卡片" class="headerlink" title="trello卡片"></a>trello卡片</h2><p><blockquote class="trello-card"><a href="https://trello.com/c/FTCK9PPX/29-launchpad%E5%AD%A6%E4%B9%A0" target="_blank" rel="noopener">LaunchPad学习</a></blockquote><script src="https://p.trellocdn.com/embed.min.js"></script></p><p><a href="http://www.bilibili.com/video/av12189950" target="_blank" rel="noopener">第二期：Chain的选择与设置/页数的映射</a></p><ol><li><p>分轨和音频采样</p></li><li><p>音频轨道<br>拖拽音频文件或视频文件到<code>Simple</code>采样轨道中，视频格式会生成<code>asd</code>格式的新文件文件，加载到轨道中。</p></li><li><p>MIDI轨道可以为<code>Lights</code><br>1.1 灯光轨道<br>1.2 鼓点设置</p><h3 id="鼓点音色映射设置，来输出不同的音乐片段"><a href="#鼓点音色映射设置，来输出不同的音乐片段" class="headerlink" title="鼓点音色映射设置，来输出不同的音乐片段"></a>鼓点音色映射设置，来输出不同的音乐片段</h3></li><li>拖动IB控件到MIDI模块</li></ol><h3 id="鼓点灯光映射设置"><a href="#鼓点灯光映射设置" class="headerlink" title="鼓点灯光映射设置"></a>鼓点灯光映射设置</h3><ol><li>拖进MIDI Effects rack控件<br>1.1 点击黄色选项：展开Key:vel:chain:Hide页面<br>1.2 右击蓝色条，选择map selecter<br>1.3 选中右上角的<code>MIDI</code>切换到设置MIDI映射键模式。<br>1.4 选中第一个表盘，选中LauchPad上的 A—B，来映射页数的设置<br>1.5 新建八个chain，错位蓝色条，完成页数映射的设置<br>1.6 逐个选中不同的chain，在每一个chain中嵌套MIDI Effect Rock控件</li></ol><p><a href="http://www.bilibili.com/video/av12319673" target="_blank" rel="noopener">第三期：关于分轨和音频采样</a><br><a href="https://www.reddit.com/r/SongStems/" target="_blank" rel="noopener">reddit.com</a><br><a href="https://www.beatport.com/stems" target="_blank" rel="noopener">beatport.com</a><br><a href="https://splice.com/explore/contests" target="_blank" rel="noopener">splice.com</a><br>选中页数1的chain ，展开drum rack模块，点击launchpad上键盘，会高亮显示映射的鼓点位置，这时将采样的音色拖拽到改鼓点位置，再次点击launchpad键垫就可以播放音色片段。</p><p><a href="http://www.bilibili.com/video/av12431271" target="_blank" rel="noopener">第四期：基础灯光效果制作</a></p><h3 id="Arpeggiator-（A效果器）"><a href="#Arpeggiator-（A效果器）" class="headerlink" title="Arpeggiator （A效果器）"></a>Arpeggiator （A效果器）</h3><p>设置纵横方向的属性变化<br>效果：垫子灯光会从左到右，从下向上的走马灯式的移动。通过arpeggiator设置移动速度，范围</p><ol><li>rate速度：1/1一拍移动一下最慢，1/128最快。</li><li>Gate范围：1—200：依据灯光速率的亮度百分率率来看，1%:亮度不高，200%：可以在一个键上激活两个相邻的灯光</li><li>style：纵向变化的方向：up/down/upDown/DownUp…</li><li>Hold激活不用长按，即可厂量</li><li><p>repeats：设置走马灯的循环次数</p></li><li><p>A效果器在灯光效果包中，放置的位置不同起到不同效果，例如一个灯光效果在A效果器之后，则会将A效果器的属性应用到后续其他的灯光效果上。</p></li></ol><h3 id="Chord-（和弦）"><a href="#Chord-（和弦）" class="headerlink" title="Chord （和弦）"></a>Chord （和弦）</h3><ol><li>拖拽到Key列表中的一个垫子的灯光效果包上。</li><li>chord提供六个属性shift1，shift2….shift6，来设置和弦灯光错位，融合等效果<br>第一个旋钮设置1 ：说明灯光向右边移动一个单位。即当点击当前垫子时，右边相邻的垫子的灯光也会一起亮<br>第二个按钮shift2设置+2：灯光向右联动两个单位，右边相邻的两个垫子的灯光都点亮。<br>以此类推<br>一个key上可以添加多个chord：根据偏移量来激活周边的垫子灯光。+4亮起四分之一，+16：亮起半屏，-16：四分之三亮起 -32：整个lPD全亮</li></ol><h3 id="MIDI-Effect-Rack"><a href="#MIDI-Effect-Rack" class="headerlink" title="MIDI Effect Rack"></a>MIDI Effect Rack</h3><p>在主MIDI effect Rack中的chain中映射出的页数中，再嵌套子MIDI effect Rack这样每一页都可以设置自己的灯光效果。<br>设置灯光效果包</p><ol><li>选中嵌套的子MIDIeffect rack，展开chain模块 ，右击新建一个chain，即代表着一个灯光效果</li><li>选中key，点击lauchpad垫子，在钢琴键位为标红显示，即可定位将要设置灯光效果的键。即：绿色区域定位点击的键垫位置</li><li>新建Velocity（力度感应）</li><li>新建chord（和弦）</li><li>新建Arpeggiator（A效果器）</li></ol><p>Note Length<br>Pitch<br>Random<br>Scale</p><h3 id="Velocity：力度感应"><a href="#Velocity：力度感应" class="headerlink" title="Velocity：力度感应"></a>Velocity：力度感应</h3><ol><li>拖到刚才的chain上，即在该键上添加力度感应属性设置。</li><li>设置灯光颜色：<code>Out Hi</code>的表盘参数，参考MIni支持的灯光色值</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
+      
+    
+    </summary>
+    
+      <category term="LaunchPad打击垫学习.md" scheme="https://huos3203.github.io/categories/LaunchPad%E6%89%93%E5%87%BB%E5%9E%AB%E5%AD%A6%E4%B9%A0-md/"/>
     
     
   </entry>
@@ -339,29 +362,6 @@
   </entry>
   
   <entry>
-    <title>七个习惯题由内而外全面造就自己</title>
-    <link href="https://huos3203.github.io/2018/09/03/%E9%98%85%E8%AF%BB/%E4%B8%83%E4%B8%AA%E4%B9%A0%E6%83%AF%E9%A2%98%E7%94%B1%E5%86%85%E8%80%8C%E5%A4%96%E5%85%A8%E9%9D%A2%E9%80%A0%E5%B0%B1%E8%87%AA%E5%B7%B1/"/>
-    <id>https://huos3203.github.io/2018/09/03/阅读/七个习惯题由内而外全面造就自己/</id>
-    <published>2018-09-03T10:11:38.000Z</published>
-    <updated>2018-09-04T19:39:51.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="由内而外全面造就自己"><a href="#由内而外全面造就自己" class="headerlink" title="由内而外全面造就自己"></a>由内而外全面造就自己</h2><p>你是否有过这种经验，做出推测时发现自己的判断过于匆忙？请对这种经验加以描述。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答:</span><br></pre></td></tr></table></figure></p><p>你当时做出的推测是什么？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答:</span><br></pre></td></tr></table></figure></p><p>想一下你做过的其他推测。本周你将对其中某一项采取什么行动？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答:</span><br></pre></td></tr></table></figure></p><h3 id="1）检验你的思维定式"><a href="#1）检验你的思维定式" class="headerlink" title="1）检验你的思维定式"></a>1）检验你的思维定式</h3><p>你曾经到过其他国家，或本国其他地区吗？你觉得哪些事情是陌生的或奇怪的？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答:</span><br></pre></td></tr></table></figure></p><p>人们的行为是否如你预期？你对他们的行为有何看法？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答:</span><br></pre></td></tr></table></figure></p><p>回想你的旅游经验，你认为当地人对你的看法如何？你是否认为他们对你的看法与你对他们的看法可能很类似？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答:</span><br></pre></td></tr></table></figure></p><p>如果你有机会在旅途中认识当地人，你对他们的看法或推测会有什么改变？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答:</span><br></pre></td></tr></table></figure></p><h3 id="2）转换你的思维定式"><a href="#2）转换你的思维定式" class="headerlink" title="2）转换你的思维定式"></a>2）转换你的思维定式</h3><p>回想一下通往你的工作场所或你的家的不同途径。是否有些途径比其他的更复杂？是否有时其中一条比其他的更方便？为什么方便，为什么不方便？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答:</span><br></pre></td></tr></table></figure></p><p>你是否发现过一条你以前不知道的新途径？走不同途径的新鲜感又是什么？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答:</span><br></pre></td></tr></table></figure></p><p>现在想一下你与他人打交道的方式。与他们打交道是否有好几种途径？你还有可能会尝试哪些新的方式？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答:</span><br></pre></td></tr></table></figure></p><h3 id="3）影响你生活的五个原则"><a href="#3）影响你生活的五个原则" class="headerlink" title="3）影响你生活的五个原则"></a>3）影响你生活的五个原则</h3><p>请列出影响你的日常生活的五个原则。它们以怎样的方式影响你？它们是以积极的，还是消极的方式影响你的生活？</p><ol><li><hr></li><li><hr></li><li><hr></li><li><hr></li><li><hr></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
-      
-    
-    </summary>
-    
-      <category term="阅读" scheme="https://huos3203.github.io/categories/%E9%98%85%E8%AF%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>七个习惯概论</title>
     <link href="https://huos3203.github.io/2018/09/03/%E9%98%85%E8%AF%BB/%E4%B8%83%E4%B8%AA%E4%B9%A0%E6%83%AF%E6%A6%82%E8%AE%BA/"/>
     <id>https://huos3203.github.io/2018/09/03/阅读/七个习惯概论/</id>
@@ -385,13 +385,13 @@
   </entry>
   
   <entry>
-    <title>使用Instruments的工具</title>
-    <link href="https://huos3203.github.io/2018/09/01/%E8%B0%83%E8%AF%95/%E4%BD%BF%E7%94%A8Instruments%E7%9A%84%E5%B7%A5%E5%85%B7/"/>
-    <id>https://huos3203.github.io/2018/09/01/调试/使用Instruments的工具/</id>
-    <published>2018-08-31T16:58:22.000Z</published>
-    <updated>2018-08-31T16:58:22.000Z</updated>
+    <title>七个习惯题由内而外全面造就自己</title>
+    <link href="https://huos3203.github.io/2018/09/03/%E9%98%85%E8%AF%BB/%E4%B8%83%E4%B8%AA%E4%B9%A0%E6%83%AF%E9%A2%98%E7%94%B1%E5%86%85%E8%80%8C%E5%A4%96%E5%85%A8%E9%9D%A2%E9%80%A0%E5%B0%B1%E8%87%AA%E5%B7%B1/"/>
+    <id>https://huos3203.github.io/2018/09/03/阅读/七个习惯题由内而外全面造就自己/</id>
+    <published>2018-09-03T10:11:38.000Z</published>
+    <updated>2018-09-04T19:39:51.000Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>检测app内存爆增代码，优化性能<br><a href="https://www.jianshu.com/p/d0e149332380" target="_blank" rel="noopener">Instruments工具使用办法</a><br>整理Demo，列出几种常用instrument的场景。来熟悉具体操作<br><a href="https://gitee.com/leiming97/MemoryProblems-master.git" target="_blank" rel="noopener">demo</a></p><ol><li>集成归档模块代码，测试内存上升问题</li></ol>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="由内而外全面造就自己"><a href="#由内而外全面造就自己" class="headerlink" title="由内而外全面造就自己"></a>由内而外全面造就自己</h2><p>你是否有过这种经验，做出推测时发现自己的判断过于匆忙？请对这种经验加以描述。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答:</span><br></pre></td></tr></table></figure></p><p>你当时做出的推测是什么？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答:</span><br></pre></td></tr></table></figure></p><p>想一下你做过的其他推测。本周你将对其中某一项采取什么行动？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答:</span><br></pre></td></tr></table></figure></p><h3 id="1）检验你的思维定式"><a href="#1）检验你的思维定式" class="headerlink" title="1）检验你的思维定式"></a>1）检验你的思维定式</h3><p>你曾经到过其他国家，或本国其他地区吗？你觉得哪些事情是陌生的或奇怪的？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答:</span><br></pre></td></tr></table></figure></p><p>人们的行为是否如你预期？你对他们的行为有何看法？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答:</span><br></pre></td></tr></table></figure></p><p>回想你的旅游经验，你认为当地人对你的看法如何？你是否认为他们对你的看法与你对他们的看法可能很类似？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答:</span><br></pre></td></tr></table></figure></p><p>如果你有机会在旅途中认识当地人，你对他们的看法或推测会有什么改变？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答:</span><br></pre></td></tr></table></figure></p><h3 id="2）转换你的思维定式"><a href="#2）转换你的思维定式" class="headerlink" title="2）转换你的思维定式"></a>2）转换你的思维定式</h3><p>回想一下通往你的工作场所或你的家的不同途径。是否有些途径比其他的更复杂？是否有时其中一条比其他的更方便？为什么方便，为什么不方便？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答:</span><br></pre></td></tr></table></figure></p><p>你是否发现过一条你以前不知道的新途径？走不同途径的新鲜感又是什么？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答:</span><br></pre></td></tr></table></figure></p><p>现在想一下你与他人打交道的方式。与他们打交道是否有好几种途径？你还有可能会尝试哪些新的方式？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答:</span><br></pre></td></tr></table></figure></p><h3 id="3）影响你生活的五个原则"><a href="#3）影响你生活的五个原则" class="headerlink" title="3）影响你生活的五个原则"></a>3）影响你生活的五个原则</h3><p>请列出影响你的日常生活的五个原则。它们以怎样的方式影响你？它们是以积极的，还是消极的方式影响你的生活？</p><ol><li><hr></li><li><hr></li><li><hr></li><li><hr></li><li><hr></li></ol>]]></content>
     
     <summary type="html">
     
@@ -402,7 +402,7 @@
     
     </summary>
     
-      <category term="调试" scheme="https://huos3203.github.io/categories/%E8%B0%83%E8%AF%95/"/>
+      <category term="阅读" scheme="https://huos3203.github.io/categories/%E9%98%85%E8%AF%BB/"/>
     
     
   </entry>
@@ -431,13 +431,13 @@
   </entry>
   
   <entry>
-    <title>Thisdeviceisnotcurrentlyonline</title>
-    <link href="https://huos3203.github.io/2018/09/01/%E8%B0%83%E8%AF%95/Thisdeviceisnotcurrentlyonline/"/>
-    <id>https://huos3203.github.io/2018/09/01/调试/Thisdeviceisnotcurrentlyonline/</id>
+    <title>使用Instruments的工具</title>
+    <link href="https://huos3203.github.io/2018/09/01/%E8%B0%83%E8%AF%95/%E4%BD%BF%E7%94%A8Instruments%E7%9A%84%E5%B7%A5%E5%85%B7/"/>
+    <id>https://huos3203.github.io/2018/09/01/调试/使用Instruments的工具/</id>
     <published>2018-08-31T16:58:22.000Z</published>
     <updated>2018-08-31T16:58:22.000Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p><a href="https://forums.developer.apple.com/thread/16242" target="_blank" rel="noopener">参考</a></p><ol><li>you can restart your device!  then connect your device  to your mac-&gt;open Xcode-&gt;press command + i</li></ol><p>I’ve encountered this issue today. The record button is disabled and the tooltip says “This device is not currently online”. However my iPhone is connecting with my Mac and can be debugged with Xcode without any problem.</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>检测app内存爆增代码，优化性能<br><a href="https://www.jianshu.com/p/d0e149332380" target="_blank" rel="noopener">Instruments工具使用办法</a><br>整理Demo，列出几种常用instrument的场景。来熟悉具体操作<br><a href="https://gitee.com/leiming97/MemoryProblems-master.git" target="_blank" rel="noopener">demo</a></p><ol><li>集成归档模块代码，测试内存上升问题</li></ol>]]></content>
     
     <summary type="html">
     
@@ -454,13 +454,13 @@
   </entry>
   
   <entry>
-    <title>Chisel-LLDB命令插件</title>
-    <link href="https://huos3203.github.io/2018/09/01/%E8%B0%83%E8%AF%95/Chisel-LLDB%E5%91%BD%E4%BB%A4%E6%8F%92%E4%BB%B6/"/>
-    <id>https://huos3203.github.io/2018/09/01/调试/Chisel-LLDB命令插件/</id>
-    <published>2018-08-31T16:20:20.000Z</published>
-    <updated>2018-08-31T16:40:53.000Z</updated>
+    <title>Thisdeviceisnotcurrentlyonline</title>
+    <link href="https://huos3203.github.io/2018/09/01/%E8%B0%83%E8%AF%95/Thisdeviceisnotcurrentlyonline/"/>
+    <id>https://huos3203.github.io/2018/09/01/调试/Thisdeviceisnotcurrentlyonline/</id>
+    <published>2018-08-31T16:58:22.000Z</published>
+    <updated>2018-08-31T16:58:22.000Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><!--github库卡片--><div id="badge-container-facebook-chisel-56d0e0d" class="hexo-github" style="width: ="></div><script src="/hexo-github/badge.js"></script><script type="text/javascript">  loadStyle("/hexo-github/style.css");  loadStyle("/hexo-github/octicons/octicons.css");  new Badge("#badge-container-facebook-chisel-56d0e0d", "facebook", "chisel", "56d0e0d", false);</script><p>LLDB 是一个有着 REPL 的特性和 C++ ,Python 插件的开源调试器。LLDB 绑定在 Xcode 内部，存在于主窗口底部的控制台中。调试器允许你在程序运行的特定时暂停它，你可以查看变量的值，执行自定的指令，并且按照你所认为合适的步骤来操作程序的进展。(这里有一个关于调试器如何工作的总体的解释。)</p><p>Chisel 为lldb提供了新增的便捷命令，是非常实用的命令。</p><h3 id="pviews"><a href="#pviews" class="headerlink" title="pviews"></a>pviews</h3><p>这个命令可以递归打印所有的view，并能标示层级，相当于 UIView 的私有辅助方法 <code>[view recursiveDescription]</code> 。 善用使用这个功能会让你在调试定位问题时省去很多麻烦。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">(lldb) pviews view</span><br><span class="line">&lt;TestView: 0x18df8070; baseClass = UIControl; frame = (144 9; 126 167); layer = &lt;CALayer: 0x18df8150&gt;&gt;</span><br><span class="line">| &lt;UIView: 0x18df81d0; frame = (0 0; 126 126); userInteractionEnabled = NO; layer = &lt;CALayer: 0x18df8240&gt;&gt;</span><br><span class="line">| &lt;UIImageView: 0x18df8330; frame = (0 0; 126 126); clipsToBounds = YES; opaque = NO; userInteractionEnabled = NO; layer = &lt;CALayer: 0x18df83b0&gt;&gt;</span><br><span class="line">| &lt;UILabel: 0x18df8460; frame = (0 135; 126 14); text = &apos;haha&apos;; userInteractionEnabled = NO; layer = &lt;_UILabelLayer: 0x18df7fb0&gt;&gt;</span><br><span class="line">|    | &lt;_UILabelContentLayer: 0x131a3d50&gt; (layer)</span><br><span class="line">| &lt;UILabel: 0x18df8670; frame = (0 155; 126 12); text = &apos;hahaha&apos;; userInteractionEnabled = NO; layer = &lt;_UILabelLayer: 0x18df8730&gt;&gt;</span><br><span class="line">|    | &lt;_UILabelContentLayer: 0x131bea10&gt; (layer)</span><br><span class="line">| &lt;UIImageView: 0x18df88d0; frame = (0 9; 28 27); hidden = YES; opaque = NO; userInteractionEnabled = NO; layer = &lt;CALayer: 0x18df8ba0&gt;&gt;</span><br></pre></td></tr></table></figure></p><h3 id="pvc"><a href="#pvc" class="headerlink" title="pvc"></a>pvc</h3><p>这个命令也是递归打印层级，但是不是view，而是<code>viewController</code>。利用它我们可以对viewController的结构一目了然。 其实苹果在IOS8也默默的添加了 UIViewController 的一个私有辅助方法 <code>[UIViewController _printHierarchy]</code> 同样的效果。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">(lldb) pvc</span><br><span class="line">&lt;TabBarController: 0x13772fd0; view = &lt;UILayoutContainerView; 0x151b3a30&gt;; frame = (0, 0; 414, 736)&gt;</span><br><span class="line">| &lt;UINavigationController: 0x1602b800; view = &lt;UILayoutContainerView; 0x1b00aca0&gt;; frame = (0, 0; 414, 736)&gt;</span><br><span class="line">|   | &lt;FirstViewController: 0x16029c00; view = &lt;UIView; 0x1b01e1c0&gt;; frame = (0, 0; 414, 736)&gt;</span><br><span class="line">| &lt;UINavigationController: 0x138c5200; view = &lt;UILayoutContainerView; 0x1316a080&gt;; frame = (0, 0; 414, 736)&gt;</span><br><span class="line">|   | &lt;SecondViewController: 0x16030400; view = &lt;UIView; 0x2094b370&gt;; frame = (0, 0; 414, 736)&gt;</span><br><span class="line">|   |   | &lt;SecondChildViewController: 0x15af6000; view = &lt;UIView; 0x18d4e650&gt;; frame = (0, 64; 414, 628)&gt;</span><br><span class="line">| &lt;UINavigationController: 0x1383ca00; view = &lt;UILayoutContainerView; 0x13180070&gt;; frame = (0, 0; 414, 736)&gt;</span><br><span class="line">|   | &lt;ThirdViewController: 0x138ddc00; view = &lt;UIView; 0x18df6650&gt;; frame = (0, 0; 414, 736)&gt;</span><br><span class="line">|   |   | &lt;ThirdChild1ViewController: 0x1393fe00; view = &lt;UIView; 0x131ec000&gt;; frame = (0, 0; 414, 672)&gt;</span><br><span class="line">|   |   | &lt;ThirdChild2ViewController: 0x138dce00; view = &lt;UIView; 0x204075a0&gt;; frame = (414, 0; 414, 672)&gt;</span><br><span class="line">|   |   | &lt;ThirdChild3ViewController: 0x138a8e00; view = &lt;UIView; 0x20426250&gt;; frame = (828, 0; 414, 672)&gt;</span><br><span class="line">| &lt;UINavigationController: 0x160eca00; view = &lt;UILayoutContainerView; 0x152f7d90&gt;; frame = (0, 0; 414, 736)&gt;</span><br><span class="line">|   | &lt;FourViewController: 0x13157cc0; view not loaded&gt;</span><br></pre></td></tr></table></figure></p><h3 id="visualize"><a href="#visualize" class="headerlink" title="visualize"></a>visualize</h3><p>这是个很有意思的功能，它可以让你使用Mac的预览打开一个 UIImage, CGImageRef, UIView, 或 CALayer。 这个功能或许可以帮我们用来截图、用来定位一个view的具体内容。 但是在我试用了一下，发现暂时还是只能在模拟器时使用，真机还不行。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(lldb) visualize imageView</span><br></pre></td></tr></table></figure></p><h3 id="fv-amp-fvc"><a href="#fv-amp-fvc" class="headerlink" title="fv &amp; fvc"></a>fv &amp; fvc</h3><p><code>fv</code> 和 <code>fvc</code> 这两个命令是用来通过类名搜索当前内存中存在的view和viewController实例的命令，支持正则搜索。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">(lldb) fv scrollView</span><br><span class="line">0x18d3b8c0 UIScrollView</span><br><span class="line">0x137d0c50 UIScrollView</span><br><span class="line">0x131b1580 UIScrollView</span><br><span class="line">0x131b2070 UIScrollView</span><br><span class="line">(lldb) fvc Home</span><br><span class="line">0x1393fe00 HomeFeedsViewController</span><br><span class="line">0x138a8e00 HomeFeedsViewController</span><br><span class="line">(lldb)</span><br></pre></td></tr></table></figure></p><h3 id="show-amp-hide"><a href="#show-amp-hide" class="headerlink" title="show &amp; hide"></a>show &amp; hide</h3><p>这两个命令用来显示和隐藏一个指定的 UIView . 你甚至不需要Continue Progress. 就可以看到效果。</p><h3 id="mask-umask-border-unborder"><a href="#mask-umask-border-unborder" class="headerlink" title="mask/umask border/unborder"></a>mask/umask border/unborder</h3><p>这两组命令用来标识一个view或layer的位置时用， mask用来在view上覆盖一个半透明的矩形， border可以给view添加边框。<br>但是在我实际使用的过程中mask总是会报错，估计是有bug， 那么mask/unmask 一般不要用好了，用border命令是一样的效果，反正二者的用途都是找到一个对应的view.</p><h3 id="caflush"><a href="#caflush" class="headerlink" title="caflush"></a>caflush</h3><p>这个命令会重新渲染，即可以重新绘制界面， 相当于执行了 [CATransaction flush] 方法，要注意如果在动画过程中执行这个命令，就直接渲染出动画结束的效果。<br>当你想在调试界面颜色、坐标之类的时候，可以直接在控制台修改属性，然后caflush就可以看到效果啦，是不是要比改代码，然后重新build省事多了呢。<br>例, 其中 $122 即是目标UIView：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(lldb) p view</span><br><span class="line">(long) $122 = 140718754142192</span><br><span class="line">(lldb) e (void)[$122 setBackgroundColor:[UIColor greenColor]]</span><br><span class="line">(lldb) caflush</span><br></pre></td></tr></table></figure></p><h3 id="bmessage"><a href="#bmessage" class="headerlink" title="bmessage"></a>bmessage</h3><p>使用场景：我们想在 <code>[MyViewController viewWillAppear:]</code> 里面打断点，但是 <code>MyViewController</code>并没有实现 <code>viewWillAppear:</code> 方法， 以往的作法可能就是在子类中实现下<code>viewWillAppear:</code>，然后打断点，然后<code>rebuild</code>。<br>那么幸好有了 <code>bmessage</code>命令。我们可以不用这样就可以打这个效果的断点：<code>(lldb) bmessage -[MyViewController viewWillAppear:]</code> 上面命令会在其父类的 <code>viewWillAppear:</code>方法中打断点，并添加上了条件：<code>[self isKindOfClass:[MyViewController class]]</code>.</p><p><a href="https://blog.cnbluebox.com/blog/2015/03/05/chisel/" target="_blank" rel="noopener">Chisel-LLDB命令插件，让调试更Easy</a></p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p><a href="https://forums.developer.apple.com/thread/16242" target="_blank" rel="noopener">参考</a></p><ol><li>you can restart your device!  then connect your device  to your mac-&gt;open Xcode-&gt;press command + i</li></ol><p>I’ve encountered this issue today. The record button is disabled and the tooltip says “This device is not currently online”. However my iPhone is connecting with my Mac and can be debugged with Xcode without any problem.</p>]]></content>
     
     <summary type="html">
     
