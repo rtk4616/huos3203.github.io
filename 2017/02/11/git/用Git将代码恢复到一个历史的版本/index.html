@@ -100,7 +100,7 @@
 <meta property="og:site_name" content="布衣男儿">
 <meta property="og:description" content="经历：将代码全提交到默认的head分支中，切换分支后，无法找到分支的严重后果：目的：在当前分支上，将代码恢复到一个历史的提交版本上。 暴力的方式如果仓库是自己在用（不影响别人），那么可以使用git reset --hard &amp;lt;target_commit_id&amp;gt; 来恢复到指定的提交，再用 git push -f 来强制更新远程的分支指针。为了保证万一需要找回历史提交，我们可以先打一个 t">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-02-10T18:29:19.000Z">
+<meta property="og:updated_time" content="2018-09-05T15:52:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用Git将代码恢复到一个历史的版本">
 <meta name="twitter:description" content="经历：将代码全提交到默认的head分支中，切换分支后，无法找到分支的严重后果：目的：在当前分支上，将代码恢复到一个历史的提交版本上。 暴力的方式如果仓库是自己在用（不影响别人），那么可以使用git reset --hard &amp;lt;target_commit_id&amp;gt; 来恢复到指定的提交，再用 git push -f 来强制更新远程的分支指针。为了保证万一需要找回历史提交，我们可以先打一个 t">
@@ -440,7 +440,7 @@ daovoice('update');
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  283字
+                  371字
                 </span>
               
 
@@ -456,7 +456,7 @@ daovoice('update');
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  1分钟
+                  2分钟
                 </span>
               
             </div>
@@ -483,6 +483,13 @@ daovoice('update');
 </ol>
 <h2 id="温柔的方式"><a href="#温柔的方式" class="headerlink" title="温柔的方式"></a>温柔的方式</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">回滚</span></span><br><span class="line">git reset  —hard  a1d09fd</span><br><span class="line"><span class="meta">#</span><span class="bash">将当前代码切换回最新的提交</span></span><br><span class="line">git reset --soft origin/source</span><br></pre></td></tr></table></figure>
 <p>此时工作区变成了历史的提交内容，这个时候用 <code>git add</code> 和 <code>git commit</code> 即可.</p>
+<h3 id="后悔药"><a href="#后悔药" class="headerlink" title="后悔药"></a>后悔药</h3><ul>
+<li>舍弃上一次工作区的更改<br><code>git checkout .</code></li>
+<li>舍弃暂存区的更改<br><code>git reset --hard</code></li>
+<li>恢复上一次提交的内容到工作区<br><code>git reset -- .</code><br><code>git reset filename</code></li>
+<li>先提交后再恢复到上一次提交的状态<br><code>git revert id</code><br><code>git revert HEAD</code></li>
+<li>修改提交的日志分两步<br><code>git commit -am &quot;日志信息&quot;</code><br><code>git commit -amend</code></li>
+</ul>
 
       
     </div>
@@ -679,7 +686,7 @@ daovoice('update');
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">187</span>
+                <span class="site-state-item-count">192</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -690,7 +697,7 @@ daovoice('update');
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">76</span>
+                <span class="site-state-item-count">77</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -865,7 +872,7 @@ daovoice('update');
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#暴力的方式"><span class="nav-number">1.</span> <span class="nav-text">暴力的方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#温柔的方式"><span class="nav-number">2.</span> <span class="nav-text">温柔的方式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#暴力的方式"><span class="nav-number">1.</span> <span class="nav-text">暴力的方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#温柔的方式"><span class="nav-number">2.</span> <span class="nav-text">温柔的方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#后悔药"><span class="nav-number">2.1.</span> <span class="nav-text">后悔药</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -893,7 +900,7 @@ daovoice('update');
     <span id="busuanzi_container_site_pv">
      本站总<span id="busuanzi_value_site_pv"></span>次访问 |
     </span>
-    <span class="post-count"> 博客全站共200.9k字</span>
+    <span class="post-count"> 博客全站共203.9k字</span>
 </div>
 <div class="copyright">
     <span id="timeDate">载入天数...</span>
