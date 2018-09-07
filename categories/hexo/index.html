@@ -403,7 +403,7 @@ daovoice('update');
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">194</span>
+                <span class="site-state-item-count">196</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -601,7 +601,7 @@ daovoice('update');
     <span id="busuanzi_container_site_pv">
      本站总<span id="busuanzi_value_site_pv"></span>次访问 |
     </span>
-    <span class="post-count"> 博客全站共203.9k字</span>
+    <span class="post-count"> 博客全站共204.6k字</span>
 </div>
 <div class="copyright">
     <span id="timeDate">载入天数...</span>
@@ -1196,7 +1196,59 @@ setInterval("createtime()",250);
 </html>
 <!-- 页面点击小红心 -->
 <script type="text/javascript" src="/js/src/love.js"></script>
-s = [];
+ck(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("ue8PI3eFeweMAjNgpAAIfiRi-gzGzoHsz", "2kHl2CEoDUKiHcVvz0dhu5rF");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
       var $visitors = $(".leancloud_visitors");
 
       $visitors.each(function () {

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huos3203.github.io/"/>
-  <updated>2018-09-05T19:07:39.000Z</updated>
+  <updated>2018-09-07T15:08:22.000Z</updated>
   <id>https://huos3203.github.io/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo插件开发</title>
+    <link href="https://huos3203.github.io/2018/09/07/hexo/Hexo%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
+    <id>https://huos3203.github.io/2018/09/07/hexo/Hexo插件开发/</id>
+    <published>2018-09-07T15:08:22.000Z</published>
+    <updated>2018-09-07T15:08:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><!--github库卡片--><div id="badge-container-hexojs-site-e1839be" class="hexo-github" style="width: ="></div><script src="/hexo-github/badge.js"></script><script type="text/javascript">  loadStyle("/hexo-github/style.css");  loadStyle("/hexo-github/octicons/octicons.css");  new Badge("#badge-container-hexojs-site-e1839be", "hexojs", "site", "e1839be", false);</script><p>Hexo 有强大的插件系统，使您能轻松扩展功能而不用修改核心模块的源码。在 Hexo 中有两种形式的插件：</p><h2 id="脚本（Scripts）"><a href="#脚本（Scripts）" class="headerlink" title="脚本（Scripts）"></a>脚本（Scripts）</h2><p>如果您的代码很简单，建议您编写脚本，您只需要把 JavaScript 文件放到 <code>scripts</code> 文件夹，在启动时就会自动载入。</p><h2 id="插件（Packages）"><a href="#插件（Packages）" class="headerlink" title="插件（Packages）"></a>插件（Packages）</h2><p>如果您的代码较复杂，或是您想要发布到 NPM 上，建议您编写插件。首先，在 <code>node_modules</code> 文件夹中建立文件夹，文件夹名称开头必须为 <code>hexo-</code>，如此一来 Hexo 才会在启动时载入否则 Hexo 将会忽略它。</p><p>文件夹内至少要包含 2 个文件：一个是主程序，另一个是 <code>package.json</code>，描述插件的用途和所依赖的插件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── index.js</span><br><span class="line">└── package.json</span><br></pre></td></tr></table></figure></p><p><code>package.json</code> 中至少要包含 <code>name</code>, <code>version</code>, <code>main</code> 属性，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">package.json</span><br><span class="line">&#123;</span><br><span class="line">&quot;name&quot;: &quot;hexo-my-plugin&quot;,</span><br><span class="line">&quot;version&quot;: &quot;0.0.1&quot;,</span><br><span class="line">&quot;main&quot;: &quot;index&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>您可以使用 Hexo 提供的官方工具插件来加速开发：<br><a href="https://github.com/hexojs/hexo-fs" target="_blank" rel="noopener">hexo-fs</a>：文件 IO<br><a href="https://github.com/hexojs/hexo-util" target="_blank" rel="noopener">hexo-util</a>：工具程式<br><a href="https://github.com/hexojs/hexo-i18n" target="_blank" rel="noopener">hexo-i18n</a>：本地化（i18n）<br><a href="https://github.com/hexojs/hexo-pagination" target="_blank" rel="noopener">hexo-pagination</a>：生成分页资料</p><h2 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h2><p>当您完成插件后，可以考虑将它发布到 <a href="https://hexo.io/plugins" target="_blank" rel="noopener">插件列表</a>，让更多人能够使用您的插件。发布插件的步骤和 <a href="https://hexo.io/zh-cn/docs/contributing.html#更新文件" target="_blank" rel="noopener">更新文件</a> 非常类似。</p><ol><li>Fork <a href="https://github.com/hexojs/site" target="_blank" rel="noopener">hexojs/site</a></li><li><p>把库（repository）复制到电脑上，并安装所依赖的插件：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https://github.com/&lt;username&gt;/site.git</span><br><span class="line">$ cd site</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure></li><li><p>编辑 source/_data/plugins.yml，在档案中新增您的插件，例如：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- name: hexo-server</span><br><span class="line">description: Server module for Hexo.</span><br><span class="line">link: https://github.com/hexojs/hexo-server</span><br><span class="line">tags:</span><br><span class="line">- official</span><br><span class="line">- server</span><br><span class="line">- console</span><br></pre></td></tr></table></figure></li><li><p>推送（push）分支.</p></li><li>建立一个新的合并申请（pull request）并描述改动。</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
+      
+    
+    </summary>
+    
+      <category term="hexo" scheme="https://huos3203.github.io/categories/hexo/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo开发文档及使用教程</title>
+    <link href="https://huos3203.github.io/2018/09/07/hexo/Hexo%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    <id>https://huos3203.github.io/2018/09/07/hexo/Hexo开发文档及使用教程/</id>
+    <published>2018-09-07T15:08:22.000Z</published>
+    <updated>2018-09-07T15:08:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><!--github库卡片--><div id="badge-container-hexojs-hexo-0b26940" class="hexo-github" style="width: ="></div><script src="/hexo-github/badge.js"></script><script type="text/javascript">  loadStyle("/hexo-github/style.css");  loadStyle("/hexo-github/octicons/octicons.css");  new Badge("#badge-container-hexojs-hexo-0b26940", "hexojs", "hexo", "0b26940", false);</script><p><a href="https://hexo.io/zh-cn/docs/contributing" target="_blank" rel="noopener"></a></p><h3 id="开始之前"><a href="#开始之前" class="headerlink" title="开始之前"></a>开始之前</h3><p>请遵守以下准则：</p><ul><li>遵守 Google JavaScript 代码风格。</li><li>使用 2 个空格缩排。</li><li>不要把逗号放在最前面。<h3 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h3></li></ul><ol><li>Fork <a href="https://github.com/hexojs/hexo" target="_blank" rel="noopener">hexojs/hexo</a></li><li><p>把库（repository）复制到电脑上，并安装所依赖的插件:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https://github.com/&lt;username&gt;/hexo.git</span><br><span class="line">$ cd hexo</span><br><span class="line">$ npm install</span><br><span class="line">$ git submodule update --init</span><br></pre></td></tr></table></figure></li><li><p>新增一个功能分支:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b new_feature</span><br></pre></td></tr></table></figure></li><li><p>开始开发。</p></li><li><p>推送（push）分支:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin new_feature</span><br></pre></td></tr></table></figure></li><li><p>建立一个新的合并申请（pull request）并描述变动.</p><h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>不要修改 <code>package.json</code> 的版本号。<br>只有在测试通过的情况下您的合并申请才会被批准，在提交前别忘了进行测试。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm test</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
+      
+    
+    </summary>
+    
+      <category term="hexo" scheme="https://huos3203.github.io/categories/hexo/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>一周膳食计划</title>
@@ -58,29 +104,6 @@
     </summary>
     
       <category term="工具" scheme="https://huos3203.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>敏捷开发歌诀</title>
-    <link href="https://huos3203.github.io/2018/09/05/%E7%AE%A1%E7%90%86/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E6%AD%8C%E8%AF%80/"/>
-    <id>https://huos3203.github.io/2018/09/05/管理/敏捷开发歌诀/</id>
-    <published>2018-09-05T15:52:33.000Z</published>
-    <updated>2018-09-05T15:52:33.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="trello卡片"><a href="#trello卡片" class="headerlink" title="trello卡片"></a>trello卡片</h2><p><blockquote class="trello-card"><a href="https://trello.com/c/4NID7312/26-%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E6%AD%8C%E8%AF%80%E5%8F%8A%E5%AE%A3%E8%A8%80" target="_blank" rel="noopener">敏捷开发歌诀及宣言</a></blockquote><script src="https://p.trellocdn.com/embed.min.js"></script></p><h2 id="敏捷开发歌诀"><a href="#敏捷开发歌诀" class="headerlink" title="敏捷开发歌诀"></a>敏捷开发歌诀</h2><p>迭代开发，价值优先<br>分解任务，真实进度<br>站立会议，交流畅通<br>用户参与，调整方向<br>结对编程，代码质量<br>测试驱动，安全可靠<br>持续集成，尽早反馈<br>自动部署，一键安装<br>定期回顾，持续改进<br>不断学习，提高能力</p><h2 id="敏捷开发宣言"><a href="#敏捷开发宣言" class="headerlink" title="敏捷开发宣言"></a>敏捷开发宣言</h2><ul><li>个体和交互，胜过过程和工具</li><li>可工作的软件，胜过面面俱到的文档</li><li>客户协作，胜过合同谈判</li><li>响应变化，胜过遵循计划</li></ul><p>虽然右项也有价值，左项具有更大的价值。</p><h2 id="迭代和增量式的学习"><a href="#迭代和增量式的学习" class="headerlink" title="迭代和增量式的学习"></a>迭代和增量式的学习</h2><p>每天计划用一段时间来学习新技术，它不需要很长时间，但需要经常进行。记下那些你想学习的东西–当你听到一些不熟悉的术语或者短语时，简要地把它记录下来。然后在计划的时间中深入研究它。了解最新行情。互联网上有大量关于学习新技术的资源。阅读社区讨论和邮件列表，可以了解其他人遇到的问题，以及他们发现的很酷的解决方案。选择一些公认的优秀技术博客，经常去读一读，以了解那些顶尖的博客作者们正在关注什么（最新的博客列表请参考pragmaticprogrammer.com）。参加本地的用户组活动。Java、Ruby、Delphi、.NET、过程改进、面向对象设计、Linux、Mac，以及其他的各种技术在很多地区都会有用户组。听讲座，然后积极加入到问答环节中。</p><blockquote><p>跟踪技术变化。你不需要精通所有技术，但需要清楚知道行业的动向，从而规划你的项目和职业生涯。</p></blockquote><h2 id="切身感受"><a href="#切身感受" class="headerlink" title="切身感受"></a>切身感受</h2><p>你能嗅到将要流行的新技术，知道它们已经发布或投入使用。如果必须要把工作切换到一种新的技术领域，你能做到。</p><h3 id="平衡的艺术"><a href="#平衡的艺术" class="headerlink" title="平衡的艺术"></a>平衡的艺术</h3><ul><li>许多新想法从未变得羽翼丰满，成为有用的技术。即使是大型、热门和资金充裕的项目也会有同样的下场。你要正确把握自己投入的精力。</li><li>你不可能精通每一项技术，没有必要去做这样的尝试。只要你在某些方面成为专家，就能使用同样的方法，很容易地成为新领域的专家。</li><li>你要明白为什么需要这项新技术——它试图解决什么样的问题？它可以被用在什么地方？</li><li>避免在一时冲动的情况下，只是因为想学习而将应用切换到新的技术、框架或开发语言。在做决策之前，你必须评估新技术的优势。开发一个小的原型系统，是对付技术狂热者的一剂良药。</li></ul><p>当开发项目的时候，你需要使用一些术语或者隐喻来清晰地传达设计的概念和意图。如果团队中的大部分成员不熟悉这些，就很难进行高效地工作。再比如你参加了一个课程或者研讨班之后，所学的知识如果不用，往往就会忘记。所以，你需要和其他团队成员分享所学的知识，把这些知识引入团队中。</p><p>找出你或团队中的高手擅长的领域，帮助其他的团队成员在这些方面迎头赶上（这样做还有一个好处是，可以讨论如何将这些东西应用于自己的项目中）。</p><p>“午餐会议”是在团队中分享知识非常好的方式。在一周之中挑选一天，例如星期三（一般来说任何一天都可以，但最好不要是星期一和星期五）。事先计划午餐时聚集在一起，这样就不会担心和其他会议冲突，也不需要特别的申请。为了降低成本，就让大家自带午餐。</p><p>每周，要求团队中的一个人主持讲座。他会给大家介绍一些概念，演示工具，或者做团队感兴趣的任何一件事情。你可以挑一本书，给大家说说其中一些特别内容、项目或者实践。①无论什么主题都可以。</p><p>从每周主持讲座的人开始，先让他讲15分钟，然后，进行开放式讨论，这样每个人都可以发表自己的意见，讨论这个主题对于项目的意义。讨论应该包括所能带来的益处，提供来自自己应用程序的示例，并准备好听取进一步的信息。</p><p>这些午餐会议非常有用。它促进了整个团队对这个行业的了解，你自己也可以从其他人身上学到很多东西。优秀的管理者会重用那些能提高其他团队成员价值的人，因此这些活动也直接有助于你的职业生涯。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
-      
-    
-    </summary>
-    
-      <category term="管理" scheme="https://huos3203.github.io/categories/%E7%AE%A1%E7%90%86/"/>
     
     
   </entry>
@@ -132,29 +155,6 @@
   </entry>
   
   <entry>
-    <title>swift支持的正则（textKit）</title>
-    <link href="https://huos3203.github.io/2018/09/05/swift/swift%E6%94%AF%E6%8C%81%E7%9A%84%E6%AD%A3%E5%88%99%EF%BC%88textKit%EF%BC%89/"/>
-    <id>https://huos3203.github.io/2018/09/05/swift/swift支持的正则（textKit）/</id>
-    <published>2018-09-05T15:52:33.000Z</published>
-    <updated>2018-09-05T15:52:33.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p><blockquote class="trello-card"><a href="https://trello.com/c/kSIkFQXO/5-swift%E6%94%AF%E6%8C%81%E7%9A%84%E6%AD%A3%E5%88%99%EF%BC%88textkit%EF%BC%89" target="_blank" rel="noopener">swift支持的正则（textKit）</a></blockquote><script src="https://p.trellocdn.com/embed.min.js"></script></p><p><a href="https://msdn.microsoft.com/zh-cn/library/ae5bf541(VS.80" target="_blank" rel="noopener">正则表达式语法</a>.aspx)<br><a href="http://www.cocoachina.com/ios/20150415/11568.html" target="_blank" rel="noopener">iOS开发之详解正则表达式</a>原文：NSRegularExpression Tutorial: Getting Started<br><a href="http://nshipster.cn/nspredicate/" target="_blank" rel="noopener">nshipster文章NSPredicate</a><br><a href="http://www.cocoachina.com/ios/20160111/14926.html" target="_blank" rel="noopener">iOS中的谓词（NSPredicate）使用</a></p><h2 id="谓词和正则表达式的区别及适用场景"><a href="#谓词和正则表达式的区别及适用场景" class="headerlink" title="谓词和正则表达式的区别及适用场景"></a>谓词和正则表达式的区别及适用场景</h2><ol><li>谓词的对象可以是字符串，集合，同时支持sql语法和正则表达式</li><li>正则表达式，对字符串</li></ol><h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p>简短的定义：正则表达式提供了一种在指定文本文档中按指定模式进行搜索，并能基于匹配模式进行修改文本的一种方式。<br>正则表达式的通用用例：</p><ol><li>执行搜索：高亮显示搜索和替换<ol><li>UITextView的NSAttributedString属性来高亮显示搜索的结果</li><li>用text kit来实现高亮的功能</li></ol></li><li>验证用户输入</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
-      
-    
-    </summary>
-    
-      <category term="swift" scheme="https://huos3203.github.io/categories/swift/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>LaunchPad打击垫学习</title>
     <link href="https://huos3203.github.io/2018/09/05/LaunchPad%E6%89%93%E5%87%BB%E5%9E%AB%E5%AD%A6%E4%B9%A0/"/>
     <id>https://huos3203.github.io/2018/09/05/LaunchPad打击垫学习/</id>
@@ -178,13 +178,13 @@
   </entry>
   
   <entry>
-    <title>Linux下heroku安装及使用</title>
-    <link href="https://huos3203.github.io/2018/09/05/%E5%B7%A5%E5%85%B7/Linux%E4%B8%8Bheroku%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/"/>
-    <id>https://huos3203.github.io/2018/09/05/工具/Linux下heroku安装及使用/</id>
-    <published>2018-09-05T14:03:39.000Z</published>
+    <title>swift支持的正则（textKit）</title>
+    <link href="https://huos3203.github.io/2018/09/05/swift/swift%E6%94%AF%E6%8C%81%E7%9A%84%E6%AD%A3%E5%88%99%EF%BC%88textKit%EF%BC%89/"/>
+    <id>https://huos3203.github.io/2018/09/05/swift/swift支持的正则（textKit）/</id>
+    <published>2018-09-05T15:52:33.000Z</published>
     <updated>2018-09-05T15:52:33.000Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p><a href="https://devcenter.heroku.com/articles/heroku-cli#download-and-install" target="_blank" rel="noopener">heroku安装</a><br><a href="https://devcenter.heroku.com/articles/exec" target="_blank" rel="noopener">heroku执行bash</a></p><h2 id="Linux环境安装"><a href="#Linux环境安装" class="headerlink" title="Linux环境安装"></a>Linux环境安装</h2><ol><li><p>下载ngrok</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -o ngrok.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip</span><br></pre></td></tr></table></figure></li><li><p>解压zip</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip ngrok.zip</span><br></pre></td></tr></table></figure></li></ol><h2 id="启动heroku-终端"><a href="#启动heroku-终端" class="headerlink" title="启动heroku 终端"></a>启动heroku 终端</h2><p>Each Heroku Exec connection lasts a maximum of one hour. After an hour, you might need to reconnect. Additionally, Heroku Exec is not supported in Shield Private Spaces.</p><p>先保证在该目录执行,即初始化环境<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heroku create myhexo</span><br></pre></td></tr></table></figure></p><ol><li><p>创建</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heroku ps:exec</span><br></pre></td></tr></table></figure></li><li><p>bash</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">heroku run bash</span><br><span class="line">//</span><br><span class="line">Heroku ps:stop run #停止所有的dynos</span><br><span class="line">再执行heroku run bash</span><br></pre></td></tr></table></figure></li><li><p>查看正在运行的bash</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Heroku run:detached ls</span><br></pre></td></tr></table></figure></li><li><p>退出</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Heroku dyno:kill dyno</span><br></pre></td></tr></table></figure></li><li><p>重启</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Heroku dyno:restart [dyno]</span><br></pre></td></tr></table></figure></li></ol><h2 id="安装screen"><a href="#安装screen" class="headerlink" title="安装screen"></a>安装screen</h2><ol><li>下载<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://ftp.gnu.org/gnu/screen/screen-4.0.3.tar.gz</span><br></pre></td></tr></table></figure></li></ol><h2 id="安装lldb"><a href="#安装lldb" class="headerlink" title="安装lldb"></a>安装lldb</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install lldb-3.5</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p><blockquote class="trello-card"><a href="https://trello.com/c/kSIkFQXO/5-swift%E6%94%AF%E6%8C%81%E7%9A%84%E6%AD%A3%E5%88%99%EF%BC%88textkit%EF%BC%89" target="_blank" rel="noopener">swift支持的正则（textKit）</a></blockquote><script src="https://p.trellocdn.com/embed.min.js"></script></p><p><a href="https://msdn.microsoft.com/zh-cn/library/ae5bf541(VS.80" target="_blank" rel="noopener">正则表达式语法</a>.aspx)<br><a href="http://www.cocoachina.com/ios/20150415/11568.html" target="_blank" rel="noopener">iOS开发之详解正则表达式</a>原文：NSRegularExpression Tutorial: Getting Started<br><a href="http://nshipster.cn/nspredicate/" target="_blank" rel="noopener">nshipster文章NSPredicate</a><br><a href="http://www.cocoachina.com/ios/20160111/14926.html" target="_blank" rel="noopener">iOS中的谓词（NSPredicate）使用</a></p><h2 id="谓词和正则表达式的区别及适用场景"><a href="#谓词和正则表达式的区别及适用场景" class="headerlink" title="谓词和正则表达式的区别及适用场景"></a>谓词和正则表达式的区别及适用场景</h2><ol><li>谓词的对象可以是字符串，集合，同时支持sql语法和正则表达式</li><li>正则表达式，对字符串</li></ol><h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p>简短的定义：正则表达式提供了一种在指定文本文档中按指定模式进行搜索，并能基于匹配模式进行修改文本的一种方式。<br>正则表达式的通用用例：</p><ol><li>执行搜索：高亮显示搜索和替换<ol><li>UITextView的NSAttributedString属性来高亮显示搜索的结果</li><li>用text kit来实现高亮的功能</li></ol></li><li>验证用户输入</li></ol>]]></content>
     
     <summary type="html">
     
@@ -195,7 +195,30 @@
     
     </summary>
     
-      <category term="工具" scheme="https://huos3203.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+      <category term="swift" scheme="https://huos3203.github.io/categories/swift/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>敏捷开发歌诀</title>
+    <link href="https://huos3203.github.io/2018/09/05/%E7%AE%A1%E7%90%86/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E6%AD%8C%E8%AF%80/"/>
+    <id>https://huos3203.github.io/2018/09/05/管理/敏捷开发歌诀/</id>
+    <published>2018-09-05T15:52:33.000Z</published>
+    <updated>2018-09-05T15:52:33.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="trello卡片"><a href="#trello卡片" class="headerlink" title="trello卡片"></a>trello卡片</h2><p><blockquote class="trello-card"><a href="https://trello.com/c/4NID7312/26-%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E6%AD%8C%E8%AF%80%E5%8F%8A%E5%AE%A3%E8%A8%80" target="_blank" rel="noopener">敏捷开发歌诀及宣言</a></blockquote><script src="https://p.trellocdn.com/embed.min.js"></script></p><h2 id="敏捷开发歌诀"><a href="#敏捷开发歌诀" class="headerlink" title="敏捷开发歌诀"></a>敏捷开发歌诀</h2><p>迭代开发，价值优先<br>分解任务，真实进度<br>站立会议，交流畅通<br>用户参与，调整方向<br>结对编程，代码质量<br>测试驱动，安全可靠<br>持续集成，尽早反馈<br>自动部署，一键安装<br>定期回顾，持续改进<br>不断学习，提高能力</p><h2 id="敏捷开发宣言"><a href="#敏捷开发宣言" class="headerlink" title="敏捷开发宣言"></a>敏捷开发宣言</h2><ul><li>个体和交互，胜过过程和工具</li><li>可工作的软件，胜过面面俱到的文档</li><li>客户协作，胜过合同谈判</li><li>响应变化，胜过遵循计划</li></ul><p>虽然右项也有价值，左项具有更大的价值。</p><h2 id="迭代和增量式的学习"><a href="#迭代和增量式的学习" class="headerlink" title="迭代和增量式的学习"></a>迭代和增量式的学习</h2><p>每天计划用一段时间来学习新技术，它不需要很长时间，但需要经常进行。记下那些你想学习的东西–当你听到一些不熟悉的术语或者短语时，简要地把它记录下来。然后在计划的时间中深入研究它。了解最新行情。互联网上有大量关于学习新技术的资源。阅读社区讨论和邮件列表，可以了解其他人遇到的问题，以及他们发现的很酷的解决方案。选择一些公认的优秀技术博客，经常去读一读，以了解那些顶尖的博客作者们正在关注什么（最新的博客列表请参考pragmaticprogrammer.com）。参加本地的用户组活动。Java、Ruby、Delphi、.NET、过程改进、面向对象设计、Linux、Mac，以及其他的各种技术在很多地区都会有用户组。听讲座，然后积极加入到问答环节中。</p><blockquote><p>跟踪技术变化。你不需要精通所有技术，但需要清楚知道行业的动向，从而规划你的项目和职业生涯。</p></blockquote><h2 id="切身感受"><a href="#切身感受" class="headerlink" title="切身感受"></a>切身感受</h2><p>你能嗅到将要流行的新技术，知道它们已经发布或投入使用。如果必须要把工作切换到一种新的技术领域，你能做到。</p><h3 id="平衡的艺术"><a href="#平衡的艺术" class="headerlink" title="平衡的艺术"></a>平衡的艺术</h3><ul><li>许多新想法从未变得羽翼丰满，成为有用的技术。即使是大型、热门和资金充裕的项目也会有同样的下场。你要正确把握自己投入的精力。</li><li>你不可能精通每一项技术，没有必要去做这样的尝试。只要你在某些方面成为专家，就能使用同样的方法，很容易地成为新领域的专家。</li><li>你要明白为什么需要这项新技术——它试图解决什么样的问题？它可以被用在什么地方？</li><li>避免在一时冲动的情况下，只是因为想学习而将应用切换到新的技术、框架或开发语言。在做决策之前，你必须评估新技术的优势。开发一个小的原型系统，是对付技术狂热者的一剂良药。</li></ul><p>当开发项目的时候，你需要使用一些术语或者隐喻来清晰地传达设计的概念和意图。如果团队中的大部分成员不熟悉这些，就很难进行高效地工作。再比如你参加了一个课程或者研讨班之后，所学的知识如果不用，往往就会忘记。所以，你需要和其他团队成员分享所学的知识，把这些知识引入团队中。</p><p>找出你或团队中的高手擅长的领域，帮助其他的团队成员在这些方面迎头赶上（这样做还有一个好处是，可以讨论如何将这些东西应用于自己的项目中）。</p><p>“午餐会议”是在团队中分享知识非常好的方式。在一周之中挑选一天，例如星期三（一般来说任何一天都可以，但最好不要是星期一和星期五）。事先计划午餐时聚集在一起，这样就不会担心和其他会议冲突，也不需要特别的申请。为了降低成本，就让大家自带午餐。</p><p>每周，要求团队中的一个人主持讲座。他会给大家介绍一些概念，演示工具，或者做团队感兴趣的任何一件事情。你可以挑一本书，给大家说说其中一些特别内容、项目或者实践。①无论什么主题都可以。</p><p>从每周主持讲座的人开始，先让他讲15分钟，然后，进行开放式讨论，这样每个人都可以发表自己的意见，讨论这个主题对于项目的意义。讨论应该包括所能带来的益处，提供来自自己应用程序的示例，并准备好听取进一步的信息。</p><p>这些午餐会议非常有用。它促进了整个团队对这个行业的了解，你自己也可以从其他人身上学到很多东西。优秀的管理者会重用那些能提高其他团队成员价值的人，因此这些活动也直接有助于你的职业生涯。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
+      
+    
+    </summary>
+    
+      <category term="管理" scheme="https://huos3203.github.io/categories/%E7%AE%A1%E7%90%86/"/>
     
     
   </entry>
@@ -219,6 +242,29 @@
     </summary>
     
       <category term="调试" scheme="https://huos3203.github.io/categories/%E8%B0%83%E8%AF%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Linux下heroku安装及使用</title>
+    <link href="https://huos3203.github.io/2018/09/05/%E5%B7%A5%E5%85%B7/Linux%E4%B8%8Bheroku%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/"/>
+    <id>https://huos3203.github.io/2018/09/05/工具/Linux下heroku安装及使用/</id>
+    <published>2018-09-05T14:03:39.000Z</published>
+    <updated>2018-09-05T15:52:33.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p><a href="https://devcenter.heroku.com/articles/heroku-cli#download-and-install" target="_blank" rel="noopener">heroku安装</a><br><a href="https://devcenter.heroku.com/articles/exec" target="_blank" rel="noopener">heroku执行bash</a></p><h2 id="Linux环境安装"><a href="#Linux环境安装" class="headerlink" title="Linux环境安装"></a>Linux环境安装</h2><ol><li><p>下载ngrok</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -o ngrok.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip</span><br></pre></td></tr></table></figure></li><li><p>解压zip</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip ngrok.zip</span><br></pre></td></tr></table></figure></li></ol><h2 id="启动heroku-终端"><a href="#启动heroku-终端" class="headerlink" title="启动heroku 终端"></a>启动heroku 终端</h2><p>Each Heroku Exec connection lasts a maximum of one hour. After an hour, you might need to reconnect. Additionally, Heroku Exec is not supported in Shield Private Spaces.</p><p>先保证在该目录执行,即初始化环境<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heroku create myhexo</span><br></pre></td></tr></table></figure></p><ol><li><p>创建</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heroku ps:exec</span><br></pre></td></tr></table></figure></li><li><p>bash</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">heroku run bash</span><br><span class="line">//</span><br><span class="line">Heroku ps:stop run #停止所有的dynos</span><br><span class="line">再执行heroku run bash</span><br></pre></td></tr></table></figure></li><li><p>查看正在运行的bash</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Heroku run:detached ls</span><br></pre></td></tr></table></figure></li><li><p>退出</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Heroku dyno:kill dyno</span><br></pre></td></tr></table></figure></li><li><p>重启</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Heroku dyno:restart [dyno]</span><br></pre></td></tr></table></figure></li></ol><h2 id="安装screen"><a href="#安装screen" class="headerlink" title="安装screen"></a>安装screen</h2><ol><li>下载<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://ftp.gnu.org/gnu/screen/screen-4.0.3.tar.gz</span><br></pre></td></tr></table></figure></li></ol><h2 id="安装lldb"><a href="#安装lldb" class="headerlink" title="安装lldb"></a>安装lldb</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install lldb-3.5</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="https://huos3203.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
   </entry>
@@ -408,29 +454,6 @@
   </entry>
   
   <entry>
-    <title>MPMoviePlayerController遇到的坑</title>
-    <link href="https://huos3203.github.io/2018/09/01/%E4%B8%AA%E4%BA%BA%E9%A1%B9%E7%9B%AE/MPMoviePlayerController%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91/"/>
-    <id>https://huos3203.github.io/2018/09/01/个人项目/MPMoviePlayerController遇到的坑/</id>
-    <published>2018-08-31T16:58:22.000Z</published>
-    <updated>2018-08-31T16:58:22.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ol><li>[MPMoviePlayerController播放过程中自动暂停的问题]<br>在使用系统播放器MPMoviePlayerController的过程中，会出现播放器自动暂停的情况，有两种解决办法：<a href="https://www.cnblogs.com/elsonpeng/p/5404969.html" target="_blank" rel="noopener">参看</a><br>1.1 <code>在播放开始的时候，设置useApplicationAudioSession ＝ NO;</code><br>1.2 <code>重启手机，也可以恢复</code></li><li><a href="https://stackoverflow.com/questions/3138660/why-does-mpmovieloadstate-have-state-5" target="_blank" rel="noopener">why does MPMovieLoadState have state 5?</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">The playState is a bitmask. Any number of bits can be set, such as</span><br><span class="line">MPMovieLoadStatePlaythroughOK | MPMovieLoadStatePlayable</span><br><span class="line">Check for states like this:</span><br><span class="line">MPMovieLoadState state = [playerController loadState];</span><br><span class="line">if( state &amp; MPMovieLoadStatePlaythroughOK ) &#123;</span><br><span class="line">NSLog(@&quot;State is Playthrough OK&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol><h1 id="问题2"><a href="#问题2" class="headerlink" title="问题2"></a>问题2</h1><h4 id="投影不全屏"><a href="#投影不全屏" class="headerlink" title="投影不全屏"></a>投影不全屏</h4><p>现象：投影仪页面未同步现象，全屏查看视频，横屏全屏显示，但投影在大屏的画面没有同步</p><ol><li><p>隔离业务代码，编写demo复现投影问题。<a href="https://github.com/huos3203/ALMoviePlayerController/tree/master/ALMoviePlayerControllerDemo" target="_blank" rel="noopener">ALMoviePlayerControllerGit库</a></p><h5 id="demo问题"><a href="#demo问题" class="headerlink" title="demo问题"></a>demo问题</h5><p>解决办法：<br>注释掉：<code>- (id)initWithContentURL:(NSURL *)url</code>方法。demo正常播放<br>小插曲：遇到<code>Setting device discovery mode to DiscoveryMode_None</code>，排查之后不影响播放。故没有继续研究。。。</p><blockquote><p>教训：必须深入代码联调测试中，本可以通过断点排查，查处url为nil导致demo无法的播放的原因。却长时间纠结在不必要的日志中。</p></blockquote></li><li><p>通过在投影仪上联调测试<code>不影响播放</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">VAALMoviePlayerController[7438:3348866] [] &lt;&lt;&lt;&lt; AVOutputDeviceDiscoverySession (FigRouteDiscoverer) &gt;&gt;&gt;&gt; -[AVFigRouteDiscovererOutputDeviceDiscoverySessionImpl outputDeviceDiscoverySessionDidChangeDiscoveryMode:]: Setting device discovery mode to DiscoveryMode_None (client: VAALMoviePlayerController)</span><br></pre></td></tr></table></figure></li></ol><p>通过百度有两种方式：<br>1.在viewwillapear中添加<code>player=nil</code><br><a href="https://stackoverflow.com/questions/47438401/avplayer-is-not-playing-in-ios-11#" target="_blank" rel="noopener">AVPlayer is not playing in iOS 11</a><br><a href="https://stackoverflow.com/questions/46321860/avplayerviewcontroller-black-screen-when-swiping-on-ios-11" target="_blank" rel="noopener">AVPlayerViewController black screen when swiping on iOS 11</a></p><p>2.将工程设置为<code>arc=YES</code></p><h4 id="MP4音频不同步"><a href="#MP4音频不同步" class="headerlink" title="MP4音频不同步"></a>MP4音频不同步</h4><p>现象：视频播放到待定的时间点，画面卡顿，拖动进度条，声音画面不同步，复现：《视频美国儿童思维导图特训营》第一课：21:00时长复现</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
-      
-    
-    </summary>
-    
-      <category term="个人项目" scheme="https://huos3203.github.io/categories/%E4%B8%AA%E4%BA%BA%E9%A1%B9%E7%9B%AE/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>使用Instruments的工具</title>
     <link href="https://huos3203.github.io/2018/09/01/%E8%B0%83%E8%AF%95/%E4%BD%BF%E7%94%A8Instruments%E7%9A%84%E5%B7%A5%E5%85%B7/"/>
     <id>https://huos3203.github.io/2018/09/01/调试/使用Instruments的工具/</id>
@@ -438,29 +461,6 @@
     <updated>2018-08-31T16:58:22.000Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>检测app内存爆增代码，优化性能<br><a href="https://www.jianshu.com/p/d0e149332380" target="_blank" rel="noopener">Instruments工具使用办法</a><br>整理Demo，列出几种常用instrument的场景。来熟悉具体操作<br><a href="https://gitee.com/leiming97/MemoryProblems-master.git" target="_blank" rel="noopener">demo</a></p><ol><li>集成归档模块代码，测试内存上升问题</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;/owl.css&quot;&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;scr
-      
-    
-    </summary>
-    
-      <category term="调试" scheme="https://huos3203.github.io/categories/%E8%B0%83%E8%AF%95/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Thisdeviceisnotcurrentlyonline</title>
-    <link href="https://huos3203.github.io/2018/09/01/%E8%B0%83%E8%AF%95/Thisdeviceisnotcurrentlyonline/"/>
-    <id>https://huos3203.github.io/2018/09/01/调试/Thisdeviceisnotcurrentlyonline/</id>
-    <published>2018-08-31T16:58:22.000Z</published>
-    <updated>2018-08-31T16:58:22.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" href="/owl.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p><a href="https://forums.developer.apple.com/thread/16242" target="_blank" rel="noopener">参考</a></p><ol><li>you can restart your device!  then connect your device  to your mac-&gt;open Xcode-&gt;press command + i</li></ol><p>I’ve encountered this issue today. The record button is disabled and the tooltip says “This device is not currently online”. However my iPhone is connecting with my Mac and can be debugged with Xcode without any problem.</p>]]></content>
     
     <summary type="html">
     
